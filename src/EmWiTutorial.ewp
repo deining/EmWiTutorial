@@ -50,7 +50,7 @@ unit Application
 // Mosaic Framework
 note group Note1
 {
-  attr Bounds = <20,20,260,290>;
+  attr Bounds = <20,20,260,370>;
 }
 
 // Profile Configuration
@@ -65,49 +65,10 @@ note group Note3
   attr Bounds = <520,20,760,130>;
 }
 
-// To do:
-// 
-// - Verify whether the attribute 'PlatformPackage' of the member 'Profile' does \
-// match your desired target system. With 'PlatformPackage' you determine the code \
-// generators und resource converters needed when your project is translated for \
-// the target system.
-// 
-// - Verify whether the attribute 'ScreenSize' of the member 'Profile' does correspond \
-// to the resolution of your display.
-// 
-// - Open the unit 'Application'. You will find there the application component (the \
-// root component of your GUI). Implement there your desired GUI look and feel.
-// 
-// - To better structure your project you can add more units here. Use for this purpose \
-// the template 'Unit' from the Gallery folder 'Chora'. Afterwards you can open the \
-// unit and put there your own GUI components.
-// 
-// - If you plan to develop a multilingual GUI application, you can add more language \
-// members to the project. Use for this purpose the template 'Language' found in \
-// the Gallery folder 'Chora'.
-note legend Note4
-{
-  attr Bounds = <20,510,760,810>;
-}
-
 // Project Units
 note group Note5
 {
   attr Bounds = <270,140,760,290>;
-}
-
-// Welcome to Embedded Wizard!
-// 
-// This empty project is prepared to create a GUI application suitable for Win32 \
-// with a screen size of 640x480 pixel (landscape mode).
-// 
-// In order to create your first Embedded Wizard UI application, we highly recommend \
-// to study the online documentation:
-// 
-// http://doc.embedded-wizard.de
-note legend Note
-{
-  attr Bounds = <20,300,760,500>;
 }
 
 // This is a profile member for the project. This profile controls the code generation \
@@ -123,4 +84,16 @@ profile Profile : Tara.Win32.RGBA8888
 
   $rect <10,10,154,50>
   macro Author = "Dipl. Ing. Paul Banach and Dipl. Ing. Manfred Schweyer, Copyright (C) TARA Systems GmbH";
+}
+
+$rect <40,270,240,310>
+unit WidgetSet
+{
+  attr Directory = $Mosaic\;
+}
+
+$rect <40,310,240,350>
+unit Templates
+{
+  attr Directory = $Mosaic\;
 }

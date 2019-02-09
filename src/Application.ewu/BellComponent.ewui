@@ -1,0 +1,57 @@
+$version 6.60
+
+// The bell component will be used when assembling the application.
+// The class representing the bell component is named 'BellComponent' and is located \
+// inside the unit 'Application'. Therefore the class name is Application::BellComponent.
+$rect <20,71,220,111>
+$output false
+class BellComponent : Core::Group
+{
+  // The property 'Bounds' defines the position and the size of bell component view.
+  // The view is 200 px wide and 150 px high, its origin is <0, 0>.
+  $rect <-2,166,198,206>
+  inherited property Bounds = <0,0,200,150>;
+
+  // Push button of the bell component.
+  // Inside the inspecot window, the Property 'OnActivate' of this object
+  // was assigned to the slot method 'RingTheBellSlot'.
+  // Therefore this slot method will called once the button was activated (= pressed).
+  $rect <20,20,160,60>
+  object WidgetSet::PushButton PushButtonBell
+  {
+    preset Bounds = <23,76,173,126>;
+    preset OnActivate = RingTheBellSlot;
+    preset Label = "Ring";
+    preset Appearance = WidgetSet::PushButton_Medium;
+  }
+
+  // This slot method is invoked once the push button is pressed (= activated).
+  $rect <240,40,440,80>
+  slot RingTheBellSlot
+  {
+    trace "Sorry, the GUI cannot ring the bell!";
+  }
+
+  // Header text of the bell component.
+  $rect <20,20,160,60>
+  object Views::Text HeadingBell
+  {
+    preset Bounds = <0,13,200,53>;
+    preset String = "Bell";
+    preset Font = Resources::FontExtraLarge;
+  }
+
+  // Border of the bell component.
+  $rect <20,20,160,60>
+  object Views::Border Border
+  {
+    preset Bounds = <0,0,200,150>;
+    preset Width = 2;
+  }
+
+  // Slot method(s)
+  note group NoteSlot
+  {
+    attr Bounds = <220,0,460,130>;
+  }
+}

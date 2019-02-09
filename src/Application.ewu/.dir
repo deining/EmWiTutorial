@@ -1,4 +1,4 @@
 $version 6.60
 
-$include Application
+$include TutorialApplication
 $include BellComponent

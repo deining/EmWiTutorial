@@ -1,1 +1,0 @@
-## Embedded Wizard sample application

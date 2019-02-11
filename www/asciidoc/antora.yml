@@ -1,0 +1,5 @@
+name: EmWiTutorial
+title: Embedded Wizard Tutorial
+version: latest
+nav:
+- modules/ROOT/nav.adoc

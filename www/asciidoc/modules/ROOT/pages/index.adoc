@@ -1,0 +1,96 @@
+= Getting started with 'Hello world'
+Andreas Deininger andreas@deininger.net
+
+For every language, its a good practice to start by printing out _Hello World!_. So let's start and do this with Embedded Wizard, too!
+
+== Setting up a new project
+
+. Start up Embedded Wizard Studio
+
+. From the main menu, select menu:Project[New ...] to start a new project
+
+. A popup appears:
+
+* In the template, select item btn:[Empty project].
+* Specify _EmWiTutorial_ as project name.
+* Select the _Location_ as project name.
+
+. Once project name and location are set, press the button btn:[Create new project] to bring up the new project.
+
+== Structure of the project
+
+Let's have a look at the structure of the newly created project. As you can see from figure 1, in total 4 items were added to main area, the so called https://doc.embedded-wizard.de/composer-window[composer window^]:
+
+.Inital project layout
+image::InitialProject.png[Initial project setup, 1024]
+
+These 4 groups serve totally different purposes:
+
+Mosaic Framework:: This is embedded wizard's GUI framework used under the hood. You shouldn't be concerned about this right now.
+Profile configuration:: A profile is used to store configuration parameters for your project. By using different profiles, you can customize the project settings to the  different target(s) that you ant to use.
+Languages:: The concept of languages is deeply embedded into the system's language _Chora_. If you want to caret a multi-lingual app, you can do so by smply adding more languages here. 
+Project units:: That's the most interesting part for now, so let's start explaining the concept behind:
+
+=== Units
+
+https://doc.embedded-wizard.de/unit-member[Units^] are a way to structure your project. For now, we will deal with one unit only, the _Application_ unit. While we use this unit for now, we will add more units later on. Units are a kind of container for our components used, so have a look now what's inside the  _Application_ unit_:
+
+. Double click on _Application_ unit (symbolized by a blue folder symbol).
+. Inside the composer window, a second tab appears which shows the contents inside the unit which is now opened.
+
+The unit contains one single element only, the _Application_ class:
+
+.Application unit with application class inside
+image::ApplicationUnit.png[Application unit]
+
+=== Application class
+
+The _Application_ class is the root element, standing at the very top our application. Again let's see what's inside the _Application_ class, which is a kind of container for the elements of the class:
+
+. Double click on _Application_ class (symbolized by a circles with three squares inside).
+. Inside the composer window, a third tab appears which shows the contents of the class which is now opened:
+
+.Application class with root canvas inside
+image::ApplicationUnit.png[Application class]
+
+All you will see here is the transparent root canvas, surrounded by a blue border.
+That's not much, so let's put some text on the canvas:
+
+* In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates windows^], left to the main composer window, make sure, the tab _Templates_ is selected.
+* In the main area of the templates window, you will find several text item entries. Click on the item _Views_, which will open and show all the _view_-subitems (the items of the templates window follows are arranged in an accordion style layout).
+* Identify the item _Text_, representing a simple text view. Click on the element, drag it over to the root canves and place it in the middle of the canvas.
+* If all went fine, you will see a tiny white text element labelled _Text_ in the middle of the canvas.
+
+.Root canvas with inserted text view
+image::RootCanvasTextView.png[Root canvas]
+
+So far so good, let's style our text a bit to make it more appealing:
+
+* In the composer window, click on the newly inserted text view to select the element.
+* Now have a look at the https://doc.embedded-wizard.de/inspector-window[inspector windows^] right to the main composer window: in the upper _member area_ you should see the element named text selected. Also note the attributes and properties area below that shows all properties of the currently selected text view.
+* Inside the attributes and properties area, we can adapt the newly inserted text view to our needs:
+** Using the dropdown list, alter the _Font_ property of the text elemnt to the value _Resources::FontExtraLarge_.
+** Using the dropdown element, alter the _Color_ property of the text element to the value _#000000FF_ (black, opaque).
+** In order to change the display text, alter the _String_ property of the text element to the value _"Hello, world!"_.
+** Since we do have text overflow in the element now, alter the _AutoSize_ property of the text element to the value _true_.
+
+.Properties area with text view selected
+image::PropertiesWindow.png[Properties window]
+
+That's it, we do have our message on the screen now!
+
+IMPORTANT: When typing in the _Hello, world!_ text, make sure the string you typed in is surrounded by double quotes, otherwise an error message will come up.
+
+=== Running the application
+
+Our _Hello world_ application is now ready to run!
+
+There are several ways to launch the app:
+
+* From the main menu, select the menu item menu:Build[Start prototyper with application class], or
+* use the keystroke combination kbd:[Ctrl+F5], or
+* click on image:LaunchSymbol.png[Launch symbol] symbol in the second row of the toolbar. 
+
+Congratulations, you successfully assembled your first application!
+
+Let's move on to the next chapter, there's much more to explore here!

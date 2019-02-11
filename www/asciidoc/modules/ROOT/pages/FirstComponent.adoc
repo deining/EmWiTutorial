@@ -1,0 +1,6 @@
+= Adding your first GUI component
+Andreas Deininger andreas@deininger.net
+
+* In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates windows^], left to the main composer window,  make sure, the tab _Templates_ is selected.
+* In the main area of the templates window, click on the item _Component templates_, which will then open and show all available templates.
+* Identify the item _Component_, representing an empty GUI component. Click on the element, drag it into the _Application_ and place it underneath the existing _Application_ root component.

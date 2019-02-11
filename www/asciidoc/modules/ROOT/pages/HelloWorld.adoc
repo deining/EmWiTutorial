@@ -58,7 +58,7 @@ That's not much, so let's put some text on the canvas:
 
 * In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates windows^], left to the main composer window, make sure, the tab _Templates_ is selected.
 * In the main area of the templates window, you will find several text item entries. Click on the item _Views_, which will open and show all the _view_-subitems (the items of the templates window follows are arranged in an accordion style layout).
-* Identify the item _Text_, representing a simple text view. Click on the element, drag it over to the root canves and place it in the middle of the canvas.
+* Identify the item _Text_, representing a simple text view. Click on the element, drag it over to the root canvas and place it in the middle of the canvas.
 * If all went fine, you will see a tiny white text element labelled _Text_ in the middle of the canvas.
 
 .Root canvas with inserted text view

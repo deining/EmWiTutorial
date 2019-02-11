@@ -1,2 +1,3 @@
 .First steps
-* xref:index.adoc[Getting started with 'Hello world!']
+* xref:HelloWorld.adoc[Getting started with 'Hello world!']
+* xref:FirstComponent.adoc[Adding your first GUI component]

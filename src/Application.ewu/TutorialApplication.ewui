@@ -4,7 +4,7 @@ $version 6.60
 // The class representing the root component is named 'TutorialApplication' and is \
 // located inside the unit 'Application'. Therefore the class name is Application::TutorialApplication.
 // Please note that the class is derived from the class Core::Root.
-$rect <20,20,220,60>
+$rect <20,20,230,59>
 $output false
 class TutorialApplication : Core::Root
 {
@@ -28,12 +28,14 @@ class TutorialApplication : Core::Root
     preset Color = #DCDCDCFF;
   }
 
-  // The bell component is the first component of the tutorial application.
-  // We will add more components later on. 
+  // The bell component is an instance of the PushButtonComponent.
   $rect <20,20,160,60>
-  object Application::BellComponent BellComponent
+  object Application::PushButtonComponent BellComponent
   {
-    preset Bounds = <132,122,332,272>;
+    preset Bounds = <30,122,230,272>;
+    preset ActionButton = RingTheBellSlot;
+    preset LabelButton = "Ring";
+    preset TextHeader = "Bell";
   }
 
   // Header text for the tutorial application.
@@ -44,5 +46,33 @@ class TutorialApplication : Core::Root
     preset String = "Tutorial application";
     preset Font = Resources::FontExtraLarge;
     preset Color = #000000FF;
+  }
+
+  $rect <520,40,720,80>
+  slot RingTheBellSlot
+  {
+    trace "Sorry, but the GUI cannot ring the bell";
+  }
+
+  // Slot method(s)
+  note group Note
+  {
+    attr Bounds = <500,0,740,150>;
+  }
+
+  // The forecast component is an instance of the PushButtonComponent.
+  $rect <20,20,160,60>
+  object Application::PushButtonComponent WeatherComponent
+  {
+    preset Bounds = <254,122,454,272>;
+    preset ActionButton = ForeCastSlot;
+    preset LabelButton = "Show";
+    preset TextHeader = "Forecast";
+  }
+
+  $rect <520,88,720,128>
+  slot ForeCastSlot
+  {
+    trace "Sorry, but the GUI cannot tell the weather forecast";
   }
 }

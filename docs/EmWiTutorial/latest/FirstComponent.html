@@ -118,7 +118,7 @@
     <li class="crumb"><a href="FirstComponent.html">Adding your first GUI component</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/FirstComponent.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/Win10 Home x64/Documents/Embedded Wizard Projects/EmWiTutorial/www/asciidoc/modules/ROOT/pages/FirstComponent.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Adding your first GUI component</h1>
@@ -131,11 +131,11 @@
 <dl>
 <dt class="hdlist1">Testing</dt>
 <dd>
-<p>using the built in protoyper, you can test the components in isolation. There&#8217;s a much higher chance the application works as wanted once you assemble it from already tested (sub-)components.</p>
+<p>Using the built in protoyper, you can test the components in isolation. There is a much higher chance the application works as expected once you assemble it from already tested (sub-)components.</p>
 </dd>
 <dt class="hdlist1">Reusability</dt>
 <dd>
-<p>when using components, it&#8217;s much easier to folllow the DRY principle (<strong>d</strong>on&#8217;t <strong>r</strong>epeat <strong>y</strong>ourself. You only write a component once and use it several places.</p>
+<p>When using components, it&#8217;s much easier to folllow the DRY principle (<strong>d</strong>on&#8217;t <strong>r</strong>epeat <strong>y</strong>ourself). You only write a component once and may use it in several places.</p>
 </dd>
 </dl>
 </div>
@@ -218,13 +218,13 @@
 <p>Click on the blck triangle left to the <em>Default</em> element. Multiple lines will show up which hold the values for the origin (<em>x</em>, <em>y</em>) and the size of the element (<em><strong>w</strong>idth</em>, _<strong>h</strong>eight).</p>
 </li>
 <li>
-<p>Alter the <em>w</em> instance property of the component to the value <em>200</em> to set the default width of the component to 200 px.</p>
+<p>Alter the <em>w</em> instance property of the component to the value <em>200</em> to set the default width of the component to 200&#160;px.</p>
 </li>
 <li>
-<p>Alter the <em>h</em> instance property of the component to the value <em>150</em> to set the default height of the component to 150 px.</p>
+<p>Alter the <em>h</em> instance property of the component to the value <em>150</em> to set the default height of the component to 150&#160;px.</p>
 </li>
 <li>
-<p>In order to adapt the size of the component on the screen, click on <span class="image"><img src="_images/ReloadSymbol.png" alt="Launch symbol"></span> symbol in the second row of the toolbar or press <kbd>F7</kbd> to reload the class. The blue border of the element will shrink to the new size then.</p>
+<p>In order to adapt the size of the component on the screen, click on <span class="image"><img src="_images/ReloadSymbol.png" alt="Reload symbol"></span> symbol in the second row of the toolbar or press <kbd>F7</kbd> to reload the class. The blue border of the element will shrink to the new size then.</p>
 </li>
 </ul>
 </div>
@@ -243,7 +243,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In the gallery templates window left to the main composer window, click on the item <em>Views</em>, which will open and show all the <em>view</em>-subitems.</p>
+<p>In the gallery templates window left to the main composer window, click on the item <em>Views</em>, which will open and show all the <em>view</em> subitems.</p>
 </li>
 <li>
 <p>Click on the item <em>Filled Rectangle</em>, and drag an instance over to the component&#8217;s canvas. Place the element in the upper left corner of the canvas.</p>
@@ -274,7 +274,7 @@
 <p>Adapt the size of the border to 200 × 150 px. again, this may be done by either resizing the element with the mouse or by adjusting the property <em>Bounds</em> of the component in the lower area of the inspector window.</p>
 </li>
 <li>
-<p>Adjust the color of the border to the value <em>#000000FF (black, opaque) and set the property _Width</em> of the border to 1 px.</p>
+<p>Adjust the color of the border to the value <em>#000000FF</em> (black, opaque) and set the property <em>Width</em> of the border to 1&#160;px.</p>
 </li>
 <li>
 <p>You now should see a black border around your component.</p>
@@ -287,7 +287,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In the gallery templates window, click on the item <em>Text</em> and drag an instance over to the component&#8217;s canvas. Place the element centered in the upper area of the component.</p>
+<p>In the <em>gallery templates</em> window, click on the item <em>Text</em> and drag an instance over to the component&#8217;s canvas. Place the element centered in the upper area of the component.</p>
 </li>
 <li>
 <p>Using <kbd>F2</kbd> key, rename the name to <em>HeadingBell</em>.</p>
@@ -336,7 +336,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>We are finished now with adding eleemnts to our component, and the component should pretty much like shown in figure x below:</p>
+<p>We are finished now with adding elements to our component, and the component should pretty much like shown in figure x below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -360,11 +360,11 @@
 </dd>
 <dt class="hdlist1">Signal based communication between objects</dt>
 <dd>
-<p>in order to invoke a slot method, a signal has to be send to the method. Once the slot method receives the signal the code in the body of the slot method is executed. Since a slot method does not take parameters, signal-based process communication can happen between all kinds of objects, the sender does not have to know about the identify of the receiver object. However, the identify of the sender is passed onto the slot method in the hidden parameter <em>sender</em> which can be used inside the body of the slot method.</p>
+<p>In order to invoke a slot method, a signal has to be send to the method. Once the slot method receives the signal the code in the body of the slot method is executed. Since a slot method does not take parameters, signal-based process communication can happen between all kinds of objects, the sender does not have to know about the identify of the receiver object. However, the identify of the sender is passed onto the slot method in the hidden parameter <em>sender</em> which can be used inside the body of the slot method.</p>
 </dd>
 <dt class="hdlist1">Inheritance</dt>
 <dd>
-<p>Slot methods are members of class objects. If a class is derived from another class, it inherits all slot methods from this class. As any inherited members, these slot methods can be overridden if needed. You also may call the inherited version ot the slot method by making use of the pseudo method super().</p>
+<p>Slot methods are members of class objects. If a class is derived from another class, it inherits all slot methods from this class. As any inherited members, these slot methods can be overridden if needed. You also may call the inherited version ot the slot method by making use of the pseudo method <em>super()</em>.</p>
 </dd>
 </dl>
 </div>
@@ -396,7 +396,7 @@
 <p>Press <kbd>F2</kbd> to rename the slot method. In the inspector window, type in <em>RingTheBellSlot</em> and press <kbd>Enter</kbd> once you are done.</p>
 </li>
 <li>
-<p>Finally, we have to fill the body of the slot method with some code. To do so, double click on the slot method <em>RingTheBellSlot</em>. In the <a href="https://doc.embedded-wizard.de/code-editor-window">Code editor</a>, you will now see one ling line of Chora code:</p>
+<p>Finally, we have to fill the body of the slot method with some code. To do so, double click on the slot method <em>RingTheBellSlot</em>. In the <a href="https://doc.embedded-wizard.de/code-editor-window">Code editor</a>, you will now see one single line of Chora code:</p>
 </li>
 </ul>
 </div>
@@ -417,7 +417,7 @@
 <p>The <a href="https://doc.embedded-wizard.de/trace-statemen">trace</a> is a debugging statement that prints diagnostic output to the <a href="https://doc.embedded-wizard.de/log-window">log window</a> located in the lower left area of the screen.</p>
 </div>
 <div class="paragraph">
-<p>We now finished with our slot method now, as soon as a signal will be sent to the method, it will print it&#8217;s output to the log window. However, we haven&#8217;t connected our slot method to our push button yet, so let&#8217;s move on and connect the sender (= push button) with the slot slot method in order to get the push button working!</p>
+<p>We now finished with our slot method now, as soon as a signal will be sent to the method, it will print it&#8217;s output to the log window. However, we haven&#8217;t connected our slot method to our push button yet, so let&#8217;s move on and connect the sender (=&#160;push button) with the slot slot method in order to get the push button working!</p>
 </div>
 <div class="ulist">
 <ul>
@@ -434,7 +434,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/BellComponentFinal.png" alt="Component with slot method" width="1024">
+<img src="_images/BellComponentFinal.png" alt="Component with slot method">
 </div>
 <div class="title">Figure 5. Bell component with slot method defined</div>
 </div>
@@ -452,7 +452,7 @@
 <p>From the main menu, select the menu item <span class="menuseq"><b class="menu">Build</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Start prototyper</b></span>, or</p>
 </li>
 <li>
-<p>use the keystroke combination <kbd>F5</kbd>, or</p>
+<p>use the keystroke <kbd>F5</kbd>, or</p>
 </li>
 <li>
 <p>click on <span class="image"><img src="_images/LaunchSymbol.png" alt="Launch symbol"></span> symbol in the second row of the toolbar.</p>
@@ -495,7 +495,7 @@ Let&#8217;s move on and integrate the component into the root component, that&#8
 <p>Since want to place the component in the <em>Application</em> unit, click on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab. Inside the composer window, you should now see the <em>Application</em> root component and the <em>Bell component</em>, developed from you.</p>
 </li>
 <li>
-<p>Rename the root application class to <em>TutorialApllication</em> using the  <kbd>F2</kbd> key.</p>
+<p>Rename the root application class to <em>TutorialApplication</em> using the <kbd>F2</kbd> key.</p>
 </li>
 <li>
 <p>Double click on the root application class that you just renamed. The root application class will be opened, showing an the <em>Hello world!</em> text we added in the last chapter.</p>
@@ -529,13 +529,13 @@ Pay attention to Z-Order TODO
 <div class="ulist">
 <ul>
 <li>
-<p>In the gallery templates window^, left to the main composer window, make sure, the tab <em>Browser</em> at the top of the window is selected.</p>
+<p>In the gallery templates window, left to the main composer window, make sure, the tab <em>Browser</em> at the top of the window is selected.</p>
 </li>
 <li>
-<p>The browser list of classes present is quite long, so we have to narrow down the displayed classes: in the search field below immediately below the two tabs, type in <em>Bell</em>. While typing have a look at the list, you will notice that the list getting shorter and shorter. Once you typed in <em>Bell</em>, the only class left is the compoment newly created from you.</p>
+<p>The browser&#8217;s list of classes present is quite long, so we have to narrow down the displayed classes: in the search field immediately below the two tabs, type in <em>Bell</em>. While typing have a look at the list and you will notice that the list is getting shorter and shorter. Once you typed in <em>Bell</em>, the only class left is the component newly created from you.</p>
 </li>
 <li>
-<p>Click on the <em>Application::BellComponent</em> class and drag an instance of the class over to the root canvas. Place the component below the heder text.</p>
+<p>Click on the <em>Application::BellComponent</em> class and drag an instance of the class over to the root canvas. Place the component below the header text.</p>
 </li>
 </ul>
 </div>
@@ -573,7 +573,7 @@ Pay attention to Z-Order TODO
 <p>Click on the <em>Project</em> tab (the first tab from the left) and click on the <em>Profile</em> item, located inside the note group <em>Profile configuration</em>.</p>
 </li>
 <li>
-<p>Using the inspector window, change the property ScreenSize to <em>&lt;48,320&gt;</em>.</p>
+<p>Using the inspector window, change the property <em>ScreenSize</em> to <em>&lt;48,320&gt;</em>.</p>
 </li>
 </ul>
 </div>

@@ -27,13 +27,13 @@ image::InitialProject.png[Initial project setup, 1024]
 These 4 groups serve totally different purposes:
 
 Mosaic Framework:: This is embedded wizard's GUI framework used under the hood. You shouldn't be concerned about this right now.
-Profile configuration:: A profile is used to store configuration parameters for your project. By using different profiles, you can customize the project settings to the  different target(s) that you ant to use.
-Languages:: The concept of languages is deeply embedded into the system's language _Chora_. If you want to caret a multi-lingual app, you can do so by smply adding more languages here. 
+Profile configuration:: A profile is used to store configuration parameters for your project. By using different profiles, you can customize the project settings to the different target(s) that you ant to use.
+Languages:: The concept of languages is deeply embedded into the system's language _Chora_. If you want to create a multi-lingual app, you can do so by simply adding more languages here. 
 Project units:: That's the most interesting part for now, so let's start explaining the concept behind:
 
 === Units
 
-https://doc.embedded-wizard.de/unit-member[Units^] are a way to structure your project. For now, we will deal with one unit only, the _Application_ unit. While we use this unit for now, we will add more units later on. Units are a kind of container for our components used, so have a look now what's inside the  _Application_ unit_:
+https://doc.embedded-wizard.de/unit-member[Units^] are a way to structure your project. For now, we will deal with one unit only, the _Application_ unit. While we use this unit for now, we will add more units later on. Units are a kind of container for our components used, so have a look now what's inside the _Application_ unit_:
 
 . Double click on _Application_ unit (symbolized by a blue folder symbol).
 . Inside the composer window, a second tab appears which shows the contents inside the unit which is now opened.
@@ -56,7 +56,7 @@ image::ApplicationUnit.png[Application class]
 All you will see here is the transparent root canvas, surrounded by a blue border.
 That's not much, so let's put some text on the canvas:
 
-* In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates windows^], left to the main composer window, make sure, the tab _Templates_ is selected.
+* In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window, make sure, the tab _Templates_ is selected.
 * In the main area of the templates window, you will find several text item entries. Click on the item _Views_, which will open and show all the _view_-subitems (the items of the templates window follows are arranged in an accordion style layout).
 * Identify the item _Text_, representing a simple text view. Click on the element, drag it over to the root canvas and place it in the middle of the canvas.
 * If all went fine, you will see a tiny white text element labelled _Text_ in the middle of the canvas.
@@ -67,9 +67,9 @@ image::RootCanvasTextView.png[Root canvas]
 So far so good, let's style our text a bit to make it more appealing:
 
 * In the composer window, click on the newly inserted text view to select the element.
-* Now have a look at the https://doc.embedded-wizard.de/inspector-window[inspector windows^] right to the main composer window: in the upper _member area_ you should see the element named text selected. Also note the attributes and properties area below that shows all properties of the currently selected text view.
+* Now have a look at the https://doc.embedded-wizard.de/inspector-window[inspector window^] right to the main composer window: in the upper _member area_ you should see the element named _Text_ selected. Also note the attributes and properties area below that shows all properties of the currently selected text view.
 * Inside the attributes and properties area, we can adapt the newly inserted text view to our needs:
-** Using the dropdown list, alter the _Font_ property of the text elemnt to the value _Resources::FontExtraLarge_.
+** Using the dropdown list, alter the _Font_ property of the text element to the value _Resources::FontExtraLarge_.
 ** Using the dropdown element, alter the _Color_ property of the text element to the value _#000000FF_ (black, opaque).
 ** In order to change the display text, alter the _String_ property of the text element to the value _"Hello, world!"_.
 ** Since we do have text overflow in the element now, alter the _AutoSize_ property of the text element to the value _true_.
@@ -89,7 +89,7 @@ There are several ways to launch the app:
 
 * From the main menu, select the menu item menu:Build[Start prototyper with application class], or
 * use the keystroke combination kbd:[Ctrl+F5], or
-* click on image:LaunchSymbol.png[Launch symbol] symbol in the second row of the toolbar. 
+* click on image:LaunchApplicationSymbol.png[Launch symbol] symbol in the second row of the toolbar. 
 
 Congratulations, you successfully assembled your first application!
 

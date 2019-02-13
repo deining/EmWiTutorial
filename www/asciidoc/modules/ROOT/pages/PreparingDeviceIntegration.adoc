@@ -1,0 +1,4 @@
+= Preparing device integration
+Andreas Deininger andreas@deininger.net
+
+In the xref::ComponentReusability.adoc[last chapter], we ...

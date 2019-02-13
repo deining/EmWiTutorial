@@ -1,32 +1,32 @@
 = Adding your first GUI component
 Andreas Deininger andreas@deininger.net
 
-In the last chapter, we successfully built the _Hello world_ application. In order to show the text, we placed a text view element directly on the root canvas. While this is a valid approach, it is highly recommended to build reusable components and use this components when assembling your application. This approach has two main benefits:
+In the xref::HelloWorld.adoc[last chapter], we successfully built the _Hello world_ application. In order to show the text, we placed a text view element directly on the root canvas. While this is a valid approach, it is highly recommended to build reusable components and use this components when assembling your application. This approach has two main benefits:
 
 Testing:: Using the built in protoyper, you can test the components in isolation. There is a much higher chance the application works as expected once you assemble it from already tested (sub-)components.
 Reusability:: When using components, it's much easier to folllow the DRY principle (**d**on't **r**epeat **y**ourself). You only write a component once and may use it in several places.
 
 So let's start and built our first GUI component: it's a simple graphical unit with a border, a header text, a push button, and a background. Once the button is pressed, some action will occur. 
 
-== Adding the empty component itself 
+== Adding the empty component itself
 
-* We want to place the component in the _Application_ unit, so click on the tab labelled _Application_. If this tab is not present yet, click on the _Project_ tab and double click on the _Application_ unit to invoke the tab. Inside the composer window, you will now see the _Application_ root component, the only component currently present.
+* We want to place the component in the _Application_ unit, so click on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab. Inside the composer window, you will now see the _Application_ root component, the only component currently present.
 
 * In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window, make sure, the tab _Templates_ at the top of the window is selected.
 * In the main area of the templates window, click on the item _Component templates_, which will then open and show all available GUI templates.
-* Identify the item _Component_, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing _Application_ root component.
+* Identify the item image:icons/ComponentIcon.png[component icon] _Component_, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing _Application_ root component.
 * We want to use the new component to ring a bell, so we give it dedicated name: with the component still seleted, press kbd:[F2] to rename the component. In the https://doc.embedded-wizard.de/inspector-window[inspector window^], type in _BellComponent_ and press kbd:[Enter] once you are done.
 
 .Inserting an empty GUI component
-image::InsertingComponent.png[Inserting GUI component]
+image::firstcomponent/InsertingComponent.png[Inserting GUI component]
 
 Now, we have to open the empty component we just inserted:
 
-* Double click on the newyl inserted _bell_ component.
+* Double click on the newly inserted icon image:icons/BellComponentIcon.png[bell component icon], representing the _bell_ component.
 * Inside the composer window, another tab appears which shows the contents of the component class which is now opened:
 
 .Empty GUI component
-image::EmptyComponent.png[Empty GUI component]
+image::firstcomponent/EmptyComponent.png[Empty GUI component]
 
 == Filling the component 
 
@@ -34,20 +34,20 @@ Next, we have to fill the empty component:
 
 * First, we do some cleanup: With the kbd:[Shift] key pressed, click on the two methods _UpdateViewState_ and _UpdateLayout_ to select both methods. Press the kbd:[Delete] key to delete those methods, we don't need them for now.
 * Also, click on the note element that contains a lot of text. Press the kbd:[Delete] key to delete this element, too.
-* Our component should have a size of 200 × 150 px, so we have to adjust this: click on the property _Bounds_ (symbolized by a green diamond) to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
+* Our component should have a size of 200 × 150 px, so we have to adjust this: click on the property _Bounds_ (adorned by a green diamond) to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
 * Inside the attributes and properties area, we can adapt the default bounds values to our needs:
 ** Click on the blck triangle left to the _Default_ element. Multiple lines will show up which hold the values for the origin (_x_, _y_) and the size of the element (_**w**idth_, _**h**eight).
 ** Alter the _w_ instance property of the component to the value _200_ to set the default width of the component to 200{nbsp}px.
 ** Alter the _h_ instance property of the component to the value _150_ to set the default height of the component to 150{nbsp}px.
-** In order to adapt the size of the component on the screen, click on image:ReloadSymbol.png[Reload symbol] symbol in the second row of the toolbar or press kbd:[F7] to reload the class. The blue border of the element will shrink to the new size then.
+** In order to adapt the size of the component on the screen, click on the _Reload_ icon image:icons/ReloadIcon.png[Reload icon] in the second row of the toolbar or press kbd:[F7] to reload the class. The blue border of the element will shrink to the new size then.
 
 .Setting the default component size
-image::ComponentBounds.png[component size]
+image::firstcomponent/ComponentBounds.png[component size]
 
 In a further step, we put all the elements onto the element's canvas:
 
 * In the gallery templates window left to the main composer window, click on the item _Views_, which will open and show all the _view_ subitems.
-* Click on the item _Filled Rectangle_, and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
+* Click on the item image:icons/FilledRectangleIcon.png[Filled rectangle icon] _Filled Rectangle_, and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
 * Press kbd:[F2] to rename the component. In the inspector window, type in _Background_ and press kbd:[Enter] once you are done.
 * Adapt the size of the background rectangle to 200 × 150 px. You may do so by either resizing the element with the mouse or by adjusting the property _Bounds_ in the in the lower _attributes and properties area_ of the inspector window (as described above when setting the default bounds for the component).
 * If needed, adjust te color of the background to the value _#FFFFFFFF (white, opaque).
@@ -55,14 +55,14 @@ In a further step, we put all the elements onto the element's canvas:
 
 Now we put a border around the component:
 
-* In the gallery templates window, click on the item _Border_ and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
+* In the gallery templates window, click on the item image:icons/BorderIcon.png[Border icon] _Border_ and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
 * Adapt the size of the border to 200 × 150 px. again, this may be done by either resizing the element with the mouse or by adjusting the property _Bounds_ of the component in the lower area of the inspector window.
 * Adjust the color of the border to the value _#000000FF_ (black, opaque) and set the property _Width_ of the border to 1{nbsp}px.
 * You now should see a black border around your component.
 
 Next we add a header text to the component:
 
-* In the _gallery templates_ window, click on the item _Text_ and drag an instance over to the component's canvas. Place the element centered in the upper area of the component.
+* In the _gallery templates_ window, click on the item image:icons/TextViewIcon.png[text view icon] _Text_ and drag an instance over to the component's canvas. Place the element centered in the upper area of the component.
 * Using kbd:[F2] key, rename the name to _HeadingBell_.
 * Inside the attributes and properties area, adapt the newly inserted heading text to your needs:
 ** Using the dropdown list, alter the _Font_ property of the text element to the value _Resources::FontExtraLarge_.
@@ -70,7 +70,7 @@ Next we add a header text to the component:
 ** In order to change the display text, alter the _String_ property of the text element to the value _"Hello, world!"_.
 ** Since we do have text overflow in the element now, alter the _AutoSize_ property of the text element to the value _true_.
 
-Eventually, we add the core element, a push button that will be used ti ring the bell:
+Eventually, we add the core element, a push button that will be used to ring the bell:
 
 * In the gallery templates window to the left, click on the item _Widgets_ to open and show the list of all available widgets.
 * Click on the _Push Button_, widget and drag an instance over to the component's canvas. Place the element in the lower area of the canvas.
@@ -78,12 +78,13 @@ Eventually, we add the core element, a push button that will be used ti ring the
 * Now customize the appearance of the push button. You may do so by setting the property _Appearance_ in the inspector window to _WidgetSet::PushButtonSmall_ and by setting the property _Label_ to _Ring_.
 * You should now see a push button labelled _Ring_ in the lower area of the canvas.
 
-We are finished now with adding elements to our component, and the component should pretty much like shown in figure x below:
+We are finished now with adding elements to our component, and the component should pretty much like shown in <<fig:BellComponent>> below:
 
+[[fig:BellComponent]]
 .Final look of bell component
-image::BellComponentFinal.png[Bell component]
+image::firstcomponent/BellComponentFinal.png[Bell component]
 
-== Defining an button action performed on click
+== Defining a button action performed on click
 
 So far, we successfully added elements the _Bell_ component. the only interactive element is the push button, so let's bring life to this component! To do so, we have to add some logic to the component, more specifically some signal handler logic. Embedded Wizard heavily relies on so called https://doc.embedded-wizard.de/slot-method-member[slot methods^] when implementing communication between two objects. Slot methods show the following characteristics:
 
@@ -95,11 +96,11 @@ So let's start and built our first slot method to bring life to our push button:
 
 * In the gallery templates window to the left, click on the item _Chora_ to open and show the list of the language elements available in the programming language _Chora_.
 * To keep our component organized, it's a good idea to place a note group on the canvas first:
-** Click on the element _Annotation Group_, and drag an instance over to the component's canvas. Place the element right beneath the component's canvas.
-** By default, the hedaing of the note is _This is an annotation_. Change the heading of the note area by changing the property _Caption_ in the inspector window to _Slot method(s)_.
-* By now we are ready to insert our slot method: Click on the element _Slot Method_, and drag an instance over to the component's canvas. Place the element inside the note rectangle you inserted and adapted in the previous two steps.
+** Click on the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, and drag an instance over to the component's canvas. Place the element right beneath the component's canvas.
+** By default, the heading of the note is _This is an annotation_. Change the heading of the note area by changing the property _Caption_ in the inspector window to _Slot method(s)_.
+* By now we are ready to insert our slot method: Click on the element image:icons/SlotMethodIcon.png[slot method icon] _Slot Method_, and drag an instance over to the component's canvas. Place the element inside the note rectangle you inserted and adapted in the previous two steps.
 * Press kbd:[F2] to rename the slot method. In the inspector window, type in _RingTheBellSlot_ and press kbd:[Enter] once you are done.
-* Finally, we have to fill the body of the slot method with some code. To do so, double click on the slot method _RingTheBellSlot_. In the https://doc.embedded-wizard.de/code-editor-window[Code editor], you will now see one single line of Chora code:
+* Finally, we have to fill the body of the slot method with some code. To do so, double click on the icon image:icons/RingTheBellSlotIcon.png[slot icon] representing the slot method _RingTheBellSlot_. In the https://doc.embedded-wizard.de/code-editor-window[Code editor^], you will now see one single line of Chora code:
 
 [source,chora]
 ----
@@ -113,17 +114,18 @@ For now, change this code line to:
 trace "Sorry, the GUI cannot ring the bell!";
 ----
 
-The https://doc.embedded-wizard.de/trace-statemen[trace] is a debugging statement that prints diagnostic output to the https://doc.embedded-wizard.de/log-window[log window] located in the lower left area of the screen.
+The https://doc.embedded-wizard.de/trace-statemen[trace^] is a debugging statement that prints diagnostic output to the https://doc.embedded-wizard.de/log-window[log window^] located in the lower left area of the screen.
 
 We now finished with our slot method now, as soon as a signal will be sent to the method, it will print it's output to the log window. However, we haven't connected our slot method to our push button yet, so let's move on and connect the sender (={nbsp}push button) with the slot slot method in order to get the push button working!
 
-* To do so, we have to select the push button first. Select it by either clicking on the button object in the copmoser area or by clicking on the element titled _PushButtonBell_, listed in the upper _member area_ of the inspector window to the right.
-* With the push button selected, search for the property _OnActivate_ in the lower area of the inspector window. The property _OnActivate_ refers to a slot method, so as value tyoe in _RingTheBellSlot_. If you want to save typing, click on the small triangle at the right hand side of the value field select the slot method _PushButtonSlot_ from the long list offered inside the dropdown area.
+* To do so, we have to select the push button first. Select it by either clicking on the button object in the composer area or by clicking on the element titled _PushButtonBell_, listed in the upper _member area_ of the inspector window to the right.
+* With the push button selected, search for the property _OnActivate_ in the lower area of the inspector window. The property _OnActivate_ refers to a slot method, so as value type in _RingTheBellSlot_. If you want to save typing, click on the small downwards triangle at the right hand side of the value field select the slot method _PushButtonSlot_ from the long list offered inside the dropdown area.
 
-You are done with your first component, the layout should look like in the figure below:
+You are done with your first component, the layout should look like shown in <<fig:BellComponentWithSlot>> below:
 
+[[fig:BellComponentWithSlot]]
 .Bell component with slot method defined
-image::BellComponentFinal.png[Component with slot method]
+image::firstcomponent/BellComponentSlot.png[Component with slot method]
 
 == Test the component in isolation
 
@@ -131,21 +133,21 @@ Let's go and test our first component! There are several ways to do so:
 
 * From the main menu, select the menu item menu:Build[Start prototyper], or
 * use the keystroke kbd:[F5], or
-* click on image:LaunchSymbol.png[Launch symbol] symbol in the second row of the toolbar. 
+* click on the launch icon image:icons/LaunchIcon.png[Launch icon] in the second row of the toolbar. 
 
 A prototyper window will appear which shows your component and simulate its behaviour: Click on the push button, twice, and two debug messages will appear in the log window:
 
 WARNING: Don't confuse F5 <-> CTRL F5 TODO
 
 .Debugging output inside the log window
-image::DebugOutput.png[Debugging output]
+image::firstcomponent/DebugOutput.png[Debugging output]
 
 == Add the component to the application's root component
 
 Having first component up and ready is pretty cool, isn't it?
 Let's move on and integrate the component into the root component, that's what the component is made for!
 
-* Since want to place the component in the _Application_ unit, click on the tab labelled _Application_. If this tab is not present yet, click on the _Project_ tab and double click on the _Application_ unit to invoke the tab. Inside the composer window, you should now see the _Application_ root component and the _Bell component_, developed from you.
+* Since want to place the component in the _Application_ unit, click on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab. Inside the composer window, you should now see the _Application_ root component and the _Bell component_, developed from you.
 * Rename the root application class to _TutorialApplication_ using the kbd:[F2] key.
 * Double click on the root application class that you just renamed. The root application class will be opened, showing an the _Hello world!_ text we added in the last chapter.
 * Using the inspector window, change the _Hello world!_ text to _Tutorial application_.
@@ -158,30 +160,30 @@ Now we are eventually ready to add our bell component:
 
 * In the gallery templates window, left to the main composer window, make sure, the tab _Browser_ at the top of the window is selected.
 * The browser's list of classes present is quite long, so we have to narrow down the displayed classes: in the search field immediately below the two tabs, type in _Bell_. While typing have a look at the list and you will notice that the list is getting shorter and shorter. Once you typed in _Bell_, the only class left is the component newly created from you.
-* Click on the _Application::BellComponent_ class and drag an instance of the class over to the root canvas. Place the component below the header text.
+* Click on the image:icons/ClassIcon.png[class icon] _Application::BellComponent_ class and drag an instance of the class over to the root canvas. Place the component below the header text.
 
 Yeah! You successfully included your component into the main app!
 
 .Tutorial application with bell component
-image::TutorialApplication.png[Debugging output]
+image::firstcomponent/TutorialApplication.png[Debugging output]
 
 Let's test it out:
 
 * From the main menu, select the menu item menu:Build[Start prototyper with application class], or
 * use the keystroke combination kbd:[Ctrl+F5], or
-* click on image:LaunchApplicationSymbol.png[Launch symbol] symbol in the second row of the toolbar. 
+* click on application launch icon image:icons/LaunchApplicationIcon.png[Launch icon] in the second row of the toolbar. 
 
 The application will start up. You will notice that the screen size is larger than the root element we put on it. Let's fix this:
 
-* Click on the _Project_ tab (the first tab from the left) and click on the _Profile_ item, located inside the note group _Profile configuration_.
+* Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left) and click on the _Profile_ item, located inside the note group _Profile configuration_.
 * Using the inspector window, change the property _ScreenSize_ to _<48,320>_.
 
 .Adapting the screen size
-image::AdaptingScreenSize.png[Screen size]
+image::firstcomponent/AdaptingScreenSize.png[Screen size]
 
 Hooray, it we have our first application up and running:
 
 .First application running
-image::TutorialApplicationRunning.png[Screen size]
+image::firstcomponent/TutorialApplicationRunning.png[Screen size]
 
-Let's move on to the next chapter, there's still much more to explore!
+Let's move on to the xref::ComponentReusability.adoc[next chapter], there's still much more to explore!

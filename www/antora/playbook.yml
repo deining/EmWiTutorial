@@ -9,7 +9,8 @@ content:
 
 asciidoc:
   attributes:
-    experimental: true    
+    experimental: true
+    xrefstyle: short    
 
 ui:
   bundle:

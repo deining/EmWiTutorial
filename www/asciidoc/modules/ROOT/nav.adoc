@@ -1,3 +1,5 @@
 .First steps
 * xref:HelloWorld.adoc[Getting started with 'Hello world!']
 * xref:FirstComponent.adoc[Adding your first GUI component]
+* xref:ComponentReusability.adoc[Making your GUI component truly reusable]
+* xref:PreparingDeviceIntegration.adoc[Preparing device integration]

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making your component truly reusable :: Embedded Wizard Tutorial</title>
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">Embedded Wizard Tutorial</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://ask.embedded-wizard.de/" target="_blank">Ask for help</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://github.com/deining/EmWiTutorial" target="_blank">Project on GitHub </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/deining/EmWiTutorial/tree/master/src" target="_blank">Sources (Embedded Wizard)</a>
+            <a class="navbar-item" href="https://github.com/deining/EmWiTutorial/tree/master/www/asciidoc/modules" target="_blank">Markup tutorial site (AsciiDoc)</a>
+            <a class="navbar-item" href="https://github.com/deining/EmWiTutorial/tree/master/docs" target="_blank">Tutorial website (HMTL)</a>
+            <a class="navbar-item" href="https://github.com/deining/EmWiTutorial/issues" target="_blank">Report an issue</a>
+            <a class="navbar-item" href="https://github.com/deining/EmWiTutorial/pulls" target="_blank">Create a pull request</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://www.embedded-wizard.de/">Embedded Wizard</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/" target="_blank">Features</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/platforms/" target="_blank">Platforms</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/services/" target="_blank">Services</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/support/" target="_blank">Support</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/cases/" target="_blank">Use cases</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/demo/" target="_blank">Demos</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/news/" target="_blank">News</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/pricing/" target="_blank">Pricing</a>
+            <a class="navbar-item" href="https://www.embedded-wizard.de/features/download/" target="_blank">Download</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://doc.embedded-wizard.de/" target="_blank">EmWi documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://doc.embedded-wizard.de/basic-concepts" target="_blank">Basic concepts</a>
+            <a class="navbar-item" href="https://doc.embedded-wizard.de/working-with-embedded-wizard" target="_blank">Working with Embedded Wizard</a>
+            <a class="navbar-item" href="https://doc.embedded-wizard.de/platform-integration-and-build-environments" target="_blank">Platform Integration</a>
+            <a class="navbar-item" href="https://doc.embedded-wizard.de/embedded-wizard-studio" target="_blank">Embedded Wizard Studio</a>
+            <a class="navbar-item" href="https://doc.embedded-wizard.de/chora-reference" target="_blank">Programming language chora</a>
+            <a class="navbar-item" href="https://doc.embedded-wizard.de/mosaic_overview" target="_blank">Framework Mosaic</a>
+            <a class="navbar-item" href="https://doc.embedded-wizard.de/release-notes" target="_blank">Release notes</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download code</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="EmWiTutorial" data-version="latest">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="HelloWorld.html">Embedded Wizard Tutorial</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-toggle"></button>
+    <span class="nav-text">First steps</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="HelloWorld.html">Getting started with 'Hello world!'</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="FirstComponent.html">Adding your first GUI component</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="ComponentReusability.html">Making your GUI component truly reusable</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="PreparingDeviceIntegration.html">Preparing device integration</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Embedded Wizard Tutorial</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Embedded Wizard Tutorial</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="HelloWorld.html">latest</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="HelloWorld.html">Embedded Wizard Tutorial</a></li>
+    <li class="crumb">First steps</li>
+    <li class="crumb"><a href="ComponentReusability.html">Making your GUI component truly reusable</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/ComponentReusability.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>Making your component truly reusable</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <a href="FirstComponent.html" class="page">last chapter</a>, we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivtuion to use components is reusability. Let&#8217;s think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two ore more instances of the bell component on the root canvas, but it&#8217;s unlikley that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform <em>different</em> actions, however. With the components in its current form, implementing this is not possible right now. So let&#8217;s extend the component and make it truly reusable in the next chapter!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extending_your_component_with_properties"><a class="anchor" href="#_extending_your_component_with_properties"></a>Extending your component with properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s have a look at our component first:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open the the <em>Application</em> unit by clicking on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab.</p>
+</li>
+<li>
+<p>We want to refactor the <em>BellComponent</em> in order to facilitate reuse of the component. This should be reflected in the name of the compoment, so go ahead and rename the component to <em>PushButtonCompunent</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>Double click on the renamed <em>PushButtonCompunent</em> element. Its contents will be show in a new tab titled with the class name <em>Application::PushButtonComponent</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let us reflect on the current design of the component a bit: currently there are three items hardcoded, which severely limits the reusability of this component:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the text shown in the header text view (hardcoded value: <em>Bell</em>),</p>
+</li>
+<li>
+<p>the text of the label on the push button (hardcoded value: <em>Ring</em>) and</p>
+</li>
+<li>
+<p>the slot method attached to the property <em>OnActivate</em> of the push button (hardcoded value: <em>RingTheBellSlot</em>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In order to allow reuse, we have to extend the component so that the three items listed above can be stored inside the component. That&#8217;s what <a href="https://doc.embedded-wizard.de/property-member" target="_blank" rel="noopener">properties</a> are made for. If you do have a Java or C# background, you already should be familiar with the concept of properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Properties are a kind of variable where data of an arbitrary Chora <a href="https://doc.embedded-wizard.de/data-types" target="_blank" rel="noopener">data type</a> can be stored (e.g. string, int, slot, &#8230;&#8203;). For each property, you have to specify the data type it can held (including its default value).</p>
+</li>
+<li>
+<p>A property represent a more sophisticated variable in that sense that a property does have <em>OnSet</em> and <em>OnGet</em> methods that are used to get and set the value of the property. Normally, these methods contain boilerplate code that set or gets the internal memory of the property. You are encouraged to add your custom code to these method(s) to tailor them to your needs. We will do some shortly, so hold on!</p>
+</li>
+<li>
+<p>You are allowed to attach slot methods as observer to any property we implement. As soon as the value of the property changes, the slot method (=&#160;observer) gets notified about the change. This is a core feature of Chora that allows the development of apllications following the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank" rel="noopener">MVC</a> pattern. We may talk about this later on.</p>
+</li>
+<li>
+<p>Properties cannot only store arbitrary data type, they can also store references to any data type. Properties that store references are so called <a href="https://doc.embedded-wizard.de/implementing-component-interface#4" target="_blank" rel="noopener">outlet properties</a>. This is an advanced concept, we may talk about that later on.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That&#8217;s the theory behind property in short. Let&#8217;s get our feet wet and add some properties to our component:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <em>PushButtonComponent</em> tab, rename the existing push button <em>BushButtonBell</em> to <em>PushButton</em> in order to reflect the refactoring of the component. Also rename the header text element <em>HeaderBell</em> to <em>Header</em>.</p>
+</li>
+<li>
+<p>Delete the existing slot method <em>RingTheBellSlot</em> using the <kbd>Del</kbd> key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more. Don&#8217;t forget to reset the property <em>OnActivate</em> of the PushButton to <em>null</em> otherwise you will run in trouble later on.</p>
+</li>
+<li>
+<p>From the gallery and templates window (category: <em>Chora</em> selected), drag an instance of the <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas and rename the property <em>Caption</em> of the element to <em>Properties</em> using the inspector window.</p>
+</li>
+<li>
+<p>Now we are ready to insert our properties: Click on the element <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Property</em>, and drag an instance over to the component&#8217;s canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As you can see, a property named <em>Property</em> was inserted, together with its <em>Onset</em> and <em>OnGet</em> methods:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/reusablecomponent/NewProperty.png" alt="New property">
+</div>
+<div class="title">Figure 1. Inserting our first property</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s move on and adapt the property to our needs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The property should be used to store the text of the header element of our component, therefore we rename the property to <em>TextHeader</em> using the <kbd>F2</kbd>. Please note that the names of the <em>Onset</em> and <em>OnGet</em> methods automatically change to <em>OnSetTextHeader</em> and <em>OnGetTextHeader</em> respectively.</p>
+</li>
+<li>
+<p>Currently, the data type of the property is <em>int32</em>, that&#8217;s not what we want, instead we want to store a string value (=&#160;the header text) inside the property. To be able to do so, we change the value of the property <em>Type</em> to <em>string</em> inside the inspector window.</p>
+</li>
+<li>
+<p>The header text of our component should be <em>Header</em> by default, so we change the value <em>Default</em> to <em>"Header"</em> inside the inspector window. Don&#8217;t forget the surrounding double quotes here or you may run in trouble.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The property is now set up to store the header text value. Currently, when setting the header text property, the change of the property value is not reflected inside the component. To overcome this, we have to add some code to the OnSet method which is called each time a new value is assigned to the property.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Double click on the method <em>OnSetTextHeader</em> of the property. In the code editor window, you will now see some lines of boilerplate Chora code:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">// The value doesn't change - nothing to do.
+if ( pure Property == value )
+  return;
+
+// Remember the property's new value.
+pure Property = value;
+
+// TO DO:
+//
+// Now you can handle the alternation of the property.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace the TODO section at the bottom with two lines of custom code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">// The value doesn't change - nothing to do.
+if ( pure Property == value )
+  return;
+
+// Remember the property's new value.
+pure Property = value;
+
+// change the text of the header
+Heading.String = value;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Our new line of code assigns the property <em>String</em> of the <em>Heading</em> element (<em>Heading.String</em>) the new value the property was set to, this is immediately reflected in the GUI.
+That&#8217;s all we have to do! Now, as soon as the property gets a new value assigned, the header text changes, too.</p>
+</div>
+<div class="paragraph">
+<p>The first property is ready to go, so add two more properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery and templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
+</li>
+<li>
+<p>Rename the property to <em>LabelButton</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>Change the type of the property to <em>string</em>, with a default value <em>"Label"</em>.</p>
+</li>
+<li>
+<p>In the body of the <em>OnSetLabelButton</em> method, replace the <em>TODO</em> section with the code line <code>PushButton.Label = value;</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This way, any change of the property <em>LabelButton</em> will immediately change the label text of the button.
+So far so good. Now we have to take care that not only the label and heading text can be set, but also the action performed once the button is clicked:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery and templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
+</li>
+<li>
+<p>Rename the property to <em>ActionButton</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>Change the type of the property to <em>slot</em>, with a default value <em>null</em>.</p>
+</li>
+<li>
+<p>In the body of the <em>OnSetActionButton</em> method, replace the <em>TODO</em> section with the code line <code>PushButton.OnActivate = value;</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The refactoring of our component is done, it should now look like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/reusablecomponent/RefactoredComponent.png" alt="New property">
+</div>
+<div class="title">Figure 2. Refactored component</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adapt_and_fix_the_main_application"><a class="anchor" href="#_adapt_and_fix_the_main_application"></a>Adapt and fix the main application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that refactoring our component is done, we have to make some changes in the main application to make the application work again:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Bring up the contents of the main application in the tab <em>Application::TutorialApplication</em>.</p>
+</li>
+<li>
+<p>The refactored pushbutton component now shows <em>Header</em> as header text and <em>Label</em> as button label. These are the default values of the properties we just introduced to the component. Let&#8217;s customize the component&#8217;s properties, that&#8217;s why we introduced them in our component:</p>
+</li>
+<li>
+<p>Using the inspector window, change the property of the push button component <em>TextHeader</em> text to <em>Bell</em>.</p>
+</li>
+<li>
+<p>Using the inspector window, change the property <em>LabelButton</em> text to <em>Ring</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The appearance of our component now again looks as wanted. When pressing the button, nothing happens yet. Let&#8217;s fix that, too:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery templates window to the left, drag an element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em>, over to root canvas. Rename the group to <em>Slot method(s)</em>.</p>
+</li>
+<li>
+<p>Add a new slot method inside the note rectangle. Rename the slot method to <em>RingTheBellSlot</em>.</p>
+</li>
+<li>
+<p>Fill the body of the slot method with the code line <code>trace "Sorry, the GUI cannot ring the bell!";</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it! Test the main application in the prototyper (<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>F5</kbd></span>), and the main app should behave exactly as prior to the refactoring.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_a_second_component_weather_forecast"><a class="anchor" href="#_adding_a_second_component_weather_forecast"></a>Adding a second component (weather forecast)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are asking yourself why we did the refactoring, things are getting clear hopefully as soon as we insert a second instance of the component.
+The GUI allows ringing the bell of your device already. Imagine your device is able to present the weather forecast to you. Maybe your device has a screen display for that purpose, or it has a speaker to read out the forecast loud. Let&#8217;s extend the GUI with a second push button component for presenting the weather forecast to you:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the gallery templates window, left to the main composer window, make sure, the tab <em>Browser</em> at the top of the window is selected.</p>
+</li>
+<li>
+<p>In the search field immediately below the two tabs, type in <em>Push</em> to shorten the class list.</p>
+</li>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/ClassIcon.png" alt="class icon"></span> <em>Application::PushButtonComponent</em> class and drag a second instance of the class over to the root canvas. Rearrange the two push button components so that both of them fit on the screen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Yeah! You successfully included a second push button component into the main app. Let&#8217;s move on and customize the newly inserted component!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If not already select, select the newly inserted component first:</p>
+</li>
+<li>
+<p>Using the inspector window, change the property of the new push button component <em>TextHeader</em> text to <em>Forecast</em>.</p>
+</li>
+<li>
+<p>Using the inspector window, change the property <em>LabelButton</em> text to <em>Show</em>.</p>
+</li>
+<li>
+<p>Add a new slot method inside the note rectangle titled <em>Slot methods</em>. Rename the slot method to <em>ForecastSlot</em>.</p>
+</li>
+<li>
+<p>Fill the body of the slot method with the code line <code>trace "Sorry, but the GUI cannot tell the weather forecast";</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The extended version of the application with two push button components should now look like in <a href="#fig:ExtendedApplication">Figure 3</a> below:</p>
+</div>
+<div id="fig:ExtendedApplication" class="imageblock">
+<div class="content">
+<img src="_images/reusablecomponent/TutorialApplicationExtended.png" alt="Extended application">
+</div>
+<div class="title">Figure 3. Extended tutorial application</div>
+</div>
+<div class="paragraph">
+<p>Go ahead and test your application! You should see different debugging output depending on the button pressed.</p>
+</div>
+<div class="paragraph">
+<p>This chapter has come to an end, time to recap: By adding three properties to our component we managed to create a truly reusable component. Creating reusable components comes has its price, however, this will certainly pay off once your project grows over time.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s move on to the <a href="PreparingDeviceIntegration.html" class="page">next chapter</a>, there&#8217;s still much more to explore!</p>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

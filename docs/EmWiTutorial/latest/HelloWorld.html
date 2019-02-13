@@ -84,6 +84,12 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="FirstComponent.html">Adding your first GUI component</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ComponentReusability.html">Making your GUI component truly reusable</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="PreparingDeviceIntegration.html">Preparing device integration</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -145,7 +151,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In the template, select item <b class="button">Empty project</b>.</p>
+<p>In the template, select the item <b class="button">Empty project</b>.</p>
 </li>
 <li>
 <p>Specify <em>EmWiTutorial</em> as project name.</p>
@@ -167,11 +173,11 @@
 <h2 id="_structure_of_the_project"><a class="anchor" href="#_structure_of_the_project"></a>Structure of the project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Let&#8217;s have a look at the structure of the newly created project. As you can see from figure 1, in total 4 items were added to main area, the so called <a href="https://doc.embedded-wizard.de/composer-window" target="_blank" rel="noopener">composer window</a>:</p>
+<p>Let&#8217;s have a look at the structure of the newly created project. As you can see from <a href="#fig:ProjectLayout">Figure 1</a>, in total 4 items were added to the main area, the so called <a href="https://doc.embedded-wizard.de/composer-window" target="_blank" rel="noopener">composer window</a>:</p>
 </div>
-<div class="imageblock">
+<div id="fig:ProjectLayout" class="imageblock">
 <div class="content">
-<img src="_images/InitialProject.png" alt="Initial project setup" width="1024">
+<img src="_images/helloworld/InitialProject.png" alt="Initial project setup" width="1024">
 </div>
 <div class="title">Figure 1. Inital project layout</div>
 </div>
@@ -206,7 +212,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Double click on <em>Application</em> unit (symbolized by a blue folder symbol).</p>
+<p>Double click on the icon <span class="image"><img src="_images/icons/ApplicationUnitIcon.png" alt="Icon application unit"></span>, representing the <em>Application</em> unit.</p>
 </li>
 <li>
 <p>Inside the composer window, a second tab appears which shows the contents inside the unit which is now opened.</p>
@@ -218,7 +224,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/ApplicationUnit.png" alt="Application unit">
+<img src="_images/helloworld/ApplicationUnit.png" alt="Application unit">
 </div>
 <div class="title">Figure 2. Application unit with application class inside</div>
 </div>
@@ -231,7 +237,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Double click on <em>Application</em> class (symbolized by a circles with three squares inside).</p>
+<p>Double click on the icon <span class="image"><img src="_images/icons/ApplicationClassIcon.png" alt="Icon application class"></span>, representing the <em>Application</em> class.</p>
 </li>
 <li>
 <p>Inside the composer window, a third tab appears which shows the contents of the class which is now opened:</p>
@@ -240,7 +246,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/ApplicationUnit.png" alt="Application class">
+<img src="_images/helloworld/ApplicationClass.png" alt="Application class">
 </div>
 <div class="title">Figure 3. Application class with root canvas inside</div>
 </div>
@@ -257,7 +263,7 @@ That&#8217;s not much, so let&#8217;s put some text on the canvas:</p>
 <p>In the main area of the templates window, you will find several text item entries. Click on the item <em>Views</em>, which will open and show all the <em>view</em>-subitems (the items of the templates window follows are arranged in an accordion style layout).</p>
 </li>
 <li>
-<p>Identify the item <em>Text</em>, representing a simple text view. Click on the element, drag it over to the root canvas and place it in the middle of the canvas.</p>
+<p>Identify the item <span class="image"><img src="_images/icons/TextViewIcon.png" alt="text view icon"></span> Text, representing a simple text view. Click on the element, drag it over to the root canvas and place it in the middle of the canvas.</p>
 </li>
 <li>
 <p>If all went fine, you will see a tiny white text element labelled <em>Text</em> in the middle of the canvas.</p>
@@ -266,7 +272,7 @@ That&#8217;s not much, so let&#8217;s put some text on the canvas:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/RootCanvasTextView.png" alt="Root canvas">
+<img src="_images/helloworld/RootCanvasTextView.png" alt="Root canvas">
 </div>
 <div class="title">Figure 4. Root canvas with inserted text view</div>
 </div>
@@ -304,7 +310,7 @@ That&#8217;s not much, so let&#8217;s put some text on the canvas:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/PropertiesWindow.png" alt="Properties window">
+<img src="_images/helloworld/PropertiesWindow.png" alt="Properties window">
 </div>
 <div class="title">Figure 5. Properties area with text view selected</div>
 </div>
@@ -341,7 +347,7 @@ When typing in the <em>Hello, world!</em> text, make sure the string you typed i
 <p>use the keystroke combination <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>F5</kbd></span>, or</p>
 </li>
 <li>
-<p>click on <span class="image"><img src="_images/LaunchApplicationSymbol.png" alt="Launch symbol"></span> symbol in the second row of the toolbar.</p>
+<p>click on the application launch icon <span class="image"><img src="_images/icons/LaunchApplicationIcon.png" alt="Launch icon"></span> in the second row of the toolbar.</p>
 </li>
 </ul>
 </div>
@@ -349,7 +355,10 @@ When typing in the <em>Hello, world!</em> text, make sure the string you typed i
 <p>Congratulations, you successfully assembled your first application!</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s move on to the next chapter, there&#8217;s much more to explore here!</p>
+<p>If needed, you may download the <a href="_attachments/HelloWorldTutorial.zip">sources</a> of the hello world example described above.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s move on to the next <a href="FirstComponent.html" class="page">chapter</a>, there&#8217;s much more to explore here!</p>
 </div>
 </div>
 </div>

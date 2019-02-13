@@ -84,6 +84,12 @@
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="FirstComponent.html">Adding your first GUI component</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ComponentReusability.html">Making your GUI component truly reusable</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="PreparingDeviceIntegration.html">Preparing device integration</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -118,14 +124,14 @@
     <li class="crumb"><a href="FirstComponent.html">Adding your first GUI component</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/Win10 Home x64/Documents/Embedded Wizard Projects/EmWiTutorial/www/asciidoc/modules/ROOT/pages/FirstComponent.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/FirstComponent.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Adding your first GUI component</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the last chapter, we successfully built the <em>Hello world</em> application. In order to show the text, we placed a text view element directly on the root canvas. While this is a valid approach, it is highly recommended to build reusable components and use this components when assembling your application. This approach has two main benefits:</p>
+<p>In the <a href="HelloWorld.html" class="page">last chapter</a>, we successfully built the <em>Hello world</em> application. In order to show the text, we placed a text view element directly on the root canvas. While this is a valid approach, it is highly recommended to build reusable components and use this components when assembling your application. This approach has two main benefits:</p>
 </div>
 <div class="dlist">
 <dl>
@@ -150,7 +156,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>We want to place the component in the <em>Application</em> unit, so click on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab. Inside the composer window, you will now see the <em>Application</em> root component, the only component currently present.</p>
+<p>We want to place the component in the <em>Application</em> unit, so click on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab. Inside the composer window, you will now see the <em>Application</em> root component, the only component currently present.</p>
 </li>
 <li>
 <p>In the <a href="https://doc.embedded-wizard.de/gallery-templates-window" target="_blank" rel="noopener">gallery templates window</a>, left to the main composer window, make sure, the tab <em>Templates</em> at the top of the window is selected.</p>
@@ -159,7 +165,7 @@
 <p>In the main area of the templates window, click on the item <em>Component templates</em>, which will then open and show all available GUI templates.</p>
 </li>
 <li>
-<p>Identify the item <em>Component</em>, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing <em>Application</em> root component.</p>
+<p>Identify the item <span class="image"><img src="_images/icons/ComponentIcon.png" alt="component icon"></span> <em>Component</em>, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing <em>Application</em> root component.</p>
 </li>
 <li>
 <p>We want to use the new component to ring a bell, so we give it dedicated name: with the component still seleted, press <kbd>F2</kbd> to rename the component. In the <a href="https://doc.embedded-wizard.de/inspector-window" target="_blank" rel="noopener">inspector window</a>, type in <em>BellComponent</em> and press <kbd>Enter</kbd> once you are done.</p>
@@ -168,7 +174,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/InsertingComponent.png" alt="Inserting GUI component">
+<img src="_images/firstcomponent/InsertingComponent.png" alt="Inserting GUI component">
 </div>
 <div class="title">Figure 1. Inserting an empty GUI component</div>
 </div>
@@ -178,7 +184,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Double click on the newyl inserted <em>bell</em> component.</p>
+<p>Double click on the newly inserted icon <span class="image"><img src="_images/icons/BellComponentIcon.png" alt="bell component icon"></span>, representing the <em>bell</em> component.</p>
 </li>
 <li>
 <p>Inside the composer window, another tab appears which shows the contents of the component class which is now opened:</p>
@@ -187,7 +193,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/EmptyComponent.png" alt="Empty GUI component">
+<img src="_images/firstcomponent/EmptyComponent.png" alt="Empty GUI component">
 </div>
 <div class="title">Figure 2. Empty GUI component</div>
 </div>
@@ -208,7 +214,7 @@
 <p>Also, click on the note element that contains a lot of text. Press the <kbd>Delete</kbd> key to delete this element, too.</p>
 </li>
 <li>
-<p>Our component should have a size of 200 × 150 px, so we have to adjust this: click on the property <em>Bounds</em> (symbolized by a green diamond) to select the element. Now, in the in the upper <em>member area</em> of the inspector window right to the main composer window you should see the element named <em>Bounds</em> selected. Also note the attributes and properties area below that shows all properties of the currently selected <em>Bounds</em> property.</p>
+<p>Our component should have a size of 200 × 150 px, so we have to adjust this: click on the property <em>Bounds</em> (adorned by a green diamond) to select the element. Now, in the in the upper <em>member area</em> of the inspector window right to the main composer window you should see the element named <em>Bounds</em> selected. Also note the attributes and properties area below that shows all properties of the currently selected <em>Bounds</em> property.</p>
 </li>
 <li>
 <p>Inside the attributes and properties area, we can adapt the default bounds values to our needs:</p>
@@ -224,7 +230,7 @@
 <p>Alter the <em>h</em> instance property of the component to the value <em>150</em> to set the default height of the component to 150&#160;px.</p>
 </li>
 <li>
-<p>In order to adapt the size of the component on the screen, click on <span class="image"><img src="_images/ReloadSymbol.png" alt="Reload symbol"></span> symbol in the second row of the toolbar or press <kbd>F7</kbd> to reload the class. The blue border of the element will shrink to the new size then.</p>
+<p>In order to adapt the size of the component on the screen, click on the <em>Reload</em> icon <span class="image"><img src="_images/icons/ReloadIcon.png" alt="Reload icon"></span> in the second row of the toolbar or press <kbd>F7</kbd> to reload the class. The blue border of the element will shrink to the new size then.</p>
 </li>
 </ul>
 </div>
@@ -233,7 +239,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/ComponentBounds.png" alt="component size">
+<img src="_images/firstcomponent/ComponentBounds.png" alt="component size">
 </div>
 <div class="title">Figure 3. Setting the default component size</div>
 </div>
@@ -246,7 +252,7 @@
 <p>In the gallery templates window left to the main composer window, click on the item <em>Views</em>, which will open and show all the <em>view</em> subitems.</p>
 </li>
 <li>
-<p>Click on the item <em>Filled Rectangle</em>, and drag an instance over to the component&#8217;s canvas. Place the element in the upper left corner of the canvas.</p>
+<p>Click on the item <span class="image"><img src="_images/icons/FilledRectangleIcon.png" alt="Filled rectangle icon"></span> <em>Filled Rectangle</em>, and drag an instance over to the component&#8217;s canvas. Place the element in the upper left corner of the canvas.</p>
 </li>
 <li>
 <p>Press <kbd>F2</kbd> to rename the component. In the inspector window, type in <em>Background</em> and press <kbd>Enter</kbd> once you are done.</p>
@@ -268,7 +274,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In the gallery templates window, click on the item <em>Border</em> and drag an instance over to the component&#8217;s canvas. Place the element in the upper left corner of the canvas.</p>
+<p>In the gallery templates window, click on the item <span class="image"><img src="_images/icons/BorderIcon.png" alt="Border icon"></span> <em>Border</em> and drag an instance over to the component&#8217;s canvas. Place the element in the upper left corner of the canvas.</p>
 </li>
 <li>
 <p>Adapt the size of the border to 200 × 150 px. again, this may be done by either resizing the element with the mouse or by adjusting the property <em>Bounds</em> of the component in the lower area of the inspector window.</p>
@@ -287,7 +293,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In the <em>gallery templates</em> window, click on the item <em>Text</em> and drag an instance over to the component&#8217;s canvas. Place the element centered in the upper area of the component.</p>
+<p>In the <em>gallery templates</em> window, click on the item <span class="image"><img src="_images/icons/TextViewIcon.png" alt="text view icon"></span> <em>Text</em> and drag an instance over to the component&#8217;s canvas. Place the element centered in the upper area of the component.</p>
 </li>
 <li>
 <p>Using <kbd>F2</kbd> key, rename the name to <em>HeadingBell</em>.</p>
@@ -314,7 +320,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Eventually, we add the core element, a push button that will be used ti ring the bell:</p>
+<p>Eventually, we add the core element, a push button that will be used to ring the bell:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -336,18 +342,18 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>We are finished now with adding elements to our component, and the component should pretty much like shown in figure x below:</p>
+<p>We are finished now with adding elements to our component, and the component should pretty much like shown in <a href="#fig:BellComponent">Figure 4</a> below:</p>
 </div>
-<div class="imageblock">
+<div id="fig:BellComponent" class="imageblock">
 <div class="content">
-<img src="_images/BellComponentFinal.png" alt="Bell component">
+<img src="_images/firstcomponent/BellComponentFinal.png" alt="Bell component">
 </div>
 <div class="title">Figure 4. Final look of bell component</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_defining_an_button_action_performed_on_click"><a class="anchor" href="#_defining_an_button_action_performed_on_click"></a>Defining an button action performed on click</h2>
+<h2 id="_defining_a_button_action_performed_on_click"><a class="anchor" href="#_defining_a_button_action_performed_on_click"></a>Defining a button action performed on click</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>So far, we successfully added elements the <em>Bell</em> component. the only interactive element is the push button, so let&#8217;s bring life to this component! To do so, we have to add some logic to the component, more specifically some signal handler logic. Embedded Wizard heavily relies on so called <a href="https://doc.embedded-wizard.de/slot-method-member" target="_blank" rel="noopener">slot methods</a> when implementing communication between two objects. Slot methods show the following characteristics:</p>
@@ -381,22 +387,22 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Click on the element <em>Annotation Group</em>, and drag an instance over to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas.</p>
+<p>Click on the element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em>, and drag an instance over to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas.</p>
 </li>
 <li>
-<p>By default, the hedaing of the note is <em>This is an annotation</em>. Change the heading of the note area by changing the property <em>Caption</em> in the inspector window to <em>Slot method(s)</em>.</p>
+<p>By default, the heading of the note is <em>This is an annotation</em>. Change the heading of the note area by changing the property <em>Caption</em> in the inspector window to <em>Slot method(s)</em>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>By now we are ready to insert our slot method: Click on the element <em>Slot Method</em>, and drag an instance over to the component&#8217;s canvas. Place the element inside the note rectangle you inserted and adapted in the previous two steps.</p>
+<p>By now we are ready to insert our slot method: Click on the element <span class="image"><img src="_images/icons/SlotMethodIcon.png" alt="slot method icon"></span> <em>Slot Method</em>, and drag an instance over to the component&#8217;s canvas. Place the element inside the note rectangle you inserted and adapted in the previous two steps.</p>
 </li>
 <li>
 <p>Press <kbd>F2</kbd> to rename the slot method. In the inspector window, type in <em>RingTheBellSlot</em> and press <kbd>Enter</kbd> once you are done.</p>
 </li>
 <li>
-<p>Finally, we have to fill the body of the slot method with some code. To do so, double click on the slot method <em>RingTheBellSlot</em>. In the <a href="https://doc.embedded-wizard.de/code-editor-window">Code editor</a>, you will now see one single line of Chora code:</p>
+<p>Finally, we have to fill the body of the slot method with some code. To do so, double click on the icon <span class="image"><img src="_images/icons/RingTheBellSlotIcon.png" alt="slot icon"></span> representing the slot method <em>RingTheBellSlot</em>. In the <a href="https://doc.embedded-wizard.de/code-editor-window" target="_blank" rel="noopener">Code editor</a>, you will now see one single line of Chora code:</p>
 </li>
 </ul>
 </div>
@@ -414,7 +420,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>The <a href="https://doc.embedded-wizard.de/trace-statemen">trace</a> is a debugging statement that prints diagnostic output to the <a href="https://doc.embedded-wizard.de/log-window">log window</a> located in the lower left area of the screen.</p>
+<p>The <a href="https://doc.embedded-wizard.de/trace-statemen" target="_blank" rel="noopener">trace</a> is a debugging statement that prints diagnostic output to the <a href="https://doc.embedded-wizard.de/log-window" target="_blank" rel="noopener">log window</a> located in the lower left area of the screen.</p>
 </div>
 <div class="paragraph">
 <p>We now finished with our slot method now, as soon as a signal will be sent to the method, it will print it&#8217;s output to the log window. However, we haven&#8217;t connected our slot method to our push button yet, so let&#8217;s move on and connect the sender (=&#160;push button) with the slot slot method in order to get the push button working!</p>
@@ -422,19 +428,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>To do so, we have to select the push button first. Select it by either clicking on the button object in the copmoser area or by clicking on the element titled <em>PushButtonBell</em>, listed in the upper <em>member area</em> of the inspector window to the right.</p>
+<p>To do so, we have to select the push button first. Select it by either clicking on the button object in the composer area or by clicking on the element titled <em>PushButtonBell</em>, listed in the upper <em>member area</em> of the inspector window to the right.</p>
 </li>
 <li>
-<p>With the push button selected, search for the property <em>OnActivate</em> in the lower area of the inspector window. The property <em>OnActivate</em> refers to a slot method, so as value tyoe in <em>RingTheBellSlot</em>. If you want to save typing, click on the small triangle at the right hand side of the value field select the slot method <em>PushButtonSlot</em> from the long list offered inside the dropdown area.</p>
+<p>With the push button selected, search for the property <em>OnActivate</em> in the lower area of the inspector window. The property <em>OnActivate</em> refers to a slot method, so as value type in <em>RingTheBellSlot</em>. If you want to save typing, click on the small downwards triangle at the right hand side of the value field select the slot method <em>PushButtonSlot</em> from the long list offered inside the dropdown area.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>You are done with your first component, the layout should look like in the figure below:</p>
+<p>You are done with your first component, the layout should look like shown in <a href="#fig:BellComponentWithSlot">Figure 5</a> below:</p>
 </div>
-<div class="imageblock">
+<div id="fig:BellComponentWithSlot" class="imageblock">
 <div class="content">
-<img src="_images/BellComponentFinal.png" alt="Component with slot method">
+<img src="_images/firstcomponent/BellComponentSlot.png" alt="Component with slot method">
 </div>
 <div class="title">Figure 5. Bell component with slot method defined</div>
 </div>
@@ -455,7 +461,7 @@
 <p>use the keystroke <kbd>F5</kbd>, or</p>
 </li>
 <li>
-<p>click on <span class="image"><img src="_images/LaunchSymbol.png" alt="Launch symbol"></span> symbol in the second row of the toolbar.</p>
+<p>click on the launch icon <span class="image"><img src="_images/icons/LaunchIcon.png" alt="Launch icon"></span> in the second row of the toolbar.</p>
 </li>
 </ul>
 </div>
@@ -476,7 +482,7 @@ Don&#8217;t confuse F5 &lt;&#8594; CTRL F5 TODO
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/DebugOutput.png" alt="Debugging output">
+<img src="_images/firstcomponent/DebugOutput.png" alt="Debugging output">
 </div>
 <div class="title">Figure 6. Debugging output inside the log window</div>
 </div>
@@ -492,7 +498,7 @@ Let&#8217;s move on and integrate the component into the root component, that&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Since want to place the component in the <em>Application</em> unit, click on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab. Inside the composer window, you should now see the <em>Application</em> root component and the <em>Bell component</em>, developed from you.</p>
+<p>Since want to place the component in the <em>Application</em> unit, click on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab. Inside the composer window, you should now see the <em>Application</em> root component and the <em>Bell component</em>, developed from you.</p>
 </li>
 <li>
 <p>Rename the root application class to <em>TutorialApplication</em> using the <kbd>F2</kbd> key.</p>
@@ -535,7 +541,7 @@ Pay attention to Z-Order TODO
 <p>The browser&#8217;s list of classes present is quite long, so we have to narrow down the displayed classes: in the search field immediately below the two tabs, type in <em>Bell</em>. While typing have a look at the list and you will notice that the list is getting shorter and shorter. Once you typed in <em>Bell</em>, the only class left is the component newly created from you.</p>
 </li>
 <li>
-<p>Click on the <em>Application::BellComponent</em> class and drag an instance of the class over to the root canvas. Place the component below the header text.</p>
+<p>Click on the <span class="image"><img src="_images/icons/ClassIcon.png" alt="class icon"></span> <em>Application::BellComponent</em> class and drag an instance of the class over to the root canvas. Place the component below the header text.</p>
 </li>
 </ul>
 </div>
@@ -544,7 +550,7 @@ Pay attention to Z-Order TODO
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/TutorialApplication.png" alt="Debugging output">
+<img src="_images/firstcomponent/TutorialApplication.png" alt="Debugging output">
 </div>
 <div class="title">Figure 7. Tutorial application with bell component</div>
 </div>
@@ -560,7 +566,7 @@ Pay attention to Z-Order TODO
 <p>use the keystroke combination <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>F5</kbd></span>, or</p>
 </li>
 <li>
-<p>click on <span class="image"><img src="_images/LaunchApplicationSymbol.png" alt="Launch symbol"></span> symbol in the second row of the toolbar.</p>
+<p>click on application launch icon <span class="image"><img src="_images/icons/LaunchApplicationIcon.png" alt="Launch icon"></span> in the second row of the toolbar.</p>
 </li>
 </ul>
 </div>
@@ -570,7 +576,7 @@ Pay attention to Z-Order TODO
 <div class="ulist">
 <ul>
 <li>
-<p>Click on the <em>Project</em> tab (the first tab from the left) and click on the <em>Profile</em> item, located inside the note group <em>Profile configuration</em>.</p>
+<p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left) and click on the <em>Profile</em> item, located inside the note group <em>Profile configuration</em>.</p>
 </li>
 <li>
 <p>Using the inspector window, change the property <em>ScreenSize</em> to <em>&lt;48,320&gt;</em>.</p>
@@ -579,7 +585,7 @@ Pay attention to Z-Order TODO
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/AdaptingScreenSize.png" alt="Screen size">
+<img src="_images/firstcomponent/AdaptingScreenSize.png" alt="Screen size">
 </div>
 <div class="title">Figure 8. Adapting the screen size</div>
 </div>
@@ -588,12 +594,12 @@ Pay attention to Z-Order TODO
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/TutorialApplicationRunning.png" alt="Screen size">
+<img src="_images/firstcomponent/TutorialApplicationRunning.png" alt="Screen size">
 </div>
 <div class="title">Figure 9. First application running</div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s move on to the next chapter, there&#8217;s still much more to explore!</p>
+<p>Let&#8217;s move on to the <a href="ComponentReusability.html" class="page">next chapter</a>, there&#8217;s still much more to explore!</p>
 </div>
 </div>
 </div>

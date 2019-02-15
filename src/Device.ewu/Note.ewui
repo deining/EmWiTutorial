@@ -1,0 +1,14 @@
+$version 6.60
+
+// The class 'Device::DeviceClass' implements the interface between the GUI application \
+// and the device. Within the class you can react to system events sent by the device, \
+// exchange data with the device or send commands to the device. You are completely \
+// free in the design of this interface.
+// 
+// The object 'Device' represents the instance of the device interface. It exists \
+// for your convenience. As an autoobject it is globally available for all GUI components \
+// within your project.
+note legend Note
+{
+  attr Bounds = <450,0,950,180>;
+}

@@ -1,0 +1,296 @@
+$version 6.60
+
+$rect <40,0,240,40>
+$output false
+class DeviceClass : Templates::DeviceClass
+{
+  $rect <420,60,620,100>
+  onset Property
+  {
+    // The property doesn't change -> nothing to do.
+    if ( pure Property == value )
+      return;
+
+    // Remember the new value in the internal memory of the property.
+    pure Property = value;
+
+    // For target code generation you will use your specific device API 
+    // to change the affected value.
+    $if !$prototyper
+      native ( value )
+      {
+        /*
+           TO DO:
+
+           You can call a function of your own device API or you simply
+           modify a variable existing in your middleware to reflect the
+           new value:
+
+           YourDevice_SetSomeValue( value );
+
+           or
+
+           YourDevice_SomeVariable = value;
+        */
+      }
+    $endif
+
+    // Notify all associated property observers.
+    notifyobservers ^Property;
+  }
+
+  // This property represents an individual setting or state value existing within \
+  // the device.
+  $rect <220,60,420,100>
+  property int32 Property = 0;
+
+  // This method is intended to be called by the device to notify the GUI application \
+  // about an alternation of its setting or state value.
+  $rect <20,60,220,100>
+  $output true
+  method void UpdateProperty( arg int32 aNewValue )
+  {
+    // Only if the reported value does differ from the one stored currently in the property.
+    if ( aNewValue != pure Property )
+    {
+      // Remember the new value in the internal memory of the property.
+      pure Property = aNewValue;
+
+      // Notify all associated property observers.
+      notifyobservers ^Property;
+    }
+  }
+
+  // This object represents an individual system event.
+  $rect <220,280,420,320>
+  object Core::SystemEvent SystemEvent;
+
+  // This method is intended to be called by the device to notify the GUI application \
+  // about a particular system event.
+  $rect <20,280,220,320>
+  $output true
+  method void TriggerEvent()
+  {
+    // Just trigger the system event. All associated system event handler
+    // will then be notified automatically.
+    SystemEvent.Trigger( null, false );
+
+    /*
+       HINT 1:
+
+       When triggering the event you can pass an optional 'context' object.
+       With it additional event specific data can be attached at the event
+       and dispatched with it. All notified system event handler can thus
+       evaluate this 'context' information.
+
+       To do this, you will need to define a particular 'context' class
+       suitable to store the event specific information. Then create an
+       instance of the class, initialize it with all the specific context
+       data and finally pass the instance in the first parameter of the
+       Trigger() method:
+
+
+       var YourUnit::ContextClass context = new YourUnit::ContextClass;
+
+       context.SomeData1 = ...
+       context.SomeData2 = ...
+
+       SystemEvent.Trigger( context, false );
+
+
+       You can add parameters to the method in order to simply receive
+       values from the device.
+    */
+
+    /*
+       HINT 2:
+
+       When triggering a system event you can determine its priority. Per
+       default system events are delivered strictly in the order in which
+       they have been triggered. When you pass 'true' in the last parameter
+       of Trigger() you can force the event to be dispatched early:
+
+       SystemEvent.Trigger( null, true );
+    */
+  }
+
+  // This method implements a device command.
+  $rect <20,430,220,470>
+  method int32 Command( arg int32 aParameter1, arg bool aParameter2 )
+  {
+    // The following code is used during prototyping only. It simply returns
+    // a dummy value. No device specific API is used during prototyping.
+    $if $prototyper
+      /*
+         TO DO:
+
+         List all parameters of this method not used explicitly. This will
+         suppress the Chora warnings because of unused parameters.
+      */
+
+      aParameter1;
+      aParameter2;
+
+      /*
+         TO DO:
+
+         The following code is necessary for command methods intended to
+         return a value. It can be removed if the method is declared with
+         'void' as its return data type.
+
+         In the case a return value is desired, adapt the 'return' statement
+         to match the method's return data type. The value is just a dummy
+         used during prototyping only.
+      */
+
+      return 0;
+    $endif
+
+    // For target code generation you will use your specific device API 
+    // to perform the command in the device.
+    $if !$prototyper
+      /*
+         TO DO:
+
+         The following variable declaration is reasonable for command methods
+         which return a value. It can be removed if the method is declared with
+         'void' as its return data type or if the return value is not obtained
+         from the native code.
+
+         Additionally you may need to adapt this declaration to the method's
+         return data type.
+      */
+
+      var int32 result = 0;
+       
+      /*
+         TO DO:
+
+         The following native statement encloses the code to communicate with
+         your device API. Chora expects here all variables accessed from the
+         native code to be explicitly listed in the head of the native statement.
+         
+         Write here all parameters and locally declared variables you intend to 
+         access from the native code.
+      */
+
+      native ( aParameter1, aParameter2, result )
+      {
+        /*
+           TO DO:
+
+           You can call a function of your own device API or you simply
+           modify variables existing in your middleware to reflect the
+           command:
+
+           YourDevice_DoSomething( aParameter1, aParameter2, ... );
+
+           or
+
+           YourDevice_SomeVariable    = aParameter1;
+           YourDevice_AnotherVariable = aParameter2;
+
+           Also receive a return value:
+
+           result = YourDevice_DoSomething();
+        */
+      }
+
+      /*
+         TO DO:
+
+         The following 'return' statement is needed only when the command method
+         is declared to return a value. Otherwise you can remove the statement.
+      */
+      return result;
+    $endif
+  }
+
+  // Example of an interface to read and modify a device setting or state value
+  note group Note1
+  {
+    attr Bounds = <10,10,630,110>;
+  }
+
+  // Example of an interface to react to a system event
+  note group Note2
+  {
+    attr Bounds = <10,230,630,330>;
+  }
+
+  // Example of an interface to perform an operation in the device
+  note group Note3
+  {
+    attr Bounds = <10,380,630,480>;
+  }
+
+  // The property 'Property' represents an individual setting or state value existing \
+  // within the device. Through the associated 'onset' method all write operations \
+  // to the property can be directed to your particular device API. The read accesses, \
+  // in contrast, are handled internally by using the last known value of the property. \
+  // See inline documentation inside the 'onset' method 'OnSetProperty'.
+  // 
+  // The method 'UpdateProperty', in turn, is intended to be called by the device \
+  // to notify the GUI application about an alternation of a setting or state value \
+  // represented by the property 'Property'. See inline documentation inside the \
+  // method.
+  // 
+  // You will eventually need to change the data type of the property to match the \
+  // data in your device (e.g. to 'bool', 'uint32', or 'string', etc.). Use for this \
+  // purpose the attribute 'Type' of the property itself. Accordingly the declaration \
+  // of the 'UpdateProperty' method may need an adaptation.
+  note legend Note4
+  {
+    attr Bounds = <700,10,1540,220>;
+  }
+
+  note arrow Note5
+  {
+    attr Point1 = <630,60>;
+    attr Point2 = <700,60>;
+  }
+
+  // The object 'SystemEvent' represents an individual system event. When the system \
+  // event is triggered all associated system event handler are notified automatically.
+  // 
+  // The method 'TriggerEvent' method is intended to be called by the device to notify \
+  // the GUI application about the particular system event represented by the object \
+  // 'SystemEvent'. This method exists for your convenience only and is optional. \
+  // See inline documentation inside the method.
+  note legend Note6
+  {
+    attr Bounds = <700,230,1540,370>;
+  }
+
+  note arrow Note7
+  {
+    attr Point1 = <630,280>;
+    attr Point2 = <700,280>;
+  }
+
+  // This method demonstrates the implementation of a device command. The GUI application \
+  // can call the method with the intention to trigger the device to perform an action. \
+  // It's up to you what the method does. You are free in the declaration of the \
+  // method. The parameters and the return value can be changed. See inline documentation \
+  // inside the method.
+  note legend Note8
+  {
+    attr Bounds = <700,380,1540,470>;
+  }
+
+  note arrow Note9
+  {
+    attr Point1 = <630,430>;
+    attr Point2 = <700,430>;
+  }
+
+  // More functionality ... ?
+  // 
+  // Within the device class you can add as many commands, system events and properties \
+  // as required by your target device. Use for this purpose the templates from the \
+  // Gallery folder 'Device'.
+  note legend Note10
+  {
+    attr Bounds = <10,500,630,600>;
+  }
+}

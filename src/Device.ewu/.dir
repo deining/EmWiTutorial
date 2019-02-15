@@ -1,0 +1,5 @@
+$version 6.60
+
+$include DeviceClass
+$include Device
+$include Note

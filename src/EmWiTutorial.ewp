@@ -55,7 +55,7 @@ $rect <540,70,740,110>
 language Default;
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <290,190,490,230>
+$rect <290,186,490,226>
 unit Application
 {
   attr Directory = .\;
@@ -79,10 +79,10 @@ note group Languages
   attr Bounds = <520,20,760,130>;
 }
 
-// Project Units
-note group ProjectUnits
+// GUI Project
+note group GUIProject
 {
-  attr Bounds = <270,140,760,290>;
+  attr Bounds = <270,140,750,240>;
 }
 
 // This is a profile member for the project. This profile controls the code generation \
@@ -95,9 +95,23 @@ profile Profile : Tara.Win32.RGBA8888
   attr Optimization = High;
   attr ApplicationClass = Application::TutorialApplication;
   attr CleanOutputDirectories = false;
-  attr ApplicationTitle = Embedded Wizard sample application;
+  attr ApplicationTitle = "Embedded Wizard sample application";
   attr ApplicationName = TutorialApplication;
+  attr OutputDirectory = ../Win32;
 
   $rect <10,10,154,50>
   macro Author = "Dipl. Ing. Paul Banach and Dipl. Ing. Manfred Schweyer, Copyright (C) TARA Systems GmbH";
+}
+
+// This unit is intended to contain the application class and other GUI components.
+$rect <290,297,490,337>
+unit Device
+{
+  attr Directory = .\;
+}
+
+// Middleware
+note group Middleware
+{
+  attr Bounds = <270,251,750,410>;
 }

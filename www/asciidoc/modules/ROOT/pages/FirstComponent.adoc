@@ -137,10 +137,20 @@ Let's go and test our first component! There are several ways to do so:
 
 A prototyper window will appear which shows your component and simulate its behaviour: Click on the push button, twice, and two debug messages will appear in the log window:
 
-WARNING: Don't confuse F5 <-> CTRL F5 TODO
-
 .Debugging output inside the log window
 image::firstcomponent/DebugOutput.png[Debugging output]
+
+NOTE: When we launched the test above, the prototyper acted on a component level, allowing us to test the component in isolation. We do also have the opportunity to launch / prototype the whole application, use kbd:[Ctrl+F5] to do so. Have a look at <<tab:ProtoyperStart>> which summarizes the two different prototyping methods.
+
+.Starting the prototyper in different ways
+[[tab:ProtoyperStart]]
+[cols="<h,^,^", options="header", grid=rows, frame=topbot]
+|===
+|                   | Prototyping of component     |  Prototyping of application
+| Menu              | menu:Build[Start prototyper] | menu:Build[Start prototyper with application class]
+| Keyboard shortcut | kbd:[F5]                     | kbd:[Ctrl+F5]
+| Toolbar icon      | image:icons/Launchlcon.png[Launch icon] | image:icons/LaunchApplicationIcon.png[Launch icon]
+|===
 
 == Add the component to the application's root component
 
@@ -151,10 +161,21 @@ Let's move on and integrate the component into the root component, that's what t
 * Rename the root application class to _TutorialApplication_ using the kbd:[F2] key.
 * Double click on the root application class that you just renamed. The root application class will be opened, showing an the _Hello world!_ text we added in the last chapter.
 * Using the inspector window, change the _Hello world!_ text to _Tutorial application_.
-* Using the _Bounds_ property, change the size of the root canvas to 480 × 320 px. If you don't know how to do that, have a look at how we changed the size of the bell component above.
+* Using the _Bounds_ property, change the size of the root canvas to 480 × 320 px. If you don't know how to do that, have a look at how we changed the size of the _bell_ component above.
 * Add a background with the same dimensions of 480 × 320 px to the root canvas. If you don't know how to do that, have a look at how we added a background to the bell component above. Change the color of the background to Gainsborough (_#DCDCDCFF_).
  
-IMPORTANT: Pay attention to Z-Order TODO
+[IMPORTANT]
+====
+When adding the background onto the canvas, it will be placed in the foreground and will hide your header text. In order to fix that, you have to restack the elements on the canvas. 
+
+* Right click on the _Background_ element in the inspector window to show its context menu.
+
+image::firstcomponent/RestackElements.png[Restack elements]
+
+* From the context menu, select the menu item _Restack down_.
+
+TIP: When you want to restack an element several levels up or down, select the element and then make use of the shortcuts kbd:[Ctrl+Up] or kbd:[Ctrl+Down] respectively.
+====
 
 Now we are eventually ready to add our bell component:
 

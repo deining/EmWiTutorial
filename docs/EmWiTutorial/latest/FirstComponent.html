@@ -461,24 +461,11 @@
 <p>use the keystroke <kbd>F5</kbd>, or</p>
 </li>
 <li>
-<p>click on the launch icon <span class="image"><img src="_images/icons/LaunchIcon.png" alt="Launch icon"></span> in the second row of the toolbar.</p>
+<p>click on the launch icon <span class="image"><img src="_images/icons/LaunchIcon.png" alt="Launch icon"></span> in the second row of the toolbar.
+vkv
+A prototyper window will appear which shows your component and simulate its behaviour: Click on the push button, twice, and two debug messages will appear in the log window:</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>A prototyper window will appear which shows your component and simulate its behaviour: Click on the push button, twice, and two debug messages will appear in the log window:</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Don&#8217;t confuse F5 &lt;&#8594; CTRL F5 TODO
-</td>
-</tr>
-</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -486,6 +473,50 @@ Don&#8217;t confuse F5 &lt;&#8594; CTRL F5 TODO
 </div>
 <div class="title">Figure 6. Debugging output inside the log window</div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When we launched the test above, the prototyper acted on a component level, allowing us to test the component in isolation. We do also have tje opportunity to launch / prototype the whole application, use <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>F5</kbd></span> to do so. Have a look at <a href="#tab:ProtoyperStart">Table 1</a> which summarizes the two different prototyping methods.
+</td>
+</tr>
+</table>
+</div>
+<table id="tab:ProtoyperStart" class="tableblock frame-topbot grid-rows stretch">
+<caption class="title">Table 1. Starting the prototyper in different ways</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-top">Prototyping of component</th>
+<th class="tableblock halign-center valign-top">Prototyping of application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Menu</p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="menuseq"><b class="menu">Build</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Start prototyper</b></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="menuseq"><b class="menu">Build</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Start prototyper with application class</b></span></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Keyboard shortcut</p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>F5</kbd></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>F5</kbd></span></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Toolbar icon</p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/Launchlcon.png" alt="Launch icon"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/LaunchApplicationIcon.png" alt="Launch icon"></span></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -510,7 +541,7 @@ Let&#8217;s move on and integrate the component into the root component, that&#8
 <p>Using the inspector window, change the <em>Hello world!</em> text to <em>Tutorial application</em>.</p>
 </li>
 <li>
-<p>Using the <em>Bounds</em> property, change the size of the root canvas to 480 × 320 px. If you don&#8217;t know how to do that, have a look at how we changed the size of the bell component above.</p>
+<p>Using the <em>Bounds</em> property, change the size of the root canvas to 480 × 320 px. If you don&#8217;t know how to do that, have a look at how we changed the size of the <em>bell</em> component above.</p>
 </li>
 <li>
 <p>Add a background with the same dimensions of 480 × 320 px to the root canvas. If you don&#8217;t know how to do that, have a look at how we added a background to the bell component above. Change the color of the background to Gainsborough (<em>#DCDCDCFF</em>).</p>
@@ -524,7 +555,40 @@ Let&#8217;s move on and integrate the component into the root component, that&#8
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Pay attention to Z-Order TODO
+<div class="paragraph">
+<p>When adding the background onto the canvas, it will be placed in the foreground and will hide your header text. In order to fix that, you have to restack the elements on the canvas.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RIght click on the <em>Background</em> element in the inspector window to show its context menu.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/firstcomponent/RestackElements.png" alt="Restack elements">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the context menu, select the menu item <em>Restack down</em>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+When you want to restack an element several levels up or down, select the element and then make use of the shortcuts <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Up</kbd></span> or <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Down</kbd></span> respectively.
+</td>
+</tr>
+</table>
+</div>
 </td>
 </tr>
 </table>

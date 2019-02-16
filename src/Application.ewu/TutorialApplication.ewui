@@ -51,7 +51,7 @@ class TutorialApplication : Core::Root
   $rect <520,40,720,80>
   slot RingTheBellSlot
   {
-    trace "Sorry, but the GUI cannot ring the bell";
+    Device::Device.RingTheBellCommand();
   }
 
   // Slot method(s)

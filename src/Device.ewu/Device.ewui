@@ -1,4 +1,4 @@
 $version 6.60
 
-$rect <240,0,440,40>
+$rect <215,0,435,40>
 autoobject Device::DeviceClass Device;

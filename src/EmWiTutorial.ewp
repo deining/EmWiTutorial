@@ -55,7 +55,7 @@ $rect <540,70,740,110>
 language Default;
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <290,186,490,226>
+$rect <290,245,490,285>
 unit Application
 {
   attr Directory = .\;
@@ -70,25 +70,25 @@ note group MosaicFramework
 // Profile Configuration
 note group ProfileConfiguration
 {
-  attr Bounds = <270,20,510,130>;
+  attr Bounds = <270,20,510,190>;
 }
 
 // Languages
 note group Languages
 {
-  attr Bounds = <520,20,760,130>;
+  attr Bounds = <520,20,760,190>;
 }
 
 // GUI Project
 note group GUIProject
 {
-  attr Bounds = <270,140,750,240>;
+  attr Bounds = <270,199,760,296>;
 }
 
 // This is a profile member for the project. This profile controls the code generation \
 // for the target system.
 $rect <290,70,490,110>
-profile Profile : Tara.Win32.RGBA8888
+profile Win32 : Tara.Win32.RGBA8888
 {
   attr Verbose = false;
   attr ScreenSize = <480,320>;
@@ -104,7 +104,7 @@ profile Profile : Tara.Win32.RGBA8888
 }
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <290,297,490,337>
+$rect <290,356,490,396>
 unit Device
 {
   attr Directory = .\;
@@ -113,5 +113,37 @@ unit Device
 // Middleware
 note group Middleware
 {
-  attr Bounds = <270,251,750,410>;
+  attr Bounds = <270,306,760,500>;
+}
+
+// This unit is intended to contain the application class and other GUI components.
+$rect <335,400,535,440>
+unit BrowserDevice
+{
+  attr Directory = .\;
+}
+
+// This is a profile member for the project. This profile controls the code generation \
+// for the target system.
+$rect <290,116,490,156>
+profile Browser : Tara.WebGL.RGBA8888
+{
+  attr Verbose = false;
+  attr ScreenSize = <480,320>;
+  attr Optimization = High;
+  attr ApplicationClass = Application::TutorialApplication;
+  attr CleanOutputDirectories = false;
+  attr ApplicationTitle = "Embedded Wizard sample application";
+  attr ApplicationName = TutorialApplication;
+  attr OutputDirectory = ../WebGL;
+  attr Obfuscation = true;
+
+  $rect <10,10,154,50>
+  macro Author = "Dipl. Ing. Paul Banach and Dipl. Ing. Manfred Schweyer, Copyright (C) TARA Systems GmbH";
+}
+
+$rect <336,444,536,484>
+unit TargetDevice
+{
+  attr Directory = .\;
 }

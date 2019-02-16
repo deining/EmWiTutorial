@@ -1,0 +1,25 @@
+$version 6.60
+
+$rect <30,20,230,60>
+$variant Browser
+vclass DeviceClassBrowser : Device::DeviceClass
+{
+  $rect <20,39,220,79>
+  inherited method RingTheBellCommand()
+  {
+    trace "Command on browser device was called";
+
+    $if (!$prototyper)
+      native
+      {
+        console.log("Hello, world!");
+      }
+    $endif
+  }
+
+  // Command(s)
+  note group Commands
+  {
+    attr Bounds = <0,-2,240,148>;
+  }
+}

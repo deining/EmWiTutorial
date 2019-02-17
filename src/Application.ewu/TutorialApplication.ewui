@@ -73,6 +73,6 @@ class TutorialApplication : Core::Root
   $rect <520,88,720,128>
   slot ForeCastSlot
   {
-    trace "Sorry, but the GUI cannot tell the weather forecast";
+    Device::Device.ShowForecastCommand();
   }
 }

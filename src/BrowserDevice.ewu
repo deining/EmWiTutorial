@@ -4,15 +4,28 @@ $rect <30,20,230,60>
 $variant Browser
 vclass DeviceClassBrowser : Device::DeviceClass
 {
-  $rect <20,39,220,79>
+  $rect <20,39,240,80>
   inherited method RingTheBellCommand()
   {
-    trace "Command on browser device was called";
+    trace "Command \"ring the bell\" on browser device was called";
 
     $if (!$prototyper)
       native
       {
-        console.log("Hello, world!");
+        beep();
+      }
+    $endif
+  }
+
+  $rect <17,87,237,127>
+  inherited method ShowForecastCommand()
+  {
+    trace "Command \"show forecast\" on browser device was called";
+
+    $if (!$prototyper)
+      native
+      {
+        window.open('https://www.cnn.com/weather', '_self');
       }
     $endif
   }
@@ -20,6 +33,25 @@ vclass DeviceClassBrowser : Device::DeviceClass
   // Command(s)
   note group Commands
   {
-    attr Bounds = <0,-2,240,148>;
+    attr Bounds = <0,-2,260,140>;
+  }
+}
+
+$rect <30,70,230,110>
+inline InlineFunctions
+{
+  // reuse context since browsers limit the number of concurrent audio contexts
+  var audioContext = new AudioContext();
+
+  function beep() {
+    var oscillatorNode = audioContext.createOscillator();
+    var gainNode = audioContext.createGain();
+    oscillatorNode.connect(gainNode);
+    oscillatorNode.frequency.value = 500;
+    oscillatorNode.type = "square";
+    gainNode.connect(audioContext.destination);
+    gainNode.gain.value = 1.5;
+    oscillatorNode.start(audioContext.currentTime);
+    oscillatorNode.stop(audioContext.currentTime + 0.2);
   }
 }

@@ -5,7 +5,7 @@ $output false
 class DeviceClass : Templates::DeviceClass
 {
   // This method implements a device command.
-  $rect <20,230,220,270>
+  $rect <20,40,240,84>
   method void RingTheBellCommand()
   {
     trace "Sorry, but this device is not able to ring the bell!";
@@ -14,6 +14,13 @@ class DeviceClass : Templates::DeviceClass
   // Command(s)
   note group Commands
   {
-    attr Bounds = <0,190,240,340>;
+    attr Bounds = <0,0,260,140>;
+  }
+
+  // This method implements a device command.
+  $rect <20,86,240,130>
+  method void ShowForecastCommand()
+  {
+    trace "Sorry, but this device is not able to present a weather forecast!";
   }
 }

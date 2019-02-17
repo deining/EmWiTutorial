@@ -1,4 +1,30 @@
-= Preparing device integration
+= Hello world from our device
 Andreas Deininger andreas@deininger.net
 
-In the xref::ComponentReusability.adoc[last chapter], we ...
+In the xref::ComponentReusability.adoc[last chapter], we made our component truly reuaable by adding properties to it. Afterwards we completed our GUI which now contains two units, one for ringing a bell and another for showing the weather forecast. Unfortunately, there's no real function behind the push buttons of both units yet. We will address this in the following chapter.
+
+== GUI builder and platform packages
+
+Emmbedded wizard is a GUI framework builder that allows you to build GUI platform indepent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other that that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That's were the concept of https://doc.embedded-wizard.de/platform-package[platform packages^] comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, ...). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.
+
+[IMPORTANT]
+====
+Besides these platform packages that target real hardware there is also a JavaScript/WebGL Platform Package available that allows to run the GUI in any WebGL enabled browser. That's especially handy for this tutorial since you don't need any hardware to follow the instruction given. The WebGL platform package is included in the Embedded Wizard installer, so it's available out of the box. 
+====
+
+== Preparing device integration
+
+As explained above, there is a strict separation between the GUI application and the device, represented by one or mor platform packages. Let's start and reflect that separation in our application structure, too:
+
+* Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
+* Identify the note frame that helds the icon image:icons/ApplicationUnitIcon.png[Icon application unit] that represents the application unit. Rename the heading text of this frame from _Project Units_ to _GUI project_. To do so, change the property _Caption_ of the note frame using the inspector window.
+* From the gallery templates window to the left, drag an element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ over to root canvas. Rename the group to _Middleware_.
+* Drag an element image:icons/UnitIcon.png[annotation group icon] _Unit_ over to root canvas, add the new unit inside the note rectangle you inserted in the previous step. Rename the unit to _Device_.
+* Drag another image:icons/UnitIcon.png[annotation group icon] _Unit_ into the same note rectangle _Middleware_. Rename the unit to _BrowserDevice_.
+* Drag a third image:icons/UnitIcon.png[annotation group icon] _Unit_ into the note rectangle _Middleware_. Rename the unit to _TargetDevice_.
+
+The structure of your project should now look as shown in <<fig:ExtendedProjectLayout>> below:
+
+[[fig:ExtendedProjectLayout]]
+.Extended project layout
+image::DeviceIntegration/ProjectStructure.png[project layout]

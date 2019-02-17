@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preparing device integration :: Embedded Wizard Tutorial</title>
+    <title>Hello world from our device :: Embedded Wizard Tutorial</title>
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -124,12 +124,77 @@
     <li class="crumb"><a href="PreparingDeviceIntegration.html">Preparing device integration</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/PreparingDeviceIntegration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/Win10 Home x64/Documents/Embedded Wizard Projects/EmWiTutorial/www/asciidoc/modules/ROOT/pages/PreparingDeviceIntegration.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
-<h1>Preparing device integration</h1>
+<h1>Hello world from our device</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>In the <a href="ComponentReusability.html" class="page">last chapter</a>, we &#8230;&#8203;</p>
+<p>In the <a href="ComponentReusability.html" class="page">last chapter</a>, we made our component truly reuaable by adding properties to it. Afterwards we completed our GUI which now contains two units, one for ringing a bell and another for showing the weather forecast. Unfortunately, there&#8217;s no real function behind the push buttons of both units yet. We will address this in the following chapter.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gui_builder_and_platform_packages"><a class="anchor" href="#_gui_builder_and_platform_packages"></a>GUI builder and platform packages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Emmbedded wizard is a GUI framework builder that allows you to build GUI platform indepent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other that that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That&#8217;s were the concept of <a href="https://doc.embedded-wizard.de/platform-package" target="_blank" rel="noopener">platform packages</a> comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, &#8230;&#8203;). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Besides these platform packages that target real hardware there is also a JavaScript/WebGL Platform Package available that allows to run the GUI in any WebGL enabled browser. That&#8217;s especially handy for this tutorial since you don&#8217;t need any hardware to follow the instruction given. The WebGL platform package is included in the Embedded Wizard installer, so it&#8217;s available out of the box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preparing_device_integration"><a class="anchor" href="#_preparing_device_integration"></a>Preparing device integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As explained above, there is a strict separation between the GUI application and the device, represented by one or mor platform packages. Let&#8217;s start and reflect that separation in our application structure, too:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left).</p>
+</li>
+<li>
+<p>Identify the note frame that helds the icon <span class="image"><img src="_images/icons/ApplicationUnitIcon.png" alt="Icon application unit"></span> that represents the application unit. Rename the heading text of this frame from <em>Project Units</em> to <em>GUI project</em>. To do so, change the property <em>Caption</em> of the note frame using the inspector window.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag an element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> over to root canvas. Rename the group to <em>Middleware</em>.</p>
+</li>
+<li>
+<p>Drag an element <span class="image"><img src="_images/icons/UnitIcon.png" alt="annotation group icon"></span> <em>Unit</em> over to root canvas, add the new unit inside the note rectangle you inserted in the previous step. Rename the unit to <em>Device</em>.</p>
+</li>
+<li>
+<p>Drag another <span class="image"><img src="_images/icons/UnitIcon.png" alt="annotation group icon"></span> <em>Unit</em> into the same note rectangle <em>Middleware</em>. Rename the unit to <em>BrowserDevice</em>.</p>
+</li>
+<li>
+<p>Drag a third <span class="image"><img src="_images/icons/UnitIcon.png" alt="annotation group icon"></span> <em>Unit</em> into the note rectangle <em>Middleware</em>. Rename the unit to <em>TargetDevice</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The structure of your project should now look as shown in <a href="#fig:ExtendedProjectLayout">Figure 1</a> below:</p>
+</div>
+<div id="fig:ExtendedProjectLayout" class="imageblock">
+<div class="content">
+<img src="_images/DeviceIntegration/ProjectStructure.png" alt="project layout">
+</div>
+<div class="title">Figure 1. Extended project layout</div>
+</div>
+</div>
 </div>
 </article>
   </main>

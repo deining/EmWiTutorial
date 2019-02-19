@@ -124,7 +124,7 @@
     <li class="crumb"><a href="PreparingDeviceIntegration.html">Preparing device integration</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/Win10 Home x64/Documents/Embedded Wizard Projects/EmWiTutorial/www/asciidoc/modules/ROOT/pages/PreparingDeviceIntegration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/PreparingDeviceIntegration.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Hello world from our device</h1>
@@ -141,27 +141,13 @@
 <div class="paragraph">
 <p>Emmbedded wizard is a GUI framework builder that allows you to build GUI platform indepent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other that that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That&#8217;s were the concept of <a href="https://doc.embedded-wizard.de/platform-package" target="_blank" rel="noopener">platform packages</a> comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, &#8230;&#8203;). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Besides these platform packages that target real hardware there is also a JavaScript/WebGL Platform Package available that allows to run the GUI in any WebGL enabled browser. That&#8217;s especially handy for this tutorial since you don&#8217;t need any hardware to follow the instruction given. The WebGL platform package is included in the Embedded Wizard installer, so it&#8217;s available out of the box.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_preparing_device_integration"><a class="anchor" href="#_preparing_device_integration"></a>Preparing device integration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As explained above, there is a strict separation between the GUI application and the device, represented by one or mor platform packages. Let&#8217;s start and reflect that separation in our application structure, too:</p>
+<p>As explained above, there is a strict separation between the GUI application and the device, represented by one or more platform packages. Let&#8217;s start and reflect that separation in our application structure, too:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -193,6 +179,226 @@
 <img src="_images/DeviceIntegration/ProjectStructure.png" alt="project layout">
 </div>
 <div class="title">Figure 1. Extended project layout</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s add content to the newly inserted units:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Double click on the icon <span class="image"><img src="_images/icons/DeviceUnitIcon.png" alt="Icon device unit"></span>, representing the <em>Device</em> unit. This will open the unit in a new tab.</p>
+</li>
+<li>
+<p>In the gallery templates window left to the main composer window, click on the item <em>Device</em>, which will open and show all the <em>device</em> subitems.</p>
+</li>
+<li>
+<p>Click on the item <span class="image"><img src="_images/icons/DeviceInterfaceIcon.png" alt="Device interface icon"></span> <em>Device interface</em>, and drag an instance over to the component&#8217;s canvas. Place the element in the upper left corner of the canvas.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By dragging over the <em>device interface</em> to the canvas, two new objects were inserted:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <em>DeviceClass</em> element to the left, which represents the class where we will store device related class members like commands, properties and so on and</p>
+</li>
+<li>
+<p>the <em>Device</em> autoobject element associated to the <em>DeviceClass</em> element. This autoobject represents the globally available intance of the device class. This autoobject represents Embedded Wizard&#8217;s implementation of the <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton pattern</a> (if you are familiar with Java, you may think of the <em>Device</em> class as a static class). Using the <em>Device</em> autoobject, any GUI element has direct access to the device class and its members, which is very handy. We will use this autoobject soon.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Your screen should now look like illustrated in <a href="#fig:DeviceClassInterface">Figure 2</a> below:</p>
+</div>
+<div id="fig:DeviceClassInterface" class="imageblock">
+<div class="content">
+<img src="_images/DeviceIntegration/DeviceClassInterface.png" alt="device class interface">
+</div>
+<div class="title">Figure 2. Device class interface</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s go ahead and add content to the newly inserted units:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Double click on the icon <span class="image"><img src="_images/icons/DeviceAutoObjectIcon.png" alt="Icon autoobject"></span>, representing the <em>Device</em> autoobject. This will open the <em>Device</em> class in a new tab. You will see that the canvas was prepopulated with several class members already.</p>
+</li>
+<li>
+<p>Identify the note group that helds the icon <span class="image"><img src="_images/icons/CommandMethodIcon.png" alt="Command method icon"></span> representing the <em>Command</em> method and rename the caption of this note group from <em>Example of an interface to perform an operation in the device</em> to <em>Command(s)</em>.</p>
+</li>
+<li>
+<p>Rename icon <span class="image"><img src="_images/icons/CommandMethodIcon.png" alt="Command method icon"></span> representing the <em>Command</em> method to <em>HelloWorldCommand</em>.</p>
+</li>
+<li>
+<p>Double click on the renamed command. In the code editor window, you will see the methods signature, followed from many lines of template Chora code.</p>
+</li>
+<li>
+<p>Have a look at the method signature of the <em>HelloWorld</em> command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Device commands are represented by regular methods. Like in all programming languages, a method can take parameters and can have a return value. Have a look at the signature of the <em>HelloWorld</em> method shown at the top of the code editor:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora"> method int32 Device::DeviceClass.HelloWorldCommand( arg int32 aParameter1, arg bool aParameter2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see the method currently takes an int32 value as first argument and a boolean value as second argument. Also, the method returns an int32 value. The settings are not what we want, our simple <em>HelloWorld</em> method does not need any parameters and won&#8217;t return anything, so the return type shold be <em>void</em>. Let&#8217;s go ahed and adjust the method&#8217;s signature to our needs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the top title line of the code editor containing the method signature, you can see a small downwards triangle. Click on this triangle to show a frame where the method&#8217;s retrurn value and parameters are listed in separate lines.</p>
+</li>
+<li>
+<p>Right click on the first method parameter <em>arg int32 aParameter1</em> to invoke the context menu for this parameter. From this menu select <em>Delete</em> to remove the first parameter.</p>
+</li>
+<li>
+<p>Right click on the remaining method parameter <em>arg bool aParameter2</em>. From the context menu shown, select <em>Delete</em> to remove this parameter, too.</p>
+</li>
+<li>
+<p>Right click on the first line that shows the method&#8217;s name <em>method int32 Helloworld</em>. From the context menu shown, select <em>Edit</em> and change the retrn parameter from <em>int32</em> to <em>void</em>.</p>
+</li>
+</ul>
+</div>
+<div id="fig:DeleteMethodsParameter" class="imageblock">
+<div class="content">
+<img src="_images/deviceintegration/DeleteMethodParameters.png" alt="delete methods parameters">
+</div>
+<div class="title">Figure 3. Delete methods parameters</div>
+</div>
+<div class="paragraph">
+<p>Once we adjusted the signature of the method, let us adjust the body of the method, too. Remove all template code and put in one single line:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">trace "The device class of the GUI is an interface only and cannot run any device commands! Please implement the command in a derived class!";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As said, Embedded Wizard does not have access to the underlying device and therefore cannot advise the device to say <em>Hello</em> to us. We have to implement this in a derived class, we will do so shortly.</p>
+</div>
+<div class="paragraph">
+<p>Since we have set up a device and a command now, let&#8217;s use it and wire the push button action of the bell to that newly created command:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Bring up the contents of the main application inside the tab <em>Application::TutorialApplication</em>.</p>
+</li>
+<li>
+<p>Double click on the icon <span class="image"><img src="_images/icons/RingTheBellSlotIcon.png" alt="slot icon"></span> representing the slot method <em>RingTheBellSlot</em>. Inside the code editor, you will see he line <code>´trace "Sorry, the GUI cannot ring the bell!";`</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Change this code to</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">Device::Device.RingTheBellCommand();</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Embedded wizard code editor ships with integrated code completion, which is very handy and might prevent you from typos when authoring code inside the code editor. To test it out, simply write <em>Device::</em> into the editor and should see a list of available completions to the given <em>Device</em> unit name you just typed in.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That&#8217;s how we call a method by code: specify the class name (<em>Device.DeviceClass</em>) first, then append the method name (<em>HelloWorldCommand</em>), prepended with a dot.
+Run your code now using the protoyper, and you should see a trace message informing you that the GUI cannot run any device commands. Obviously, we are not at the end, so read on!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_another_profile"><a class="anchor" href="#_adding_another_profile"></a>Adding another profile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As already explained above, there is a strict separation between the GUI application and the device, represented by one or more platform packages. Two platform packages are included in the Embedded Wizard installer and are available out of the box:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <em>Tara.Win32.xxx</em> platform package. This is the default platform package that allows you to run the application on your Windows platform. We were using it all the time already when using the prototyper to run your application. (<em>xxx</em> stand for one of the available color formats, either Index8 or RGBxxxxx).</p>
+</li>
+<li>
+<p>the <em>Tara.WebGL.RGBA8888</em> platform. This WebGL/Javascript platform package allows you to run the GUI in any WebGL enabled browser. That&#8217;s especially handy for this tutorial since you don&#8217;t need any hardware to follow the instruction given.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Besides the Win32 and the WebGL there are many platform packages available to target real hardware (STM, NXP, TI, Raspberry Pi, &#8230;&#8203;). For each of these platform packages, a separate installer exists. You have to obtain and run this installer to make the associated platform packages available inside Embedded Wizard.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In order to make use of more than one platform package, for each package we must have an associated <strong>profile</strong> on the Projects tab. So let&#8217;s add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output _Hello, world!" on the browser device, more specifically on the web console of the browser. The journey goes on &#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left).</p>
+</li>
+<li>
+<p>Identify the note frame with the caption <em>Profile configuration</em>, it only contains the icon <span class="image"><img src="_images/icons/ProfileIcon.png" alt="Profile configuration"></span> representing the default profile. Select this profile and have a look at the inspector window. You will see that the attribute  <em>PlatformPackage</em> of the profile has the value <em>Tara.Win32.RGBA8888</em> assigned. To reflect this, rename the profile from <em>Profile</em> to <em>Win32</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/ProfileIcon.png" alt="annotation group icon"></span> <em>Profile</em> over to canvas and place it underneath the existing profile <em>win32</em> . Rename the profile to <em>Browser</em>. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.</p>
+</li>
+<li>
+<p>Our new profile should be associated with the WebGL platform pacakge, so inside the inspector window, change the value of the attribute <em>PlatformPackage</em> from <em>Tara.Win32.RGBA8888</em> to <em>Tara.WebGL.RGBA8888</em>.</p>
+</li>
+<li>
+<p>Inside the inspector window, change the value of the attribute <em>ScreenSize</em> to <em>&lt;480,320&gt;</em>.</p>
+</li>
+<li>
+<p>Also change the value of the attribute <em>OutputDirectory</em> to <em>../WebGL</em>. This defines the directory where all the code for our website will be stored once we build the project.</p>
+</li>
+<li>
+<p>Optionally, you may fill the attributes <em>ApplicationName</em> and <em>ApplicationTitle</em> with the values <em>TutorialApplication</em> or <em>"Embedded Wizard sample application"</em>, respectively. For the last value, don&#8217;t forget the surrounding double quotes here or you may run in trouble.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <em>Profile</em> section of your project should now look as shown in <a href="#fig:ProjectProfiles">Figure 4</a> below:</p>
+</div>
+<div id="fig:ProjectProfiles" class="imageblock">
+<div class="content">
+<img src="_images/deviceintegration/ProjectProfiles.png" alt="Project profiles">
+</div>
+<div class="title">Figure 4. Delete methods parameters</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Now that we that two profiles defined, we can switch between these two profiles using the <em>Profile</em> dropdown menu <span class="image"><img src="_images/deviceintegration/DropdownProfiles.png" alt="dropdwon profiles"></span> located in the second row of the toolbar, located right beneath the icon <span class="image"><img src="_images/icons/BuildProfileIcon.png" alt="Build profile"></span> for building the selected profile and the icon <span class="image"><img src="_images/icons/BuildBatchIcon.png" alt="Build batch mode"></span> for building multiple profiles in batch mode.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

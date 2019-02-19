@@ -50,7 +50,7 @@ In a further step, we put all the elements onto the element's canvas:
 * Click on the item image:icons/FilledRectangleIcon.png[Filled rectangle icon] _Filled Rectangle_, and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
 * Press kbd:[F2] to rename the component. In the inspector window, type in _Background_ and press kbd:[Enter] once you are done.
 * Adapt the size of the background rectangle to 200 × 150 px. You may do so by either resizing the element with the mouse or by adjusting the property _Bounds_ in the in the lower _attributes and properties area_ of the inspector window (as described above when setting the default bounds for the component).
-* If needed, adjust te color of the background to the value _#FFFFFFFF (white, opaque).
+* If needed, adjust the color of the background to the value _#FFFFFFFF (white, opaque).
 * If all went fine, you will see a tiny white text element labelled _Text_ in the middle of the canvas.
 
 Now we put a border around the component:

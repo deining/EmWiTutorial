@@ -1,18 +1,18 @@
 = Hello world from our device
 Andreas Deininger andreas@deininger.net
 
-In the xref::ComponentReusability.adoc[last chapter], we made our component truly reuaable by adding properties to it. Afterwards we completed our GUI which now contains two units, one for ringing a bell and another for showing the weather forecast. Unfortunately, there's no real function behind the push buttons of both units yet. We will address this in the following chapter.
+In the xref::ComponentReusability.adoc[last chapter], we made our component truly reusable by adding properties to it. Afterwards we completed our GUI which now contains two units, one for ringing a bell and another for showing the weather forecast. Unfortunately, there's no real function behind the push buttons of both units yet. We will address this in the following chapter.
 
 == GUI builder and platform packages
 
-Emmbedded wizard is a GUI framework builder that allows you to build GUI platform indepent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other that that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That's were the concept of https://doc.embedded-wizard.de/platform-package[platform packages^] comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, ...). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.
+Embedded wizard is a GUI framework builder that allows you to build GUI platform independent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other than that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That's where the concept of https://doc.embedded-wizard.de/platform-package[platform packages^] comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, ...). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.
 
 == Preparing device integration
 
 As explained above, there is a strict separation between the GUI application and the device, represented by one or more platform packages. Let's start and reflect that separation in our application structure, too:
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
-* Identify the note frame that helds the icon image:icons/ApplicationUnitIcon.png[Icon application unit] that represents the application unit. Rename the heading text of this frame from _Project Units_ to _GUI project_. To do so, change the property _Caption_ of the note frame using the inspector window.
+* Identify the note frame that holds the icon image:icons/ApplicationUnitIcon.png[Icon application unit] that represents the application unit. Rename the heading text of this frame from _Project Units_ to _GUI project_. To do so, change the property _Caption_ of the note frame using the inspector window.
 * From the gallery templates window to the left, drag an element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ over to root canvas. Rename the group to _Middleware_.
 * Drag an element image:icons/UnitIcon.png[annotation group icon] _Unit_ over to root canvas, add the new unit inside the note rectangle you inserted in the previous step. Rename the unit to _Device_.
 * Drag another image:icons/UnitIcon.png[annotation group icon] _Unit_ into the same note rectangle _Middleware_. Rename the unit to _BrowserDevice_.
@@ -22,7 +22,7 @@ The structure of your project should now look as shown in <<fig:ExtendedProjectL
 
 [[fig:ExtendedProjectLayout]]
 .Extended project layout
-image::DeviceIntegration/ProjectStructure.png[project layout]
+image::deviceintegration/ProjectStructure.png[project layout]
 
 Let's add content to the newly inserted units:
 
@@ -32,8 +32,8 @@ Let's add content to the newly inserted units:
 
 By dragging over the _device interface_ to the canvas, two new objects were inserted:
 
-* the _DeviceClass_ element to the left, which represents the class where we will store device related class members like commands, properties and so on and
-* the _Device_ autoobject element associated to the _DeviceClass_ element. This autoobject represents the globally available intance of the device class. This autoobject represents Embedded Wizard's implementation of the https://en.wikipedia.org/wiki/Singleton_pattern[singleton pattern] (if you are familiar with Java, you may think of the _Device_ class as a static class). Using the _Device_ autoobject, any GUI element has direct access to the device class and its members, which is very handy. We will use this autoobject soon.
+* the _DeviceClass_ element to the left, which represents the class where we will store device related class members like commands, properties and so on, and
+* the _Device_ autoobject element associated to the _DeviceClass_ element. This autoobject represents the globally available instance of the device class. This autoobject represents Embedded Wizard's implementation of the https://en.wikipedia.org/wiki/Singleton_pattern[singleton pattern] (if you are familiar with Java, you may think of the _Device_ class as a static class). Using the _Device_ autoobject, any GUI element has direct access to the device class and its members, which is very handy. We will use this autoobject soon.
 
 Your screen should now look like illustrated in <<fig:DeviceClassInterface>> below:
 
@@ -44,9 +44,9 @@ image::DeviceIntegration/DeviceClassInterface.png[device class interface]
 Let's go ahead and add content to the newly inserted units:
 
 * Double click on the icon image:icons/DeviceAutoObjectIcon.png[Icon autoobject], representing the _Device_ autoobject. This will open the _Device_ class in a new tab. You will see that the canvas was prepopulated with several class members already.
-* Identify the note group that helds the icon image:icons/CommandMethodIcon.png[Command method icon] representing the _Command_ method and rename the caption of this note group from _Example of an interface to perform an operation in the device_ to _Command(s)_.
+* Identify the note group that holds the icon image:icons/CommandMethodIcon.png[Command method icon] representing the _Command_ method and rename the caption of this note group from _Example of an interface to perform an operation in the device_ to _Command(s)_.
 * Rename icon image:icons/CommandMethodIcon.png[Command method icon] representing the _Command_ method to _HelloWorldCommand_.
-* Double click on the renamed command. In the code editor window, you will see the methods signature, followed from many lines of template Chora code.
+* Double click on the renamed command. In the code editor window, you will see the method's signature, followed by many lines of template Chora code.
 * Have a look at the method signature of the _HelloWorld_ command.
 
 Device commands are represented by regular methods. Like in all programming languages, a method can take parameters and can have a return value. Have a look at the signature of the _HelloWorld_ method shown at the top of the code editor:
@@ -56,12 +56,12 @@ Device commands are represented by regular methods. Like in all programming lang
  method int32 Device::DeviceClass.HelloWorldCommand( arg int32 aParameter1, arg bool aParameter2)
 ----
 
-As you can see the method currently takes an int32 value as first argument and a boolean value as second argument. Also, the method returns an int32 value. The settings are not what we want, our simple _HelloWorld_ method does not need any parameters and won't return anything, so the return type shold be _void_. Let's go ahed and adjust the method's signature to our needs:
+As you can see the method currently takes an int32 value as first argument and a boolean value as second argument. Also, the method returns an int32 value. These settings are not what we want, our simple _HelloWorld_ method does not need any parameters and won't return anything, so the return type should be _void_. Let's go ahead and adjust the method's signature to our needs:
 
-* In the top title line of the code editor containing the method signature, you can see a small downwards triangle. Click on this triangle to show a frame where the method's retrurn value and parameters are listed in separate lines.
-* Right click on the first method parameter _arg int32 aParameter1_ to invoke the context menu for this parameter. From this menu select _Delete_ to remove the first parameter.
+* In the top title line of the code editor containing the method signature, you can see a small downwards triangle. Click on this triangle to show a frame where the method's return value and parameters are listed in separate lines.
+* Right click on the first method parameter _arg int32 aParameter1_ to invoke the context menu on this parameter. From this menu select the menu item _Delete_ to remove the first parameter.
 * Right click on the remaining method parameter _arg bool aParameter2_. From the context menu shown, select _Delete_ to remove this parameter, too.
-* Right click on the first line that shows the method's name _method int32 Helloworld_. From the context menu shown, select _Edit_ and change the retrn parameter from _int32_ to _void_.
+* Right click on the first line that shows the method's name _method int32 HelloworldCommand_. From the context menu shown, select _Edit_ and change the return parameter from _int32_ to _void_.
 
 [[fig:DeleteMethodsParameter]]
 .Delete methods parameters
@@ -79,7 +79,7 @@ As said, Embedded Wizard does not have access to the underlying device and there
 Since we have set up a device and a command now, let's use it and wire the push button action of the bell to that newly created command:
 
 * Bring up the contents of the main application inside the tab _Application::TutorialApplication_.
-* Double click on the icon image:icons/RingTheBellSlotIcon.png[slot icon] representing the slot method _RingTheBellSlot_. Inside the code editor, you will see he line `´trace "Sorry, the GUI cannot ring the bell!";``.
+* Double click on the icon image:icons/RingTheBellSlotIcon.png[slot icon] representing the slot method _RingTheBellSlot_. Inside the code editor, you will see the line ``trace "Sorry, the GUI cannot ring the bell!";``.
 
 Change this code to
 
@@ -90,25 +90,25 @@ Device::Device.RingTheBellCommand();
 
 NOTE: Embedded wizard code editor ships with integrated code completion, which is very handy and might prevent you from typos when authoring code inside the code editor. To test it out, simply write _Device::_ into the editor and should see a list of available completions to the given _Device_ unit name you just typed in.
 
-That's how we call a method by code: specify the class name (_Device.DeviceClass_) first, then append the method name (_HelloWorldCommand_), prepended with a dot.
-Run your code now using the protoyper, and you should see a trace message informing you that the GUI cannot run any device commands. Obviously, we are not at the end, so read on!
+That's how we call a method by code: specify the class name (_Device::DeviceClass_) first, then append the method name (_HelloWorldCommand_), prepended with a dot.
+Now run your code using the prototyper, and you should see a trace message informing you that the GUI cannot run any device commands. Obviously, we are not at the end, so read on!
 
 == Adding another profile
 
 As already explained above, there is a strict separation between the GUI application and the device, represented by one or more platform packages. Two platform packages are included in the Embedded Wizard installer and are available out of the box:
 
-* the _Tara.Win32.xxx_ platform package. This is the default platform package that allows you to run the application on your Windows platform. We were using it all the time already when using the prototyper to run your application. (_xxx_ stand for one of the available color formats, either Index8 or RGBxxxxx).
+* the _Tara.Win32.xxx_ platform package. This is the default platform package that allows you to run the application on your Windows platform. You were using it already when you launched the prototyper to run your application or component (_xxx_ stand for one of the available color formats, either Index8 or RGBxxxxx).
 * the _Tara.WebGL.RGBA8888_ platform. This WebGL/Javascript platform package allows you to run the GUI in any WebGL enabled browser. That's especially handy for this tutorial since you don't need any hardware to follow the instruction given.
 
-NOTE: Besides the Win32 and the WebGL there are many platform packages available to target real hardware (STM, NXP, TI, Raspberry Pi, ...). For each of these platform packages, a separate installer exists. You have to obtain and run this installer to make the associated platform packages available inside Embedded Wizard.
+NOTE: Besides the Win32 and the WebGL packages there are many platform packages available to target real hardware (STM, NXP, TI, Raspberry Pi, ...). For each of these platform packages, a separate installer exists. You have to obtain and run this installer to make the associated platform packages available inside Embedded Wizard.
 
-In order to make use of more than one platform package, for each package we must have an associated *profile* on the Projects tab. So let's add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output _Hello, world!" on the browser device, more specifically on the web console of the browser. The journey goes on ... 
+If we want to make use of more than one platform package inside our project, we have to have an associated *profile* on the Projects tab for each package you would like to use. So let's add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output _Hello, world!_ on the browser device, more specifically on the web console of the browser. The journey goes on ... 
 
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
-* Identify the note frame with the caption _Profile configuration_, it only contains the icon image:icons/ProfileIcon.png[Profile configuration] representing the default profile. Select this profile and have a look at the inspector window. You will see that the attribute  _PlatformPackage_ of the profile has the value _Tara.Win32.RGBA8888_ assigned. To reflect this, rename the profile from _Profile_ to _Win32_ using the kbd:[F2] key.
-* From the gallery templates window to the left, drag the element image:icons/ProfileIcon.png[annotation group icon] _Profile_ over to canvas and place it underneath the existing profile _win32_ . Rename the profile to _Browser_. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.
-* Our new profile should be associated with the WebGL platform pacakge, so inside the inspector window, change the value of the attribute _PlatformPackage_ from _Tara.Win32.RGBA8888_ to _Tara.WebGL.RGBA8888_.
+* Identify the note frame with the caption _Profile configuration_, it only contains the icon image:icons/DefaultProfileIcon.png[Deafult profile icon] representing the default profile. Select this profile and have a look at the inspector window. You will realize that the attribute _PlatformPackage_ of the profile has the value _Tara.Win32.RGBA8888_ assigned. To reflect this, rename the profile from _Profile_ to _Win32_ using the kbd:[F2] key.
+* From the gallery templates window to the left, drag the element image:icons/ProfileIcon.png[annotation group icon] _Profile_ over to the canvas and place it underneath the existing profile _Win32_ . Rename the profile to _Browser_. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.
+* Our new profile should be associated with the WebGL platform package, so inside the inspector window, change the value of the attribute _PlatformPackage_ from _Tara.Win32.RGBA8888_ to _Tara.WebGL.RGBA8888_.
 * Inside the inspector window, change the value of the attribute _ScreenSize_ to _<480,320>_.
 * Also change the value of the attribute _OutputDirectory_ to _../WebGL_. This defines the directory where all the code for our website will be stored once we build the project.
 * Optionally, you may fill the attributes _ApplicationName_ and _ApplicationTitle_ with the values _TutorialApplication_ or _"Embedded Wizard sample application"_, respectively. For the last value, don't forget the surrounding double quotes here or you may run in trouble.
@@ -116,7 +116,7 @@ In order to make use of more than one platform package, for each package we must
 The _Profile_ section of your project should now look as shown in <<fig:ProjectProfiles>> below:
 
 [[fig:ProjectProfiles]]
-.Delete methods parameters
+.Project profiles and their attributes
 image::deviceintegration/ProjectProfiles.png[Project profiles]
 
-TIP: Now that we that two profiles defined, we can switch between these two profiles using the _Profile_ dropdown menu image:deviceintegration/DropdownProfiles.png[dropdwon profiles] located in the second row of the toolbar, located right beneath the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode.
+TIP: Now that we that two profiles defined, we can switch between these two profiles using the _Profile_ dropdown menu image:deviceintegration/DropdownProfiles.png[dropdwon profiles] located in the second row of the toolbar, placed right beneath the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode.

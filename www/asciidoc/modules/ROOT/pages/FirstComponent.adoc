@@ -12,7 +12,7 @@ So let's start and built our first GUI component: it's a simple graphical unit w
 
 * We want to place the component in the _Application_ unit, so click on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab. Inside the composer window, you will now see the _Application_ root component, the only component currently present.
 
-* In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window, make sure, the tab _Templates_ at the top of the window is selected.
+* In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window, make sure that the tab _Templates_ at the top of the window is selected.
 * In the main area of the templates window, click on the item _Component templates_, which will then open and show all available GUI templates.
 * Identify the item image:icons/ComponentIcon.png[component icon] _Component_, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing _Application_ root component.
 * We want to use the new component to ring a bell, so we give it dedicated name: with the component still seleted, press kbd:[F2] to rename the component. In the https://doc.embedded-wizard.de/inspector-window[inspector window^], type in _BellComponent_ and press kbd:[Enter] once you are done.
@@ -179,7 +179,7 @@ TIP: When you want to restack an element several levels up or down, select the e
 
 Now we are eventually ready to add our bell component:
 
-* In the gallery templates window, left to the main composer window, make sure, the tab _Browser_ at the top of the window is selected.
+* In the gallery templates window, left to the main composer window, make sure that the tab _Browser_ at the top of the window is selected.
 * The browser's list of classes present is quite long, so we have to narrow down the displayed classes: in the search field immediately below the two tabs, type in _Bell_. While typing have a look at the list and you will notice that the list is getting shorter and shorter. Once you typed in _Bell_, the only class left is the component newly created from you.
 * Click on the image:icons/ClassIcon.png[class icon] _Application::BellComponent_ class and drag an instance of the class over to the root canvas. Place the component below the header text.
 

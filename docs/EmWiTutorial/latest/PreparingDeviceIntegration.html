@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello world from our device :: Embedded Wizard Tutorial</title>
+    <title>Device integration: Hello world from our device :: Embedded Wizard Tutorial</title>
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -124,10 +124,10 @@
     <li class="crumb"><a href="PreparingDeviceIntegration.html">Preparing device integration</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/Pferdinand/Documents/EmWiTutorial/www/asciidoc/modules/ROOT/pages/PreparingDeviceIntegration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/PreparingDeviceIntegration.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
-<h1>Hello world from our device</h1>
+<h1>Device integration: Hello world from our device</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -144,7 +144,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_preparing_device_integration"><a class="anchor" href="#_preparing_device_integration"></a>Preparing device integration</h2>
+<h2 id="_adapting_the_project_structure"><a class="anchor" href="#_adapting_the_project_structure"></a>Adapting the project structure</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>As explained above, there is a strict separation between the GUI application and the device, represented by one or more platform packages. Let&#8217;s start and reflect that separation in our application structure, too:</p>
@@ -180,8 +180,13 @@
 </div>
 <div class="title">Figure 1. Extended project layout</div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_a_interface_device_class"><a class="anchor" href="#_adding_a_interface_device_class"></a>Adding a interface device class</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Let&#8217;s add content to the newly inserted units:</p>
+<p>Let&#8217;s add content to the newly inserted units! We start with adding a device class interface first:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -219,7 +224,7 @@
 <div class="title">Figure 2. Device class interface</div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s go ahead and add content to the newly inserted units:</p>
+<p>Let&#8217;s go ahead and review and adapt the members of the newly inserted device class interface:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -278,7 +283,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">trace "The device class of the GUI is an interface only and cannot run any device commands! Please implement the command in a derived class!";</code></pre>
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">trace "The device class of the GUI is an interface only and cannot run any device commands! Please implement the command in a variant class!";</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -360,10 +365,10 @@ Besides the Win32 and the WebGL packages there are many platform packages availa
 <p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left).</p>
 </li>
 <li>
-<p>Identify the note frame with the caption <em>Profile configuration</em>, it only contains the icon <span class="image"><img src="_images/icons/DefaultProfileIcon.png" alt="Deafult profile icon"></span> representing the default profile. Select this profile and have a look at the inspector window. You will realize that the attribute <em>PlatformPackage</em> of the profile has the value <em>Tara.Win32.RGBA8888</em> assigned. To reflect this, rename the profile from <em>Profile</em> to <em>Win32</em> using the <kbd>F2</kbd> key.</p>
+<p>Identify the note frame with the caption <em>Profile configuration</em>, it only contains the icon <span class="image"><img src="_images/icons/DefaultProfileIcon.png" alt="Default profile icon"></span> representing the default profile. Select this profile and have a look at the inspector window. You will realize that the attribute <em>PlatformPackage</em> of the profile has the value <em>Tara.Win32.RGBA8888</em> assigned. To reflect this, rename the profile from <em>Profile</em> to <em>Win32</em> using the <kbd>F2</kbd> key.</p>
 </li>
 <li>
-<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/ProfileIcon.png" alt="annotation group icon"></span> <em>Profile</em> over to the canvas and place it underneath the existing profile <em>Win32</em> . Rename the profile to <em>Browser</em>. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.</p>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/ProfileIcon.png" alt="profile icon"></span> <em>Profile</em> over to the canvas and place it underneath the existing profile <em>Win32</em> . Rename the profile to <em>Browser</em>. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.</p>
 </li>
 <li>
 <p>Our new profile should be associated with the WebGL platform package, so inside the inspector window, change the value of the attribute <em>PlatformPackage</em> from <em>Tara.Win32.RGBA8888</em> to <em>Tara.WebGL.RGBA8888</em>.</p>
@@ -399,6 +404,104 @@ Now that we that two profiles defined, we can switch between these two profiles 
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_a_browser_device_class_variant"><a class="anchor" href="#_adding_a_browser_device_class_variant"></a>Adding a browser device class variant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We already added an interface device class to our project. However, this interface device class is not meant to run any command on the device. The actual execution of the command on the device will happen inside a <a href="https://doc.embedded-wizard.de/class-variant-member">class variant</a>. <a href="https://doc.embedded-wizard.de/managing-project-variants">Variants</a> are an extremly powerful concept of Embedded wizard, in the example below we use it to manage code execution on different platform packages. Variants are useful in various other scenarios, you may use them to manage variants of your application for different screen resolutions or if you want to implement a different look and feel for one or more application components. Let&#8217;s go ahead and add and populate a class variant for the use with browser devices:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left).</p>
+</li>
+<li>
+<p>Identify the note frame with the caption <em>Middleware</em> which holds three device units, the <em>Device</em> unit, the <em>BrowserDevice</em> unit and the <em>TargetDevice</em> unit.</p>
+</li>
+<li>
+<p>Double click on the icon <span class="image"><img src="_images/icons/BrowserDeviceUnitIcon.png" alt="Icon browser device unit"></span>, representing the <em>BrowserDevice</em> unit. This will open the empty unit inside a new tab.</p>
+</li>
+<li>
+<p>In the gallery templates window, left to the main composer window, make sure that the tab <em>Browser</em> at the top of the window is selected.</p>
+</li>
+<li>
+<p>In the search field immediately below the two tabs, type in <em>Device</em> to shorten the class list.</p>
+</li>
+<li>
+<p>Right click on the <span class="image"><img src="_images/icons/ClassIcon.png" alt="class icon"></span> <em>Device::DeviceClass</em> class to invoke the context menu on this class. From this menu select the menu item <em>Copy</em> to copy the class to the clipboard.</p>
+</li>
+<li>
+<p>Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item <em>Variant paste</em> to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd></span> pressed. Note the letter <em>V</em> in the icon <span class="image"><img src="_images/icons/VariantClassIcon.png" alt="variant clas icon"></span> that decorates the newly inserted class which marks the class as a class variant.</p>
+</li>
+<li>
+<p>Rename the newly inserted variant class to <em>DeviceClassBrowser</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>In the inspector window, locate the attribute line <em>VariantCond</em>. The right hand  <em>value</em> cell of this attribute line helds a small downwards triangle at the right hand side. Click on this triangle to open the dropdown list populated with all profiles of your project. Deselect all profiles except for the profile <em>Browser</em> and click on the lower button labelled with a checkmark to confirm your choice. With this setting in place, the class variant is now associated with the <em>Browser</em> profile only.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Your screen should now look as shown in <a href="#fig:ClassVariant">Figure 5</a> below:</p>
+</div>
+<div id="fig:ClassVariant" class="imageblock">
+<div class="content">
+<img src="_images/deviceintegration/DeviceClassBrowser.png" alt="class variant" width="1024">
+</div>
+<div class="title">Figure 5. Browser device class variant</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementing_a_different_behaviour_for_the_browser_device_class_variant"><a class="anchor" href="#_implementing_a_different_behaviour_for_the_browser_device_class_variant"></a>Implementing a different behaviour for the browser device class variant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We want to make the newly created class behave differently, so there&#8217;s still some work to do:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Double click on the icon <span class="image"><img src="_images/icons/DeviceClassBrowserIcon.png" alt="Icon device class browser"></span>, representing the recently add device class variant. This will open the empty <em>DeviceClassBrowser</em> class variant inside a new tab.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag an element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> over to root canvas. Rename the group to <em>Command(s)</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Have a look at the inspector window and you will see the method <em>HelloWorldCommand</em>. This is the command we previoulsy added to the <em>Device</em> class. Since the variant class is derived from this class, it has access to all its class members, inclduing the <em>HelloWorldCommand</em>. The light grey colour of the method name marks the method as an inherited method. We now want to implement a different behaviour for this command in the variant class, we can do so by overriding the method in the variant class:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the inspector window, right click on the method <em>HelloWorldCommand</em> to invoke the context menu on the method. From this menu select the menu item <em>Override class member</em>. A method element with the same name <em>HelloWorldCommand</em> will appear on the canvas.</p>
+</li>
+<li>
+<p>We are now able to specify different code in the method body of the newly created method: double click on the icon <span class="image"><img src="_images/icons/RingTheBellSlotIcon.png" alt="slot icon"></span> representing the newly inserted method <em>HelloWorldCommand</em>. Inside the code editor, you will see the line <code>// TO DO: Write your code here &#8230;&#8203; </code>. That&#8217;s great, we can add our custom code here which will be executed only once the broser device class variant was called!</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using the code editor, add the following code inside the method body:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">trace "Command on browser device was called";
+
+$if (!$prototyper)
+  native
+  {
+    // Javascript code executed inside the browser
+    console.log("Hello, world");
+  }
+$endif</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We are <a href="https://doc.embedded-wizard.de/integrating-with-the-device#1">executing native code</a> using the  <em><a href="https://doc.embedded-wizard.de/native-statement">native</a></em> statement here.</p>
 </div>
 </div>
 </div>

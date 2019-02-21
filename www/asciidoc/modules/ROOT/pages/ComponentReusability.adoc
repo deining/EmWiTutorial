@@ -120,7 +120,7 @@ That's it! Test the main application in the prototyper (kbd:[Ctrl+F5]), and the 
 If you are asking yourself why we did the refactoring, things are getting clear hopefully as soon as we insert a second instance of the component.
 The GUI allows ringing the bell of your device already. Imagine your device is able to present the weather forecast to you. Maybe your device has a screen display for that purpose, or it has a speaker to read out the forecast loud. Let's extend the GUI with a second push button component for presenting the weather forecast to you:
 
-* In the gallery templates window, left to the main composer window, make sure, the tab _Browser_ at the top of the window is selected.
+* In the gallery templates window, left to the main composer window, make sure that the tab _Browser_ at the top of the window is selected.
 * In the search field immediately below the two tabs, type in _Push_ to shorten the class list.
 * Click on the image:icons/ClassIcon.png[class icon] _Application::PushButtonComponent_ class and drag a second instance of the class over to the root canvas. Rearrange the two push button components so that both of them fit on the screen.
 

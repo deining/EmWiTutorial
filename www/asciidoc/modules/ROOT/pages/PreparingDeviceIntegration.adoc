@@ -47,23 +47,23 @@ Let's go ahead and review and adapt the members of the newly inserted device cla
 
 * Double click on the icon image:icons/DeviceAutoObjectIcon.png[Icon autoobject], representing the _Device_ autoobject. This will open the _Device_ class in a new tab. You will see that the canvas was prepopulated with several class members already.
 * Identify the note group that holds the icon image:icons/CommandMethodIcon.png[Command method icon] representing the _Command_ method and rename the caption of this note group from _Example of an interface to perform an operation in the device_ to _Command(s)_.
-* Rename icon image:icons/CommandMethodIcon.png[Command method icon] representing the _Command_ method to _HelloWorldCommand_.
+* Rename icon image:icons/CommandMethodIcon.png[Command method icon] representing the _Command_ method to _RingTheBellCommand_.
 * Double click on the renamed command. In the code editor window, you will see the method's signature, followed by many lines of template Chora code.
-* Have a look at the method signature of the _HelloWorld_ command.
+* Have a look at the method signature of the _RingTheBell_ command.
 
-Device commands are represented by regular methods. Like in all programming languages, a method can take parameters and can have a return value. Have a look at the signature of the _HelloWorld_ method shown at the top of the code editor:
+Device commands are represented by regular methods. Like in all programming languages, a method can take parameters and can have a return value. Have a look at the signature of the _RingTheBellCommand_ method shown at the top of the code editor:
 
 [source,chora]
 ----
- method int32 Device::DeviceClass.HelloWorldCommand( arg int32 aParameter1, arg bool aParameter2)
+ method int32 Device::DeviceClass.RingTheBellCommand( arg int32 aParameter1, arg bool aParameter2)
 ----
 
-As you can see the method currently takes an int32 value as first argument and a boolean value as second argument. Also, the method returns an int32 value. These settings are not what we want, our simple _HelloWorld_ method does not need any parameters and won't return anything, so the return type should be _void_. Let's go ahead and adjust the method's signature to our needs:
+As you can see the method currently takes an int32 value as first argument and a boolean value as second argument. Also, the method returns an int32 value. These settings are not what we want, our simple _RingTheBellCommand_ method does not need any parameters and won't return anything, so the return type should be _void_. Let's go ahead and adjust the method's signature to our needs:
 
 * In the top title line of the code editor containing the method signature, you can see a small downwards triangle. Click on this triangle to show a frame where the method's return value and parameters are listed in separate lines.
 * Right click on the first method parameter _arg int32 aParameter1_ to invoke the context menu on this parameter. From this menu select the menu item _Delete_ to remove the first parameter.
 * Right click on the remaining method parameter _arg bool aParameter2_. From the context menu shown, select _Delete_ to remove this parameter, too.
-* Right click on the first line that shows the method's name _method int32 HelloworldCommand_. From the context menu shown, select _Edit_ and change the return parameter from _int32_ to _void_.
+* Right click on the first line that shows the method's name _method int32 RingTheBellCommand_. From the context menu shown, select _Edit_ and change the return parameter from _int32_ to _void_.
 
 [[fig:DeleteMethodsParameter]]
 .Delete methods parameters
@@ -92,7 +92,7 @@ Device::Device.RingTheBellCommand();
 
 NOTE: Embedded wizard code editor ships with integrated code completion, which is very handy and might prevent you from typos when authoring code inside the code editor. To test it out, simply write _Device::_ into the editor and should see a list of available completions to the given _Device_ unit name you just typed in.
 
-That's how we call a method by code: specify the class name (_Device::DeviceClass_) first, then append the method name (_HelloWorldCommand_), prepended with a dot.
+That's how we call a method by code: specify the class name (_Device::DeviceClass_) first, then append the method name (_RingTheBellCommand_), prepended with a dot and terminated with empty parentheses.
 Now run your code using the prototyper, and you should see a trace message informing you that the GUI cannot run any device commands. Obviously, we are not at the end, so read on!
 
 == Adding another profile
@@ -120,7 +120,14 @@ The _Profile_ section of your project should now look as shown in <<fig:ProjectP
 .Project profiles and their attributes
 image::deviceintegration/ProjectProfiles.png[Project profiles]
 
-TIP: Now that we that two profiles defined, we can switch between these two profiles using the _Profile_ dropdown menu image:deviceintegration/DropdownProfiles.png[dropdwon profiles] located in the second row of the toolbar, placed right beneath the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode.
+[TIP]
+====
+Now that we have two profiles defined, we can switch between these two profiles using the _Profile_ dropdown list located in the second row of the toolbar, placed right beneath the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode:
+
+[[fig:DropdownList]]
+.Dropdown list for switching between different profiles
+image::deviceintegration/DropdownProfiles.png[dropdownlist profiles] 
+====
 
 == Adding a browser device class variant
 
@@ -132,14 +139,14 @@ We already added an interface device class to our project. However, this interfa
 * In the gallery templates window, left to the main composer window, make sure that the tab _Browser_ at the top of the window is selected.
 * In the search field immediately below the two tabs, type in _Device_ to shorten the class list.
 * Right click on the image:icons/ClassIcon.png[class icon] _Device::DeviceClass_ class to invoke the context menu on this class. From this menu select the menu item _Copy_ to copy the class to the clipboard.
-* Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item _Variant paste_ to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping kbd:[Ctrl+Shift+Alt] pressed. Note the letter _V_ in the icon image:icons/VariantClassIcon.png[variant clas icon] that decorates the newly inserted class which marks the class as a class variant.
+* Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item _Variant paste_ to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping kbd:[Ctrl+Shift+Alt] pressed. Note the letter _V_ in the icon image:icons/VariantClassIcon.png[variant clas icon] of the newly inserted class which marks the class as a class variant.
 * Rename the newly inserted variant class to _DeviceClassBrowser_ using the kbd:[F2] key.
 * In the inspector window, locate the attribute line _VariantCond_. The right hand  _value_ cell of this attribute line helds a small downwards triangle at the right hand side. Click on this triangle to open the dropdown list populated with all profiles of your project. Deselect all profiles except for the profile _Browser_ and click on the lower button labelled with a checkmark to confirm your choice. With this setting in place, the class variant is now associated with the _Browser_ profile only.
 
 Your screen should now look as shown in <<fig:ClassVariant>> below:
 
 [[fig:ClassVariant]]
-.Browser device class variant 
+.Browser device class variant
 image::deviceintegration/DeviceClassBrowser.png[class variant, 1024]
 
 == Implementing a different behaviour for the browser device class variant
@@ -149,10 +156,10 @@ We want to make the newly created class behave differently, so there's still som
 * Double click on the icon image:icons/DeviceClassBrowserIcon.png[Icon device class browser], representing the recently add device class variant. This will open the empty _DeviceClassBrowser_ class variant inside a new tab.
 * From the gallery templates window to the left, drag an element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ over to root canvas. Rename the group to _Command(s)_.
 
-Have a look at the inspector window and you will see the method _HelloWorldCommand_. This is the command we previoulsy added to the _Device_ class. Since the variant class is derived from this class, it has access to all its class members, inclduing the _HelloWorldCommand_. The light grey colour of the method name marks the method as an inherited method. We now want to implement a different behaviour for this command in the variant class, we can do so by overriding the method in the variant class:
+Have a look at the inspector window and you will see the method _RingTheBellCommand_. This is the command we previoulsy added to the _Device_ class. Since the variant class is derived from this class, it has access to all its class members, including the _RingTheBellCommand_. The light grey colour of the method name marks the method as inherited. We now want to implement a different behaviour for this command in the variant class, we can do so by overriding the method in the variant class:
 
-* In the inspector window, right click on the method _HelloWorldCommand_ to invoke the context menu on the method. From this menu select the menu item _Override class member_. A method element with the same name _HelloWorldCommand_ will appear on the canvas. 
-* We are now able to specify different code in the method body of the newly created method: double click on the icon image:icons/RingTheBellSlotIcon.png[slot icon] representing the newly inserted method _HelloWorldCommand_. Inside the code editor, you will see the line ``// TO DO: Write your code here ... ``. That's great, we can add our custom code here which will be executed only once the broser device class variant was called!
+* In the inspector window, right click on the method _RingTheBellCommand_ to invoke the context menu on the method. From this menu select the menu item _Override class member_. A method element with the same name _RingTheBellCommand_ will appear on the canvas. 
+* We are now able to specify different code in the method body of the newly created method: double click on the icon image:icons/RingTheBellSlotIcon.png[slot icon] representing the newly inserted method _RingTheBellCommand_. Inside the code editor, you will see the line ``// TO DO: Write your code here ... ``. That's great, we can add our custom code here which will be executed only once the browser device class variant was called!
 
 Using the code editor, add the following code inside the method body:
 
@@ -164,10 +171,45 @@ $if (!$prototyper)
   native
   {
     // Javascript code executed inside the browser
-    console.log("Hello, world"); 
+    console.log("Hello, world!");
+    console.log("We will be able to ring the bell shortly");
   }
 $endif
 ----
 
-We are https://doc.embedded-wizard.de/integrating-with-the-device#1[executing native code] using the  _https://doc.embedded-wizard.de/native-statement[native]_ statement here.
+Eventually, we are revealing how Embedded Wizard can https://doc.embedded-wizard.de/integrating-with-the-device#1[execute native code] on the device: by making use of the _https://doc.embedded-wizard.de/native-statement[native]_ statement of the Chora language. Any code inside this statement remains untouched and is passed _as is_ to the device. Since we are communicating with browser devices, we have to put JavaScript code inside the _native_ statement. More specifically, we make use of the ``console.log()`` method which outputs arbitrary text to the browser's console.
 
+NOTE: The construct ``$if (!$prototyper) ... $endif`` around the _native_ statement prevents the native code block from being executed once we are using the prototyper for previewing our components or our applications. By adding this statement, we prevent Embedded Wizard from raising a warning that native code will the ignored during prototyping.
+
+== Running the application inside a web browser
+
+Hooray, we are now ready to run the application inside a web browser of your choice! To do, so, we have to build the browser specific code first:
+
+* Switch to the _Browser_ profile using the dropdown list depicted in <<fig:DropdownList>> above.
+* Click on the the icon image:icons/BuildProfileIcon.png[Build profile] for building the application for the selected _Browser_ profile. The generated code will be written into the output directory _WebGL_ on the root appliction level. We specified this output directory when creating the _Browser_ profile.
+* Loate the output directory on your local file system. We contents of this directory should look like as depicted in <<fig:WebGLFolder>>.
+
+[[fig:WebGLFolder]]
+.Contents of WebGL output folder
+image::deviceintegration/OutputFolderWebGL.png[output folder WebGL]
+
+* Double click on the file _TutorialApplication.html_ inside your _WebGL_ output directory. This will open your default web browser with a window that runs your application:
+
+[[fig:ApplicationBrowser]]
+.executing the application inside a web browser
+image::deviceintegration/ApplicationRunBrowser.png[application inside browser]
+
+IMPORTANT: Due to security concerns, the _Chrome_ browser does not allow to load webites locally. We do *not* recommend the use of this browser for local preview of our application since most likely, you are running into trouble.
+
+* Open the Javascript console of your browser. The way how to achieve that depends on your browser:
+** Firefox: From the menu, select menu:Tools[Web developer >  Browser console] or use the keyboard shortcut kbd:[Ctrl+Shift+J]
+** Microsoft Edge: Use the keyboard shortcut kbd:[F12] to open the Developer Tools, then click on the _Console_ tab or press kbd:[Ctrl+2] to invoke that tab.
+* Inside the application in your browser window, click on the push button labelled _Ring_. From your browser console, you should be greeted with _Hello, world!_:
+
+[[fig:BrowserConsole]]
+._Hello, world!_ on the browser console
+image::deviceintegration/BrowserConsole.png[browser console]
+
+== Finalizing device actions
+
+In order to get results quickly, we made use of the ``console.log()`` inside the _RingTheBell_ command. But we certainly can do better here, let's move on and let the bell ring!

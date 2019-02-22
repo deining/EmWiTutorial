@@ -235,26 +235,26 @@
 <p>Identify the note group that holds the icon <span class="image"><img src="_images/icons/CommandMethodIcon.png" alt="Command method icon"></span> representing the <em>Command</em> method and rename the caption of this note group from <em>Example of an interface to perform an operation in the device</em> to <em>Command(s)</em>.</p>
 </li>
 <li>
-<p>Rename icon <span class="image"><img src="_images/icons/CommandMethodIcon.png" alt="Command method icon"></span> representing the <em>Command</em> method to <em>HelloWorldCommand</em>.</p>
+<p>Rename icon <span class="image"><img src="_images/icons/CommandMethodIcon.png" alt="Command method icon"></span> representing the <em>Command</em> method to <em>RingTheBellCommand</em>.</p>
 </li>
 <li>
 <p>Double click on the renamed command. In the code editor window, you will see the method&#8217;s signature, followed by many lines of template Chora code.</p>
 </li>
 <li>
-<p>Have a look at the method signature of the <em>HelloWorld</em> command.</p>
+<p>Have a look at the method signature of the <em>RingTheBell</em> command.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Device commands are represented by regular methods. Like in all programming languages, a method can take parameters and can have a return value. Have a look at the signature of the <em>HelloWorld</em> method shown at the top of the code editor:</p>
+<p>Device commands are represented by regular methods. Like in all programming languages, a method can take parameters and can have a return value. Have a look at the signature of the <em>RingTheBellCommand</em> method shown at the top of the code editor:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora"> method int32 Device::DeviceClass.HelloWorldCommand( arg int32 aParameter1, arg bool aParameter2)</code></pre>
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora"> method int32 Device::DeviceClass.RingTheBellCommand( arg int32 aParameter1, arg bool aParameter2)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>As you can see the method currently takes an int32 value as first argument and a boolean value as second argument. Also, the method returns an int32 value. These settings are not what we want, our simple <em>HelloWorld</em> method does not need any parameters and won&#8217;t return anything, so the return type should be <em>void</em>. Let&#8217;s go ahead and adjust the method&#8217;s signature to our needs:</p>
+<p>As you can see the method currently takes an int32 value as first argument and a boolean value as second argument. Also, the method returns an int32 value. These settings are not what we want, our simple <em>RingTheBellCommand</em> method does not need any parameters and won&#8217;t return anything, so the return type should be <em>void</em>. Let&#8217;s go ahead and adjust the method&#8217;s signature to our needs:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -268,7 +268,7 @@
 <p>Right click on the remaining method parameter <em>arg bool aParameter2</em>. From the context menu shown, select <em>Delete</em> to remove this parameter, too.</p>
 </li>
 <li>
-<p>Right click on the first line that shows the method&#8217;s name <em>method int32 HelloworldCommand</em>. From the context menu shown, select <em>Edit</em> and change the return parameter from <em>int32</em> to <em>void</em>.</p>
+<p>Right click on the first line that shows the method&#8217;s name <em>method int32 RingTheBellCommand</em>. From the context menu shown, select <em>Edit</em> and change the return parameter from <em>int32</em> to <em>void</em>.</p>
 </li>
 </ul>
 </div>
@@ -323,7 +323,7 @@ Embedded wizard code editor ships with integrated code completion, which is very
 </table>
 </div>
 <div class="paragraph">
-<p>That&#8217;s how we call a method by code: specify the class name (<em>Device::DeviceClass</em>) first, then append the method name (<em>HelloWorldCommand</em>), prepended with a dot.
+<p>That&#8217;s how we call a method by code: specify the class name (<em>Device::DeviceClass</em>) first, then append the method name (<em>RingTheBellCommand</em>), prepended with a dot and terminated with empty parentheses.
 Now run your code using the prototyper, and you should see a trace message informing you that the GUI cannot run any device commands. Obviously, we are not at the end, so read on!</p>
 </div>
 </div>
@@ -400,7 +400,15 @@ Besides the Win32 and the WebGL packages there are many platform packages availa
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Now that we that two profiles defined, we can switch between these two profiles using the <em>Profile</em> dropdown menu <span class="image"><img src="_images/deviceintegration/DropdownProfiles.png" alt="dropdwon profiles"></span> located in the second row of the toolbar, placed right beneath the icon <span class="image"><img src="_images/icons/BuildProfileIcon.png" alt="Build profile"></span> for building the selected profile and the icon <span class="image"><img src="_images/icons/BuildBatchIcon.png" alt="Build batch mode"></span> for building multiple profiles in batch mode.
+<div class="paragraph">
+<p>Now that we have two profiles defined, we can switch between these two profiles using the <em>Profile</em> dropdown list located in the second row of the toolbar, placed right beneath the icon <span class="image"><img src="_images/icons/BuildProfileIcon.png" alt="Build profile"></span> for building the selected profile and the icon <span class="image"><img src="_images/icons/BuildBatchIcon.png" alt="Build batch mode"></span> for building multiple profiles in batch mode:</p>
+</div>
+<div id="fig:DropdownList" class="imageblock">
+<div class="content">
+<img src="_images/deviceintegration/DropdownProfiles.png" alt="dropdownlist profiles">
+</div>
+<div class="title">Figure 5. Dropdown list for switching between different profiles</div>
+</div>
 </td>
 </tr>
 </table>
@@ -434,7 +442,7 @@ Now that we that two profiles defined, we can switch between these two profiles 
 <p>Right click on the <span class="image"><img src="_images/icons/ClassIcon.png" alt="class icon"></span> <em>Device::DeviceClass</em> class to invoke the context menu on this class. From this menu select the menu item <em>Copy</em> to copy the class to the clipboard.</p>
 </li>
 <li>
-<p>Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item <em>Variant paste</em> to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd></span> pressed. Note the letter <em>V</em> in the icon <span class="image"><img src="_images/icons/VariantClassIcon.png" alt="variant clas icon"></span> that decorates the newly inserted class which marks the class as a class variant.</p>
+<p>Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item <em>Variant paste</em> to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd></span> pressed. Note the letter <em>V</em> in the icon <span class="image"><img src="_images/icons/VariantClassIcon.png" alt="variant clas icon"></span> of the newly inserted class which marks the class as a class variant.</p>
 </li>
 <li>
 <p>Rename the newly inserted variant class to <em>DeviceClassBrowser</em> using the <kbd>F2</kbd> key.</p>
@@ -445,13 +453,13 @@ Now that we that two profiles defined, we can switch between these two profiles 
 </ul>
 </div>
 <div class="paragraph">
-<p>Your screen should now look as shown in <a href="#fig:ClassVariant">Figure 5</a> below:</p>
+<p>Your screen should now look as shown in <a href="#fig:ClassVariant">Figure 6</a> below:</p>
 </div>
 <div id="fig:ClassVariant" class="imageblock">
 <div class="content">
 <img src="_images/deviceintegration/DeviceClassBrowser.png" alt="class variant" width="1024">
 </div>
-<div class="title">Figure 5. Browser device class variant</div>
+<div class="title">Figure 6. Browser device class variant</div>
 </div>
 </div>
 </div>
@@ -472,15 +480,15 @@ Now that we that two profiles defined, we can switch between these two profiles 
 </ul>
 </div>
 <div class="paragraph">
-<p>Have a look at the inspector window and you will see the method <em>HelloWorldCommand</em>. This is the command we previoulsy added to the <em>Device</em> class. Since the variant class is derived from this class, it has access to all its class members, inclduing the <em>HelloWorldCommand</em>. The light grey colour of the method name marks the method as an inherited method. We now want to implement a different behaviour for this command in the variant class, we can do so by overriding the method in the variant class:</p>
+<p>Have a look at the inspector window and you will see the method <em>RingTheBellCommand</em>. This is the command we previoulsy added to the <em>Device</em> class. Since the variant class is derived from this class, it has access to all its class members, including the <em>RingTheBellCommand</em>. The light grey colour of the method name marks the method as inherited. We now want to implement a different behaviour for this command in the variant class, we can do so by overriding the method in the variant class:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>In the inspector window, right click on the method <em>HelloWorldCommand</em> to invoke the context menu on the method. From this menu select the menu item <em>Override class member</em>. A method element with the same name <em>HelloWorldCommand</em> will appear on the canvas.</p>
+<p>In the inspector window, right click on the method <em>RingTheBellCommand</em> to invoke the context menu on the method. From this menu select the menu item <em>Override class member</em>. A method element with the same name <em>RingTheBellCommand</em> will appear on the canvas.</p>
 </li>
 <li>
-<p>We are now able to specify different code in the method body of the newly created method: double click on the icon <span class="image"><img src="_images/icons/RingTheBellSlotIcon.png" alt="slot icon"></span> representing the newly inserted method <em>HelloWorldCommand</em>. Inside the code editor, you will see the line <code>// TO DO: Write your code here &#8230;&#8203; </code>. That&#8217;s great, we can add our custom code here which will be executed only once the broser device class variant was called!</p>
+<p>We are now able to specify different code in the method body of the newly created method: double click on the icon <span class="image"><img src="_images/icons/RingTheBellSlotIcon.png" alt="slot icon"></span> representing the newly inserted method <em>RingTheBellCommand</em>. Inside the code editor, you will see the line <code>// TO DO: Write your code here &#8230;&#8203; </code>. That&#8217;s great, we can add our custom code here which will be executed only once the browser device class variant was called!</p>
 </li>
 </ul>
 </div>
@@ -495,13 +503,112 @@ $if (!$prototyper)
   native
   {
     // Javascript code executed inside the browser
-    console.log("Hello, world");
+    console.log("Hello, world!");
+    console.log("We will be able to ring the bell shortly");
   }
 $endif</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We are <a href="https://doc.embedded-wizard.de/integrating-with-the-device#1">executing native code</a> using the  <em><a href="https://doc.embedded-wizard.de/native-statement">native</a></em> statement here.</p>
+<p>Eventually, we are revealing how Embedded Wizard can <a href="https://doc.embedded-wizard.de/integrating-with-the-device#1">execute native code</a> on the device: by making use of the <em><a href="https://doc.embedded-wizard.de/native-statement">native</a></em> statement of the Chora language. Any code inside this statement remains untouched and is passed <em>as is</em> to the device. Since we are communicating with browser devices, we have to put JavaScript code inside the <em>native</em> statement. More specifically, we make use of the <code>console.log()</code> method which outputs arbitrary text to the browser&#8217;s console.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The construct <code>$if (!$prototyper) &#8230;&#8203; $endif</code> around the <em>native</em> statement prevents the native code block from being executed once we are using the prototyper for previewing our components or our applications. By adding this statement, we prevent Embedded Wizard from raising a warning that native code will the ignored during prototyping.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_the_application_inside_a_web_browser"><a class="anchor" href="#_running_the_application_inside_a_web_browser"></a>Running the application inside a web browser</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hooray, we are now ready to run the application inside a web browser of your choice! To do, so, we have to build the browser specific code first:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Switch to the <em>Browser</em> profile using the dropdown list depicted in <a href="#fig:DropdownList">Figure 5</a> above.</p>
+</li>
+<li>
+<p>Click on the the icon <span class="image"><img src="_images/icons/BuildProfileIcon.png" alt="Build profile"></span> for building the application for the selected <em>Browser</em> profile. The generated code will be written into the output directory <em>WebGL</em> on the root appliction level. We specified this output directory when creating the <em>Browser</em> profile.</p>
+</li>
+<li>
+<p>Loate the output directory on your local file system. We contents of this directory should look like as depicted in <a href="#fig:WebGLFolder">Figure 7</a>.</p>
+</li>
+</ul>
+</div>
+<div id="fig:WebGLFolder" class="imageblock">
+<div class="content">
+<img src="_images/deviceintegration/OutputFolderWebGL.png" alt="output folder WebGL">
+</div>
+<div class="title">Figure 7. Contents of WebGL output folder</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Double click on the file <em>TutorialApplication.html</em> inside your <em>WebGL</em> output directory. This will open your default web browser with a window that runs your application:</p>
+</li>
+</ul>
+</div>
+<div id="fig:ApplicationBrowser" class="imageblock">
+<div class="content">
+<img src="_images/deviceintegration/ApplicationRunBrowser.png" alt="application inside browser">
+</div>
+<div class="title">Figure 8. executing the application inside a web browser</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Due to security concerns, the <em>Chrome</em> browser does not allow to load webites locally. We do <strong>not</strong> recommend the use of this browser for local preview of our application since most likely, you are running into trouble.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open the Javascript console of your browser. The way how to achieve that depends on your browser:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Firefox: From the menu, select <span class="menuseq"><b class="menu">Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Web developer</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Browser console</b></span> or use the keyboard shortcut <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd></span></p>
+</li>
+<li>
+<p>Microsoft Edge: Use the keyboard shortcut <kbd>F12</kbd> to open the Developer Tools, then click on the <em>Console</em> tab or press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>2</kbd></span> to invoke that tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Inside the application in your browser window, click on the push button labelled <em>Ring</em>. From your browser console, you should be greeted with <em>Hello, world!</em>:</p>
+</li>
+</ul>
+</div>
+<div id="fig:BrowserConsole" class="imageblock">
+<div class="content">
+<img src="_images/deviceintegration/BrowserConsole.png" alt="browser console">
+</div>
+<div class="title">Figure 9. <em>Hello, world!</em> on the browser console</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_finalizing_device_actions"><a class="anchor" href="#_finalizing_device_actions"></a>Finalizing device actions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to get results quickly, we made use of the <code>console.log()</code> inside the <em>RingTheBell</em> command. But we certainly can do better here, let&#8217;s move on and let the bell ring!</p>
 </div>
 </div>
 </div>

@@ -13,7 +13,7 @@ For every language, its a good practice to start by printing out _Hello World!_.
 
 * In the template, select the item btn:[Empty project].
 * Specify _EmWiTutorial_ as project name.
-* Select the _Location_ as project name.
+* For the _Location_ of your project, specify a folder of your choice on your local file system.
 
 . Once project name and location are set, press the button btn:[Create new project] to bring up the new project.
 

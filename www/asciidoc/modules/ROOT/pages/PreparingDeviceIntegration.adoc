@@ -41,7 +41,7 @@ Your screen should now look like illustrated in <<fig:DeviceClassInterface>> bel
 
 [[fig:DeviceClassInterface]]
 .Device class interface
-image::DeviceIntegration/DeviceClassInterface.png[device class interface]
+image::deviceintegration/DeviceClassInterface.png[device class interface]
 
 Let's go ahead and review and adapt the members of the newly inserted device class interface:
 

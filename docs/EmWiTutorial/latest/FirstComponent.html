@@ -124,20 +124,20 @@
     <li class="crumb"><a href="FirstComponent.html">Adding your first GUI component</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/FirstComponent.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/Alina/Documents/EmWiTutorial/www/asciidoc/modules/ROOT/pages/FirstComponent.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Adding your first GUI component</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the <a href="HelloWorld.html" class="page">last chapter</a>, we successfully built the <em>Hello world</em> application. In order to show the text, we placed a text view element directly on the root canvas. While this is a valid approach, it is highly recommended to build reusable components and use this components when assembling your application. This approach has two main benefits:</p>
+<p>In the <a href="HelloWorld.html" class="page">last chapter</a>, we successfully built the <em>Hello world</em> application. In order to show the text, we placed a text view element directly on the root canvas. While this is a valid approach, it is highly recommended to build reusable components and use these components when assembling your application. This approach has two main benefits:</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Testing</dt>
 <dd>
-<p>Using the built in protoyper, you can test the components in isolation. There is a much higher chance the application works as expected once you assemble it from already tested (sub-)components.</p>
+<p>Using the built-in protoyper, you can test the components in isolation. There is a much higher chance the application works as expected once you assemble it from already tested (sub-)components.</p>
 </dd>
 <dt class="hdlist1">Reusability</dt>
 <dd>
@@ -146,7 +146,7 @@
 </dl>
 </div>
 <div class="paragraph">
-<p>So let&#8217;s start and built our first GUI component: it&#8217;s a simple graphical unit with a border, a header text, a push button, and a background. Once the button is pressed, some action will occur.</p>
+<p>So let&#8217;s start and build our first GUI component: it&#8217;s a simple graphical unit with a border, a header text, a push button, and a background. Once the button is pressed, some action will occur.</p>
 </div>
 </div>
 </div>
@@ -168,7 +168,7 @@
 <p>Identify the item <span class="image"><img src="_images/icons/ComponentIcon.png" alt="component icon"></span> <em>Component</em>, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing <em>Application</em> root component.</p>
 </li>
 <li>
-<p>We want to use the new component to ring a bell, so we give it dedicated name: with the component still seleted, press <kbd>F2</kbd> to rename the component. In the <a href="https://doc.embedded-wizard.de/inspector-window" target="_blank" rel="noopener">inspector window</a>, type in <em>BellComponent</em> and press <kbd>Enter</kbd> once you are done.</p>
+<p>We want to use the new component to ring a bell, so we give it a dedicated name: with the component still seleted, press <kbd>F2</kbd> to rename the component. In the <a href="https://doc.embedded-wizard.de/inspector-window" target="_blank" rel="noopener">inspector window</a>, type in <em>BellComponent</em> and press <kbd>Enter</kbd> once you are done.</p>
 </li>
 </ul>
 </div>
@@ -263,9 +263,6 @@
 <li>
 <p>If needed, adjust the color of the background to the value _#FFFFFFFF (white, opaque).</p>
 </li>
-<li>
-<p>If all went fine, you will see a tiny white text element labelled <em>Text</em> in the middle of the canvas.</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -309,7 +306,7 @@
 <p>Using the dropdown element, alter the <em>Color</em> property of the text element to the value <em>#000000FF</em> (black, opaque).</p>
 </li>
 <li>
-<p>In order to change the display text, alter the <em>String</em> property of the text element to the value <em>"Hello, world!"</em>.</p>
+<p>In order to change the display text, alter the <em>String</em> property of the text element to the value <em>"Bell"</em>.</p>
 </li>
 <li>
 <p>Since we do have text overflow in the element now, alter the <em>AutoSize</em> property of the text element to the value <em>true</em>.</p>
@@ -366,7 +363,7 @@
 </dd>
 <dt class="hdlist1">Signal based communication between objects</dt>
 <dd>
-<p>In order to invoke a slot method, a signal has to be send to the method. Once the slot method receives the signal the code in the body of the slot method is executed. Since a slot method does not take parameters, signal-based process communication can happen between all kinds of objects, the sender does not have to know about the identify of the receiver object. However, the identify of the sender is passed onto the slot method in the hidden parameter <em>sender</em> which can be used inside the body of the slot method.</p>
+<p>In order to invoke a slot method, a signal has to be send to the method. Once the slot method receives the signal the code in the body of the slot method is executed. Since a slot method does not take parameters, signal-based process communication can happen between all kinds of objects, the sender does not have to know about the identity of the receiver object. However, the identity of the sender is passed onto the slot method in the hidden parameter <em>sender</em> which can be used inside the body of the slot method.</p>
 </dd>
 <dt class="hdlist1">Inheritance</dt>
 <dd>
@@ -375,7 +372,7 @@
 </dl>
 </div>
 <div class="paragraph">
-<p>So let&#8217;s start and built our first slot method to bring life to our push button:</p>
+<p>So let&#8217;s start and build our first slot method to bring life to our push button:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -530,13 +527,13 @@ Let&#8217;s move on and integrate the component into the root component, that&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Since want to place the component in the <em>Application</em> unit, click on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab. Inside the composer window, you should now see the <em>Application</em> root component and the <em>Bell component</em>, developed from you.</p>
+<p>Since want to place the component in the <em>Application</em> unit, click on the tab labelled <em>Application</em>. If this tab is not present yet, click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab and double click on the <em>Application</em> unit to invoke the tab. Inside the composer window, you should now see the <em>Application</em> root component and the <em>Bell component</em>, developed by you.</p>
 </li>
 <li>
 <p>Rename the root application class to <em>TutorialApplication</em> using the <kbd>F2</kbd> key.</p>
 </li>
 <li>
-<p>Double click on the root application class that you just renamed. The root application class will be opened, showing an the <em>Hello world!</em> text we added in the last chapter.</p>
+<p>Double click on the root application class that you just renamed. The root application class will be opened, showing the <em>Hello world!</em> text we added in the last chapter.</p>
 </li>
 <li>
 <p>Using the inspector window, change the <em>Hello world!</em> text to <em>Tutorial application</em>.</p>
@@ -603,7 +600,7 @@ When you want to restack an element several levels up or down, select the elemen
 <p>In the gallery templates window, left to the main composer window, make sure that the tab <em>Browser</em> at the top of the window is selected.</p>
 </li>
 <li>
-<p>The browser&#8217;s list of classes present is quite long, so we have to narrow down the displayed classes: in the search field immediately below the two tabs, type in <em>Bell</em>. While typing have a look at the list and you will notice that the list is getting shorter and shorter. Once you typed in <em>Bell</em>, the only class left is the component newly created from you.</p>
+<p>The browser&#8217;s list of classes present is quite long, so we have to narrow down the displayed classes: in the search field immediately below the two tabs, type in <em>Bell</em>. While typing have a look at the list and you will notice that the list is getting shorter and shorter. Once you typed in <em>Bell</em>, the only class left is the component newly created by you.</p>
 </li>
 <li>
 <p>Click on the <span class="image"><img src="_images/icons/ClassIcon.png" alt="class icon"></span> <em>Application::BellComponent</em> class and drag an instance of the class over to the root canvas. Place the component below the header text.</p>

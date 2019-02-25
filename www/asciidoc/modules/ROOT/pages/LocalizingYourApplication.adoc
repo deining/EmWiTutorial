@@ -1,0 +1,4 @@
+= Localizing your application
+Andreas Deininger andreas@deininger.net
+
+To be authored

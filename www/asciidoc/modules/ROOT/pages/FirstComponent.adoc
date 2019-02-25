@@ -4,7 +4,7 @@ Andreas Deininger andreas@deininger.net
 In the xref::HelloWorld.adoc[last chapter], we successfully built the _Hello world_ application. In order to show the text, we placed a text view element directly on the root canvas. While this is a valid approach, it is highly recommended to build reusable components and use these components when assembling your application. This approach has two main benefits:
 
 Testing:: Using the built-in protoyper, you can test the components in isolation. There is a much higher chance the application works as expected once you assemble it from already tested (sub-)components.
-Reusability:: When using components, it's much easier to folllow the DRY principle (**d**on't **r**epeat **y**ourself). You only write a component once and may use it in several places.
+Reusability:: When using components, it's much easier to follow the DRY principle (**d**on't **r**epeat **y**ourself). You only write a component once and may use it in several places.
 
 So let's start and build our first GUI component: it's a simple graphical unit with a border, a header text, a push button, and a background. Once the button is pressed, some action will occur. 
 
@@ -15,7 +15,7 @@ So let's start and build our first GUI component: it's a simple graphical unit w
 * In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window, make sure that the tab _Templates_ at the top of the window is selected.
 * In the main area of the templates window, click on the item _Component templates_, which will then open and show all available GUI templates.
 * Identify the item image:icons/ComponentIcon.png[component icon] _Component_, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing _Application_ root component.
-* We want to use the new component to ring a bell, so we give it a dedicated name: with the component still seleted, press kbd:[F2] to rename the component. In the https://doc.embedded-wizard.de/inspector-window[inspector window^], type in _BellComponent_ and press kbd:[Enter] once you are done.
+* We want to use the new component to ring a bell, so we give it a dedicated name: with the component still selected, press kbd:[F2] to rename the component. In the https://doc.embedded-wizard.de/inspector-window[inspector window^], type in _BellComponent_ and press kbd:[Enter] once you are done.
 
 .Inserting an empty GUI component
 image::firstcomponent/InsertingComponent.png[Inserting GUI component]
@@ -36,7 +36,7 @@ Next, we have to fill the empty component:
 * Also, click on the note element that contains a lot of text. Press the kbd:[Delete] key to delete this element, too.
 * Our component should have a size of 200 × 150 px, so we have to adjust this: click on the property _Bounds_ (adorned by a green diamond) to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
 * Inside the attributes and properties area, we can adapt the default bounds values to our needs:
-** Click on the blck triangle left to the _Default_ element. Multiple lines will show up which hold the values for the origin (_x_, _y_) and the size of the element (_**w**idth_, _**h**eight).
+** Click on the black triangle left to the _Default_ element. Multiple lines will show up which hold the values for the origin (_x_, _y_) and the size of the element (_**w**idth_, _**h**eight).
 ** Alter the _w_ instance property of the component to the value _200_ to set the default width of the component to 200{nbsp}px.
 ** Alter the _h_ instance property of the component to the value _150_ to set the default height of the component to 150{nbsp}px.
 ** In order to adapt the size of the component on the screen, click on the _Reload_ icon image:icons/ReloadIcon.png[Reload icon] in the second row of the toolbar or press kbd:[F7] to reload the class. The blue border of the element will shrink to the new size then.
@@ -76,6 +76,9 @@ Eventually, we add the core element, a push button that will be used to ring the
 * Press kbd:[F2] to rename the component. In the inspector window, type in _PushButtonBell_ and press kbd:[Enter] once you are done.
 * Now customize the appearance of the push button. You may do so by setting the property _Appearance_ in the inspector window to _WidgetSet::PushButtonSmall_ and by setting the property _Label_ to _Ring_.
 * You should now see a push button labelled _Ring_ in the lower area of the canvas.
+* In the search field at the very top of the inspector window, type in _Focus_ to look up the property _Focus_ of your component. By writing the string _null_ into the value input field, set the _Default_ value of this property explicitly to _null_ (). An icon image:icons/FocusPropertyIcon.png[focus property icon] _Focus_ will appear at the top left corner of the composer window, representing the overridden property. Move this icon to the bottom.
+
+NOTE: By setting the _Focus_ to null, we prevent our component from obtaining the focus. Obtaining the focus changes the component's appearance, which is undesired in our case.
 
 We are finished now with adding elements to our component, and the component should pretty much like shown in <<fig:BellComponent>> below:
 
@@ -87,7 +90,7 @@ image::firstcomponent/BellComponentFinal.png[Bell component]
 
 So far, we successfully added elements the _Bell_ component. the only interactive element is the push button, so let's bring life to this component! To do so, we have to add some logic to the component, more specifically some signal handler logic. Embedded Wizard heavily relies on so called https://doc.embedded-wizard.de/slot-method-member[slot methods^] when implementing communication between two objects. Slot methods show the following characteristics:
 
-Code based implementation:: Every slot method has a method body containing the logic that will be performed once the slot method was called. The programming language used when authoring code inside the methody body is _Chora:_, a relatively unknown, platform independent language which syntax closely resembles C.
+Code based implementation:: Every slot method has a method body containing the logic that will be performed once the slot method was called. The programming language used when authoring code inside the method's body is _Chora_:, a relatively unknown, platform independent language which syntax closely resembles C.
 Signal based communication between objects:: In order to invoke a slot method, a signal has to be send to the method. Once the slot method receives the signal the code in the body of the slot method is executed. Since a slot method does not take parameters, signal-based process communication can happen between all kinds of objects, the sender does not have to know about the identity of the receiver object. However, the identity of the sender is passed onto the slot method in the hidden parameter _sender_ which can be used inside the body of the slot method.
 Inheritance:: Slot methods are members of class objects. If a class is derived from another class, it inherits all slot methods from this class. As any inherited members, these slot methods can be overridden if needed. You also may call the inherited version ot the slot method by making use of the pseudo method _super()_.
 
@@ -196,7 +199,7 @@ Let's test it out:
 The application will start up. You will notice that the screen size is larger than the root element we put on it. Let's fix this:
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left) and click on the _Profile_ item, located inside the note group _Profile configuration_.
-* Using the inspector window, change the property _ScreenSize_ to _<48,320>_.
+* Using the inspector window, change the property _ScreenSize_ to _<480,320>_.
 
 .Adapting the screen size
 image::firstcomponent/AdaptingScreenSize.png[Screen size]

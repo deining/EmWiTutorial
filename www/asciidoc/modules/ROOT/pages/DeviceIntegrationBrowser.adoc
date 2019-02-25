@@ -131,7 +131,7 @@ image::deviceintegration/DropdownProfiles.png[dropdownlist profiles]
 
 == Adding a browser device class variant
 
-We already added an interface device class to our project. However, this interface device class is not meant to run any command on the device. The actual execution of the command on the device will happen inside a https://doc.embedded-wizard.de/class-variant-member[class variant]. https://doc.embedded-wizard.de/managing-project-variants[Variants] are an extremly powerful concept of Embedded wizard, in the example below we use it to manage code execution on different platform packages. Variants are useful in various other scenarios, you may use them to manage variants of your application for different screen resolutions or if you want to implement a different look and feel for one or more application components. Let's go ahead and add and populate a class variant for the use with browser devices:
+We already added an interface device class to our project. However, this interface device class is not meant to run any command on the device. The actual execution of the command on the device will happen inside a https://doc.embedded-wizard.de/class-variant-member[class variant]. https://doc.embedded-wizard.de/managing-project-variants[Variants] are an extremely powerful concept of Embedded wizard, in the example below we use it to manage code execution on different platform packages. Variants are useful in various other scenarios, you may use them to manage variants of your application for different screen resolutions or if you want to implement a different look and feel for one or more application components. Let's go ahead and add and populate a class variant for the use with browser devices:
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
 * Identify the note frame with the caption _Middleware_ which holds three device units, the _Device_ unit, the _BrowserDevice_ unit and the _TargetDevice_ unit.
@@ -139,9 +139,9 @@ We already added an interface device class to our project. However, this interfa
 * In the gallery templates window, left to the main composer window, make sure that the tab _Browser_ at the top of the window is selected.
 * In the search field immediately below the two tabs, type in _Device_ to shorten the class list.
 * Right click on the image:icons/ClassIcon.png[class icon] _Device::DeviceClass_ class to invoke the context menu on this class. From this menu select the menu item _Copy_ to copy the class to the clipboard.
-* Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item _Variant paste_ to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping kbd:[Ctrl+Shift+Alt] pressed. Note the letter _V_ in the icon image:icons/VariantClassIcon.png[variant clas icon] of the newly inserted class which marks the class as a class variant.
+* Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item _Variant paste_ to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping kbd:[Ctrl+Shift+Alt] pressed. Note the letter _V_ in the icon image:icons/VariantClassIcon.png[variant class icon] of the newly inserted class which marks the class as a class variant.
 * Rename the newly inserted variant class to _DeviceClassBrowser_ using the kbd:[F2] key.
-* In the inspector window, locate the attribute line _VariantCond_. The right hand  _value_ cell of this attribute line helds a small downwards triangle at the right hand side. Click on this triangle to open the dropdown list populated with all profiles of your project. Deselect all profiles except for the profile _Browser_ and click on the lower button labelled with a checkmark to confirm your choice. With this setting in place, the class variant is now associated with the _Browser_ profile only.
+* In the inspector window, locate the attribute line _VariantCond_. The right hand _value_ cell of this attribute line holds a small downwards triangle at the right hand side. Click on this triangle to open the dropdown list populated with all profiles of your project. Deselect all profiles except for the profile _Browser_ and click on the lower button labelled with a check mark to confirm your choice. With this setting in place, the class variant is now associated with the _Browser_ profile only.
 
 Your screen should now look as shown in <<fig:ClassVariant>> below:
 
@@ -149,17 +149,17 @@ Your screen should now look as shown in <<fig:ClassVariant>> below:
 .Browser device class variant
 image::deviceintegration/DeviceClassBrowser.png[class variant, 1024]
 
-== Implementing a different behaviour for the browser device class variant
+== Implementing a different behavior for the browser device class variant
 
 We want to make the newly created class behave differently, so there's still some work to do:
 
 * Double click on the icon image:icons/DeviceClassBrowserIcon.png[Icon device class browser], representing the recently add device class variant. This will open the empty _DeviceClassBrowser_ class variant inside a new tab.
 * From the gallery templates window to the left, drag an element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ over to root canvas. Rename the group to _Command(s)_.
 
-Have a look at the inspector window and you will see the method _RingTheBellCommand_. This is the command we previoulsy added to the _Device_ class. Since the variant class is derived from this class, it has access to all its class members, including the _RingTheBellCommand_. The light grey colour of the method name marks the method as inherited. We now want to implement a different behaviour for this command in the variant class, we can do so by overriding the method in the variant class:
+Have a look at the inspector window and you will see the method _RingTheBellCommand_. This is the command we previously added to the _Device_ class. Since the variant class is derived from this class, it has access to all its class members, including the _RingTheBellCommand_. The light grey colour of the method name marks the method as inherited. We now want to implement a different behavior for this command in the variant class, we can do so by overriding the method in the variant class:
 
 * In the inspector window, right click on the method _RingTheBellCommand_ to invoke the context menu on the method. From this menu select the menu item _Override class member_. A method element with the same name _RingTheBellCommand_ will appear on the canvas. 
-* We are now able to specify different code in the method body of the newly created method: double click on the icon image:icons/RingTheBellSlotIcon.png[slot icon] representing the newly inserted method _RingTheBellCommand_. Inside the code editor, you will see the line ``// TO DO: Write your code here ... ``. That's great, we can add our custom code here which will be executed only once the browser device class variant was called!
+* We are now able to specify different code in the method body of the newly created method: double click on the icon image:icons/RingTheBellCommandIcon.png[command method icon] representing the newly inserted method _RingTheBellCommand_. Inside the code editor, you will see the line ``// TO DO: Write your code here ... ``. That's great, we can add our custom code here which will be executed only once the browser device class variant was called!
 
 Using the code editor, add the following code inside the method body:
 
@@ -181,13 +181,19 @@ Eventually, we are revealing how Embedded Wizard can https://doc.embedded-wizard
 
 NOTE: The construct ``$if (!$prototyper) ... $endif`` around the _native_ statement prevents the native code block from being executed once we are using the prototyper for previewing our components or our applications. By adding this statement, we prevent Embedded Wizard from raising a warning that native code will the ignored during prototyping.
 
+The _BrowserDevice_ class variant should now look like as depicted in <<fig:BrowserDeviceBellCommand>> below:
+
+[[fig:BrowserDeviceBellCommand]]
+.Browser device class variant with command added
+image::deviceintegration/DeviceClassBrowserCommand.png[browser device class variant]
+
 == Running the application inside a web browser
 
 Hooray, we are now ready to run the application inside a web browser of your choice! To do, so, we have to build the browser specific code first:
 
 * Switch to the _Browser_ profile using the dropdown list depicted in <<fig:DropdownList>> above.
-* Click on the the icon image:icons/BuildProfileIcon.png[Build profile] for building the application for the selected _Browser_ profile. The generated code will be written into the output directory _WebGL_ on the root appliction level. We specified this output directory when creating the _Browser_ profile.
-* Loate the output directory on your local file system. We contents of this directory should look like as depicted in <<fig:WebGLFolder>>.
+* Click on the the icon image:icons/BuildProfileIcon.png[Build profile] for building the application for the selected _Browser_ profile. The generated code will be written into the output directory _WebGL_ on the root application level. We specified this output directory when creating the _Browser_ profile.
+* Locate the output directory on your local file system. We contents of this directory should look like as depicted in <<fig:WebGLFolder>>.
 
 [[fig:WebGLFolder]]
 .Contents of WebGL output folder
@@ -199,10 +205,10 @@ image::deviceintegration/OutputFolderWebGL.png[output folder WebGL]
 .executing the application inside a web browser
 image::deviceintegration/ApplicationRunBrowser.png[application inside browser]
 
-IMPORTANT: Due to security concerns, the _Chrome_ browser does not allow to load webites locally. We do *not* recommend the use of this browser for local preview of our application since most likely, you are running into trouble.
+IMPORTANT: Due to security concerns, the _Chrome_ browser does not allow to load websites locally. We do *not* recommend the use of this browser for local preview of our application since most likely, you are running into trouble.
 
 * Open the Javascript console of your browser. The way how to achieve that depends on your browser:
-** Firefox: From the menu, select menu:Tools[Web developer >  Browser console] or use the keyboard shortcut kbd:[Ctrl+Shift+J]
+** Firefox: From the menu, select menu:Tools[Web developer > Browser console] or use the keyboard shortcut kbd:[Ctrl+Shift+J]
 ** Microsoft Edge: Use the keyboard shortcut kbd:[F12] to open the Developer Tools, then click on the _Console_ tab or press kbd:[Ctrl+2] to invoke that tab.
 * Inside the application in your browser window, click on the push button labelled _Ring_. From your browser console, you should be greeted with _Hello, world!_:
 
@@ -212,4 +218,95 @@ image::deviceintegration/BrowserConsole.png[browser console]
 
 == Finalizing device actions
 
+=== Make the device beep eventually
+
 In order to get results quickly, we made use of the ``console.log()`` inside the _RingTheBell_ command. But we certainly can do better here, let's move on and let the bell ring!
+
+* In the body of method _RingTheBellCommand_, remove the two lines with console.log statements and replace them with a single code line with a mere function call ``beep();``. The code in the method body should now read:
+
+[source,chora]
+----
+trace "Ring the bell command on browser device was called";
+
+$if (!$prototyper)
+  native
+  {
+    // Javascript code executed inside the browser
+    beep();
+  }
+$endif
+----
+
+The function _beep()_ does not exist yet, so let's create it. We intentionally move this function out to the unit _BrowserDevice_ in order to operate with small, separated code units.
+
+* Select or open the tab with the unit _BrowserDevice_, the unit currently holds the variant class _DeviceClassBrowser_ only.
+* Click on the _Templates_ windows to the left or invoke it by using the keyboard shortcut kbd:[Alt+1]. Press key kbd:[c] to open the folder _Chora_ and show its elements.
+* Identify the item image:icons/InlineCodeIcon.png[inline code icon] _Inline code_, representing a native code snippet. Click on the element, drag it into the main area and place it underneath the existing _DeviceClassBrowser_ element.
+* Rename the newly inserted _inline code_ element to _InlineFunctions_ using the kbd:[F2] key.
+
+The _BrowserDevice_ unit should now look like as depicted in <<fig:BrowserDevice>> below:
+
+[[fig:BrowserDevice]]
+.Browser device unit
+image::deviceintegration/UnitBrowserDevice.png[browser device unit]
+
+* Double click on the icon image:icons/InlineFunctionsIcon.png[inline functions icon] representing the inline code element. Inside the code editor, you will see a single code line ``// TO DO: Write your code here ... ``. 
+* Using the code editor, insert the function _beep()_ inside the body of the inline element:
+[source,chora]
+----
+// reuse context since browsers limit the number of concurrent audio contexts
+var audioContext = new AudioContext();
+
+function beep() {
+  var oscillatorNode = audioContext.createOscillator();
+  var gainNode = audioContext.createGain();
+  oscillatorNode.connect(gainNode);
+  oscillatorNode.frequency.value = 500;
+  oscillatorNode.type = "square";
+  gainNode.connect(audioContext.destination);
+  gainNode.gain.value = 1.5;
+  oscillatorNode.start(audioContext.currentTime);
+  oscillatorNode.stop(audioContext.currentTime + 0.2);
+}
+----
+
+Test that your device makes _beep_ eventually:
+
+* Make sure the profile _Browser_ is selected and rebuild your project using the kbd:[F8] key.
+* Go to your web browser and issue a page refresh the browser page displaying your application using the kbd:[F5] key.
+* Click on the push-button labelled _Ring_ and your PC should beep eventually, provided, it has a speaker built in.
+
+=== Presenting the weather forecast on the browser device
+
+We are almost at the end of this long chapter! One task is left, however: we have to teach the browser device to display the weather forecast. That's pretty easy, though:
+
+* Select or open the tab with the variant class _DeviceClassBrowser_, this class currently holds the command method _RingTheBellCommand_ only.
+* In the inspector window, right click on the method _ShowForecastCommand_ to invoke the context menu on the method. From this menu select the menu item _Override class member_. A method element with the same name _ShowForecastCommand_ will appear on the canvas. Rearrange elements so that the layout looks nice again if needed.
+
+The final _BrowserDevice_ class variant should now look like as depicted in <<fig:BrowserDeviceBellCommands>> below:
+
+[[fig:BrowserDeviceBellCommands]]
+.Browser device class variant with two commands added
+image::deviceintegration/DeviceClassBrowserCommands.png[browser device class variant]
+
+* We are now able to specify different code in the method body of the newly created method: double click on the icon image:icons/ShowForecastCommandIcon.png[forecast command icon] representing the newly inserted method _ShowForecastCommand_. Inside the code editor, you will see the line ``// TO DO: Write your code here ... ``. Again now we can add our custom code here which will be executed only once the browser device class variant was called.
+
+Using the code editor, add the following code inside the method body:
+
+[source,chora]
+----
+trace "Show forecast command on browser device was called";
+
+$if (!$prototyper)
+  native
+  {
+    // Javascript: redirect to weather forecast page
+    window.open('https://www.cnn.com/weather', '_self');
+  }
+$endif
+----
+
+We are done! To test the newly added weather forecast functionality, rebuild the project and reload the application page in your web browser.
+You should now be able to both make your device beep and to view the weather forecast inside your browser. Pretty cool, isn't it?
+
+Let's move on to the xref::LocalizingYourApplication.adoc[next chapter], there's still much more to explore!

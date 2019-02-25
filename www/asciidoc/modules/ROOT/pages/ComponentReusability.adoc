@@ -1,27 +1,27 @@
 = Making your component truly reusable
 Andreas Deininger andreas@deininger.net
 
-In the xref::FirstComponent.adoc[last chapter], we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let's think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two ore more instances of the bell component on the root canvas, but it's unlikley that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform _different_ actions, however. With the components in its current form, implementing this is not possible right now. So let's extend the component and make it truly reusable in the next chapter!
+In the xref::FirstComponent.adoc[last chapter], we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let's think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two ore more instances of the bell component on the root canvas, but it's unlikely that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform _different_ actions, however. With the components in its current form, implementing this is not possible right now. So let's extend the component and make it truly reusable in the next chapter!
 
 == Extending your component with properties
 
 Let's have a look at our component first:
 
 * Open the the _Application_ unit by clicking on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab.
-* We want to refactor the _BellComponent_ in order to facilitate reuse of the component. This should be reflected in the name of the compoment, so go ahead and rename the component to _PushButtonCompunent_ using the kbd:[F2] key.
-* Double click on the renamed _PushButtonCompunent_ element. Its contents will be show in a new tab titled with the class name _Application::PushButtonComponent_.
+* We want to refactor the _BellComponent_ in order to facilitate reuse of the component. This should be reflected in the name of the component, so go ahead and rename the component to _PushButtonComponent_ using the kbd:[F2] key.
+* Double click on the renamed _PushButtonComponent_ element. Its contents will be show in a new tab titled with the class name _Application::PushButtonComponent_.
 
-Let us reflect on the current design of the component a bit: currently there are three items hardcoded, which severely limits the reusability of this component:
+Let us reflect on the current design of the component a bit: currently there are three items hard-coded, which severely limits the reusability of this component:
 
-* the text shown in the header text view (hardcoded value: _Bell_),
-* the text of the label on the push button (hardcoded value: _Ring_) and
-* the slot method attached to the property _OnActivate_ of the push button (hardcoded value: _RingTheBellSlot_).
+* the text shown in the header text view (hard-coded value: _Bell_),
+* the text of the label on the push button (hard/coded value: _Ring_) and
+* the slot method attached to the property _OnActivate_ of the push button (hard-coded value: _RingTheBellSlot_).
 
 In order to allow reuse, we have to extend the component so that the three items listed above can be stored inside the component. That's what https://doc.embedded-wizard.de/property-member[properties^] are made for. If you do have a Java or C# background, you already should be familiar with the concept of properties:
 
 * Properties are a kind of variable where data of an arbitrary Chora https://doc.embedded-wizard.de/data-types[data type^] can be stored (e.g. string, int, slot, ...). For each property, you have to specify the data type it can held (including its default value).
 * A property represent a more sophisticated variable in that sense that a property does have _OnSet_ and _OnGet_ methods that are used to get and set the value of the property. Normally, these methods contain boilerplate code that set or gets the internal memory of the property. You are encouraged to add your custom code to these method(s) to tailor them to your needs. We will do some shortly, so hold on!
-* You are allowed to attach slot methods as observer to any property we implement. As soon as the value of the property changes, the slot method (={nbsp}observer) gets notified about the change. This is a core feature of Chora that allows the development of apllications following the https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller[MVC^] pattern. We may talk about this later on.
+* You are allowed to attach slot methods as observer to any property we implement. As soon as the value of the property changes, the slot method (={nbsp}observer) gets notified about the change. This is a core feature of Chora that allows the development of applications following the https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller[MVC^] pattern. We may talk about this later on.
 * Properties cannot only store arbitrary data type, they can also store references to any data type. Properties that store references are so called https://doc.embedded-wizard.de/implementing-component-interface#4[outlet properties^]. This is an advanced concept, we may talk about that later on.
 
 That's the theory behind property in short. Let's get our feet wet and add some properties to our component:

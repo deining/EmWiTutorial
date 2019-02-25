@@ -12,6 +12,9 @@ class PushButtonComponent : Core::Group
   $rect <-2,166,198,206>
   inherited property Bounds = <0,0,200,150>;
 
+  $rect <-2,214,170,250>
+  inherited property Focus = null;
+
   // White background of the bell component.
   // This element has to stay in the background, therefore it must be its ordered \
   // below the other elements.
@@ -46,6 +49,7 @@ class PushButtonComponent : Core::Group
   object WidgetSet::PushButton PushButton
   {
     preset Bounds = <23,76,173,126>;
+    preset Focus = null;
     preset OnActivate = PushTheButtonSlot;
     preset Label = "Action";
     preset Appearance = WidgetSet::PushButton_Small;

@@ -32,10 +32,10 @@ class TutorialApplication : Core::Root
   $rect <20,20,160,60>
   object Application::PushButtonComponent BellComponent
   {
-    preset Bounds = <30,122,230,272>;
+    preset Bounds = <23,122,233,272>;
     preset ActionButton = RingTheBellSlot;
-    preset LabelButton = "Ring";
-    preset TextHeader = "Bell";
+    preset LabelButton = Strings::LabelPushButtonBell;
+    preset TextHeader = Strings::HeadingBell;
   }
 
   // Header text for the tutorial application.
@@ -43,7 +43,8 @@ class TutorialApplication : Core::Root
   object Views::Text Header
   {
     preset Bounds = <0,32,480,72>;
-    preset String = "Tutorial application";
+    preset AutoSize = true;
+    preset String = Strings::HeaderTutorialApplication;
     preset Font = Resources::FontExtraLarge;
     preset Color = #000000FF;
   }
@@ -64,10 +65,10 @@ class TutorialApplication : Core::Root
   $rect <20,20,160,60>
   object Application::PushButtonComponent WeatherComponent
   {
-    preset Bounds = <254,122,454,272>;
+    preset Bounds = <247,122,457,272>;
     preset ActionButton = ForeCastSlot;
-    preset LabelButton = "Show";
-    preset TextHeader = "Forecast";
+    preset LabelButton = Strings::LabelPushButtonForecast;
+    preset TextHeader = Strings::HeadingForecast;
   }
 
   $rect <520,88,720,128>

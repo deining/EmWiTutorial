@@ -9,15 +9,19 @@ This project aims at providing a tutorial for novice users to get them started q
 
 While building a sample application step by step, the tutorial covers the following topics:
 
-* Basic steps when building a GUI application
-* Developing and prototyping reusable graphical components
-* Device integration
-* Localization of your application
+* [Basic steps when building a GUI application](https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html)
+* [Developing and prototyping reusable graphical components](https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/ComponentReusability.html)
+* [Device integration](https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/DeviceIntegrationBrowser.html)
+* [Localization of your application](https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/LocalizingYourApplication.html)
 * Persistent data storage on the target device
 
 ## For readers of the tutorial
 
 The tutorial is hosted on [GitHub pages](https://deining.github.io/EmWiTutorial/), enjoy the tutorial!
+
+If you have any comments or suggestion for improvement concerning this tutorial, feel free to open an [issue](https://github.com/deining/EmWiTutorial/issues). 
+
+For general question unrelated to this tutorial, you may make use of the [question and answer site](https://ask.embedded-wizard.de) for Embedded Wizard users and UI developers.
 
 ## Structure of the repository
 

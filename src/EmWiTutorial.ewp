@@ -50,7 +50,8 @@ unit Templates
 }
 
 // The 'default' Language. Each project has to contain at least one language brick \
-// called 'Default'
+// called 'Default'.
+// The default language of the tutorial application is English.
 $rect <540,70,740,110>
 language Default;
 
@@ -144,6 +145,16 @@ profile Browser : Tara.WebGL.RGBA8888
 
 $rect <336,444,536,484>
 unit TargetDevice
+{
+  attr Directory = .\;
+}
+
+// The 'German' language.
+$rect <540,119,740,159>
+language German;
+
+$rect <513,244,713,284>
+unit Strings
 {
   attr Directory = .\;
 }

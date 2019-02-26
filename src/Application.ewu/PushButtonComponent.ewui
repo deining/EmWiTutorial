@@ -10,7 +10,7 @@ class PushButtonComponent : Core::Group
   // The property 'Bounds' defines the position and the size of bell component view.
   // The view is 200 px wide and 150 px high, its origin is <0, 0>.
   $rect <-2,166,198,206>
-  inherited property Bounds = <0,0,200,150>;
+  inherited property Bounds = <0,0,210,150>;
 
   $rect <-2,214,170,250>
   inherited property Focus = null;
@@ -28,14 +28,14 @@ class PushButtonComponent : Core::Group
   $rect <20,20,160,60>
   object Views::Rectangle Background
   {
-    preset Bounds = <0,0,200,150>;
+    preset Bounds = <0,0,210,150>;
   }
 
   // Border of the bell component.
   $rect <20,20,160,60>
   object Views::Border Border
   {
-    preset Bounds = <0,0,200,150>;
+    preset Bounds = <0,0,210,150>;
     preset Width = 1;
     preset Color = #000000FF;
   }
@@ -48,7 +48,7 @@ class PushButtonComponent : Core::Group
   $rect <20,20,160,60>
   object WidgetSet::PushButton PushButton
   {
-    preset Bounds = <23,76,173,126>;
+    preset Bounds = <29,76,179,126>;
     preset Focus = null;
     preset OnActivate = PushTheButtonSlot;
     preset Label = "Action";
@@ -60,7 +60,8 @@ class PushButtonComponent : Core::Group
   $rect <20,20,160,60>
   object Views::Text Heading
   {
-    preset Bounds = <0,13,200,53>;
+    preset Bounds = <51,15,162,51>;
+    preset AutoSize = true;
     preset String = "Heading";
     preset Font = Resources::FontLarge;
     preset Color = #010101FF;

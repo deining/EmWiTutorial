@@ -7,7 +7,7 @@ vclass DeviceClassBrowser : Device::DeviceClass
   $rect <20,39,240,80>
   inherited method RingTheBellCommand()
   {
-    trace "Command \"ring the bell\" on browser device was called";
+    trace "Ring the bell command on browser device was called";
 
     $if (!$prototyper)
       native
@@ -20,7 +20,7 @@ vclass DeviceClassBrowser : Device::DeviceClass
   $rect <17,87,237,127>
   inherited method ShowForecastCommand()
   {
-    trace "Command \"show forecast\" on browser device was called";
+    trace "Show forecast command on browser device was called";
 
     $if (!$prototyper)
       native

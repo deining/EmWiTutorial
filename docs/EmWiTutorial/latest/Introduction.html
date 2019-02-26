@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Localizing your application :: Embedded Wizard Tutorial</title>
+    <title>Embedded Wizard Tutorial :: Embedded Wizard Tutorial</title>
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -76,7 +76,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="Introduction.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -95,7 +95,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="DeviceIntegrationBrowser.html">Integrating with browser device</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="LocalizingYourApplication.html">Localizing your application</a>
   </li>
 </ul>
@@ -130,16 +130,112 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="HelloWorld.html">Embedded Wizard Tutorial</a></li>
-    <li class="crumb">Authoring your first application</li>
-    <li class="crumb"><a href="LocalizingYourApplication.html">Localizing your application</a></li>
+    <li class="crumb"><a href="Introduction.html">Introduction</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/Win10 Home x64/Documents/Embedded Wizard Projects/EmWiTutorial/www/asciidoc/modules/ROOT/pages/LocalizingYourApplication.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/Win10 Home x64/Documents/Embedded Wizard Projects/EmWiTutorial/www/asciidoc/modules/ROOT/pages/Introduction.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
-<h1>Localizing your application</h1>
+<h1>Embedded Wizard Tutorial</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>To be authored</p>
+<p>Author:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_about_embedded_wizard"><a class="anchor" href="#_about_embedded_wizard"></a>About Embedded Wizard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.embedded-wizard.de/" target="_blank" rel="noopener">Embedded Wizard</a> is a graphical user interface tool developed and distributed by <a href="https://www.tara-systems.de/">TARA Systems GmbH</a> for creating graphical user interface (GUI) applications mainly for embedded systems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_motivation_for_this_tutorial"><a class="anchor" href="#_motivation_for_this_tutorial"></a>Motivation for this tutorial</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_target_audience_prior_knowledge"><a class="anchor" href="#_target_audience_prior_knowledge"></a>Target audience, prior knowledge</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main audience for the book are professional developers that want to &#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scope_of_the_tutorial"><a class="anchor" href="#_scope_of_the_tutorial"></a>Scope of the tutorial</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This project aims at providing a tutorial for potential users of Embedded Wizard to get them started quickly.</p>
+</div>
+<div class="paragraph">
+<p>While building a sample application step by step, the tutorial covers the following topics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html">Basic steps when building a GUI application</a></p>
+</li>
+<li>
+<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/ComponentReusability.html">Developing and prototyping reusable graphical components</a></p>
+</li>
+<li>
+<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/DeviceIntegrationBrowser.html">Device integration</a></p>
+</li>
+<li>
+<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/LocalizingYourApplication.html">Localization of your application</a></p>
+</li>
+<li>
+<p>Persistent data storage on the target device</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sample_application"><a class="anchor" href="#_sample_application"></a>Sample application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the course of this tutorial, we are going to develop a small GUI application for execution inside a web browser. A screenshot of a browser window running the application is shown in <a href="#fig:TutorialApp">Figure 1</a> below:</p>
+</div>
+<div id="fig:TutorialApp" class="imageblock">
+<div class="content">
+<img src="_images/introduction/TutorialApplication.png" alt="tutorial application">
+</div>
+<div class="title">Figure 1. Tutorial application inside a web browser window</div>
+</div>
+<div class="paragraph">
+<p>The tutorial application comprises two components, titled <em>Bell</em> and <em>Weather report</em>. When pressing the push-button of the <em>bell</em> component, a beep will sound. When pressing the push-button of the <em>weather report</em> component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either <em>English</em> or German as language of the user interface. The chosen language setting will be stored inside the local storage of your web browser and will be remembered when on the next startup, even when exit and restart your browser.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Download and install <a href="https://www.embedded-wizard.de/download/">Embedded Wizard Free Edition</a>, version 9.10. The free version has all features of the Professional version, is is restricted to small projects however. Luckily, the free version allows to developing and run the tutorial application without limitation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_feedback_and_questions"><a class="anchor" href="#_feedback_and_questions"></a>Feedback and questions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have any suggestion for improvement or comment concerning this tutorial, feel free to open an <a href="https://github.com/deining/EmWiTutorial/issues">issue</a> in the github repository associated with this tutorial.</p>
+</div>
+<div class="paragraph">
+<p>For general question unrelated to this tutorial, you may make use of the <a href="https://ask.embedded-wizard.de">question and answer site</a> for Embedded Wizard users and UI developers.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s get started with a simple <a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html">Hello, world</a> example!</p>
+</div>
+</div>
 </div>
 </article>
   </main>

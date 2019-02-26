@@ -19,7 +19,7 @@ While building a sample application step by step, the tutorial covers the follow
 
 The tutorial is hosted on [GitHub pages](https://deining.github.io/EmWiTutorial/), enjoy the tutorial!
 
-If you have any comments or suggestion for improvement concerning this tutorial, feel free to open an [issue](https://github.com/deining/EmWiTutorial/issues). 
+If you have any suggestion for improvement or comment concerning this tutorial, feel free to open an [issue](https://github.com/deining/EmWiTutorial/issues). 
 
 For general question unrelated to this tutorial, you may make use of the [question and answer site](https://ask.embedded-wizard.de) for Embedded Wizard users and UI developers.
 

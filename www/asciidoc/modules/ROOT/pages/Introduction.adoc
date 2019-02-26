@@ -1,0 +1,50 @@
+= Embedded Wizard Tutorial
+Andreas Deininger andreas@deininger.net
+
+Author: 
+
+== About Embedded Wizard
+
+https://www.embedded-wizard.de/[Embedded Wizard^] is a graphical user interface tool developed and distributed by https://www.tara-systems.de/[TARA Systems GmbH] for creating graphical user interface (GUI) applications mainly for embedded systems.
+
+== Motivation for this tutorial
+
+TODO
+
+== Target audience, prior knowledge
+
+The main audience for the book are professional developers that want to ...
+
+== Scope of the tutorial
+
+This project aims at providing a tutorial for potential users of Embedded Wizard to get them started quickly.
+
+While building a sample application step by step, the tutorial covers the following topics:
+
+* https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html[Basic steps when building a GUI application]
+* https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/ComponentReusability.html[Developing and prototyping reusable graphical components]
+* https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/DeviceIntegrationBrowser.html[Device integration]
+* https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/LocalizingYourApplication.html[Localization of your application]
+* Persistent data storage on the target device
+
+== Sample application
+
+In the course of this tutorial, we are going to develop a small GUI application for execution inside a web browser. A screenshot of a browser window running the application is shown in <<fig:TutorialApp>> below:
+ 
+[[fig:TutorialApp]]
+.Tutorial application inside a web browser window
+image::introduction/TutorialApplication.png[tutorial application]
+
+The tutorial application comprises two components, titled _Bell_ and _Weather report_. When pressing the push-button of the _bell_ component, a beep will sound. When pressing the push-button of the _weather report_ component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either _English_ or German as language of the user interface. The chosen language setting will be stored inside the local storage of your web browser and will be remembered when on the next startup, even when exit and restart your browser.
+
+== Prerequisites
+
+Download and install https://www.embedded-wizard.de/download/[Embedded Wizard Free Edition], version 9.10. The free version has all features of the Professional version, is is restricted to small projects however. Luckily, the free version allows to developing and run the tutorial application without limitation.
+
+== Feedback and questions
+
+If you have any suggestion for improvement or comment concerning this tutorial, feel free to open an https://github.com/deining/EmWiTutorial/issues[issue] in the github repository associated with this tutorial. 
+
+For general question unrelated to this tutorial, you may make use of the https://ask.embedded-wizard.de[question and answer site] for Embedded Wizard users and UI developers.
+
+Let's get started with a simple https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html[Hello, world] example!

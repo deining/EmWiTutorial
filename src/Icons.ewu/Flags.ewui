@@ -1,0 +1,7 @@
+$version 6.60
+
+// Flags
+note group Flags
+{
+  attr Bounds = <10,0,470,120>;
+}

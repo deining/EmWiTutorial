@@ -2,3 +2,7 @@ $version 6.60
 
 $include TutorialApplication
 $include PushButtonComponent
+$include PushButtonFlag
+$include LanguageSelector
+$include LanguageSwitching
+$include Application

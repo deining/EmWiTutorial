@@ -4,7 +4,7 @@ $version 6.60
 // The class representing the root component is named 'TutorialApplication' and is \
 // located inside the unit 'Application'. Therefore the class name is Application::TutorialApplication.
 // Please note that the class is derived from the class Core::Root.
-$rect <20,20,230,59>
+$rect <23,57,233,97>
 $output false
 class TutorialApplication : Core::Root
 {
@@ -32,7 +32,7 @@ class TutorialApplication : Core::Root
   $rect <20,20,160,60>
   object Application::PushButtonComponent BellComponent
   {
-    preset Bounds = <23,122,233,272>;
+    preset Bounds = <23,146,233,296>;
     preset ActionButton = RingTheBellSlot;
     preset LabelButton = Strings::LabelPushButtonBell;
     preset TextHeader = Strings::HeadingBell;
@@ -42,7 +42,7 @@ class TutorialApplication : Core::Root
   $rect <20,20,160,60>
   object Views::Text Header
   {
-    preset Bounds = <0,32,480,72>;
+    preset Bounds = <47,58,433,112>;
     preset AutoSize = true;
     preset String = Strings::HeaderTutorialApplication;
     preset Font = Resources::FontExtraLarge;
@@ -65,7 +65,7 @@ class TutorialApplication : Core::Root
   $rect <20,20,160,60>
   object Application::PushButtonComponent WeatherComponent
   {
-    preset Bounds = <247,122,457,272>;
+    preset Bounds = <247,146,457,296>;
     preset ActionButton = ForeCastSlot;
     preset LabelButton = Strings::LabelPushButtonForecast;
     preset TextHeader = Strings::HeadingForecast;
@@ -75,5 +75,32 @@ class TutorialApplication : Core::Root
   slot ForeCastSlot
   {
     Device::Device.ShowForecastCommand();
+  }
+
+  $rect <20,20,160,60>
+  object Application::LanguageSelector LanguageSelector
+  {
+    preset Bounds = <367,13,467,46>;
+  }
+
+  $rect <770,40,970,80>
+  method void ReInit()
+  {
+    // Application title
+    Header.String = Strings::HeaderTutorialApplication;
+
+    // Bell component
+    BellComponent.TextHeader = Strings::HeadingBell;
+    BellComponent.LabelButton = Strings::LabelPushButtonBell;
+
+    // Weather component
+    WeatherComponent.TextHeader = Strings::HeadingForecast;
+    WeatherComponent.LabelButton = Strings::LabelPushButtonForecast;
+  }
+
+  // Language switching
+  note group Note1
+  {
+    attr Bounds = <752,0,985,100>;
   }
 }

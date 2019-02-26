@@ -1,0 +1,7 @@
+$version 6.60
+
+// Language selector
+note group LanguageSwitching
+{
+  attr Bounds = <275,10,525,170>;
+}

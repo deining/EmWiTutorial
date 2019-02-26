@@ -1,0 +1,286 @@
+$version 6.60
+
+// This class implements a 'push button' widget. When the user presses the button, \
+// a signal is sent to the slot method stored in its @OnActivate property.
+$rect <295,55,505,95>
+$output false
+class PushButtonFlag : Templates::PushButton
+{
+  $rect <480,354,680,394>
+  inherited property Bounds = <0,0,46,33>;
+
+  $rect <710,234,910,274>
+  inherited method UpdateViewState()
+  {
+    // Always invoke the inherited method.
+    super( aState );
+
+    // Determine the new state of the push button.
+    //
+    // isEnabled  --> the button can react to user inputs.
+    // isSelected --> the button can receive keyboard events.
+    // isPressed  --> the button should appear pressed.
+    //
+    var bool isEnabled  = aState.contains( Core::ViewState[ Enabled  ]);
+    var bool isSelected = aState.contains( Core::ViewState[ Selected ]);
+    var bool isPressed  = ( TouchHandler.Down && TouchHandler.Inside ) || 
+                            FlashTimer.Enabled;
+
+    // Remember the current state. Next time when the UpdateViewState() is called
+    // you can compare the 'old' state with the 'new' state and perform more
+    // sophisticated update, e.g. you can start an animation effect for the
+    // pressed <<-->> not pressed transition.
+    enabled  = isEnabled;
+    selected = isSelected;
+    pressed  = isPressed;
+  }
+
+  // State management
+  note group Note4
+  {
+    attr Bounds = <700,194,920,404>;
+  }
+
+  // Feedback flash effect
+  note group Note3
+  {
+    attr Bounds = <470,194,690,324>;
+  }
+
+  // Keyboard events
+  note group Note2
+  {
+    attr Bounds = <240,194,460,324>;
+  }
+
+  // Touch screen events
+  note group Note1
+  {
+    attr Bounds = <10,194,230,364>;
+  }
+
+  // This variable stores the current state of the button.
+  $rect <710,354,910,394>
+  var bool pressed;
+
+  // This variable stores the current state of the button.
+  $rect <710,314,910,354>
+  var bool selected;
+
+  // This variable stores the current state of the button.
+  $rect <710,274,910,314>
+  var bool enabled;
+
+  // This timer object is used to flash the button when the user has tapped it very \
+  // quickly or the button has been activated with the keyboard. This is just a visual \
+  // feedback effect.
+  $rect <480,234,680,274>
+  object Core::Timer FlashTimer
+  {
+    preset OnTrigger = onFlashTimer;
+    preset Period = 0;
+    preset Begin = 50;
+  }
+
+  // This key handler reacts to key press events. When the user presses the key specified \
+  // in the property 'Filter' of the key handler, the handler is activated and the \
+  // method '@onPressKey' is called.
+  $rect <250,234,450,274>
+  object Core::KeyPressHandler KeyHandler
+  {
+    preset OnPress = onPressKey;
+    preset Filter = Core::KeyCode.Enter;
+  }
+
+  // This internal slot method is called when the '@FlashTimer' is expired. It ends \
+  // the short flash feedback effect.
+  $rect <480,274,680,314>
+  slot onFlashTimer
+  {
+    // The feedback flash timer is finished. Request the button to update its
+    // appearance. The update will occur in the UpdateViewState() method.
+    InvalidateViewState();
+
+    // With the end of the feedback flash effect the button is activated.
+    postsignal OnActivate;
+  }
+
+  // This internal slot method is called when the '@KeyHandler' is activated (when \
+  // the user has pressed the key specified in the property 'Filter' of the key handler).
+  $rect <250,274,450,314>
+  slot onPressKey
+  {
+    // Ignore keyboard events when the user is interacting with the button via the
+    // touch screen.
+    if ( TouchHandler.Down )
+      return;
+
+    // Ignore repetitions of key events (e.g. when the user holds the key pressed)
+    if ( KeyHandler.Repetition )
+      return;
+
+    // Pressing the key flashes the button for a short period. This is a kind of 
+    // feedback effect. Request the button to update its appearance accordingly.
+    // The update will occur in the UpdateViewState() method.
+    InvalidateViewState();
+
+    // The button is still performing the feedback flash effect from the preceding
+    // tap/key event. This can occur when the user taps the button or presses the
+    // key in a very rapid succession. Thus complete this preceding tap (simulate
+    // the timer expiration) before starting a new button interaction.
+    if ( FlashTimer.Enabled )
+    {
+      postsignal OnActivate;
+      FlashTimer.Enabled = false;
+    }
+
+    // Start the feedback flash effect.
+    FlashTimer.Enabled = true;
+  }
+
+  // This internal slot method is called when the user drags the finger while pressing \
+  // the button. This only updates the button to appear pressed or released.
+  $rect <20,314,220,354>
+  slot onEnterLeaveTouch
+  {
+    // Every time the user touches the button or drags the finger inside/outside
+    // the button's area request the button update its appearance. The update will
+    // occur in the UpdateViewState() method.
+    InvalidateViewState();
+  }
+
+  // This internal slot method is called when the user releases the touch screen \
+  // after touching the button's area. This activates the button.
+  $rect <20,274,220,314>
+  slot onReleaseTouch
+  {
+    // Did the user moved the finger outside the button's area? In such case
+    // the button is not activated.
+    if ( !TouchHandler.Inside )
+      return;
+
+    // The user interaction has been passed over to the another touch handler
+    if ( TouchHandler.AutoDeflected )
+      return;
+
+    // The user has pressed and held the button for longer time. This was enough
+    // long to give a visual 'press' feedback to the user. The button can be
+    // activated immediately.
+    if ( TouchHandler.HoldPeriod >= FlashTimer.Begin )
+      postsignal OnActivate;
+
+    // The user has tapped the button very quickly. Defer the button activation
+    // to give the user first a short visual feedback that the button has been
+    // pressed.
+    else
+      FlashTimer.Enabled = true;
+  }
+
+  // This internal slot method is called when the user touches the button's area.
+  $rect <20,234,220,274>
+  slot onPressTouch
+  {
+    // The button is still performing the feedback flash effect from the preceding
+    // tap. This can occur when the user taps the button in a very rapid succession. 
+    // Thus complete this preceding tap (simulate the timer expiration) before 
+    // starting a new button interaction.
+    if ( FlashTimer.Enabled )
+    {
+      postsignal OnActivate;
+      FlashTimer.Enabled = false;
+    }
+  }
+
+  // The property 'OnActivate' can refer to a slot method, which will receive a signal \
+  // as soon as the user has activated the button. Thereupon the method's logic will \
+  // be executed.
+  $rect <250,39,450,79>
+  property slot OnActivate = switchLanguage;
+
+  $rect <20,20,160,60>
+  object Views::Image Flag
+  {
+    preset Bounds = <0,0,46,33>;
+    preset Bitmap = Icons::FlagUK;
+  }
+
+  $rect <20,20,160,60>
+  object Core::SimpleTouchHandler TouchHandler
+  {
+    preset Layout = Core::Layout[AlignToBottom, AlignToLeft, AlignToRight, AlignToTop, ResizeHorz, ResizeVert];
+    preset Point4 = <0,33>;
+    preset Point3 = <46,33>;
+    preset Point2 = <46,0>;
+    preset Point1 = <0,0>;
+    preset OnLeave = onEnterLeaveTouch;
+    preset OnEnter = onEnterLeaveTouch;
+    preset OnRelease = onReleaseTouch;
+    preset OnPress = onPressTouch;
+    preset RetargetCondition = Core::RetargetReason[WipeDown, WipeLeft, WipeRight, WipeUp];
+    preset MaxStrikeCount = 100;
+  }
+
+  $rect <485,44,685,84>
+  property Resources::Bitmap BitmapFlag = Icons::FlagUK;
+
+  $rect <485,84,685,124>
+  onset BitmapFlag
+  {
+    // The value doesn't change - nothing to do.
+    if ( pure BitmapFlag == value )
+      return;
+
+    // Remember the property's new value.
+    pure BitmapFlag = value;
+
+    Flag.Bitmap = value;
+  }
+
+  $rect <485,124,685,164>
+  onget BitmapFlag
+  {
+    return pure BitmapFlag;
+  }
+
+  $rect <719,45,919,85>
+  property language Language = Default;
+
+  $rect <719,85,919,125>
+  onset Language
+  {
+    // The value doesn't change - nothing to do.
+    if ( pure Language == value )
+      return;
+
+    // Remember the property's new value.
+    pure Language = value;
+
+    // TO DO:
+    // 
+    // Now you can handle the alternation of the property.
+  }
+
+  $rect <719,125,919,165>
+  onget Language
+  {
+    return pure Language;
+  }
+
+  $rect <247,87,447,127>
+  slot switchLanguage
+  {
+    language = Language;
+  }
+
+  // OnActivate
+  note group Activate
+  {
+    attr Bounds = <230,0,460,140>;
+  }
+
+  // User defined properties
+  note group Properties
+  {
+    attr Bounds = <470,0,930,180>;
+  }
+}

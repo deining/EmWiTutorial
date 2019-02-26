@@ -3,7 +3,7 @@ $version 6.60
 // The bell component will be used when assembling the application.
 // The class representing the bell component is named 'BellComponent' and is located \
 // inside the unit 'Application'. Therefore the class name is Application::BellComponent.
-$rect <20,71,230,110>
+$rect <23,108,233,148>
 $output false
 class PushButtonComponent : Core::Group
 {

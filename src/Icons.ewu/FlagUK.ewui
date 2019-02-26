@@ -1,0 +1,11 @@
+$version 6.60
+
+$rect <30,56,230,96>
+$output false
+resource Resources::Bitmap FlagUK
+{
+  attr bitmapfile FileName = .\Flags\uk.png;
+  attr alphafile AlphaName;
+  attr framesize FrameSize;
+  attr framedelay FrameDelay;
+}

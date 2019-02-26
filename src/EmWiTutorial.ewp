@@ -83,7 +83,7 @@ note group Languages
 // GUI Project
 note group GUIProject
 {
-  attr Bounds = <270,199,760,296>;
+  attr Bounds = <270,199,760,350>;
 }
 
 // This is a profile member for the project. This profile controls the code generation \
@@ -105,7 +105,7 @@ profile Win32 : Tara.Win32.RGBA8888
 }
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <290,356,490,396>
+$rect <290,410,490,450>
 unit Device
 {
   attr Directory = .\;
@@ -114,11 +114,11 @@ unit Device
 // Middleware
 note group Middleware
 {
-  attr Bounds = <270,306,760,500>;
+  attr Bounds = <270,360,760,554>;
 }
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <335,400,535,440>
+$rect <335,454,535,494>
 unit BrowserDevice
 {
   attr Directory = .\;
@@ -143,7 +143,7 @@ profile Browser : Tara.WebGL.RGBA8888
   macro Author = "Dipl. Ing. Paul Banach and Dipl. Ing. Manfred Schweyer, Copyright (C) TARA Systems GmbH";
 }
 
-$rect <336,444,536,484>
+$rect <336,498,536,538>
 unit TargetDevice
 {
   attr Directory = .\;
@@ -155,6 +155,12 @@ language German;
 
 $rect <513,244,713,284>
 unit Strings
+{
+  attr Directory = .\;
+}
+
+$rect <513,292,713,332>
+unit Icons
 {
   attr Directory = .\;
 }

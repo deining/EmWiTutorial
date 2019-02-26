@@ -1,0 +1,23 @@
+$version 6.60
+
+$rect <295,109,505,149>
+$output false
+class LanguageSelector : Core::Group
+{
+  $rect <0,50,200,90>
+  inherited property Bounds = <0,0,100,33>;
+
+  $rect <20,20,160,60>
+  object Application::PushButtonFlag FlagUK
+  {
+    preset Bounds = <0,0,46,33>;
+  }
+
+  $rect <20,20,160,60>
+  object Application::PushButtonFlag FlagGermany
+  {
+    preset Bounds = <54,0,100,33>;
+    preset BitmapFlag = Icons::FlagGerman;
+    preset Language = German;
+  }
+}

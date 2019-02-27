@@ -9,7 +9,11 @@ https://www.embedded-wizard.de/[Embedded Wizard^] is a graphical user interface 
 
 == Motivation for this tutorial
 
-TODO
+At work, we used Embedded Wizard GUI builder intensively in a development project. While the Embedded Wizard software proved to be an extremely powerful tool, getting started with this tool was quite challenging for me:
+
+* Embedded Wizard strictly follows and implements an object oriented programming approach. These concepts may not be immediately obvious to a novice user however, who may be overwhelmed by terminology of properties, outlets, and so on.
+* Device integration will an essential part of every real world project, this is where many newbies are often struggling. The situation is worsened by the fact that Embedded Wizards supports dozens of target devices, each one being different, which makes it hard to provide universal instructions here.
+* Excellent Documentation with many small samples, not connected, so it remains a challenge to get a big picture how to design your application properly.
 
 == Target audience, prior knowledge
 

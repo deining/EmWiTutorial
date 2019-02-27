@@ -5,3 +5,4 @@
 ** xref:ComponentReusability.adoc[Making your GUI component truly reusable]
 ** xref:DeviceIntegrationBrowser.adoc[Integrating with browser device]
 ** xref:LocalizingYourApplication.adoc[Localizing your application]
+* xref:DownloadCode.adoc[Download source code]

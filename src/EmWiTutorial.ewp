@@ -1,49 +1,49 @@
 $version 6.60
 
 // This unit is a part of the Embedded Wizard class library 'Mosaic20'.
-$rect <40,70,240,110>
+$rect <40,197,240,237>
 unit Core
 {
   attr Directory = $Mosaic;
 }
 
 // This unit is a part of the Embedded Wizard class library 'Mosaic20'.
-$rect <40,110,240,150>
+$rect <40,237,240,277>
 unit Resources
 {
   attr Directory = $Mosaic;
 }
 
 // This unit is a part of the Embedded Wizard class library 'Mosaic20'.
-$rect <40,150,240,190>
+$rect <40,277,240,317>
 unit Graphics
 {
   attr Directory = $Mosaic;
 }
 
 // This unit is a part of the Embedded Wizard class library 'Mosaic20'.
-$rect <40,190,240,230>
+$rect <40,317,240,357>
 unit Effects
 {
   attr Directory = $Mosaic;
 }
 
 // This unit is a part of the Embedded Wizard class library 'Mosaic20'.
-$rect <40,230,240,270>
+$rect <40,357,240,397>
 unit Views
 {
   attr Directory = $Mosaic;
 }
 
 // This unit is a part of the Embedded Wizard class library 'Mosaic20'.
-$rect <40,270,240,310>
+$rect <40,397,240,437>
 unit WidgetSet
 {
   attr Directory = $Mosaic\;
 }
 
 // This unit is a part of the Embedded Wizard class library 'Mosaic20'.
-$rect <40,310,240,350>
+$rect <40,437,240,477>
 unit Templates
 {
   attr Directory = $Mosaic\;
@@ -52,11 +52,11 @@ unit Templates
 // The 'default' Language. Each project has to contain at least one language brick \
 // called 'Default'.
 // The default language of the tutorial application is English.
-$rect <540,70,740,110>
+$rect <540,197,740,237>
 language Default;
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <290,245,490,285>
+$rect <290,372,490,412>
 unit Application
 {
   attr Directory = .\;
@@ -65,30 +65,30 @@ unit Application
 // Mosaic Framework
 note group MosaicFramework
 {
-  attr Bounds = <20,20,260,370>;
+  attr Bounds = <20,147,260,497>;
 }
 
 // Profile Configuration
 note group ProfileConfiguration
 {
-  attr Bounds = <270,20,510,190>;
+  attr Bounds = <270,147,510,317>;
 }
 
 // Languages
 note group Languages
 {
-  attr Bounds = <520,20,760,190>;
+  attr Bounds = <520,147,760,317>;
 }
 
 // GUI Project
 note group GUIProject
 {
-  attr Bounds = <270,199,760,350>;
+  attr Bounds = <270,326,760,477>;
 }
 
 // This is a profile member for the project. This profile controls the code generation \
 // for the target system.
-$rect <290,70,490,110>
+$rect <290,197,490,237>
 profile Win32 : Tara.Win32.RGBA8888
 {
   attr Verbose = false;
@@ -105,7 +105,7 @@ profile Win32 : Tara.Win32.RGBA8888
 }
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <290,410,490,450>
+$rect <290,537,490,577>
 unit Device
 {
   attr Directory = .\;
@@ -114,11 +114,11 @@ unit Device
 // Middleware
 note group Middleware
 {
-  attr Bounds = <270,360,760,554>;
+  attr Bounds = <270,487,760,681>;
 }
 
 // This unit is intended to contain the application class and other GUI components.
-$rect <335,454,535,494>
+$rect <335,581,535,621>
 unit BrowserDevice
 {
   attr Directory = .\;
@@ -126,7 +126,7 @@ unit BrowserDevice
 
 // This is a profile member for the project. This profile controls the code generation \
 // for the target system.
-$rect <290,116,490,156>
+$rect <290,243,490,283>
 profile Browser : Tara.WebGL.RGBA8888
 {
   attr Verbose = false;
@@ -143,24 +143,34 @@ profile Browser : Tara.WebGL.RGBA8888
   macro Author = "Dipl. Ing. Paul Banach and Dipl. Ing. Manfred Schweyer, Copyright (C) TARA Systems GmbH";
 }
 
-$rect <336,498,536,538>
+$rect <336,625,536,665>
 unit TargetDevice
 {
   attr Directory = .\;
 }
 
 // The 'German' language.
-$rect <540,119,740,159>
+$rect <540,246,740,286>
 language German;
 
-$rect <513,244,713,284>
+$rect <513,371,713,411>
 unit Strings
 {
   attr Directory = .\;
 }
 
-$rect <513,292,713,332>
+$rect <513,419,713,459>
 unit Icons
 {
   attr Directory = .\;
+}
+
+// Embedded Wizard Tutorial Application
+// Author: Andreas Deininger <andreas@deininger.net>
+// 
+// Tutorial site: https://deining.github.io/EmWiTutorial/
+// Project on GitHub: https://github.com/deining/EmWiTutorial
+note group Note6
+{
+  attr Bounds = <20,0,760,135>;
 }

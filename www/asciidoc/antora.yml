@@ -1,6 +1,6 @@
 name: EmWiTutorial
 title: Embedded Wizard Tutorial
 version: latest
-start_page: ROOT:HelloWorld.adoc
+start_page: ROOT:Introduction.adoc
 nav:
 - modules/ROOT/nav.adoc

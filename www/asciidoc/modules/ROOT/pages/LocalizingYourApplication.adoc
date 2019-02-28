@@ -1,4 +1,19 @@
 = Localizing your application
 Andreas Deininger andreas@deininger.net
 
-To be authored
+In the xref::DeviceIntegrationBrowser.adoc[last chapter], we explained how to integrate your device, this task will be an essential part of every real world project. This is where newbies are often struggling, so hopefully you could make your way until the very end of this long chapter! While Embedded Wizards supports a broad range of different target devices. In order to provide universal, target independent instructions, we explained the integration with a web browser device which is universally available to all users. So what's next? It's very likely that with your application you are targeting customers worldwide. At this point you are inevitably confronted with the localization of your application. The earlier you get started, the better it is, avoiding cumbersome rework afterwards! Fortunately localization is deeply embedded into _Chora_ language used by Embedded Wizard, this makes it really easy to get things done right here.
+
+'''
+.Source code
+****
+TIP: If you didn't author or didn't keep the _Device integration_ project explained in the previous xref:DeviceIntegrationBrowser.adoc[chapter], you may download the link:{attachmentsdir}/ReusableComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+****
+'''
+
+More to come ...
+
+.Source code
+****
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/LocalizationTutorial.zip[project sources] of the finalized example on how to localize your application.
+****
+'''

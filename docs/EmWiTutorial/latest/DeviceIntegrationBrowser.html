@@ -11,7 +11,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../..">Embedded Wizard Tutorial</a>
+      <a class="navbar-item" href="../../index.html">Embedded Wizard Tutorial</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -72,7 +72,7 @@
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="HelloWorld.html">Embedded Wizard Tutorial</a></h3>
+    <h3 class="title"><a href="Introduction.html">Embedded Wizard Tutorial</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -118,7 +118,7 @@
       <span class="title">Embedded Wizard Tutorial</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="HelloWorld.html">latest</a>
+          <a href="Introduction.html">latest</a>
         </li>
       </ul>
     </li>
@@ -132,11 +132,12 @@
   <button class="navigation-toggle"></button>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li class="crumb"><a href="HelloWorld.html">Embedded Wizard Tutorial</a></li>
+    <li class="crumb"><a href="Introduction.html">Embedded Wizard Tutorial</a></li>
     <li class="crumb">Authoring your first application</li>
     <li class="crumb"><a href="DeviceIntegrationBrowser.html">Integrating with browser device</a></li>
   </ul>
 </nav>
+  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/DeviceIntegrationBrowser.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Device integration: Hello world from our device</h1>
@@ -153,6 +154,25 @@
 <div class="paragraph">
 <p>Embedded wizard is a GUI framework builder that allows you to build GUI platform independent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other than that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That&#8217;s where the concept of <a href="https://doc.embedded-wizard.de/platform-package" target="_blank" rel="noopener">platform packages</a> comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, &#8230;&#8203;). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.</p>
 </div>
+<hr>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Source code</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you didn&#8217;t author or didn&#8217;t keep the <em>Reusable component</em> project explained in the previous <a href="ComponentReusability.html" class="page">chapter</a>, you may download the <a href="_attachments/ReusableComponentTutorial.zip">sources</a> of this project and use this a starting base to follow the instructions given below.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr>
 </div>
 </div>
 <div class="sect1">
@@ -777,6 +797,24 @@ $endif</code></pre>
 <p>We are done! To test the newly added weather forecast functionality, rebuild the project and reload the application page in your web browser.
 You should now be able to both make your device beep and to view the weather forecast inside your browser. Pretty cool, isn&#8217;t it?</p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Source code</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you encountered difficulties and didn&#8217;t succeed when following the instructions given above, you may download the <a href="_attachments/DeviceIntegrationTutorial.zip">project sources</a> of the finalized example on how to integrate your browser device.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr>
 <div class="paragraph">
 <p>Let&#8217;s move on to the <a href="LocalizingYourApplication.html" class="page">next chapter</a>, there&#8217;s still much more to explore!</p>
 </div>

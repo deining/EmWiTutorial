@@ -109,9 +109,11 @@
   border-collapse: collapse;
   font-size: 0.8em;
   margin: 2rem 0;
+  margin-left: auto;
+  margin-right: auto;
   /* enable table-layout: fixed if you want the table width to be enforced strictly */
   /* alternative is to wrap table in div and set overflow-x: auto on the wrapper */
-  /* table-layout: fixed; */
+  table-layout: fixed;
 }
 
 .doc table.spread {

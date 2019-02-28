@@ -7,6 +7,13 @@ In the xref::ComponentReusability.adoc[last chapter], we made our component trul
 
 Embedded wizard is a GUI framework builder that allows you to build GUI platform independent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other than that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That's where the concept of https://doc.embedded-wizard.de/platform-package[platform packages^] comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, ...). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.
 
+'''
+.Source code
+****
+TIP: If you didn't author or didn't keep the _Reusable component_ project explained in the previous xref::ComponentReusability.adoc[chapter], you may download the link:{attachmentsdir}/ReusableComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+****
+'''
+
 == Adapting the project structure
 
 As explained above, there is a strict separation between the GUI application and the device, represented by one or more platform packages. Let's start and reflect that separation in our application structure, too:
@@ -29,7 +36,8 @@ image::deviceintegration/ProjectStructure.png[project layout]
 Let's add content to the newly inserted units! We start with adding a device class interface first:
 
 * Double click on the icon image:icons/DeviceUnitIcon.png[Icon device unit], representing the _Device_ unit. This will open the unit in a new tab.
-* In the gallery templates window left to the main composer window, click on the item _Device_, which will open and show all the _device_ subitems.
+
+* In the gallery templates window left to the main composer window (kbd:[Alt+1]), either click on the folder header _**D**evice_ or press key kbd:[d], this will open the folder and will present all _**d**evice_ subitems.
 * Click on the item image:icons/DeviceInterfaceIcon.png[Device interface icon] _Device interface_, and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
 
 By dragging over the _device interface_ to the canvas, two new objects were inserted:
@@ -104,11 +112,11 @@ As already explained above, there is a strict separation between the GUI applica
 
 NOTE: Besides the Win32 and the WebGL packages there are many platform packages available to target real hardware (STM, NXP, TI, Raspberry Pi, ...). For each of these platform packages, a separate installer exists. You have to obtain and run this installer to make the associated platform packages available inside Embedded Wizard.
 
-If we want to make use of more than one platform package inside our project, we have to have an associated *profile* on the Projects tab for each package you would like to use. So let's add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output _Hello, world!_ on the browser device, more specifically on the web console of the browser. The journey goes on ... 
+If we want to make use of more than one platform package inside our project, we have to have an associated *https://doc.embedded-wizard.de/profile-member[profile]* on the Projects tab for each package you would like to use. So let's add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output _Hello, world!_ on the browser device, more specifically on the web console of the browser. The journey goes on ... 
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
 * Identify the note frame with the caption _Profile configuration_, it only contains the icon image:icons/DefaultProfileIcon.png[Default profile icon] representing the default profile. Select this profile and have a look at the inspector window. You will realize that the attribute _PlatformPackage_ of the profile has the value _Tara.Win32.RGBA8888_ assigned. To reflect this, rename the profile from _Profile_ to _Win32_ using the kbd:[F2] key.
-* From the gallery templates window to the left, drag the element image:icons/ProfileIcon.png[profile icon] _Profile_ over to the canvas and place it underneath the existing profile _Win32_ . Rename the profile to _Browser_. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.
+* From the gallery templates window to the left, drag the element image:icons/ProfileIcon.png[profile icon] _Profile_ inside the _Chora_ folder over to the canvas and place it underneath the existing profile _Win32_ . Rename the profile to _Browser_. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.
 * Our new profile should be associated with the WebGL platform package, so inside the inspector window, change the value of the attribute _PlatformPackage_ from _Tara.Win32.RGBA8888_ to _Tara.WebGL.RGBA8888_.
 * Inside the inspector window, change the value of the attribute _ScreenSize_ to _<480,320>_.
 * Also change the value of the attribute _OutputDirectory_ to _../WebGL_. This defines the directory where all the code for our website will be stored once we build the project.
@@ -136,7 +144,8 @@ We already added an interface device class to our project. However, this interfa
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
 * Identify the note frame with the caption _Middleware_ which holds three device units, the _Device_ unit, the _BrowserDevice_ unit and the _TargetDevice_ unit.
 * Double click on the icon image:icons/BrowserDeviceUnitIcon.png[Icon browser device unit], representing the _BrowserDevice_ unit. This will open the empty unit inside a new tab.
-* In the gallery templates window, left to the main composer window, make sure that the tab _Browser_ at the top of the window is selected.
+
+* Press kbd:[Alt+2] to select the https://doc.embedded-wizard.de/gallery-browser-window[gallery browser window], left to the main composer window. Alternatively, you may mouse click at the second tab _Browser_ at the very top of the window.
 * In the search field immediately below the two tabs, type in _Device_ to shorten the class list.
 * Right click on the image:icons/ClassIcon.png[class icon] _Device::DeviceClass_ class to invoke the context menu on this class. From this menu select the menu item _Copy_ to copy the class to the clipboard.
 * Right click on the empty canvas in the main window to invoke a context menu. From this menu select the menu item _Variant paste_ to insert a class variant of the device class. Alternatively, you may select the element and drag it over to the canvas while keeping kbd:[Ctrl+Shift+Alt] pressed. Note the letter _V_ in the icon image:icons/VariantClassIcon.png[variant class icon] of the newly inserted class which marks the class as a class variant.
@@ -308,5 +317,11 @@ $endif
 
 We are done! To test the newly added weather forecast functionality, rebuild the project and reload the application page in your web browser.
 You should now be able to both make your device beep and to view the weather forecast inside your browser. Pretty cool, isn't it?
+
+.Source code
+****
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/DeviceIntegrationTutorial.zip[project sources] of the finalized example on how to integrate your browser device.
+****
+'''
 
 Let's move on to the xref::LocalizingYourApplication.adoc[next chapter], there's still much more to explore!

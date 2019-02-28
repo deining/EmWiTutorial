@@ -6,14 +6,21 @@ In the xref::HelloWorld.adoc[last chapter], we successfully built the _Hello wor
 Testing:: Using the built-in protoyper, you can test the components in isolation. There is a much higher chance the application works as expected once you assemble it from already tested (sub-)components.
 Reusability:: When using components, it's much easier to follow the DRY principle (**d**on't **r**epeat **y**ourself). You only write a component once and may use it in several places.
 
+'''
+.Source code
+****
+TIP: If you didn't author or didn't keep the _Hello world_ project explained in the previous xref::HelloWorld.adoc[chapter], you may download the link:{attachmentsdir}/HelloWorldTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+****
+'''
+
 So let's start and build our first GUI component: it's a simple graphical unit with a border, a header text, a push button, and a background. Once the button is pressed, some action will occur. 
 
 == Adding the empty component itself
 
 * We want to place the component in the _Application_ unit, so click on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab. Inside the composer window, you will now see the _Application_ root component, the only component currently present.
 
-* In the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window, make sure that the tab _Templates_ at the top of the window is selected.
-* In the main area of the templates window, click on the item _Component templates_, which will then open and show all available GUI templates.
+* Press kbd:[Alt+1] to put the focus on the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window. Alternatively, you may mouse click at the tab _Templates_ at the very top of the window, to the left.
+* Press kbd:[c] twice: the first key press open the _**C**hora_ folder, the second key press will then open the invoke folder _**C**omponent templates_, that's what we need. Alternatively, you may mouse click on the header titled _Component templates_ inside the main area of the templates window. This will also open the folder and show all available GUI templates.
 * Identify the item image:icons/ComponentIcon.png[component icon] _Component_, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing _Application_ root component.
 * We want to use the new component to ring a bell, so we give it a dedicated name: with the component still selected, press kbd:[F2] to rename the component. In the https://doc.embedded-wizard.de/inspector-window[inspector window^], type in _BellComponent_ and press kbd:[Enter] once you are done.
 
@@ -46,7 +53,7 @@ image::firstcomponent/ComponentBounds.png[component size]
 
 In a further step, we put all the elements onto the element's canvas:
 
-* In the gallery templates window left to the main composer window, click on the item _Views_, which will open and show all the _view_ subitems.
+* With the gallery templates window left to the main composer window focused (kbd:[Alt+1]), either click on the folder header _Views_ or press key kbd:[v], this will open and show all items inside the _**V**iew_ folder.
 * Click on the item image:icons/FilledRectangleIcon.png[Filled rectangle icon] _Filled Rectangle_, and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
 * Press kbd:[F2] to rename the component. In the inspector window, type in _Background_ and press kbd:[Enter] once you are done.
 * Adapt the size of the background rectangle to 200 × 150 px. You may do so by either resizing the element with the mouse or by adjusting the property _Bounds_ in the in the lower _attributes and properties area_ of the inspector window (as described above when setting the default bounds for the component).
@@ -71,7 +78,7 @@ Next we add a header text to the component:
 
 Eventually, we add the core element, a push button that will be used to ring the bell:
 
-* In the gallery templates window to the left, click on the item _Widgets_ to open and show the list of all available widgets.
+* In the gallery templates window to the left, either click on the folder header _**W**idgets_ or press key kbd:[w], this will open and show all items inside the _**w**idgets_ folder.
 * Click on the _Push Button_, widget and drag an instance over to the component's canvas. Place the element in the lower area of the canvas.
 * Press kbd:[F2] to rename the component. In the inspector window, type in _PushButtonBell_ and press kbd:[Enter] once you are done.
 * Now customize the appearance of the push button. You may do so by setting the property _Appearance_ in the inspector window to _WidgetSet::PushButtonSmall_ and by setting the property _Label_ to _Ring_.
@@ -96,7 +103,7 @@ Inheritance:: Slot methods are members of class objects. If a class is derived f
 
 So let's start and build our first slot method to bring life to our push button:
 
-* In the gallery templates window to the left, click on the item _Chora_ to open and show the list of the language elements available in the programming language _Chora_.
+* In the gallery templates window to the left, either click on the folder header _**C**hora_ or press key kbd:[w] twice, this will open the folder and will present the list of all language elements available in the programming language _**C**hora_.
 * To keep our component organized, it's a good idea to place a note group on the canvas first:
 ** Click on the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, and drag an instance over to the component's canvas. Place the element right beneath the component's canvas.
 ** By default, the heading of the note is _This is an annotation_. Change the heading of the note area by changing the property _Caption_ in the inspector window to _Slot method(s)_.
@@ -181,7 +188,7 @@ TIP: When you want to restack an element several levels up or down, select the e
 
 Now we are eventually ready to add our bell component:
 
-* In the gallery templates window, left to the main composer window, make sure that the tab _Browser_ at the top of the window is selected.
+* Press kbd:[Alt+2] to select the https://doc.embedded-wizard.de/gallery-browser-window[gallery browser window], left to the main composer window. Alternatively, you may mouse click at the second tab _Browser_ at the very top of the window.
 * The browser's list of classes present is quite long, so we have to narrow down the displayed classes: in the search field immediately below the two tabs, type in _Bell_. While typing have a look at the list and you will notice that the list is getting shorter and shorter. Once you typed in _Bell_, the only class left is the component newly created by you.
 * Click on the image:icons/ClassIcon.png[class icon] _Application::BellComponent_ class and drag an instance of the class over to the root canvas. Place the component below the header text.
 
@@ -208,5 +215,12 @@ Hooray, it we have our first application up and running:
 
 .First application running
 image::firstcomponent/TutorialApplicationRunning.png[Screen size]
+
+'''
+.Source code
+****
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/FirstComponentTutorial.zip[project sources] of the finalized example on how to build your first component.
+****
+'''
 
 Let's move on to the xref::ComponentReusability.adoc[next chapter], there's still much more to explore!

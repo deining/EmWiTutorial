@@ -11,7 +11,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../..">Embedded Wizard Tutorial</a>
+      <a class="navbar-item" href="../../index.html">Embedded Wizard Tutorial</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -72,7 +72,7 @@
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="HelloWorld.html">Embedded Wizard Tutorial</a></h3>
+    <h3 class="title"><a href="Introduction.html">Embedded Wizard Tutorial</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -118,7 +118,7 @@
       <span class="title">Embedded Wizard Tutorial</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="HelloWorld.html">latest</a>
+          <a href="Introduction.html">latest</a>
         </li>
       </ul>
     </li>
@@ -132,11 +132,12 @@
   <button class="navigation-toggle"></button>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li class="crumb"><a href="HelloWorld.html">Embedded Wizard Tutorial</a></li>
+    <li class="crumb"><a href="Introduction.html">Embedded Wizard Tutorial</a></li>
     <li class="crumb">Authoring your first application</li>
     <li class="crumb"><a href="ComponentReusability.html">Making your GUI component truly reusable</a></li>
   </ul>
 </nav>
+  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/ComponentReusability.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Making your component truly reusable</h1>
@@ -145,6 +146,25 @@
 <div class="paragraph">
 <p>In the <a href="FirstComponent.html" class="page">last chapter</a>, we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let&#8217;s think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two ore more instances of the bell component on the root canvas, but it&#8217;s unlikely that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform <em>different</em> actions, however. With the components in its current form, implementing this is not possible right now. So let&#8217;s extend the component and make it truly reusable in the next chapter!</p>
 </div>
+<hr>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Source code</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> project explained in the previous <a href="FirstComponent.html" class="page">chapter</a>, you may download the <a href="_attachments/FirstComponentTutorial.zip">sources</a> of this project and use this a starting base to follow the instructions given below.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr>
 </div>
 </div>
 <div class="sect1">
@@ -439,6 +459,25 @@ The GUI allows ringing the bell of your device already. Imagine your device is a
 <div class="paragraph">
 <p>This chapter has come to an end, time to recap: By adding three properties to our component we managed to create a truly reusable component. Creating reusable components comes has its price, however, this will certainly pay off once your project grows over time.</p>
 </div>
+<hr>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Source code</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you encountered difficulties and didn&#8217;t succeed when following the instructions given above, you may download the <a href="_attachments/ReusableComponentTutorial.zip">project sources</a> of the finalized example on how to build and make use of a truly reusable component.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr>
 <div class="paragraph">
 <p>Let&#8217;s move on to the <a href="#">:PreparingDeviceIntegration.adoc</a>, there&#8217;s still much more to explore!</p>
 </div>

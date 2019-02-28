@@ -94,6 +94,11 @@ There are several ways to launch the app:
 
 Congratulations, you successfully assembled your first application!
 
-If needed, you may download the link:{attachmentsdir}/HelloWorldTutorial.zip[sources] of the hello world example described above.
+'''
+.Source code
+****
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/HelloWorldTutorial.zip[sources] of the hello world example described above.
+****
+'''
 
 Let's move on to the next xref::FirstComponent.adoc[chapter], there's much more to explore here!

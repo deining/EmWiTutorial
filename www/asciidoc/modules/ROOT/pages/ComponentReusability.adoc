@@ -3,6 +3,13 @@ Andreas Deininger andreas@deininger.net
 
 In the xref::FirstComponent.adoc[last chapter], we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let's think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two ore more instances of the bell component on the root canvas, but it's unlikely that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform _different_ actions, however. With the components in its current form, implementing this is not possible right now. So let's extend the component and make it truly reusable in the next chapter!
 
+'''
+.Source code
+****
+TIP: If you didn't author or didn't keep the _First component_ project explained in the previous xref::FirstComponent.adoc[chapter], you may download the link:{attachmentsdir}/FirstComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+****
+'''
+
 == Extending your component with properties
 
 Let's have a look at our component first:
@@ -28,7 +35,7 @@ That's the theory behind property in short. Let's get our feet wet and add some 
 
 * In the _PushButtonComponent_ tab, rename the existing push button _BushButtonBell_ to _PushButton_ in order to reflect the refactoring of the component. Also rename the header text element _HeaderBell_ to _Header_.
 * Delete the existing slot method _RingTheBellSlot_ using the kbd:[Del] key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more. Don't forget to reset the property _OnActivate_ of the PushButton to _null_ otherwise you will run in trouble later on.
-* From the gallery and templates window (category: _Chora_ selected), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element right beneath the component's canvas and rename the property _Caption_ of the element to _Properties_ using the inspector window.
+* From the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ openend (key kbd:[c]), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element right beneath the component's canvas and rename the property _Caption_ of the element to _Properties_ using the inspector window.
 * Now we are ready to insert our properties: Click on the element image:icons/PropertyIcon.png[property icon] _Property_, and drag an instance over to the component's canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.
 
 As you can see, a property named _Property_ was inserted, together with its _Onset_ and _OnGet_ methods:
@@ -80,7 +87,7 @@ That's all we have to do! Now, as soon as the property gets a new value assigned
 
 The first property is ready to go, so add two more properties:
 
-* From the gallery and templates window drag another _Property_ to the component's canvas.
+* From the gallery templates window drag another _Property_ to the component's canvas.
 * Rename the property to _LabelButton_ using the kbd:[F2] key.
 * Change the type of the property to _string_, with a default value _"Label"_.
 * In the body of the _OnSetLabelButton_ method, replace the _TODO_ section with the code line ``PushButton.Label = value;``.
@@ -88,7 +95,7 @@ The first property is ready to go, so add two more properties:
 This way, any change of the property _LabelButton_ will immediately change the label text of the button.
 So far so good. Now we have to take care that not only the label and heading text can be set, but also the action performed once the button is clicked:
 
-* From the gallery and templates window drag another _Property_ to the component's canvas.
+* From the gallery templates window drag another _Property_ to the component's canvas.
 * Rename the property to _ActionButton_ using the kbd:[F2] key.
 * Change the type of the property to _slot_, with a default value _null_.
 * In the body of the _OnSetActionButton_ method, replace the _TODO_ section with the code line ``PushButton.OnActivate = value;``.
@@ -120,7 +127,7 @@ That's it! Test the main application in the prototyper (kbd:[Ctrl+F5]), and the 
 If you are asking yourself why we did the refactoring, things are getting clear hopefully as soon as we insert a second instance of the component.
 The GUI allows ringing the bell of your device already. Imagine your device is able to present the weather forecast to you. Maybe your device has a screen display for that purpose, or it has a speaker to read out the forecast loud. Let's extend the GUI with a second push button component for presenting the weather forecast to you:
 
-* In the gallery templates window, left to the main composer window, make sure that the tab _Browser_ at the top of the window is selected.
+* Press kbd:[Alt+2] to select the gallery browser window, left to the main composer window. Alternatively, you may mouse click at the second tab _Browser_ at the very top of the window.
 * In the search field immediately below the two tabs, type in _Push_ to shorten the class list.
 * Click on the image:icons/ClassIcon.png[class icon] _Application::PushButtonComponent_ class and drag a second instance of the class over to the root canvas. Rearrange the two push button components so that both of them fit on the screen.
 
@@ -141,5 +148,12 @@ image::reusablecomponent/TutorialApplicationExtended.png[Extended application]
 Go ahead and test your application! You should see different debugging output depending on the button pressed.
 
 This chapter has come to an end, time to recap: By adding three properties to our component we managed to create a truly reusable component. Creating reusable components comes has its price, however, this will certainly pay off once your project grows over time.
+
+'''
+.Source code
+****
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/ReusableComponentTutorial.zip[project sources] of the finalized example on how to build and make use of a truly reusable component.
+****
+'''
 
 Let's move on to the xref::PreparingDeviceIntegration.adoc[next chapter], there's still much more to explore!

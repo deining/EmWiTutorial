@@ -1,7 +1,9 @@
 = Embedded Wizard Tutorial
 Andreas Deininger andreas@deininger.net
 
-Author: 
+****
+Author: Dr. Andreas Deininger
+****
 
 == About Embedded Wizard
 
@@ -9,15 +11,13 @@ https://www.embedded-wizard.de/[Embedded Wizard^] is a graphical user interface 
 
 == Motivation for this tutorial
 
-At work, we used Embedded Wizard GUI builder intensively in a development project. While the Embedded Wizard software proved to be an extremely powerful tool, getting started with this tool was quite challenging for me:
+At work, we used Embedded Wizard GUI builder extensively in a development project. While the Embedded Wizard software proved to be an extremely powerful tool, getting started with this tool was quite challenging for us:
 
-* Embedded Wizard strictly follows and implements an object oriented programming approach. These concepts may not be immediately obvious to a novice user however, who may be overwhelmed by terminology of properties, outlets, and so on.
-* Device integration will an essential part of every real world project, this is where many newbies are often struggling. The situation is worsened by the fact that Embedded Wizards supports dozens of target devices, each one being different, which makes it hard to provide universal instructions here.
-* Excellent Documentation with many small samples, not connected, so it remains a challenge to get a big picture how to design your application properly.
+* Embedded Wizard strictly follows and implements an object oriented programming approach. These concepts may not be immediately obvious to a novice user however, who may be overwhelmed by terminology of properties, outlets, class variants, property references and so on.
+* Device integration will an essential part of every real world project, this is where newbies are often struggling. This situation is worsened by the fact that Embedded Wizards supports a broad range of target devices, each one being different, which makes it hard to provide universal instructions here.
+* Embedded Wizard comes with a comprehensive, excellent http://doc.embedded-wizard.de[documentation] which covers all aspects of the system. This documentation is topic oriented and even comes with several small, helpful sample projects. However, it remains a challenge get an understanding on how to use and properly connect these code snippets in the context of a bigger application.
 
-== Target audience, prior knowledge
-
-The main audience for the book are professional developers that want to ...
+By time, we get acquainted to Embedded Wizard and the underlying concepts better, the learning curve was pretty steep though. At that time, I sorely missed a step-by step tutorial, explaining in detail the development of a reasonably small, but already meaningful application. Since I couldn't find anything like that I took the initiative and started authoring such a tutorial by myself. Hopefully the provided tutorial will be helpful for you and will get you started with Embedded Wizard trouble-free and quickly!   
 
 == Scope of the tutorial
 
@@ -41,9 +41,15 @@ image::introduction/TutorialApplication.png[tutorial application]
 
 The tutorial application comprises two components, titled _Bell_ and _Weather report_. When pressing the push-button of the _bell_ component, a beep will sound. When pressing the push-button of the _weather report_ component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either _English_ or German as language of the user interface. The chosen language setting will be stored inside the local storage of your web browser and will be remembered when on the next startup, even when exit and restart your browser.
 
+== Target audience, prior knowledge
+
+The main audience for the book are professional developers that want leverage Embedded Wizard platform when developing GUi applications for their embedded devices. This tutorial assumes that you have experience with one or more programming languages (C, C++, Java, C#, ...) and that you are familiar with the concepts of object oriented programming. In the first place, this tutorial wants to provide easy to follow step by step instructions on how to build a small, but meaningful sample application. Quite often, the tutorial goes beyond this and tries to reveal the architectural patterns behind the application, specifically pointing out how the patterns are implemented by Embedded wizard. While doing so we assume at least limited familiarity with the patterns of object oriented design, this tutorial does **not** explain things like classes, methods, inheritance, ... from ground up.
+
+IMPORTANT: If you haven't written any code by hand, this tutorial is most likely **not** for you. Don't be deceived: while Embedded Wizard provides a graphical oriented programming approach in the first place, for any meaningful application, you have to write code sooner or later to get the desired results. Don't be scared, though: this isn't too hard, everything will be explained in the course of this tutorial.
+
 == Prerequisites
 
-Download and install https://www.embedded-wizard.de/download/[Embedded Wizard Free Edition], version 9.10. The free version has all features of the Professional version, is is restricted to small projects however. Luckily, the free version allows to developing and run the tutorial application without limitation.
+Download and install https://www.embedded-wizard.de/download/[Embedded Wizard Free Edition], version 9.10. The free edition has all features of the Professional edition, is is restricted to small projects however. Luckily, the free edition allows to develop and to run the tutorial application without limitation.
 
 == Feedback and questions
 
@@ -51,4 +57,5 @@ If you have any suggestion for improvement or comment concerning this tutorial, 
 
 For general question unrelated to this tutorial, you may make use of the https://ask.embedded-wizard.de[question and answer site] for Embedded Wizard users and UI developers.
 
+'''
 Let's get started with a simple https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html[Hello, world] example!

@@ -1,8 +1,15 @@
 = Embedded Wizard Tutorial
 Andreas Deininger andreas@deininger.net
 
+
+
+
 ****
-Author: Dr. Andreas Deininger
+++++
+<script type="text/javascript">
+  document.write("Author: <a href='mailto:"+ obfuscateEmail() +"'>Dr. Andreas Deininger</a>")
+</script>
+++++
 ****
 
 == About Embedded Wizard

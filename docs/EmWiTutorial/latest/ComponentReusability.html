@@ -6,6 +6,7 @@
     <title>Making your component truly reusable :: Embedded Wizard Tutorial</title>
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
+    <script src="../../_/js/email-obfuscator.js"></script>
   </head>
   <body class="article">
 <header class="header">
@@ -137,7 +138,6 @@
     <li class="crumb"><a href="ComponentReusability.html">Making your GUI component truly reusable</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/ComponentReusability.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Making your component truly reusable</h1>
@@ -233,7 +233,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 <p>Delete the existing slot method <em>RingTheBellSlot</em> using the <kbd>Del</kbd> key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more. Don&#8217;t forget to reset the property <em>OnActivate</em> of the PushButton to <em>null</em> otherwise you will run in trouble later on.</p>
 </li>
 <li>
-<p>From the gallery and templates window (category: <em>Chora</em> selected), drag an instance of the <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas and rename the property <em>Caption</em> of the element to <em>Properties</em> using the inspector window.</p>
+<p>From the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>C</strong>hora</em> openend (key <kbd>c</kbd>), drag an instance of the <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas and rename the property <em>Caption</em> of the element to <em>Properties</em> using the inspector window.</p>
 </li>
 <li>
 <p>Now we are ready to insert our properties: Click on the element <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Property</em>, and drag an instance over to the component&#8217;s canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.</p>
@@ -315,7 +315,7 @@ That&#8217;s all we have to do! Now, as soon as the property gets a new value as
 <div class="ulist">
 <ul>
 <li>
-<p>From the gallery and templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
+<p>From the gallery templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
 </li>
 <li>
 <p>Rename the property to <em>LabelButton</em> using the <kbd>F2</kbd> key.</p>
@@ -335,7 +335,7 @@ So far so good. Now we have to take care that not only the label and heading tex
 <div class="ulist">
 <ul>
 <li>
-<p>From the gallery and templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
+<p>From the gallery templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
 </li>
 <li>
 <p>Rename the property to <em>ActionButton</em> using the <kbd>F2</kbd> key.</p>
@@ -412,7 +412,7 @@ The GUI allows ringing the bell of your device already. Imagine your device is a
 <div class="ulist">
 <ul>
 <li>
-<p>In the gallery templates window, left to the main composer window, make sure that the tab <em>Browser</em> at the top of the window is selected.</p>
+<p>Press <span class="keyseq"><kbd>Alt</kbd>+<kbd>2</kbd></span> to select the gallery browser window, left to the main composer window. Alternatively, you may mouse click at the second tab <em>Browser</em> at the very top of the window.</p>
 </li>
 <li>
 <p>In the search field immediately below the two tabs, type in <em>Push</em> to shorten the class list.</p>
@@ -487,8 +487,8 @@ If you encountered difficulties and didn&#8217;t succeed when following the inst
   </main>
 </div>
 <footer class="footer">
-  <p>This tutorial was authored and published by Dr. Andreas Deininger using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.</p>
-    <p>This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
+  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.</p>
+  <p>This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/highlight.js"></script>

@@ -6,6 +6,7 @@
     <title>Device integration: Hello world from our device :: Embedded Wizard Tutorial</title>
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
+    <script src="../../_/js/email-obfuscator.js"></script>
   </head>
   <body class="article">
 <header class="header">
@@ -137,7 +138,6 @@
     <li class="crumb"><a href="DeviceIntegrationBrowser.html">Integrating with browser device</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/adeininger/Documents/ASCIIDOC/EmWiTutorial/www/asciidoc/modules/ROOT/pages/DeviceIntegrationBrowser.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Device integration: Hello world from our device</h1>
@@ -226,7 +226,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Reusable component</em> 
 <p>Double click on the icon <span class="image"><img src="_images/icons/DeviceUnitIcon.png" alt="Icon device unit"></span>, representing the <em>Device</em> unit. This will open the unit in a new tab.</p>
 </li>
 <li>
-<p>In the gallery templates window left to the main composer window, click on the item <em>Device</em>, which will open and show all the <em>device</em> subitems.</p>
+<p>In the gallery templates window left to the main composer window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>), either click on the folder header <em><strong>D</strong>evice</em> or press key <kbd>d</kbd>, this will open the folder and will present all <em><strong>d</strong>evice</em> subitems.</p>
 </li>
 <li>
 <p>Click on the item <span class="image"><img src="_images/icons/DeviceInterfaceIcon.png" alt="Device interface icon"></span> <em>Device interface</em>, and drag an instance over to the component&#8217;s canvas. Place the element in the upper left corner of the canvas.</p>
@@ -389,7 +389,7 @@ Besides the Win32 and the WebGL packages there are many platform packages availa
 </table>
 </div>
 <div class="paragraph">
-<p>If we want to make use of more than one platform package inside our project, we have to have an associated <strong>profile</strong> on the Projects tab for each package you would like to use. So let&#8217;s add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output <em>Hello, world!</em> on the browser device, more specifically on the web console of the browser. The journey goes on &#8230;&#8203;</p>
+<p>If we want to make use of more than one platform package inside our project, we have to have an associated <strong><a href="https://doc.embedded-wizard.de/profile-member">profile</a></strong> on the Projects tab for each package you would like to use. So let&#8217;s add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output <em>Hello, world!</em> on the browser device, more specifically on the web console of the browser. The journey goes on &#8230;&#8203;</p>
 </div>
 <div class="ulist">
 <ul>
@@ -400,7 +400,7 @@ Besides the Win32 and the WebGL packages there are many platform packages availa
 <p>Identify the note frame with the caption <em>Profile configuration</em>, it only contains the icon <span class="image"><img src="_images/icons/DefaultProfileIcon.png" alt="Default profile icon"></span> representing the default profile. Select this profile and have a look at the inspector window. You will realize that the attribute <em>PlatformPackage</em> of the profile has the value <em>Tara.Win32.RGBA8888</em> assigned. To reflect this, rename the profile from <em>Profile</em> to <em>Win32</em> using the <kbd>F2</kbd> key.</p>
 </li>
 <li>
-<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/ProfileIcon.png" alt="profile icon"></span> <em>Profile</em> over to the canvas and place it underneath the existing profile <em>Win32</em> . Rename the profile to <em>Browser</em>. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.</p>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/ProfileIcon.png" alt="profile icon"></span> <em>Profile</em> inside the <em>Chora</em> folder over to the canvas and place it underneath the existing profile <em>Win32</em> . Rename the profile to <em>Browser</em>. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.</p>
 </li>
 <li>
 <p>Our new profile should be associated with the WebGL platform package, so inside the inspector window, change the value of the attribute <em>PlatformPackage</em> from <em>Tara.Win32.RGBA8888</em> to <em>Tara.WebGL.RGBA8888</em>.</p>
@@ -465,7 +465,7 @@ Besides the Win32 and the WebGL packages there are many platform packages availa
 <p>Double click on the icon <span class="image"><img src="_images/icons/BrowserDeviceUnitIcon.png" alt="Icon browser device unit"></span>, representing the <em>BrowserDevice</em> unit. This will open the empty unit inside a new tab.</p>
 </li>
 <li>
-<p>In the gallery templates window, left to the main composer window, make sure that the tab <em>Browser</em> at the top of the window is selected.</p>
+<p>Press <span class="keyseq"><kbd>Alt</kbd>+<kbd>2</kbd></span> to select the <a href="https://doc.embedded-wizard.de/gallery-browser-window">gallery browser window</a>, left to the main composer window. Alternatively, you may mouse click at the second tab <em>Browser</em> at the very top of the window.</p>
 </li>
 <li>
 <p>In the search field immediately below the two tabs, type in <em>Device</em> to shorten the class list.</p>
@@ -825,8 +825,8 @@ If you encountered difficulties and didn&#8217;t succeed when following the inst
   </main>
 </div>
 <footer class="footer">
-  <p>This tutorial was authored and published by Dr. Andreas Deininger using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.</p>
-    <p>This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
+  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.</p>
+  <p>This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/highlight.js"></script>

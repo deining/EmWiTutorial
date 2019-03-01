@@ -1,7 +1,7 @@
 = Localizing your application
 Andreas Deininger andreas@deininger.net
 
-In the xref::DeviceIntegrationBrowser.adoc[last chapter], we explained how to integrate your device, this task will be an essential part of every real world project. This is where newbies are often struggling, so hopefully you could make your way until the very end of this long chapter! While Embedded Wizards supports a broad range of different target devices. In order to provide universal, target independent instructions, we explained the integration with a web browser device which is universally available to all users. So what's next? It's very likely that with your application you are targeting customers worldwide. At this point you are inevitably confronted with the localization of your application. The earlier you get started, the better it is, avoiding cumbersome rework afterwards! Fortunately localization is deeply embedded into _Chora_ language used by Embedded Wizard, this makes it really easy to get things done right here.
+In the xref::DeviceIntegrationBrowser.adoc[last chapter], we explained how to integrate your device, this task will be an essential part of every real world project. This is where newbies are often struggling, so hopefully you could make your way until the very end of this long chapter! In order to provide universal, target independent instructions, we explained the integration with a web browser device which is universally available to all users. So what's next? It's very likely that with your application you are targeting customers worldwide. At this point you are inevitably confronted with the localization of your application. The earlier you get started, the better it is, avoiding cumbersome rework afterwards! Fortunately localization is deeply embedded into _Chora_ language used by Embedded Wizard, this makes it really easy to get things done right here.
 
 '''
 .Source code
@@ -10,7 +10,79 @@ TIP: If you didn't author or didn't keep the _Device integration_ project explai
 ****
 '''
 
-More to come ...
+== Multilingual applications: concepts
+
+As already stated above, the concept of languages is deeply embedded into the _Chora_ programming language. In fact, Chora has even a data type _https://doc.embedded-wizard.de/language-type[language^]_ that represents a language. Each project contains at least one ore more members of this type. Please note that there are two different kind of language members:
+
+* the member named _Default_, represented by the icon image:icons/DefaultLanguageIcon.png[default language icon]. Each project has this member, which represents the so called fallback language exactly once. This _Default_ member can neither be renamed nor can it be removed from the project.
+* user defined members, usually named after the language they represent, e.g. image:icons/GermanLanguageIcon.png[German language icon]. For each language you support, you have to add a language member.
+
+Language switching will be achieved by assigning a language member name to the built in global variable https://doc.embedded-wizard.de/language-variable[_language_^]. Don't confuse the built in global variable _language_ with the data type _language_, both are named identical!
+
+== Adding another language
+
+If you want to make use of multiple languages inside our project, you have to have an associated *https://doc.embedded-wizard.de/language-member[language^]* on the Projects tab for each language you would like to use. So let's add German as second language to our project. Once done, we are able to switch between the default language (English in our case) and the German language: 
+
+* Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
+* Identify the note frame with the caption _Languages_, it only contains the icon image:icons/DefaultLanguageIcon.png[Default language icon] representing the default language. 
+* From the gallery templates window to the left, drag the _Language_ element image:icons/LanguageIcon.png[language icon] inside the _Chora_ folder over to the canvas and place it underneath the existing _Default_ language. Rename the language to _German_. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.
+
+The _Language_ section of your project should now look as shown in <<fig:ProjectLanguages>> below:
+
+[[fig:ProjectLanguages]]
+.Project languages
+image::localization/ProjectLanguages.png[Project languages]
+
+[TIP]
+====
+Now that we have two languages defined, we can switch between these two languages using the https://doc.embedded-wizard.de/menu-build#10[_Language_ dropdown list] located in the second row of the toolbar, placed between the _Profiles_ dropdown list and the _Styles_ dropdown list:
+
+[[fig:DropdownList]]
+.Dropdown list for switching between different languages
+image::localization/DropdownLanguages.png[dropdown list languages] 
+====
+
+== Adding language strings / constants
+
+We just added a second language to our project, but this is not the end: next we have to add language strings to our project that will be used for all when we want to display text in different languages. We will put all these strings inside a new unit _Strings_ so let's go ahead and add the unit and the language strings:
+
+* Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
+* Identify the note frame with the caption _GUI project_, it only contains the icon image:icons/ApplicationUnitIcon.png[Application unit icon] representing the _Application_ unit. 
+* From the gallery templates window to the left, drag the element image:icons/UnitIcon.png[profile icon] _Unit_ inside the _Chora_ folder over to the canvas and place it beneath the existing _Application_ unit. Rename the unit to _Strings_.
+* Double click on the newly inserted unit image:icons/StringsUnitIcon.png[Icon strings unit]. Inside the composer window, a new tab _Strings_ appears which shows the currently empty unit.
+* From the gallery templates window to the left, drag the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Application_.
+* From the gallery templates window to the left, drag the element image:icons/ConstantIcon.png[constant icon] _Constant_ inside the _Chora_ folder over to the canvas and place it inside the just inserted annotation group . Rename the constant to _HeaderTutorialApplication_.
+
+With the newly inserted language string selected, have a look at the inspector window and identify the element _Values_ for the constant, which by default has the value _"Hello  World". Please note the small triangle at the left hand side of the _Values_ field. Click on the triangle and two more rows will come up: _Default_ and _German_. While the _Default_ row holds the fallback value for the string, the row _German_ shall be used for the German translation string. Surely you grasped the concept already: the rows represent the language variant of the string constant, there is one row for each project language defined. If we defined a new language Spanish to the project, another row _Spanish_ would appear. This concept of language variants makes localizing you application very easy. Let's move on:
+
+* Since we want to use the newly inserted language string as header text of our application, we change the value _Default_ from _"Hello World"_ to _"Tutorial application"_ and the value _German_ to _"Tutorial Anwendung"_. Don't forget the surrounding double quotes in both cases or you may run in trouble. 
+
+[[fig:LanguageString]]
+.Language string and its translations
+image::localization/LanguageStrings.png[language string] 
+
+* Add two new annotation groups with two new language strings inside each group. Consult <<tab:LanguageStrings>> concerning the details.
+
+.Language string constants (to be inserted)
+[[tab:LanguageStrings]]
+[width=99%, cols="<,^,^,^", options="header", grid=rows, frame=topbot]
+|===
+| Name                      | Default / Fallback value | German translation | Annotation group
+| _HeadingBell_             | "Bell"                   | "Klingel"       .2+.^| Bell component
+| _LabelPushButtonBell_     | "Ring"                   | "Läuten"
+| _HeadingForeCast_         | "Weather report"         | "Wetterbericht" .2+.^| Forecast component
+| _LabelPushButtonForeCast_ | "Show"                   | "Aufrufen"
+|===
+
+Once all four language strings were added to the project, the _Strings_ unit should look as illustrated in <<tab:LanguageStrings>>.
+
+[[fig:StringsUnit]]
+.Language strings inside the _Strings_ unit
+image::localization/StringsUnit.png[string unit] 
+
+== Localize the application text strings
+
+Now that we have the language strings defined, let's make use of them!
 
 .Source code
 ****

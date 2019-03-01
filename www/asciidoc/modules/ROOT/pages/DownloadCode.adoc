@@ -13,7 +13,7 @@ In the course of this tutorial, we gradually authored and extended a sample appl
 | xref::HelloWorld.adoc[Getting started with 'Hello world']                  | link:{attachmentsdir}/HelloWorldTutorial.zip[HelloWorldTutorial.zip]
 | xref::FirstComponent.adoc[Adding your first GUI component]                 | link:{attachmentsdir}/FirstComponentTutorial.zip[FirstComponentTutorial.zip]
 | xref::ComponentReusability.adoc[Making your GUI component truly reusable]  | link:{attachmentsdir}/ReusableComponentTutorial.zip[ReusableComponentTutorial.zip]
-| xref::PreparingDeviceIntegration.adoc[Integrating wth your browser device] | link:{attachmentsdir}/DeviceIntegrationTutorial.zip[DeviceIntegrationTutorial.zip]
+| xref::DeviceIntegrationBrowser.adoc[Integrating with your browser device] | link:{attachmentsdir}/DeviceIntegrationTutorial.zip[DeviceIntegrationTutorial.zip]
 | xref::LocalizingYourApplication.adoc[Localizing your application]          | link:{attachmentsdir}/LocalizationTutorial.zip[LocalizationTutorial.zip]
 |===
 
@@ -21,4 +21,4 @@ NOTE: The zip-archive represents the project once the lesson was *finalized*. If
 
 == Source code of the tutorial website
 
-This tutorial project in its entirety (Embedded Wizard code + code tutorial site) is hosted on https://github.com/deining/EmWiTutorial[GitHub]. For further information refer to the https://github.com/deining/EmWiTutorial/blob/master/README.md[README] file of this repository.
+This tutorial project in its entirety (Embedded Wizard code + code tutorial site) is hosted on https://github.com/deining/EmWiTutorial[GitHub^]. For further information refer to the https://github.com/deining/EmWiTutorial/blob/master/README.md[README^] file of this repository.

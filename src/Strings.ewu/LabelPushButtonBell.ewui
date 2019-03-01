@@ -1,0 +1,9 @@
+$version 6.60
+
+$rect <33,214,233,254>
+$output false
+const string LabelPushButtonBell =
+(
+  Default = "Ring";
+  German = "Läuten";
+);

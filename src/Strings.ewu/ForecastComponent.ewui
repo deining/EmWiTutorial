@@ -1,0 +1,7 @@
+$version 6.60
+
+// Forecast component
+note group ForecastComponent
+{
+  attr Bounds = <283,117,550,270>;
+}

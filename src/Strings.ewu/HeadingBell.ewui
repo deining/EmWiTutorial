@@ -1,0 +1,9 @@
+$version 6.60
+
+$rect <33,165,233,205>
+$output false
+const string HeadingBell =
+(
+  Default = "Bell";
+  German = "Klingel";
+);

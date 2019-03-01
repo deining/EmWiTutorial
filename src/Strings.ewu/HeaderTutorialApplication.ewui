@@ -1,0 +1,9 @@
+$version 6.60
+
+$rect <162,44,385,84>
+$output false
+const string HeaderTutorialApplication =
+(
+  Default = "Tutorial application";
+  German = "Tutorial Anwendung";
+);

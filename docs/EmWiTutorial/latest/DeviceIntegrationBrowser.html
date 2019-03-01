@@ -93,11 +93,20 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="ComponentReusability.html">Making your GUI component truly reusable</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="DeviceIntegrationBrowser.html">Integrating with browser device</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <span class="nav-text">Localizing your application</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="LocalizingYourApplication.html">Localizing your application</a>
+    <a class="nav-link" href="LocalizingYourApplication.html">Adding languages and localizing your strings</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="LanguageSwitcher.html">Adding a language switcher</a>
   </li>
 </ul>
   </li>
@@ -134,7 +143,6 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="Introduction.html">Embedded Wizard Tutorial</a></li>
-    <li class="crumb">Authoring your first application</li>
     <li class="crumb"><a href="DeviceIntegrationBrowser.html">Integrating with browser device</a></li>
   </ul>
 </nav>
@@ -433,11 +441,11 @@ Besides the Win32 and the WebGL packages there are many platform packages availa
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Now that we have two profiles defined, we can switch between these two profiles using the <em>Profile</em> dropdown list located in the second row of the toolbar, placed right beneath the icon <span class="image"><img src="_images/icons/BuildProfileIcon.png" alt="Build profile"></span> for building the selected profile and the icon <span class="image"><img src="_images/icons/BuildBatchIcon.png" alt="Build batch mode"></span> for building multiple profiles in batch mode:</p>
+<p>Now that we have two profiles defined, we can switch between these two profiles using the <a href="https://doc.embedded-wizard.de/menu-build#9" target="_blank" rel="noopener"><em>Profile</em> dropdown list</a> located in the second row of the toolbar, placed right beneath the icon <span class="image"><img src="_images/icons/BuildProfileIcon.png" alt="Build profile"></span> for building the selected profile and the icon <span class="image"><img src="_images/icons/BuildBatchIcon.png" alt="Build batch mode"></span> for building multiple profiles in batch mode:</p>
 </div>
 <div id="fig:DropdownList" class="imageblock">
 <div class="content">
-<img src="_images/deviceintegration/DropdownProfiles.png" alt="dropdownlist profiles">
+<img src="_images/deviceintegration/DropdownProfiles.png" alt="dropdown list profiles">
 </div>
 <div class="title">Figure 5. Dropdown list for switching between different profiles</div>
 </div>
@@ -825,8 +833,8 @@ If you encountered difficulties and didn&#8217;t succeed when following the inst
   </main>
 </div>
 <footer class="footer">
-  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.</p>
-  <p>This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
+  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.<br/>
+  This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/highlight.js"></script>

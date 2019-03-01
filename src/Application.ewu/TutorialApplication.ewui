@@ -6,6 +6,7 @@ $version 6.60
 // Please note that the class is derived from the class Core::Root.
 $rect <23,57,233,97>
 $output false
+$multilingual true
 class TutorialApplication : Core::Root
 {
   $rect <1,340,201,380>
@@ -81,26 +82,5 @@ class TutorialApplication : Core::Root
   object Application::LanguageSelector LanguageSelector
   {
     preset Bounds = <367,13,467,46>;
-  }
-
-  $rect <770,40,970,80>
-  method void ReInit()
-  {
-    // Application title
-    Header.String = Strings::HeaderTutorialApplication;
-
-    // Bell component
-    BellComponent.TextHeader = Strings::HeadingBell;
-    BellComponent.LabelButton = Strings::LabelPushButtonBell;
-
-    // Weather component
-    WeatherComponent.TextHeader = Strings::HeadingForecast;
-    WeatherComponent.LabelButton = Strings::LabelPushButtonForecast;
-  }
-
-  // Language switching
-  note group Note1
-  {
-    attr Bounds = <752,0,985,100>;
   }
 }

@@ -93,11 +93,20 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="ComponentReusability.html">Making your GUI component truly reusable</a>
   </li>
-  <li class="nav-item" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="DeviceIntegrationBrowser.html">Integrating with browser device</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <span class="nav-text">Localizing your application</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="LocalizingYourApplication.html">Localizing your application</a>
+    <a class="nav-link" href="LocalizingYourApplication.html">Adding languages and localizing your strings</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="LanguageSwitcher.html">Adding a language switcher</a>
   </li>
 </ul>
   </li>
@@ -174,12 +183,12 @@
 <p>Device integration will an essential part of every real world project, this is where newbies are often struggling. This situation is worsened by the fact that Embedded Wizards supports a broad range of target devices, each one being different, which makes it hard to provide universal instructions here.</p>
 </li>
 <li>
-<p>Embedded Wizard comes with a comprehensive, excellent <a href="http://doc.embedded-wizard.de">documentation</a> which covers all aspects of the system. This documentation is topic oriented and even comes with several small, helpful sample projects. However, it remains a challenge get an understanding on how to use and properly connect these code snippets in the context of a bigger application.</p>
+<p>Embedded Wizard comes with a comprehensive, excellent <a href="http://doc.embedded-wizard.de">documentation</a> which covers all aspects of the system. This documentation is topic oriented and even comes with several small, helpful sample projects. However, it remains a challenge to gain understanding on how to use and properly connect these code snippets in the context of a bigger application.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>By time, we get acquainted to Embedded Wizard and the underlying concepts better, the learning curve was pretty steep though. At that time, I sorely missed a step-by step tutorial, explaining in detail the development of a reasonably small, but already meaningful application. Since I couldn&#8217;t find anything like that I took the initiative and started authoring such a tutorial by myself. Hopefully the provided tutorial will be helpful for you and will get you started with Embedded Wizard trouble-free and quickly!</p>
+<p>By time, we get acquainted to Embedded Wizard and the underlying concepts, the learning curve was pretty steep though. At that time, I sorely missed a step-by step tutorial, explaining in detail the development of a reasonably small, but already meaningful application. Since I couldn&#8217;t find anything like that I took the initiative and started authoring such a tutorial by myself. Hopefully the provided tutorial will be helpful for you and will get you started with Embedded Wizard trouble-free and quickly!</p>
 </div>
 </div>
 </div>
@@ -226,7 +235,7 @@
 <div class="title">Figure 1. Tutorial application inside a web browser window</div>
 </div>
 <div class="paragraph">
-<p>The tutorial application comprises two components, titled <em>Bell</em> and <em>Weather report</em>. When pressing the push-button of the <em>bell</em> component, a beep will sound. When pressing the push-button of the <em>weather report</em> component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either <em>English</em> or German as language of the user interface. The chosen language setting will be stored inside the local storage of your web browser and will be remembered when on the next startup, even when exit and restart your browser.</p>
+<p>The tutorial application comprises two components, titled <em>Bell</em> and <em>Weather report</em>. When pressing the push-button of the <em>bell</em> component, a beep will sound. When pressing the push-button of the <em>weather report</em> component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either <em>English</em> or German as language of the user interface. The chosen language setting will be stored inside the local storage of your web browser and will be remembered when on the next startup, even when you exit and restart your browser.</p>
 </div>
 </div>
 </div>
@@ -277,8 +286,8 @@ If you haven&#8217;t written any code by hand, this tutorial is most likely <str
   </main>
 </div>
 <footer class="footer">
-  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.</p>
-  <p>This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
+  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.<br/>
+  This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/highlight.js"></script>

@@ -1,0 +1,9 @@
+$version 6.60
+
+$rect <306,165,530,210>
+$output false
+const string HeadingForecast =
+(
+  Default = "Weather report";
+  German = "Wetterbericht";
+);

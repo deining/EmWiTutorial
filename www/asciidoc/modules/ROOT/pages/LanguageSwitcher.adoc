@@ -1,0 +1,4 @@
+= Adding a language switcher
+Andreas Deininger andreas@deininger.net
+
+In the xref::LocalizingYourApplication.adoc[last chapter], we ...

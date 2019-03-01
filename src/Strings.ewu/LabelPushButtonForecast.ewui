@@ -1,0 +1,9 @@
+$version 6.60
+
+$rect <306,214,530,250>
+$output false
+const string LabelPushButtonForecast =
+(
+  Default = "Show";
+  German = "Aufrufen";
+);

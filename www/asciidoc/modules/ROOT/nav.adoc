@@ -3,6 +3,8 @@
 ** xref:HelloWorld.adoc[Getting started with 'Hello world!']
 ** xref:FirstComponent.adoc[Adding your first GUI component]
 ** xref:ComponentReusability.adoc[Making your GUI component truly reusable]
-** xref:DeviceIntegrationBrowser.adoc[Integrating with browser device]
-** xref:LocalizingYourApplication.adoc[Localizing your application]
+* xref:DeviceIntegrationBrowser.adoc[Integrating with browser device]
+* Localizing your application
+** xref:LocalizingYourApplication.adoc[Adding languages and localizing your strings]
+** xref:LanguageSwitcher.adoc[Adding a language switcher]
 * xref:DownloadCode.adoc[Download source code]

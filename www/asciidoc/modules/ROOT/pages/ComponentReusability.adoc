@@ -156,4 +156,4 @@ TIP: If you encountered difficulties and didn't succeed when following the instr
 ****
 '''
 
-Let's move on to the xref::PreparingDeviceIntegration.adoc[next chapter], there's still much more to explore!
+Let's move on to the xref::DeviceIntegrationBrowser.adoc[next chapter], there's still much more to explore!

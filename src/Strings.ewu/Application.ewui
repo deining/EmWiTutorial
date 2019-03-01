@@ -1,0 +1,7 @@
+$version 6.60
+
+// Application
+note group Application
+{
+  attr Bounds = <132,2,411,100>;
+}

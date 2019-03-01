@@ -1,0 +1,7 @@
+$version 6.60
+
+// Bell component
+note group BellComponent
+{
+  attr Bounds = <10,117,260,277>;
+}

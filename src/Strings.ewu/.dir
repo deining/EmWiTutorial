@@ -1,0 +1,10 @@
+$version 6.60
+
+$include HeaderTutorialApplication
+$include LabelPushButtonBell
+$include HeadingBell
+$include BellComponent
+$include LabelPushButtonForecast
+$include HeadingForecast
+$include ForecastComponent
+$include Application

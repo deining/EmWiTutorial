@@ -130,11 +130,11 @@ image::deviceintegration/ProjectProfiles.png[Project profiles]
 
 [TIP]
 ====
-Now that we have two profiles defined, we can switch between these two profiles using the _Profile_ dropdown list located in the second row of the toolbar, placed right beneath the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode:
+Now that we have two profiles defined, we can switch between these two profiles using the https://doc.embedded-wizard.de/menu-build#9[_Profile_ dropdown list^] located in the second row of the toolbar, placed right beneath the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode:
 
 [[fig:DropdownList]]
 .Dropdown list for switching between different profiles
-image::deviceintegration/DropdownProfiles.png[dropdownlist profiles] 
+image::deviceintegration/DropdownProfiles.png[dropdown list profiles] 
 ====
 
 == Adding a browser device class variant

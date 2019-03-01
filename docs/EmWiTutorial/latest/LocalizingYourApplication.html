@@ -93,11 +93,20 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="ComponentReusability.html">Making your GUI component truly reusable</a>
   </li>
-  <li class="nav-item" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="DeviceIntegrationBrowser.html">Integrating with browser device</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <span class="nav-text">Localizing your application</span>
+<ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="LocalizingYourApplication.html">Localizing your application</a>
+    <a class="nav-link" href="LocalizingYourApplication.html">Adding languages and localizing your strings</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="LanguageSwitcher.html">Adding a language switcher</a>
   </li>
 </ul>
   </li>
@@ -134,15 +143,17 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="Introduction.html">Embedded Wizard Tutorial</a></li>
-    <li class="crumb">Authoring your first application</li>
-    <li class="crumb"><a href="LocalizingYourApplication.html">Localizing your application</a></li>
+    <li class="crumb">Localizing your application</li>
+    <li class="crumb"><a href="LocalizingYourApplication.html">Adding languages and localizing your strings</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc">
 <h1>Localizing your application</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>In the <a href="DeviceIntegrationBrowser.html" class="page">last chapter</a>, we explained how to integrate your device, this task will be an essential part of every real world project. This is where newbies are often struggling, so hopefully you could make your way until the very end of this long chapter! While Embedded Wizards supports a broad range of different target devices. In order to provide universal, target independent instructions, we explained the integration with a web browser device which is universally available to all users. So what&#8217;s next? It&#8217;s very likely that with your application you are targeting customers worldwide. At this point you are inevitably confronted with the localization of your application. The earlier you get started, the better it is, avoiding cumbersome rework afterwards! Fortunately localization is deeply embedded into <em>Chora</em> language used by Embedded Wizard, this makes it really easy to get things done right here.</p>
+<p>In the <a href="DeviceIntegrationBrowser.html" class="page">last chapter</a>, we explained how to integrate your device, this task will be an essential part of every real world project. This is where newbies are often struggling, so hopefully you could make your way until the very end of this long chapter! In order to provide universal, target independent instructions, we explained the integration with a web browser device which is universally available to all users. So what&#8217;s next? It&#8217;s very likely that with your application you are targeting customers worldwide. At this point you are inevitably confronted with the localization of your application. The earlier you get started, the better it is, avoiding cumbersome rework afterwards! Fortunately localization is deeply embedded into <em>Chora</em> language used by Embedded Wizard, this makes it really easy to get things done right here.</p>
 </div>
 <hr>
 <div class="sidebarblock">
@@ -163,8 +174,187 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Device integration</em> 
 </div>
 </div>
 <hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multilingual_applications_concepts"><a class="anchor" href="#_multilingual_applications_concepts"></a>Multilingual applications: concepts</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>More to come &#8230;&#8203;</p>
+<p>As already stated above, the concept of languages is deeply embedded into the <em>Chora</em> programming language. In fact, Chora has even a data type <em><a href="https://doc.embedded-wizard.de/language-type" target="_blank" rel="noopener">language</a></em> that represents a language. Each project contains at least one ore more members of this type. Please note that there are two different kind of language members:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the member named <em>Default</em>, represented by the icon <span class="image"><img src="_images/icons/DefaultLanguageIcon.png" alt="default language icon"></span>. Each project has this member, which represents the so called fallback language exactly once. This <em>Default</em> member can neither be renamed nor can it be removed from the project.</p>
+</li>
+<li>
+<p>user defined members, usually named after the language they represent, e.g. <span class="image"><img src="_images/icons/GermanLanguageIcon.png" alt="German language icon"></span>. For each language you support, you have to add a language member.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Language switching will be achieved by assigning a language member name to the built in global variable <a href="https://doc.embedded-wizard.de/language-variable" target="_blank" rel="noopener"><em>language</em></a>. Don&#8217;t confuse the built in global variable <em>language</em> with the data type <em>language</em>, both are named identical!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_another_language"><a class="anchor" href="#_adding_another_language"></a>Adding another language</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to make use of multiple languages inside our project, you have to have an associated <strong><a href="https://doc.embedded-wizard.de/language-member" target="_blank" rel="noopener">language</a></strong> on the Projects tab for each language you would like to use. So let&#8217;s add German as second language to our project. Once done, we are able to switch between the default language (English in our case) and the German language:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left).</p>
+</li>
+<li>
+<p>Identify the note frame with the caption <em>Languages</em>, it only contains the icon <span class="image"><img src="_images/icons/DefaultLanguageIcon.png" alt="Default language icon"></span> representing the default language.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the <em>Language</em> element <span class="image"><img src="_images/icons/LanguageIcon.png" alt="language icon"></span> inside the <em>Chora</em> folder over to the canvas and place it underneath the existing <em>Default</em> language. Rename the language to <em>German</em>. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <em>Language</em> section of your project should now look as shown in <a href="#fig:ProjectLanguages">Figure 1</a> below:</p>
+</div>
+<div id="fig:ProjectLanguages" class="imageblock">
+<div class="content">
+<img src="_images/localization/ProjectLanguages.png" alt="Project languages">
+</div>
+<div class="title">Figure 1. Project languages</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Now that we have two languages defined, we can switch between these two languages using the <a href="https://doc.embedded-wizard.de/menu-build#10"><em>Language</em> dropdown list</a> located in the second row of the toolbar, placed between the <em>Profiles</em> dropdown list and the <em>Styles</em> dropdown list:</p>
+</div>
+<div id="fig:DropdownList" class="imageblock">
+<div class="content">
+<img src="_images/localization/DropdownLanguages.png" alt="dropdown list languages">
+</div>
+<div class="title">Figure 2. Dropdown list for switching between different languages</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_language_strings_constants"><a class="anchor" href="#_adding_language_strings_constants"></a>Adding language strings / constants</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We just added a second language to our project, but this is not the end: next we have to add language strings to our project that will be used for all when we want to display text in different languages. We will put all these strings inside a new unit <em>Strings</em> so let&#8217;s go ahead and add the unit and the language strings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left).</p>
+</li>
+<li>
+<p>Identify the note frame with the caption <em>GUI project</em>, it only contains the icon <span class="image"><img src="_images/icons/ApplicationUnitIcon.png" alt="Application unit icon"></span> representing the <em>Application</em> unit.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/UnitIcon.png" alt="profile icon"></span> <em>Unit</em> inside the <em>Chora</em> folder over to the canvas and place it beneath the existing <em>Application</em> unit. Rename the unit to <em>Strings</em>.</p>
+</li>
+<li>
+<p>Double click on the newly inserted unit <span class="image"><img src="_images/icons/StringsUnitIcon.png" alt="Icon strings unit"></span>. Inside the composer window, a new tab <em>Strings</em> appears which shows the currently empty unit.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em>, over to root canvas. Rename the group to <em>Application</em>.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/ConstantIcon.png" alt="constant icon"></span> <em>Constant</em> inside the <em>Chora</em> folder over to the canvas and place it inside the just inserted annotation group . Rename the constant to <em>HeaderTutorialApplication</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With the newly inserted language string selected, have a look at the inspector window and identify the element <em>Values</em> for the constant, which by default has the value <em>"Hello  World". Please note the small triangle at the left hand side of the _Values</em> field. Click on the triangle and two more rows will come up: <em>Default</em> and <em>German</em>. While the <em>Default</em> row holds the fallback value for the string, the row <em>German</em> shall be used for the German translation string. Surely you grasped the concept already: the rows represent the language variant of the string constant, there is one row for each project language defined. If we defined a new language Spanish to the project, another row <em>Spanish</em> would appear. This concept of language variants makes localizing you application very easy. Let&#8217;s move on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Since we want to use the newly inserted language string as header text of our application, we change the value <em>Default</em> from <em>"Hello World"</em> to <em>"Tutorial application"</em> and the value <em>German</em> to <em>"Tutorial Anwendung"</em>. Don&#8217;t forget the surrounding double quotes in both cases or you may run in trouble.</p>
+</li>
+</ul>
+</div>
+<div id="fig:LanguageString" class="imageblock">
+<div class="content">
+<img src="_images/localization/LanguageStrings.png" alt="language string">
+</div>
+<div class="title">Figure 3. Language string and its translations</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add two new annotation groups with two new language strings inside each group. Consult <a href="#tab:LanguageStrings">Table 1</a> concerning the details.</p>
+</li>
+</ul>
+</div>
+<table id="tab:LanguageStrings" class="tableblock frame-topbot grid-rows" style="width: 99%;">
+<caption class="title">Table 1. Language string constants (to be inserted)</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Default / Fallback value</th>
+<th class="tableblock halign-center valign-top">German translation</th>
+<th class="tableblock halign-center valign-top">Annotation group</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>HeadingBell</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Bell"</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Klingel"</p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">Bell component</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>LabelPushButtonBell</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Ring"</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Läuten"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>HeadingForeCast</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Weather report"</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Wetterbericht"</p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">Forecast component</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>LabelPushButtonForeCast</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Show"</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">"Aufrufen"</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Once all four language strings were added to the project, the <em>Strings</em> unit should look as illustrated in <a href="#tab:LanguageStrings">Table 1</a>.</p>
+</div>
+<div id="fig:StringsUnit" class="imageblock">
+<div class="content">
+<img src="_images/localization/StringsUnit.png" alt="string unit">
+</div>
+<div class="title">Figure 4. Language strings inside the <em>Strings</em> unit</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_localize_the_application_text_strings"><a class="anchor" href="#_localize_the_application_text_strings"></a>Localize the application text strings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that we have the language strings defined, let&#8217;s make use of them!</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -184,12 +374,14 @@ If you encountered difficulties and didn&#8217;t succeed when following the inst
 </div>
 </div>
 <hr>
+</div>
+</div>
 </article>
   </main>
 </div>
 <footer class="footer">
-  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.</p>
-  <p>This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
+  <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.<br/>
+  This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/highlight.js"></script>

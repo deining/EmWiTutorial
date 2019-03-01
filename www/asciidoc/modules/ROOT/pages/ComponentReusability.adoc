@@ -134,8 +134,8 @@ The GUI allows ringing the bell of your device already. Imagine your device is a
 Yeah! You successfully included a second push button component into the main app. Let's move on and customize the newly inserted component!
 
 * If not already select, select the newly inserted component first:
-* Using the inspector window, change the property of the new push button component _TextHeader_ text to _Forecast_.
-* Using the inspector window, change the property _LabelButton_ text to _Show_.
+* Using the inspector window, change the property _TextHeader_ of the new push button component to the text string _"Forecast"_.
+* Using the inspector window, change the property _LabelButton_ of the same component to _"Show"_.
 * Add a new slot method inside the note rectangle titled _Slot methods_. Rename the slot method to _ForecastSlot_.
 * Fill the body of the slot method with the code line ``trace "Sorry, but the GUI cannot tell the weather forecast";``.
 

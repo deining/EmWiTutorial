@@ -20,7 +20,7 @@ So let's start and build our first GUI component: it's a simple graphical unit w
 * We want to place the component in the _Application_ unit, so click on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab. Inside the composer window, you will now see the _Application_ root component, the only component currently present.
 
 * Press kbd:[Alt+1] to put the focus on the https://doc.embedded-wizard.de/gallery-templates-window[gallery templates window^], left to the main composer window. Alternatively, you may mouse click at the tab _Templates_ at the very top of the window, to the left.
-* Press kbd:[c] twice: the first key press open the _**C**hora_ folder, the second key press will then open the invoke folder _**C**omponent templates_, that's what we need. Alternatively, you may mouse click on the header titled _Component templates_ inside the main area of the templates window. This will also open the folder and show all available GUI templates.
+* Press kbd:[C] twice: the first key press opens the _**C**hora_ folder, the second key press will then open the invoke folder _**C**omponent templates_, that's what we need. Alternatively, you may mouse click on the header titled _Component templates_ inside the main area of the templates window. This will also open the folder and show all available GUI templates.
 * Identify the item image:icons/ComponentIcon.png[component icon] _Component_, representing an empty GUI component. Click on the element, drag it into the main area and place it underneath the existing _Application_ root component.
 * We want to use the new component to ring a bell, so we give it a dedicated name: with the component still selected, press kbd:[F2] to rename the component. In the https://doc.embedded-wizard.de/inspector-window[inspector window^], type in _BellComponent_ and press kbd:[Enter] once you are done.
 
@@ -78,12 +78,12 @@ Next we add a header text to the component:
 
 Eventually, we add the core element, a push button that will be used to ring the bell:
 
-* In the gallery templates window to the left, either click on the folder header _**W**idgets_ or press key kbd:[w], this will open and show all items inside the _**w**idgets_ folder.
+* In the gallery templates window to the left, either click on the folder header _**W**idgets_ or press key kbd:[W], this will open and show all items inside the _**w**idgets_ folder.
 * Click on the _Push Button_, widget and drag an instance over to the component's canvas. Place the element in the lower area of the canvas.
 * Press kbd:[F2] to rename the component. In the inspector window, type in _PushButtonBell_ and press kbd:[Enter] once you are done.
 * Now customize the appearance of the push button. You may do so by setting the property _Appearance_ in the inspector window to _WidgetSet::PushButtonSmall_ and by setting the property _Label_ to _Ring_.
 * You should now see a push button labelled _Ring_ in the lower area of the canvas.
-* In the search field at the very top of the inspector window, type in _Focus_ to look up the property _Focus_ of your component. By writing the string _null_ into the value input field, set the _Default_ value of this property explicitly to _null_ (). An icon image:icons/FocusPropertyIcon.png[focus property icon] _Focus_ will appear at the top left corner of the composer window, representing the overridden property. Move this icon to the bottom.
+* In the search field at the very top of the inspector window, type in _Focus_ to look up the property _Focus_ of your component. By writing the string _null_ into the value input field, set the _Default_ value of this property explicitly to _null_. An icon image:icons/FocusPropertyIcon.png[focus property icon] _Focus_ will appear at the top left corner of the composer window, representing the overridden property. Move this icon to the bottom.
 
 NOTE: By setting the _Focus_ to null, we prevent our component from obtaining the focus. Obtaining the focus changes the component's appearance, which is undesired in our case.
 

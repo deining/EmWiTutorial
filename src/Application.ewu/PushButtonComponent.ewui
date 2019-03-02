@@ -12,7 +12,7 @@ class PushButtonComponent : Core::Group
   $rect <-2,166,198,206>
   inherited property Bounds = <0,0,210,150>;
 
-  $rect <-2,214,170,250>
+  $rect <-2,214,200,250>
   inherited property Focus = null;
 
   // White background of the bell component.

@@ -1,0 +1,12 @@
+$version 6.60
+
+$rect <39,201,239,241>
+$output false
+enum Language
+{
+  $rect <10,10,210,50>
+  item English;
+
+  $rect <220,10,420,50>
+  item German;
+}

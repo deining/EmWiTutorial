@@ -1,10 +1,10 @@
 $version 6.60
 
-$rect <30,20,230,60>
+$rect <30,42,230,82>
 $variant Browser
 vclass DeviceClassBrowser : Device::DeviceClass
 {
-  $rect <20,39,240,80>
+  $rect <20,138,240,178>
   inherited method RingTheBellCommand()
   {
     trace "Ring the bell command on browser device was called";
@@ -17,7 +17,7 @@ vclass DeviceClassBrowser : Device::DeviceClass
     $endif
   }
 
-  $rect <17,87,237,127>
+  $rect <17,186,237,226>
   inherited method ShowForecastCommand()
   {
     trace "Show forecast command on browser device was called";
@@ -30,9 +30,53 @@ vclass DeviceClassBrowser : Device::DeviceClass
     $endif
   }
 
-  // Command(s)
+  $rect <301,41,501,81>
+  inherited onset Language
+  {
+    $if (!$prototyper)
+      native (value)
+      {
+        localStorage.setItem("Language", value);
+      }
+    $endif
+
+    UpdateLanguage(value);
+  }
+
+  // Commands
   note group Commands
   {
-    attr Bounds = <0,-2,260,140>;
+    attr Bounds = <0,97,260,239>;
   }
+
+  // Properties
+  note group Properties
+  {
+    attr Bounds = <270,-2,530,140>;
+  }
+
+  // Initialisation
+  note group Initialisation
+  {
+    attr Bounds = <1,0,261,90>;
+  }
+
+  $rect <31,38,231,78>
+  inherited slot RestoreLanguage
+  {
+    var string lang = "0";
+
+    $if (!$prototyper)
+      native
+      {
+        lang = localStorage.getItem("Language");
+      }
+    $endif
+
+    Device::Device.Language = (Device::Language) lang.parse_int32(0);
+  }
+
+  $reorder Commands 1
+  $reorder Properties 1
+  $reorder Initialisation 1
 }

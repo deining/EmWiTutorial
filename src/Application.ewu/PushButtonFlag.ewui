@@ -221,7 +221,7 @@ class PushButtonFlag : Templates::PushButton
   }
 
   $rect <254,46,454,86>
-  property Resources::Bitmap BitmapFlag = Icons::FlagUK;
+  property Resources::Bitmap BitmapFlag;
 
   $rect <254,86,454,126>
   onset BitmapFlag
@@ -243,7 +243,7 @@ class PushButtonFlag : Templates::PushButton
   }
 
   $rect <472,47,672,87>
-  property language Language = Default;
+  property Device::Language Language;
 
   $rect <472,87,672,127>
   onset Language
@@ -254,10 +254,6 @@ class PushButtonFlag : Templates::PushButton
 
     // Remember the property's new value.
     pure Language = value;
-
-    // TO DO:
-    // 
-    // Now you can handle the alternation of the property.
   }
 
   $rect <472,127,672,167>

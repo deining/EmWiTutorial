@@ -1,0 +1,7 @@
+$version 6.60
+
+// Device interface
+note group DeviceInterface
+{
+  attr Bounds = <10,0,270,150>;
+}

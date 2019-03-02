@@ -2,3 +2,6 @@ $version 6.60
 
 $include DeviceClass
 $include Device
+$include DeviceInterface
+$include Enumerations
+$include Language

@@ -12,6 +12,7 @@ class LanguageSelector : Core::Group
   {
     preset Bounds = <0,0,46,33>;
     preset OnActivate = switchLanguage;
+    preset Language = Device::Language.English;
   }
 
   $rect <20,20,160,60>
@@ -20,12 +21,12 @@ class LanguageSelector : Core::Group
     preset Bounds = <54,0,100,33>;
     preset OnActivate = switchLanguage;
     preset BitmapFlag = Icons::FlagGerman;
-    preset Language = German;
+    preset Language = Device::Language.German;
   }
 
   $rect <0,100,200,140>
   slot switchLanguage
   {
-    language = ((Application::PushButtonFlag)sender).Language;
+    Device::Device.Language = ((Application::PushButtonFlag)sender).Language;
   }
 }

@@ -1,0 +1,7 @@
+$version 6.60
+
+// Enumerations
+note group Enumerations
+{
+  attr Bounds = <10,160,270,260>;
+}

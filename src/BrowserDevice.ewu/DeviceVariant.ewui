@@ -1,0 +1,7 @@
+$version 6.60
+
+// Browser device variant
+note group DeviceVariant
+{
+  attr Bounds = <10,0,260,150>;
+}

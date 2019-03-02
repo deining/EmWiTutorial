@@ -12,6 +12,12 @@ class TutorialApplication : Core::Root
   $rect <1,340,201,380>
   inherited property Bounds = <0,0,480,320>;
 
+  $rect <10,390,190,430>
+  inherited method Init()
+  {
+    signal Device::Device.RestoreLanguage;
+  }
+
   // Gray background of the bell component.
   // This element has to stay in the background, therefore it must be its ordered \
   // below the other elements.

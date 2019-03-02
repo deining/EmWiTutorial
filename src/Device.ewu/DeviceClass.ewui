@@ -1,26 +1,76 @@
 $version 6.60
 
-$rect <5,0,215,40>
+$rect <28,44,238,84>
 $output false
 class DeviceClass : Templates::DeviceClass
 {
   // This method implements a device command.
-  $rect <20,40,240,84>
+  $rect <20,137,240,177>
   method void RingTheBellCommand()
   {
     trace "Sorry, but this device is not able to ring the bell!";
   }
 
-  // Command(s)
-  note group Commands
+  // Initialisation
+  note group Initialisation
   {
-    attr Bounds = <0,0,260,140>;
+    attr Bounds = <1,0,260,90>;
   }
 
   // This method implements a device command.
-  $rect <20,86,240,130>
+  $rect <20,183,240,223>
   method void ShowForecastCommand()
   {
     trace "Sorry, but this device is not able to present a weather forecast!";
+  }
+
+  // Properties
+  note group Properties
+  {
+    attr Bounds = <270,0,500,240>;
+  }
+
+  $rect <286,41,486,81>
+  property Device::Language Language = Device::Language.English;
+
+  $rect <286,88,486,128>
+  onset Language
+  {
+    // Implement saving the value in the variant class
+    // Call the UpdateLanguage() method afterwards
+
+    UpdateLanguage(value);
+  }
+
+  $rect <281,140,481,180>
+  method void UpdateLanguage( arg Device::Language aNewValue )
+  {
+    // Remember the property's new value.
+    pure Language = aNewValue;
+
+    switch( aNewValue )
+    {
+      case Device::Language.English:
+        language = Default;
+      case Device::Language.German:
+        language = German;
+      default:     
+        language = Default;
+    }
+
+    // Notify all associated property observers.
+    notifyobservers ^Language;
+  }
+
+  // Commands
+  note group Commands1
+  {
+    attr Bounds = <0,97,260,240>;
+  }
+
+  $rect <27,37,240,80>
+  slot RestoreLanguage
+  {
+    sender; /* The GUI cannot restore the languauge */
   }
 }

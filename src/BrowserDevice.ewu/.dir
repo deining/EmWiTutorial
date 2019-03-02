@@ -2,3 +2,4 @@ $version 6.60
 
 $include DeviceClassBrowser
 $include InlineFunctions
+$include DeviceVariant

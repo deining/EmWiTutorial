@@ -136,7 +136,7 @@ profile Browser : Tara.WebGL.RGBA8888
   attr CleanOutputDirectories = false;
   attr ApplicationTitle = "Embedded Wizard sample application";
   attr ApplicationName = TutorialApplication;
-  attr OutputDirectory = ../WebGL;
+  attr OutputDirectory = ../docs/demo;
   attr Obfuscation = true;
 
   $rect <10,10,154,50>

@@ -33,9 +33,9 @@ var index;if(!index)throw new Error("The application file '_project.js' isn't ye
 );if(index.tg)throw new Error("The unit file 'Strings.js' included twice!");index.
 tg=(function(){var B=index;var C={};
 
-C.Ho={0:"Tutorial application",1:"Tutorial Anwendung"};C.Hv={0:"Ring",1:"L\xE4uten"
-};C.Hp={0:"Bell",1:"Klingel"};C.Hw={0:"Show",1:"Aufrufen"};C.Hq={0:"Weather report"
+C.Hn={0:"Tutorial application",1:"Tutorial Anwendung"};C.Hu={0:"Ring",1:"L\xE4uten"
+};C.Ho={0:"Bell",1:"Klingel"};C.Hv={0:"Show",1:"Aufrufen"};C.Hp={0:"Weather report"
 ,1:"Wetterbericht"};
 C._Init=function(){};C.AO=function(D){};return C;})();
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

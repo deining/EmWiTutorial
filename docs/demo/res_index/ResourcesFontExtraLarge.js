@@ -1160,4 +1160,4 @@ index.tn=[43,11,0,16,0x0001,192,"\
 \u3DE8\u0000"
 ,null,null];
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

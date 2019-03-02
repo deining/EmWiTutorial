@@ -2,7 +2,7 @@ $version 6.60
 
 $rect <250,56,450,96>
 $output false
-resource Resources::Bitmap FlagGerman
+resource Resources::Bitmap FlagGermany
 {
   attr bitmapfile FileName = .\Flags\de.png;
   attr alphafile AlphaName;

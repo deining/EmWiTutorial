@@ -162,8 +162,132 @@
 </div>
 <article class="doc">
 <h1>Adding a language switcher</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>In the <a href="LocalizingYourApplication.html" class="page">last chapter</a>, we &#8230;&#8203;</p>
+<p>In the <a href="LocalizingYourApplication.html" class="page">last chapter</a>, we added German as second language to the project and created five localizable language strings. Using these language strings, we replaced all hardcoded text strings in the textual elements of our GUI components. That&#8217;s great, our application is localized now. However, currently the user does not have the possibility to change the language of the user interface. We will change this in the next lesson by adding a language switcher to the application.</p>
+</div>
+<hr>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Source code</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you didn&#8217;t author or didn&#8217;t keep the <em>Localization</em> project explained in the previous <a href="LocalizingYourApplication.html" class="page">chapter</a>, you may download the <a href="_attachments/LocalisationTutorial.zip">sources</a> of this project and use this a starting base to follow the instructions given below.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_the_resources_for_the_language_switcher"><a class="anchor" href="#_adding_the_resources_for_the_language_switcher"></a>Adding the resources for the language switcher</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Our language switcher will be quite simple: we will place a English and a German flag side by side in the upper right corner of the application window. Once the user clicks on a flag the language will be changed.</p>
+</div>
+<div class="paragraph">
+<p>First we store the needed image icons inside the project:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At the project root level, create a new folder <em>Flags</em>.</p>
+</li>
+<li>
+<p>Download the two flag icons <a href="_attachments/flags/uk.png">uk.png</a> and <a href="_attachments/flags/de.png">de.png</a> and save them in the newly created directory</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_adding_the_flag_bitmap_resources"><a class="anchor" href="#_adding_the_flag_bitmap_resources"></a>Adding the flag bitmap resources</h3>
+<div class="paragraph">
+<p>Now that we have the two icons available, we will make use of them and create two graphical bitmap resources inside our project. We will put these resources inside a new unit <em>Icons</em> so let&#8217;s go ahead and add the unit first and the two flag bitmap resources afterwards:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab (the first tab from the left).</p>
+</li>
+<li>
+<p>Identify the note frame with the caption <em>GUI project</em>, it currently contains the icon <span class="image"><img src="_images/icons/ApplicationUnitIcon.png" alt="Application unit icon"></span> representing the <em>Application</em> unit and the icon <span class="image"><img src="_images/icons/StringsUnitIcon.png" alt="Strings unit icon"></span> representing the <em>Strings</em> unit.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/UnitIcon.png" alt="profile icon"></span> <em>Unit</em> inside the <em>Chora</em> folder over to the canvas and place it underneath the existing <em>Strings</em> unit. Rename the unit to <em>Icons</em>.</p>
+</li>
+<li>
+<p>Double click on the newly inserted unit <span class="image"><img src="_images/icons/IconsUnitIcon.png" alt="Icon icons unit"></span>. Inside the composer window, a new tab <em>Icons</em> appears which shows the currently empty unit.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em>, over to root canvas. Rename the group to <em>Flags</em>.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/BitmapResourceIcon.png" alt="constant icon"></span> <em>Bitmap Resource</em> inside the <em>Resources</em> folder over to the canvas and place it inside the just inserted annotation group. Rename the constant to <em>FlagUK</em>.</p>
+</li>
+<li>
+<p>In the inspector window, change the property <em>FileName</em> of the newly inserted bitmap resource to <em>.\Flags\uk.png</em>. You may either type in the path and filename directly or you can make use of the file chooser that gets invoked one you click at the symbol <em>&#8230;&#8203;</em> located at the right end of the row.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag another <span class="image"><img src="_images/icons/BitmapResourceIcon.png" alt="constant icon"></span> <em>Bitmap Resource</em> element over to the canvas. Rename the constant to <em>FlagGermany</em>.</p>
+</li>
+<li>
+<p>Change the property <em>FileName</em> of the newly inserted bitmap resource to <em>.\Flags\de.png</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_a_pushbutton_flag_component"><a class="anchor" href="#_building_a_pushbutton_flag_component"></a>Building a pushbutton flag component</h3>
+<div class="paragraph">
+<p>With the resources available, we now can build a reusable pushbutton flag component that will be used inside the language switcher component later on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We want to place the push button component in the <em>Application</em> unit, so we have to invoke this unit first: click on the <span class="image"><img src="_images/icons/EmbeddedWizardIcon.png" alt="project icon"></span> <em>Project</em> tab and double click on the <em>Application</em> unit to open the corresponding composer tab. Inside the tab, you should now see the <em>Application</em> root component and the <em>Pushbutton component</em>, built by you.</p>
+</li>
+<li>
+<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em>, over to root canvas. Rename the group to <em>Language selector</em>.</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_the_language_switcher_component"><a class="anchor" href="#_building_the_language_switcher_component"></a>Building the language switcher component</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Source code</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you encountered difficulties and didn&#8217;t succeed when following the instructions given above, you may download the <a href="_attachments/LanguageSwitcherTutorial.zip">project sources</a> of the finalized example on how to add a language switcher to your application.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
 </div>
 </article>
   </main>

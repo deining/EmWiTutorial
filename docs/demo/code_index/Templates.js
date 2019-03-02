@@ -34,10 +34,10 @@ var index;if(!index)throw new Error("The application file '_project.js' isn't ye
 te=(function(){var B=index;var C={};
 
 C.AK={_Init:function(aArg){B.Core.Ah._Init.call(this,aArg);this.__proto__=C.AK;},
-_className:"Templates::PushButton"};C.Ce={_Init:function(aArg){this.__proto__=C.
-Ce;B.gb++;},_Done:function(){this.__proto__=C.Ce;B.gb--;},_ReInit:function(){},_Mark:
+_className:"Templates::PushButton"};C.Cc={_Init:function(aArg){this.__proto__=C.
+Cc;B.gb++;},_Done:function(){this.__proto__=C.Cc;B.gb--;},_ReInit:function(){},_Mark:
 function(D){var A;if((A=this.Af)&&(A._cycle!=D))A._Mark(A._cycle=D);},Af:null,_cycle:
 0,_observers:null,_className:"Templates::DeviceClass"};
 C._Init=function(){C.AK.__proto__=B.Core.Ah;};C.AO=function(D){};return C;})();
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

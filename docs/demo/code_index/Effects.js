@@ -40,4 +40,4 @@ function(){return this;},_this:null};
 C._Init=function(){C.FT.__proto__=B.Core.Timer;};C.AO=function(D){var A;if((A=C.EY.
 _this)&&(A._cycle!=D))A._Done(C.EY._this=null);};return C;})();
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

@@ -20,7 +20,7 @@ class LanguageSelector : Core::Group
   {
     preset Bounds = <54,0,100,33>;
     preset OnActivate = switchLanguage;
-    preset BitmapFlag = Icons::FlagGerman;
+    preset BitmapFlag = Icons::FlagGermany;
     preset Language = Device::Language.German;
   }
 

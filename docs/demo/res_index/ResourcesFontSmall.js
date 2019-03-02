@@ -334,4 +334,4 @@ index.tp=[14,4,0,16,0x0001,192,"\
 \u031D\u3D5F\u7E50\uC6B0\uDC40\uEB0F\u04E6\u0000"
 ,null,null];
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

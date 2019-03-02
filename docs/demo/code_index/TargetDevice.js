@@ -36,4 +36,4 @@ index.tm=(function(){var B=index;var C={};
 
 C._Init=function(){};C.AO=function(D){};return C;})();
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

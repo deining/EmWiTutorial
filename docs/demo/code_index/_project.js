@@ -41,4 +41,4 @@ apply(this,arguments);};B.sK=function(D){B.Core.AO(D);B.ti.AO(D);B.Graphics.AO(D
 );B.tf.AO(D);B.th.AO(D);B.tk.AO(D);B.te.AO(D);B.hN.AO(D);B.Device.AO(D);B.tl.AO(
 D);B.tm.AO(D);B.tg.AO(D);B.tj.AO(D);};return B;})();
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

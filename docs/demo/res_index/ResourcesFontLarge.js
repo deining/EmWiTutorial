@@ -691,4 +691,4 @@ index.to=[28,8,0,16,0x0001,192,"\
 \u8630\u400F\u4F1D\uFE02\u97F7\u07E3\uC530\u07FC\u0000\u0000"
 ,null,null];
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

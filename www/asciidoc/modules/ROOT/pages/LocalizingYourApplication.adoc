@@ -6,7 +6,7 @@ In the xref::DeviceIntegrationBrowser.adoc[last chapter], we explained how to in
 '''
 .Source code
 ****
-TIP: If you didn't author or didn't keep the _Device integration_ project explained in the previous xref:DeviceIntegrationBrowser.adoc[chapter], you may download the link:{attachmentsdir}/ReusableComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+TIP: If you didn't author or didn't keep the _Device integration_ project explained in the previous xref:DeviceIntegrationBrowser.adoc[chapter], you may download the link:{attachmentsdir}/DeviceIntegrationTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
 ****
 '''
 
@@ -44,7 +44,7 @@ image::localization/DropdownLanguages.png[dropdown list languages]
 
 == Adding language strings / constants
 
-We just added a second language to our project, but this is not the end: next we have to add language strings to our project that will be used for all when we want to display text in different languages. We will put all these strings inside a new unit _Strings_ so let's go ahead and add the unit and the language strings:
+We just added a second language to our project, but this is not the end: next we have to add language strings to our project that will be used when we want to display text in different languages. We will put all these strings inside a new unit _Strings_ so let's go ahead and add the unit and the language strings:
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
 * Identify the note frame with the caption _GUI project_, it only contains the icon image:icons/ApplicationUnitIcon.png[Application unit icon] representing the _Application_ unit. 
@@ -53,7 +53,7 @@ We just added a second language to our project, but this is not the end: next we
 * From the gallery templates window to the left, drag the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Application_.
 * From the gallery templates window to the left, drag the element image:icons/ConstantIcon.png[constant icon] _Constant_ inside the _Chora_ folder over to the canvas and place it inside the just inserted annotation group . Rename the constant to _HeaderTutorialApplication_.
 
-With the newly inserted language string selected, have a look at the inspector window and identify the element _Values_ for the constant, which by default has the value _"Hello  World". Please note the small triangle at the left hand side of the _Values_ field. Click on the triangle and two more rows will come up: _Default_ and _German_. While the _Default_ row holds the fallback value for the string, the row _German_ shall be used for the German translation string. Surely you grasped the concept already: the rows represent the language variant of the string constant, there is one row for each project language defined. If we defined a new language Spanish to the project, another row _Spanish_ would appear. This concept of language variants makes localizing you application very easy. Let's move on:
+With the newly inserted language string selected, have a look at the inspector window and identify the element _Values_ for the constant, which by default has the value _"Hello World". Please note the small triangle at the left hand side of the _Values_ field. Click on the triangle and two more rows will come up: _Default_ and _German_. While the _Default_ row holds the fallback value for the string, the row _German_ shall be used for the German translation string. Surely you grasped the concept already: the rows represent the language variant of the string constant, there is one row for each project language defined. If we defined a new language Spanish to the project, another row _Spanish_ would appear. This concept of language variants makes localizing you application very easy. Let's move on:
 
 * Since we want to use the newly inserted language string as header text of our application, we change the value _Default_ from _"Hello World"_ to _"Tutorial application"_ and the value _German_ to _"Tutorial Anwendung"_. Don't forget the surrounding double quotes in both cases or you may run in trouble. 
 

@@ -1,4 +1,52 @@
 = Adding a language switcher
 Andreas Deininger andreas@deininger.net
 
-In the xref::LocalizingYourApplication.adoc[last chapter], we ...
+In the xref::LocalizingYourApplication.adoc[last chapter], we added German as second language to the project and created five localizable language strings. Using these language strings, we replaced all hardcoded text strings in the textual elements of our GUI components. That's great, our application is localized now. However, currently the user does not have the possibility to change the language of the user interface. We will change this in the next lesson by adding a language switcher to the application.
+
+'''
+.Source code
+****
+TIP: If you didn't author or didn't keep the _Localization_ project explained in the previous xref:LocalizingYourApplication.adoc[chapter], you may download the link:{attachmentsdir}/LocalisationTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+****
+'''
+
+== Adding the resources for the language switcher
+
+Our language switcher will be quite simple: we will place a English and a German flag side by side in the upper right corner of the application window. Once the user clicks on a flag the language will be changed.
+
+First we store the needed image icons inside the project:
+
+* At the project root level, create a new folder _Flags_.
+* Download the two flag icons link:{attachmentsdir}/flags/uk.png[uk.png] and link:{attachmentsdir}/flags/de.png[de.png] and save them in the newly created directory
+
+=== Adding the flag bitmap resources
+
+Now that we have the two icons available, we will make use of them and create two graphical bitmap resources inside our project. We will put these resources inside a new unit _Icons_ so let's go ahead and add the unit first and the two flag bitmap resources afterwards:
+
+* Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
+* Identify the note frame with the caption _GUI project_, it currently contains the icon image:icons/ApplicationUnitIcon.png[Application unit icon] representing the _Application_ unit and the icon image:icons/StringsUnitIcon.png[Strings unit icon] representing the _Strings_ unit. 
+* From the gallery templates window to the left, drag the element image:icons/UnitIcon.png[profile icon] _Unit_ inside the _Chora_ folder over to the canvas and place it underneath the existing _Strings_ unit. Rename the unit to _Icons_.
+* Double click on the newly inserted unit image:icons/IconsUnitIcon.png[Icon icons unit]. Inside the composer window, a new tab _Icons_ appears which shows the currently empty unit.
+* From the gallery templates window to the left, drag the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Flags_.
+* From the gallery templates window to the left, drag the element image:icons/BitmapResourceIcon.png[constant icon] _Bitmap Resource_ inside the _Resources_ folder over to the canvas and place it inside the just inserted annotation group. Rename the constant to _FlagUK_.
+* In the inspector window, change the property _FileName_ of the newly inserted bitmap resource to _.\Flags\uk.png_. You may either type in the path and filename directly or you can make use of the file chooser that gets invoked one you click at the symbol _..._ located at the right end of the row.
+* From the gallery templates window to the left, drag another image:icons/BitmapResourceIcon.png[constant icon] _Bitmap Resource_ element over to the canvas. Rename the constant to _FlagGermany_.
+* Change the property _FileName_ of the newly inserted bitmap resource to _.\Flags\de.png_.
+
+=== Building a pushbutton flag component
+
+With the resources available, we now can build a reusable pushbutton flag component that will be used inside the language switcher component later on:
+
+* We want to place the push button component in the _Application_ unit, so we have to invoke this unit first: click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to open the corresponding composer tab. Inside the tab, you should now see the _Application_ root component and the _Pushbutton component_, built by you.
+* From the gallery templates window to the left, drag the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Language selector_.
+* ...
+
+=== Building the language switcher component
+
+TODO
+
+.Source code
+****
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/LanguageSwitcherTutorial.zip[project sources] of the finalized example on how to add a language switcher to your application.
+****
+'''

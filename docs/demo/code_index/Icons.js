@@ -34,11 +34,11 @@ var index;if(!index)throw new Error("The application file '_project.js' isn't ye
 tj=(function(){var B=index;var C={};
 
 C.F_={_class:function(){return B.tf.X;},0:{FileName:"./res_index/IconsFlagGerman.png"
-,Format:B.b9,NoOfFrames:1,FrameSize:[46,33],FrameDelay:0,_this:null}};C.Cf={_class:
+,Format:B.b9,NoOfFrames:1,FrameSize:[46,33],FrameDelay:0,_this:null}};C.Cd={_class:
 function(){return B.tf.X;},0:{FileName:"./res_index/IconsFlagUK.png",Format:B.b9
 ,NoOfFrames:1,FrameSize:[46,33],FrameDelay:0,_this:null}};
 C._Init=function(){};C.AO=function(D){var A;if((A=C.F_[0]._this)&&(A._cycle!=D))A.
-_Done(C.F_[0]._this=null);if((A=C.Cf[0]._this)&&(A._cycle!=D))A._Done(C.Cf[0]._this=
+_Done(C.F_[0]._this=null);if((A=C.Cd[0]._this)&&(A._cycle!=D))A._Done(C.Cd[0]._this=
 null);};return C;})();
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

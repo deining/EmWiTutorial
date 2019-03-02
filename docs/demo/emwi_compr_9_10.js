@@ -1736,4 +1736,4 @@ d.ky=0x00000002;d.jb=0x00000003;d.py=0x00000000;d.hY=0x00000100;d.kw=0x00000200;
 d.ja=0x00000300;d.sy=0x00000000;d.sA=0x00000101;d.sB=0x00000202;d.sz=0x00000303;
 d.kz=0x00000000;d.kA=0x00010000;d.kB=0x00020000;return d;})();
 
-/* Embedded Wizard */
+/* Embedded Wizard tutorial application */

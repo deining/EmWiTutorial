@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Wizard Tutorial :: Embedded Wizard Tutorial</title>
+    <title>Sample application demo site :: Embedded Wizard Tutorial</title>
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script src="../../_/js/email-obfuscator.js"></script>
@@ -79,7 +79,7 @@
     <button class="nav-toggle"></button>
     <span class="nav-text">Lessons</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="Introduction.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -118,7 +118,7 @@
     <button class="nav-toggle"></button>
     <span class="nav-text">Resources</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="DemoSite.html">Application demo site</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -154,89 +154,13 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="Introduction.html">Embedded Wizard Tutorial</a></li>
-    <li class="crumb">Lessons</li>
-    <li class="crumb"><a href="Introduction.html">Introduction</a></li>
+    <li class="crumb">Resources</li>
+    <li class="crumb"><a href="DemoSite.html">Application demo site</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc">
-<h1>Embedded Wizard Tutorial</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="sidebarblock">
-<div class="content">
-<script type="text/javascript">
-  document.write("Author: <a href='mailto:"+ obfuscateEmail() +"'>Dr. Andreas Deininger</a>")
-</script>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_about_embedded_wizard"><a class="anchor" href="#_about_embedded_wizard"></a>About Embedded Wizard</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://www.embedded-wizard.de/" target="_blank" rel="noopener">Embedded Wizard</a> is a graphical user interface tool developed and distributed by <a href="https://www.tara-systems.de/">TARA Systems GmbH</a> for creating graphical user interface (GUI) applications mainly for embedded systems.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_motivation_for_this_tutorial"><a class="anchor" href="#_motivation_for_this_tutorial"></a>Motivation for this tutorial</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>At work, we used Embedded Wizard GUI builder extensively in a development project. While the Embedded Wizard software proved to be an extremely powerful tool, getting started with this tool was quite challenging for us:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Embedded Wizard strictly follows and implements an object oriented programming approach. These concepts may not be immediately obvious to a novice user however, who may be overwhelmed by terminology of properties, outlets, class variants, property references and so on.</p>
-</li>
-<li>
-<p>Device integration will an essential part of every real world project, this is where newbies are often struggling. This situation is worsened by the fact that Embedded Wizards supports a broad range of target devices, each one being different, which makes it hard to provide universal instructions here.</p>
-</li>
-<li>
-<p>Embedded Wizard comes with a comprehensive, excellent <a href="http://doc.embedded-wizard.de">documentation</a> which covers all aspects of the system. This documentation is topic oriented and even comes with several small, helpful sample projects. However, it remains a challenge to gain understanding on how to use and properly connect these code snippets in the context of a bigger application.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>By time, we get acquainted to Embedded Wizard and the underlying concepts, the learning curve was pretty steep though. At that time, I sorely missed a step-by step tutorial, explaining in detail the development of a reasonably small, but already meaningful application. Since I couldn&#8217;t find anything like that I took the initiative and started authoring such a tutorial by myself. Hopefully the provided tutorial will be helpful for you and will get you started with Embedded Wizard trouble-free and quickly!</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_scope_of_the_tutorial"><a class="anchor" href="#_scope_of_the_tutorial"></a>Scope of the tutorial</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This project aims at providing a tutorial for potential users of Embedded Wizard to get them started quickly.</p>
-</div>
-<div class="paragraph">
-<p>While building a sample application step by step, the tutorial covers the following topics:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html">Basic steps when building a GUI application</a></p>
-</li>
-<li>
-<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/ComponentReusability.html">Developing and prototyping reusable graphical components</a></p>
-</li>
-<li>
-<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/DeviceIntegrationBrowser.html">Device integration</a></p>
-</li>
-<li>
-<p><a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/LocalizingYourApplication.html">Localization of your application</a></p>
-</li>
-<li>
-<p>Persistent data storage on the target device</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_sample_application"><a class="anchor" href="#_sample_application"></a>Sample application</h2>
-<div class="sectionbody">
+<h1>Sample application demo site</h1>
 <div class="paragraph">
 <p>In the course of this tutorial, we are going to develop a small GUI application for execution inside a web browser. A live preview of  the sample application is shown in <a href="#fig:TutorialApp">Figure 1</a> below. Feel free to click inside and explore the app and its features:</p>
 </div>
@@ -254,50 +178,17 @@
 <div class="paragraph">
 <p>The tutorial application comprises two components, titled <em>Bell</em> and <em>Weather report</em>. When pressing the push-button of the <em>bell</em> component, a beep will sound. When pressing the push-button of the <em>weather report</em> component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either <em>English</em> or German as language of the user interface. When running the app in its own browser window, the chosen language setting will be stored inside the local storage of your web browser and will be remembered on the next reload or startup. This way you can keep your language setting, even when you exit and restart your browser.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_target_audience_prior_knowledge"><a class="anchor" href="#_target_audience_prior_knowledge"></a>Target audience, prior knowledge</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The main audience for the book are professional developers that want leverage Embedded Wizard platform when developing GUi applications for their embedded devices. This tutorial assumes that you have experience with one or more programming languages (C, C++, Java, C#, &#8230;&#8203;) and that you are familiar with the concepts of object oriented programming. In the first place, this tutorial wants to provide easy to follow step by step instructions on how to build a small, but meaningful sample application. Quite often, the tutorial goes beyond this and tries to reveal the architectural patterns behind the application, specifically pointing out how the patterns are implemented by Embedded wizard. While doing so we assume at least limited familiarity with the patterns of object oriented design, this tutorial does <strong>not</strong> explain things like classes, methods, inheritance, &#8230;&#8203; from ground up.</p>
-</div>
-<div class="admonitionblock important">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you haven&#8217;t written any code by hand, this tutorial is most likely <strong>not</strong> for you. Don&#8217;t be deceived: while Embedded Wizard provides a graphical oriented programming approach in the first place, for any meaningful application, you have to write code sooner or later to get the desired results. Don&#8217;t be scared, though: this isn&#8217;t too hard, everything will be explained in the course of this tutorial.
+If you want to test whether the app actually keeps your language setting, you have to open the app in its own <a href="https://deining.github.io/EmWiTutorial/demo/">browser window</a>.
 </td>
 </tr>
 </table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Download and install <a href="https://www.embedded-wizard.de/download/">Embedded Wizard Free Edition</a>, version 9.10. The free edition has all features of the Professional edition, is is restricted to small projects however. Luckily, the free edition allows to develop and to run the tutorial application without limitation.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_feedback_and_questions"><a class="anchor" href="#_feedback_and_questions"></a>Feedback and questions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you have any suggestion for improvement or comment concerning this tutorial, feel free to open an <a href="https://github.com/deining/EmWiTutorial/issues">issue</a> in the github repository associated with this tutorial.</p>
-</div>
-<div class="paragraph">
-<p>For general question unrelated to this tutorial, you may make use of the <a href="https://ask.embedded-wizard.de">question and answer site</a> for Embedded Wizard users and UI developers.</p>
-</div>
-<hr>
-<div class="paragraph">
-<p>Let&#8217;s get started with a simple <a href="https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/HelloWorld.html">Hello, world</a> example!</p>
-</div>
-</div>
 </div>
 </article>
   </main>

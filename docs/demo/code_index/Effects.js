@@ -29,13 +29,15 @@
 *
 *******************************************************************************/
 
-var TutorialApplication;if(!TutorialApplication)throw new Error("The application file '_project.js' isn't yet loaded!"
-);if(TutorialApplication.tg)throw new Error("The unit file 'Strings.js' included twice!"
-);TutorialApplication.tg=(function(){var B=TutorialApplication;var C={};
+var index;if(!index)throw new Error("The application file '_project.js' isn't yet loaded!"
+);if(index.ti)throw new Error("The unit file 'Effects.js' included twice!");index.
+ti=(function(){var B=index;var C={};
 
-C.Hm={0:"Tutorial application",1:"Tutorial Anwendung"};C.Ht={0:"Ring",1:"L\xE4uten"
-};C.Hn={0:"Bell",1:"Klingel"};C.Hu={0:"Show",1:"Aufrufen"};C.Ho={0:"Weather report"
-,1:"Wetterbericht"};
-C._Init=function(){};C.AO=function(D){};return C;})();
+C.FT={Trigger:function(){B.Core.Timer.Trigger.call(this);B.pl(this,0);},_Init:function(
+aArg){B.Core.Timer._Init.call(this,aArg);this.__proto__=C.FT;},_className:"Effects::EffectTimerClass"
+};C.EY={_Init:function(){C.FT._Init.call(this,0);this.E9(15);this.BG(true);},_variants:
+function(){return this;},_this:null};
+C._Init=function(){C.FT.__proto__=B.Core.Timer;};C.AO=function(D){var A;if((A=C.EY.
+_this)&&(A._cycle!=D))A._Done(C.EY._this=null);};return C;})();
 
 /* Embedded Wizard */

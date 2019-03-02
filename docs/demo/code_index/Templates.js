@@ -29,16 +29,15 @@
 *
 *******************************************************************************/
 
-var EmWiCompr_9_10;var TutorialApplication;if(!EmWiCompr_9_10)throw new Error("The Embedded Wizard runtime environment file 'emwi_compr_9_10.js' isn't yet loaded!"
-);if(TutorialApplication)throw new Error("The application file '_project.js' included twice!"
-);TutorialApplication=(function(){var B={__proto__:EmWiCompr_9_10};
-B.Default=0;B.German=1;
-B.sN=[480,320];B.l_=function(){return B.hN.TutorialApplication;};B.rk="Embedded Wizard sample application";
-B.kt=0;B.s$=0;B.g9=[];B._Init=function(){B.Core._Init();B.ti._Init();B.Graphics.
-_Init();B.tf._Init();B.th._Init();B.tk._Init();B.te._Init();B.hN._Init();B.Device.
-_Init();B.tl._Init();B.tm._Init();B.tg._Init();B.tj._Init();this.__proto__._Init.
-apply(this,arguments);};B.sK=function(D){B.Core.AO(D);B.ti.AO(D);B.Graphics.AO(D
-);B.tf.AO(D);B.th.AO(D);B.tk.AO(D);B.te.AO(D);B.hN.AO(D);B.Device.AO(D);B.tl.AO(
-D);B.tm.AO(D);B.tg.AO(D);B.tj.AO(D);};return B;})();
+var index;if(!index)throw new Error("The application file '_project.js' isn't yet loaded!"
+);if(index.te)throw new Error("The unit file 'Templates.js' included twice!");index.
+te=(function(){var B=index;var C={};
+
+C.AK={_Init:function(aArg){B.Core.Ah._Init.call(this,aArg);this.__proto__=C.AK;},
+_className:"Templates::PushButton"};C.Ce={_Init:function(aArg){this.__proto__=C.
+Ce;B.gb++;},_Done:function(){this.__proto__=C.Ce;B.gb--;},_ReInit:function(){},_Mark:
+function(D){var A;if((A=this.Af)&&(A._cycle!=D))A._Mark(A._cycle=D);},Af:null,_cycle:
+0,_observers:null,_className:"Templates::DeviceClass"};
+C._Init=function(){C.AK.__proto__=B.Core.Ah;};C.AO=function(D){};return C;})();
 
 /* Embedded Wizard */

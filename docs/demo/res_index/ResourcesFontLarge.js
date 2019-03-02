@@ -29,10 +29,10 @@
 *
 *******************************************************************************/
 
-var TutorialApplication;if(!TutorialApplication)throw new Error("The application file '_project.js' isn't yet loaded!"
-);if(TutorialApplication.to)throw new Error("The file file 'ResourcesFontLarge.js' included twice!"
+var index;if(!index)throw new Error("The application file '_project.js' isn't yet loaded!"
+);if(index.to)throw new Error("The file file 'ResourcesFontLarge.js' included twice!"
 );
-TutorialApplication.to=[28,8,0,16,0x0001,192,"\
+index.to=[28,8,0,16,0x0001,192,"\
 \u0001\u8001\u7FEB\u000B\u0015\u800D\u0000\u0000\u0020\u8000\u8000\u0000\u0000\u8007\u0000\u0297\
 \u0021\u8002\u7FEB\u0004\u0015\u8008\u0000\u0297\u0022\u8002\u7FE9\u0006\u0007\u800A\u0000\u0340\
 \u0023\u8001\u7FEB\u0012\u0015\u8012\u0000\u039F\u0024\u8001\u7FE7\u000F\u001C\u8011\u0000\u0718\

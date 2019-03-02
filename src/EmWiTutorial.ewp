@@ -135,7 +135,7 @@ profile Browser : Tara.WebGL.RGBA8888
   attr ApplicationClass = Application::TutorialApplication;
   attr CleanOutputDirectories = false;
   attr ApplicationTitle = "Embedded Wizard sample application";
-  attr ApplicationName = TutorialApplication;
+  attr ApplicationName = index;
   attr OutputDirectory = ../docs/demo;
   attr Obfuscation = true;
 

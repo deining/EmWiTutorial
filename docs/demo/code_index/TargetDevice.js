@@ -29,15 +29,11 @@
 *
 *******************************************************************************/
 
-var TutorialApplication;if(!TutorialApplication)throw new Error("The application file '_project.js' isn't yet loaded!"
-);if(TutorialApplication.te)throw new Error("The unit file 'Templates.js' included twice!"
-);TutorialApplication.te=(function(){var B=TutorialApplication;var C={};
+var index;if(!index)throw new Error("The application file '_project.js' isn't yet loaded!"
+);if(index.tm)throw new Error("The unit file 'TargetDevice.js' included twice!");
+index.tm=(function(){var B=index;var C={};
 
-C.AK={_Init:function(aArg){B.Core.Ah._Init.call(this,aArg);this.__proto__=C.AK;},
-_className:"Templates::PushButton"};C.Cc={_Init:function(aArg){this.__proto__=C.
-Cc;B.gb++;},_Done:function(){this.__proto__=C.Cc;B.gb--;},_ReInit:function(){},_Mark:
-function(D){var A;if((A=this.Af)&&(A._cycle!=D))A._Mark(A._cycle=D);},Af:null,_cycle:
-0,_observers:null,_className:"Templates::DeviceClass"};
-C._Init=function(){C.AK.__proto__=B.Core.Ah;};C.AO=function(D){};return C;})();
+
+C._Init=function(){};C.AO=function(D){};return C;})();
 
 /* Embedded Wizard */

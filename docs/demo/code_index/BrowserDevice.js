@@ -29,21 +29,22 @@
 *
 *******************************************************************************/
 
-var TutorialApplication;if(!TutorialApplication)throw new Error("The application file '_project.js' isn't yet loaded!"
-);if(TutorialApplication.tl)throw new Error("The unit file 'BrowserDevice.js' included twice!"
-);TutorialApplication.tl=(function(){var B=TutorialApplication;var C={};
+var index;if(!index)throw new Error("The application file '_project.js' isn't yet loaded!"
+);if(index.tl)throw new Error("The unit file 'BrowserDevice.js' included twice!"
+);index.tl=(function(){var B=index;var C={};
 var Ai="Ring the bell command on browser device was called";var AF="Show forecast command on browser device was called";
-var BV="0";
-C.FR={Fh:function(){B.ta("%s",Ai);beep();},Fi:function(){B.ta("%s",AF);window.open(
-'https://www.cnn.com/weather','_self');},CW:function(value){localStorage.setItem(
-"Language",value);this.HL(value);},Fg:function(Az){var lang=BV;lang=localStorage.
-getItem("Language");B._GetAutoObject(B.Device.Device).CW(B.s6(lang,0,10));},_Init:
-function(aArg){var AP=this.AP;AP.__proto__=C.FR;B.gb++;},_Done:function(){var AP=
-this.AP;AP.__proto__=C.FR;B.gb--;},_ReInit:function(){},_Mark:function(D){},_variants:
-function(){return this;},_className:"BrowserDevice::DeviceClassBrowser"};var audioContext=
-new AudioContext();function beep(){var oscillatorNode=audioContext.createOscillator(
-);var gainNode=audioContext.createGain();oscillatorNode.connect(gainNode);oscillatorNode.
-frequency.value=500;oscillatorNode.type="square";gainNode.connect(audioContext.destination
+var BH="Setting";var BW="0";var BX="Restoring lang";
+C.FS={Fh:function(){B.ta("%s",Ai);beep();},Fi:function(){B.ta("%s",AF);window.open(
+'https://www.cnn.com/weather','_self');},CW:function(value){B.ta("%s",BH);B.ta("%e"
+,value);localStorage.setItem("Language",value);this.HN(value);},Fg:function(Az){
+var lang=BW;lang=localStorage.getItem("Language");B.ta("%s",BX);B.ta("%s",lang);
+B._GetAutoObject(B.Device.Device).CW(B.s6(lang,0,10));},_Init:function(aArg){var
+AP=this.AP;AP.__proto__=C.FS;B.gb++;},_Done:function(){var AP=this.AP;AP.__proto__=
+C.FS;B.gb--;},_ReInit:function(){},_Mark:function(D){},_variants:function(){return this;
+},_className:"BrowserDevice::DeviceClassBrowser"};var audioContext=new AudioContext(
+);function beep(){var oscillatorNode=audioContext.createOscillator();var gainNode=
+audioContext.createGain();oscillatorNode.connect(gainNode);oscillatorNode.frequency.
+value=500;oscillatorNode.type="square";gainNode.connect(audioContext.destination
 );gainNode.gain.value=1.5;oscillatorNode.start(audioContext.currentTime);oscillatorNode.
 stop(audioContext.currentTime+0.2);}
 C._Init=function(){};C.AO=function(D){};return C;})();

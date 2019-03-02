@@ -29,15 +29,16 @@
 *
 *******************************************************************************/
 
-var TutorialApplication;if(!TutorialApplication)throw new Error("The application file '_project.js' isn't yet loaded!"
-);if(TutorialApplication.ti)throw new Error("The unit file 'Effects.js' included twice!"
-);TutorialApplication.ti=(function(){var B=TutorialApplication;var C={};
-
-C.FS={Trigger:function(){B.Core.Timer.Trigger.call(this);B.pl(this,0);},_Init:function(
-aArg){B.Core.Timer._Init.call(this,aArg);this.__proto__=C.FS;},_className:"Effects::EffectTimerClass"
-};C.EY={_Init:function(){C.FS._Init.call(this,0);this.E9(15);this.BG(true);},_variants:
-function(){return this;},_this:null};
-C._Init=function(){C.FS.__proto__=B.Core.Timer;};C.AO=function(D){var A;if((A=C.EY.
-_this)&&(A._cycle!=D))A._Done(C.EY._this=null);};return C;})();
+var EmWiCompr_9_10;var index;if(!EmWiCompr_9_10)throw new Error("The Embedded Wizard runtime environment file 'emwi_compr_9_10.js' isn't yet loaded!"
+);if(index)throw new Error("The application file '_project.js' included twice!");
+index=(function(){var B={__proto__:EmWiCompr_9_10};
+B.Default=0;B.German=1;
+B.sN=[480,320];B.l_=function(){return B.hN.Fl;};B.rk="Embedded Wizard sample application";
+B.kt=0;B.s$=0;B.g9=[];B._Init=function(){B.Core._Init();B.ti._Init();B.Graphics.
+_Init();B.tf._Init();B.th._Init();B.tk._Init();B.te._Init();B.hN._Init();B.Device.
+_Init();B.tl._Init();B.tm._Init();B.tg._Init();B.tj._Init();this.__proto__._Init.
+apply(this,arguments);};B.sK=function(D){B.Core.AO(D);B.ti.AO(D);B.Graphics.AO(D
+);B.tf.AO(D);B.th.AO(D);B.tk.AO(D);B.te.AO(D);B.hN.AO(D);B.Device.AO(D);B.tl.AO(
+D);B.tm.AO(D);B.tg.AO(D);B.tj.AO(D);};return B;})();
 
 /* Embedded Wizard */

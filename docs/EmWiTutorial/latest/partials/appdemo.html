@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adding a language switcher :: Embedded Wizard Tutorial</title>
+    <title>Untitled :: Embedded Wizard Tutorial</title>
     <meta name="generator" content="Antora 2.0.0">
-    <link rel="stylesheet" href="../../_/css/site.css">
-    <script src="../../_/js/email-obfuscator.js"></script>
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script src="../../../_/js/email-obfuscator.js"></script>
   </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../index.html">Embedded Wizard Tutorial</a>
+      <a class="navbar-item" href="../../../index.html">Embedded Wizard Tutorial</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -73,42 +73,42 @@
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="Introduction.html">Embedded Wizard Tutorial</a></h3>
+    <h3 class="title"><a href="../Introduction.html">Embedded Wizard Tutorial</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
     <button class="nav-toggle"></button>
     <span class="nav-text">Lessons</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="Introduction.html">Introduction</a>
+    <a class="nav-link" href="../Introduction.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-toggle"></button>
     <span class="nav-text">Authoring your first application</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="HelloWorld.html">Getting started with 'Hello world!'</a>
+    <a class="nav-link" href="../HelloWorld.html">Getting started with 'Hello world!'</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="FirstComponent.html">Adding your first GUI component</a>
+    <a class="nav-link" href="../FirstComponent.html">Adding your first GUI component</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="ComponentReusability.html">Making your GUI component truly reusable</a>
+    <a class="nav-link" href="../ComponentReusability.html">Making your GUI component truly reusable</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="DeviceIntegrationBrowser.html">Integrating with browser device</a>
+    <a class="nav-link" href="../DeviceIntegrationBrowser.html">Integrating with browser device</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-toggle"></button>
     <span class="nav-text">Localizing your application</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="LocalizingYourApplication.html">Adding languages and localizing your strings</a>
+    <a class="nav-link" href="../LocalizingYourApplication.html">Adding languages and localizing your strings</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="LanguageSwitcher.html">Adding a language switcher</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../LanguageSwitcher.html">Adding a language switcher</a>
   </li>
 </ul>
   </li>
@@ -119,10 +119,10 @@
     <span class="nav-text">Resources</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="DemoSite.html">Application demo site</a>
+    <a class="nav-link" href="../DemoSite.html">Application demo site</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="DownloadCode.html">Download source code</a>
+    <a class="nav-link" href="../DownloadCode.html">Download source code</a>
   </li>
 </ul>
   </li>
@@ -139,7 +139,7 @@
       <span class="title">Embedded Wizard Tutorial</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="Introduction.html">latest</a>
+          <a href="../Introduction.html">latest</a>
         </li>
       </ul>
     </li>
@@ -152,18 +152,25 @@
 <div class="toolbar" role="navigation">
   <button class="navigation-toggle"></button>
 <nav class="crumbs" aria-label="breadcrumbs">
-  <ul>
-    <li class="crumb"><a href="Introduction.html">Embedded Wizard Tutorial</a></li>
-    <li class="crumb">Lessons</li>
-    <li class="crumb">Localizing your application</li>
-    <li class="crumb"><a href="LanguageSwitcher.html">Adding a language switcher</a></li>
-  </ul>
 </nav>
 </div>
 <article class="doc">
-<h1>Adding a language switcher</h1>
 <div class="paragraph">
-<p>In the <a href="LocalizingYourApplication.html" class="page">last chapter</a>, we &#8230;&#8203;</p>
+<p>In the course of this tutorial, we are going to develop a small GUI application for execution inside a web browser. A live preview of  the sample application is shown in <a href="#fig:TutorialApp">Figure 1</a> below. Feel free to click inside and explore the app and its features:</p>
+</div>
+<div style="width:530px; margin:0 auto;margin-top:20px">
+  <div style="position: relative; height: 0; padding-top: 65%;">
+    <iframe src="https://deining.github.io/EmWiTutorial/demo/" seamless frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="position: absolute;top: 0;left: 0;height:100%;width:100%;"></iframe>
+    </div>
+</div>
+<div id="fig:TutorialApp" class="imageblock">
+<div class="content">
+<img src="../_images/icons/1x1.png" alt="dummy picture">
+</div>
+<div class="title">Figure 1. Tutorial application, live preview</div>
+</div>
+<div class="paragraph">
+<p>The tutorial application comprises two components, titled <em>Bell</em> and <em>Weather report</em>. When pressing the push-button of the <em>bell</em> component, a beep will sound. When pressing the push-button of the <em>weather report</em> component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either <em>English</em> or German as language of the user interface. When running the app in its own browser window, the chosen language setting will be stored inside the local storage of your web browser and will be remembered on the next reload or startup. This way you can keep you language setting, even when you exit and restart your browser.</p>
 </div>
 </article>
   </main>
@@ -172,8 +179,8 @@
   <p>This tutorial was authored and published by <script type="text/javascript">document.write("<a href='mailto:" + obfuscateEmail() + "'>")</script>Dr. Andreas Deininger</a> using the <a href="https://antora.org/" target="_blank">antora</a> publishing toolchain.<br/>
   This tutorial and the source code of the associated sample project are licensed under the terms of the MIT license.</p>
 </footer>
-<script src="../../_/js/site.js"></script>
-<script src="../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
 <script>hljs.initHighlighting()</script>
   </body>
 </html>

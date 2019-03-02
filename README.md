@@ -15,6 +15,8 @@ While building a sample application step by step, the tutorial covers the follow
 * [Localization of your application](https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/LocalizingYourApplication.html)
 * Persistent data storage on the target device
 
+In order to preview a live demo of the sample application, navigate to the application [demo site](https://deining.github.io/EmWiTutorial/demo/).
+
 ## For readers of the tutorial
 
 The tutorial is hosted on [GitHub pages](https://deining.github.io/EmWiTutorial/), enjoy the tutorial!

@@ -1,0 +1,6 @@
+= Sample application demo site
+Andreas Deininger andreas@deininger.net
+
+include::partial$AppDemo.adoc[]
+
+TIP: If you want to test whether the app actually keeps your language setting, you have to open the app in its own https://deining.github.io/EmWiTutorial/demo/[browser window].

@@ -1,0 +1,14 @@
+In the course of this tutorial, we are going to develop a small GUI application for execution inside a web browser. A live preview of  the sample application is shown in <<fig:TutorialApp>> below. Feel free to click inside and explore the app and its features:
+ 
+++++
+<div style="width:530px; margin:0 auto;margin-top:20px">
+  <div style="position: relative; height: 0; padding-top: 65%;">
+    <iframe src="https://deining.github.io/EmWiTutorial/demo/" seamless frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="position: absolute;top: 0;left: 0;height:100%;width:100%;"></iframe>
+    </div>
+</div>
+++++
+[[fig:TutorialApp]]
+.Tutorial application, live preview
+image::icons/1x1.png[dummy picture]
+
+The tutorial application comprises two components, titled _Bell_ and _Weather report_. When pressing the push-button of the _bell_ component, a beep will sound. When pressing the push-button of the _weather report_ component, you will be redirected to a web site showing a weather report. The application is localized, by clicking on a flag icon in the upper right corner you can select either _English_ or German as language of the user interface. When running the app in its own browser window, the chosen language setting will be stored inside the local storage of your web browser and will be remembered on the next reload or startup. This way you can keep your language setting, even when you exit and restart your browser.

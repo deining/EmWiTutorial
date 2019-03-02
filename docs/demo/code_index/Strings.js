@@ -29,11 +29,13 @@
 *
 *******************************************************************************/
 
-var TutorialApplication;if(!TutorialApplication)throw new Error("The application file '_project.js' isn't yet loaded!"
-);if(TutorialApplication.tm)throw new Error("The unit file 'TargetDevice.js' included twice!"
-);TutorialApplication.tm=(function(){var B=TutorialApplication;var C={};
+var index;if(!index)throw new Error("The application file '_project.js' isn't yet loaded!"
+);if(index.tg)throw new Error("The unit file 'Strings.js' included twice!");index.
+tg=(function(){var B=index;var C={};
 
-
+C.Ho={0:"Tutorial application",1:"Tutorial Anwendung"};C.Hv={0:"Ring",1:"L\xE4uten"
+};C.Hp={0:"Bell",1:"Klingel"};C.Hw={0:"Show",1:"Aufrufen"};C.Hq={0:"Weather report"
+,1:"Wetterbericht"};
 C._Init=function(){};C.AO=function(D){};return C;})();
 
 /* Embedded Wizard */

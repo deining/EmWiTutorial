@@ -15,7 +15,7 @@ class TutorialApplication : Core::Root
   $rect <10,390,190,430>
   inherited method Init()
   {
-    signal Device::Device.RestoreLanguage;
+    postsignal Device::Device.RestoreLanguage;
   }
 
   // Gray background of the bell component.

@@ -194,8 +194,8 @@ class PushButtonFlag : Templates::PushButton
   // The property 'OnActivate' can refer to a slot method, which will receive a signal \
   // as soon as the user has activated the button. Thereupon the method's logic will \
   // be executed.
-  $rect <250,39,450,79>
-  property slot OnActivate = switchLanguage;
+  $rect <22,119,222,159>
+  property slot OnActivate;
 
   $rect <20,20,160,60>
   object Views::Image Flag
@@ -220,10 +220,10 @@ class PushButtonFlag : Templates::PushButton
     preset MaxStrikeCount = 100;
   }
 
-  $rect <485,44,685,84>
+  $rect <254,46,454,86>
   property Resources::Bitmap BitmapFlag = Icons::FlagUK;
 
-  $rect <485,84,685,124>
+  $rect <254,86,454,126>
   onset BitmapFlag
   {
     // The value doesn't change - nothing to do.
@@ -236,16 +236,16 @@ class PushButtonFlag : Templates::PushButton
     Flag.Bitmap = value;
   }
 
-  $rect <485,124,685,164>
+  $rect <254,126,454,166>
   onget BitmapFlag
   {
     return pure BitmapFlag;
   }
 
-  $rect <719,45,919,85>
+  $rect <472,47,672,87>
   property language Language = Default;
 
-  $rect <719,85,919,125>
+  $rect <472,87,672,127>
   onset Language
   {
     // The value doesn't change - nothing to do.
@@ -260,27 +260,21 @@ class PushButtonFlag : Templates::PushButton
     // Now you can handle the alternation of the property.
   }
 
-  $rect <719,125,919,165>
+  $rect <472,127,672,167>
   onget Language
   {
     return pure Language;
   }
 
-  $rect <247,87,447,127>
-  slot switchLanguage
-  {
-    language = Language;
-  }
-
   // OnActivate
   note group Activate
   {
-    attr Bounds = <230,0,460,140>;
+    attr Bounds = <10,80,230,180>;
   }
 
   // User defined properties
   note group Properties
   {
-    attr Bounds = <470,0,930,180>;
+    attr Bounds = <239,2,690,180>;
   }
 }

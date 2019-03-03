@@ -165,7 +165,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the <a href="FirstComponent.html" class="page">last chapter</a>, we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let&#8217;s think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two ore more instances of the bell component on the root canvas, but it&#8217;s unlikely that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform <em>different</em> actions, however. With the components in its current form, implementing this is not possible right now. So let&#8217;s extend the component and make it truly reusable in the next chapter!</p>
+<p>In the <a href="FirstComponent.html" class="page">last chapter</a>, we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let&#8217;s think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two or more instances of the bell component on the root canvas, but it&#8217;s unlikely that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform <em>different</em> actions, however. With the components in its current form, implementing this is not possible right now. So let&#8217;s extend the component and make it truly reusable in the next chapter!</p>
 </div>
 <hr>
 <div class="sidebarblock">
@@ -178,7 +178,7 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> project explained in the previous <a href="FirstComponent.html" class="page">chapter</a>, you may download the <a href="_attachments/FirstComponentTutorial.zip">sources</a> of this project and use this a starting base to follow the instructions given below.
+If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> project explained in the previous <a href="FirstComponent.html" class="page">chapter</a>, you may download the <a href="_attachments/code/code/FirstComponentTutorial.zip">sources</a> of this project and use this a starting base to follow the instructions given below.
 </td>
 </tr>
 </table>
@@ -216,7 +216,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 <p>the text shown in the header text view (hard-coded value: <em>Bell</em>),</p>
 </li>
 <li>
-<p>the text of the label on the push button (hard/coded value: <em>Ring</em>) and</p>
+<p>the text of the label on the push button (hard-coded value: <em>Ring</em>) and</p>
 </li>
 <li>
 <p>the slot method attached to the property <em>OnActivate</em> of the push button (hard-coded value: <em>RingTheBellSlot</em>).</p>
@@ -232,7 +232,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 <p>Properties are a kind of variable where data of an arbitrary Chora <a href="https://doc.embedded-wizard.de/data-types" target="_blank" rel="noopener">data type</a> can be stored (e.g. string, int, slot, &#8230;&#8203;). For each property, you have to specify the data type it can held (including its default value).</p>
 </li>
 <li>
-<p>A property represent a more sophisticated variable in that sense that a property does have <em>OnSet</em> and <em>OnGet</em> methods that are used to get and set the value of the property. Normally, these methods contain boilerplate code that set or gets the internal memory of the property. You are encouraged to add your custom code to these method(s) to tailor them to your needs. We will do some shortly, so hold on!</p>
+<p>A property represents a more sophisticated variable in that sense that a property does have <em>OnSet</em> and <em>OnGet</em> methods that are used to get and set the value of the property. Normally, these methods contain boilerplate code that set or gets the internal memory of the property. You are encouraged to add your custom code to these method(s) to tailor them to your needs. We will do some shortly, so hold on!</p>
 </li>
 <li>
 <p>You are allowed to attach slot methods as observer to any property we implement. As soon as the value of the property changes, the slot method (=&#160;observer) gets notified about the change. This is a core feature of Chora that allows the development of applications following the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank" rel="noopener">MVC</a> pattern. We may talk about this later on.</p>
@@ -243,18 +243,34 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 </ul>
 </div>
 <div class="paragraph">
-<p>That&#8217;s the theory behind property in short. Let&#8217;s get our feet wet and add some properties to our component:</p>
+<p>That&#8217;s the theory behind property in short, let&#8217;s start and put theory into practice:</p>
+</div>
+<div class="paragraph">
+<p>First we have to make a few adjustments to our components in order to reflect the refactoring of the component:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>In the <em>PushButtonComponent</em> tab, rename the existing push button <em>BushButtonBell</em> to <em>PushButton</em> in order to reflect the refactoring of the component. Also rename the header text element <em>HeaderBell</em> to <em>Header</em>.</p>
+<p>In the <em>PushButtonComponent</em> tab, rename the existing push button <em>PushButtonBell</em> to <em>PushButton</em> . Change the value of the property <em>Label</em> of this component from <em>"Ring"</em> to <em>"Action"</em>.</p>
 </li>
 <li>
-<p>Delete the existing slot method <em>RingTheBellSlot</em> using the <kbd>Del</kbd> key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more. Don&#8217;t forget to reset the property <em>OnActivate</em> of the PushButton to <em>null</em> otherwise you will run in trouble later on.</p>
+<p>Afterwards, rename the header text element <em>HeadingBell</em> to <em>Header</em> and change the value of the property <em>Label</em> of this component from <em>"Ring"</em> to <em>"Action"</em>.</p>
 </li>
 <li>
-<p>From the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>C</strong>hora</em> openend (key <kbd>c</kbd>), drag an instance of the <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas and rename the property <em>Caption</em> of the element to <em>Properties</em> using the inspector window.</p>
+<p>Delete both the existing slot method <em>RingTheBellSlot</em> and the corresponding note group <em>Slot method(s)</em> using the <kbd>Del</kbd> key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more.</p>
+</li>
+<li>
+<p>Remove the current value <em>RingTheBellSLot</em> from the the property <em>OnActivate</em> of the PushButton, otherwise you will run in trouble later on. To do so, select the  <em>PushButton</em> component and right click on its property <em>OnActivate</em>. From the context menu select the menu item <em>Restore default value</em> (<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>R</kbd></span>), and the current entry will be replace with the default <em>null</em> value.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s get our feet wet and add some properties to our component:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>C</strong>hora</em> opened (key <kbd>C</kbd>), drag an instance of the <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas and rename the property <em>Caption</em> of the element to <em>Properties</em> using the inspector window.</p>
 </li>
 <li>
 <p>Now we are ready to insert our properties: Click on the element <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Property</em>, and drag an instance over to the component&#8217;s canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.</p>
@@ -262,7 +278,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 </ul>
 </div>
 <div class="paragraph">
-<p>As you can see, a property named <em>Property</em> was inserted, together with its <em>Onset</em> and <em>OnGet</em> methods:</p>
+<p>As you can see, a property named <em>Property</em> was inserted, together with its <em>OnSet</em> and <em>OnGet</em> methods:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -276,7 +292,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 <div class="ulist">
 <ul>
 <li>
-<p>The property should be used to store the text of the header element of our component, therefore we rename the property to <em>TextHeader</em> using the <kbd>F2</kbd>. Please note that the names of the <em>Onset</em> and <em>OnGet</em> methods automatically change to <em>OnSetTextHeader</em> and <em>OnGetTextHeader</em> respectively.</p>
+<p>The property should be used to store the text of the header element of our component, therefore we rename the property to <em>TextHeader</em> using the <kbd>F2</kbd>. Please note that the names of the <em>OnSet</em> and <em>OnGet</em> methods automatically change to <em>OnSetTextHeader</em> and <em>OnGetTextHeader</em> respectively.</p>
 </li>
 <li>
 <p>Currently, the data type of the property is <em>int32</em>, that&#8217;s not what we want, instead we want to store a string value (=&#160;the header text) inside the property. To be able to do so, we change the value of the property <em>Type</em> to <em>string</em> inside the inspector window.</p>
@@ -311,7 +327,7 @@ pure Property = value;
 </div>
 </div>
 <div class="paragraph">
-<p>Replace the TODO section at the bottom with two lines of custom code:</p>
+<p>Replace the <em>TO DO:</em> section at the bottom with two lines of custom code:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -336,7 +352,7 @@ That&#8217;s all we have to do! Now, as soon as the property gets a new value as
 <div class="ulist">
 <ul>
 <li>
-<p>From the gallery templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
+<p>From the gallery templates window drag another <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Property</em> to the component&#8217;s canvas.</p>
 </li>
 <li>
 <p>Rename the property to <em>LabelButton</em> using the <kbd>F2</kbd> key.</p>
@@ -345,7 +361,7 @@ That&#8217;s all we have to do! Now, as soon as the property gets a new value as
 <p>Change the type of the property to <em>string</em>, with a default value <em>"Label"</em>.</p>
 </li>
 <li>
-<p>In the body of the <em>OnSetLabelButton</em> method, replace the <em>TODO</em> section with the code line <code>PushButton.Label = value;</code>.</p>
+<p>In the body of the <em>OnSetLabelButton</em> method, replace the <em>TO DO:</em> section with the code line <code>PushButton.Label = value;</code>.</p>
 </li>
 </ul>
 </div>
@@ -356,7 +372,7 @@ So far so good. Now we have to take care that not only the label and heading tex
 <div class="ulist">
 <ul>
 <li>
-<p>From the gallery templates window drag another <em>Property</em> to the component&#8217;s canvas.</p>
+<p>From the gallery templates window drag another <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Property</em> to the component&#8217;s canvas.</p>
 </li>
 <li>
 <p>Rename the property to <em>ActionButton</em> using the <kbd>F2</kbd> key.</p>
@@ -365,7 +381,7 @@ So far so good. Now we have to take care that not only the label and heading tex
 <p>Change the type of the property to <em>slot</em>, with a default value <em>null</em>.</p>
 </li>
 <li>
-<p>In the body of the <em>OnSetActionButton</em> method, replace the <em>TODO</em> section with the code line <code>PushButton.OnActivate = value;</code>.</p>
+<p>In the body of the <em>OnSetActionButton</em> method, replace the <em>TO DO:</em> section with the code line <code>PushButton.OnActivate = value;</code>.</p>
 </li>
 </ul>
 </div>
@@ -416,6 +432,9 @@ So far so good. Now we have to take care that not only the label and heading tex
 <li>
 <p>Fill the body of the slot method with the code line <code>trace "Sorry, the GUI cannot ring the bell!";</code>.</p>
 </li>
+<li>
+<p>Using the inspector window, change the property <em>ActionButton</em> of the bell push button component to the newly created <em>RingTheBellSlot</em>.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -463,6 +482,9 @@ The GUI allows ringing the bell of your device already. Imagine your device is a
 <li>
 <p>Fill the body of the slot method with the code line <code>trace "Sorry, but the GUI cannot tell the weather forecast";</code>.</p>
 </li>
+<li>
+<p>Using the inspector window, change the property <em>ActionButton</em> of the new push button component to the newly created <em>ForecastSlot</em>.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -491,7 +513,7 @@ The GUI allows ringing the bell of your device already. Imagine your device is a
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you encountered difficulties and didn&#8217;t succeed when following the instructions given above, you may download the <a href="_attachments/ReusableComponentTutorial.zip">project sources</a> of the finalized example on how to build and make use of a truly reusable component.
+If you encountered difficulties and didn&#8217;t succeed when following the instructions given above, you may download the <a href="_attachments/code/ReusableComponentTutorial.zip">project sources</a> of the finalized example on how to build and make use of a truly reusable component.
 </td>
 </tr>
 </table>

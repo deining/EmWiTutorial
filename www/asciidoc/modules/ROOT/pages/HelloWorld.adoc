@@ -29,7 +29,7 @@ These 4 groups serve totally different purposes:
 
 Mosaic Framework:: This is embedded wizard's GUI framework used under the hood. You shouldn't be concerned about this right now.
 Profile configuration:: A profile is used to store configuration parameters for your project. By using different profiles, you can customize the project settings to the different target(s) that you ant to use.
-Languages:: The concept of languages is deeply embedded into the system's language _Chora_. If you want to create a multi-lingual app, you can do so by simply adding more languages here. 
+Languages:: The concept of languages is deeply embedded into the system's language _Chora_. If you want to create a multi-lingual app, you can do so by simply adding more languages here.
 Project units:: That's the most interesting part for now, so let's start explaining the concept behind:
 
 === Units
@@ -90,14 +90,14 @@ There are several ways to launch the app:
 
 * From the main menu, select the menu item menu:Build[Start prototyper with application class], or
 * use the keystroke combination kbd:[Ctrl+F5], or
-* click on the application launch icon image:icons/LaunchApplicationIcon.png[Launch icon] in the second row of the toolbar. 
+* click on the application launch icon image:icons/LaunchApplicationIcon.png[Launch icon] in the second row of the toolbar.
 
 Congratulations, you successfully assembled your first application!
 
 '''
 .Source code
 ****
-TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/HelloWorldTutorial.zip[sources] of the hello world example described above.
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/HelloWorldTutorial.zip[sources] of the hello world example described above.
 ****
 '''
 

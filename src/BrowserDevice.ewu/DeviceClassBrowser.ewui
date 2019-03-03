@@ -25,7 +25,7 @@ vclass DeviceClassBrowser : Device::DeviceClass
     $if (!$prototyper)
       native
       {
-        window.open('http://worldweather.wmo.int', '_self');
+        window.open('https://worldweather.wmo.int', '_self');
       }
     $endif
   }

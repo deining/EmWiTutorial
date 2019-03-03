@@ -5,12 +5,12 @@ In the xref::ComponentReusability.adoc[last chapter], we made our component trul
 
 == GUI builder and platform packages
 
-Embedded wizard is a GUI framework builder that allows you to build GUI platform independent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other than that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That's where the concept of https://doc.embedded-wizard.de/platform-package[platform packages^] comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, ...). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.
+Embedded Wizard is a GUI framework builder that allows you to build GUI platform independent applications that can deployed on many different target systems. This is achieved by using the programming language Chora for all programming tasks related to the GUI. Other than that, Embedded Wizards strictly refrains from any access to the underlying device to ensure platform independence. However, when building embedded devices, the main purpose of the GUI application is to enable and facilitate interaction with the underlying hardware. So how does Embedded Wizard integrate with those devices? That's where the concept of https://doc.embedded-wizard.de/platform-package[platform packages^] comes into play. Embedded Wizard offers platform packages for many different hardware platforms (STM, NXP, TI, Raspberry Pi, ...). A platform package consists of a code generator, a resource converter, a graphics engine and a runtime environment for the specific platform. You may think of the platform package as a link between the GUI and the hardware. Applications implemented in the programming language Chora can be run on any particular platform if a platform package exists for that platform.
 
 '''
 .Source code
 ****
-TIP: If you didn't author or didn't keep the _Reusable component_ project explained in the previous xref::ComponentReusability.adoc[chapter], you may download the link:{attachmentsdir}/ReusableComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+TIP: If you didn't author or didn't keep the _Reusable component_ project explained in the previous xref::ComponentReusability.adoc[chapter], you may download the link:{attachmentsdir}/code/ReusableComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
 ****
 '''
 
@@ -37,7 +37,7 @@ Let's add content to the newly inserted units! We start with adding a device cla
 
 * Double click on the icon image:icons/DeviceUnitIcon.png[Icon device unit], representing the _Device_ unit. This will open the unit in a new tab.
 
-* In the gallery templates window left to the main composer window (kbd:[Alt+1]), either click on the folder header _**D**evice_ or press key kbd:[d], this will open the folder and will present all _**d**evice_ subitems.
+* In the gallery templates window left to the main composer window (kbd:[Alt+1]), either click on the folder header _**D**evice_ or press key kbd:[D], this will open the folder and will present all _**d**evice_ subitems.
 * Click on the item image:icons/DeviceInterfaceIcon.png[Device interface icon] _Device interface_, and drag an instance over to the component's canvas. Place the element in the upper left corner of the canvas.
 
 By dragging over the _device interface_ to the canvas, two new objects were inserted:
@@ -98,7 +98,7 @@ Change this code to
 Device::Device.RingTheBellCommand();
 ----
 
-NOTE: Embedded wizard code editor ships with integrated code completion, which is very handy and might prevent you from typos when authoring code inside the code editor. To test it out, simply write _Device::_ into the editor and should see a list of available completions to the given _Device_ unit name you just typed in.
+NOTE: Embedded Wizard code editor ships with integrated code completion, which is very handy and might prevent you from typos when authoring code inside the code editor. To test it out, simply write _Device::_ into the editor and should see a list of available completions to the given _Device_ unit name you just typed in.
 
 That's how we call a method by code: specify the class name (_Device::DeviceClass_) first, then append the method name (_RingTheBellCommand_), prepended with a dot and terminated with empty parentheses.
 Now run your code using the prototyper, and you should see a trace message informing you that the GUI cannot run any device commands. Obviously, we are not at the end, so read on!
@@ -112,7 +112,7 @@ As already explained above, there is a strict separation between the GUI applica
 
 NOTE: Besides the Win32 and the WebGL packages there are many platform packages available to target real hardware (STM, NXP, TI, Raspberry Pi, ...). For each of these platform packages, a separate installer exists. You have to obtain and run this installer to make the associated platform packages available inside Embedded Wizard.
 
-If we want to make use of more than one platform package inside our project, we have to have an associated *https://doc.embedded-wizard.de/profile-member[profile]* on the Projects tab for each package you would like to use. So let's add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output _Hello, world!_ on the browser device, more specifically on the web console of the browser. The journey goes on ... 
+If we want to make use of more than one platform package inside our project, we have to have an associated *https://doc.embedded-wizard.de/profile-member[profile]* on the Projects tab for each package you would like to use. So let's add another profile that allows us to switch between the Win32 package and the WebGL package. We then use the latter package to output _Hello, world!_ on the browser device, more specifically on the web console of the browser. The journey goes on ...
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
 * Identify the note frame with the caption _Profile configuration_, it only contains the icon image:icons/DefaultProfileIcon.png[Default profile icon] representing the default profile. Select this profile and have a look at the inspector window. You will realize that the attribute _PlatformPackage_ of the profile has the value _Tara.Win32.RGBA8888_ assigned. To reflect this, rename the profile from _Profile_ to _Win32_ using the kbd:[F2] key.
@@ -134,7 +134,7 @@ Now that we have two profiles defined, we can switch between these two profiles 
 
 [[fig:DropdownList]]
 .Dropdown list for switching between different profiles
-image::deviceintegration/DropdownProfiles.png[dropdown list profiles] 
+image::deviceintegration/DropdownProfiles.png[dropdown list profiles]
 ====
 
 == Adding a browser device class variant
@@ -167,7 +167,7 @@ We want to make the newly created class behave differently, so there's still som
 
 Have a look at the inspector window and you will see the method _RingTheBellCommand_. This is the command we previously added to the _Device_ class. Since the variant class is derived from this class, it has access to all its class members, including the _RingTheBellCommand_. The light grey colour of the method name marks the method as inherited. We now want to implement a different behavior for this command in the variant class, we can do so by overriding the method in the variant class:
 
-* In the inspector window, right click on the method _RingTheBellCommand_ to invoke the context menu on the method. From this menu select the menu item _Override class member_. A method element with the same name _RingTheBellCommand_ will appear on the canvas. 
+* In the inspector window, right click on the method _RingTheBellCommand_ to invoke the context menu on the method. From this menu select the menu item _Override class member_. A method element with the same name _RingTheBellCommand_ will appear on the canvas.
 * We are now able to specify different code in the method body of the newly created method: double click on the icon image:icons/RingTheBellCommandIcon.png[command method icon] representing the newly inserted method _RingTheBellCommand_. Inside the code editor, you will see the line ``// TO DO: Write your code here ... ``. That's great, we can add our custom code here which will be executed only once the browser device class variant was called!
 
 Using the code editor, add the following code inside the method body:
@@ -259,7 +259,7 @@ The _BrowserDevice_ unit should now look like as depicted in <<fig:BrowserDevice
 .Browser device unit
 image::deviceintegration/UnitBrowserDevice.png[browser device unit]
 
-* Double click on the icon image:icons/InlineFunctionsIcon.png[inline functions icon] representing the inline code element. Inside the code editor, you will see a single code line ``// TO DO: Write your code here ... ``. 
+* Double click on the icon image:icons/InlineFunctionsIcon.png[inline functions icon] representing the inline code element. Inside the code editor, you will see a single code line ``// TO DO: Write your code here ... ``.
 * Using the code editor, insert the function _beep()_ inside the body of the inline element:
 [source,chora]
 ----
@@ -320,7 +320,7 @@ You should now be able to both make your device beep and to view the weather for
 
 .Source code
 ****
-TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/DeviceIntegrationTutorial.zip[project sources] of the finalized example on how to integrate your browser device.
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/DeviceIntegrationTutorial.zip[project sources] of the finalized example on how to integrate your browser device.
 ****
 '''
 

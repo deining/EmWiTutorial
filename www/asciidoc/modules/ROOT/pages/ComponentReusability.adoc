@@ -1,12 +1,12 @@
 = Making your component truly reusable
 Andreas Deininger andreas@deininger.net
 
-In the xref::FirstComponent.adoc[last chapter], we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let's think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two ore more instances of the bell component on the root canvas, but it's unlikely that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform _different_ actions, however. With the components in its current form, implementing this is not possible right now. So let's extend the component and make it truly reusable in the next chapter!
+In the xref::FirstComponent.adoc[last chapter], we successfully built your first GUI component and put it on to the root canvas. As we saw, this allows you to test your component in isolation, which is a great benefit, especially when working on large scale projects. The second motivation to use components is reusability. Let's think about this a bit more: currently our bell component is tailored to ring a bell. This somehow limits the reuse of the component. Of course you can put two or more instances of the bell component on the root canvas, but it's unlikely that anyone wants to have two ore more buttons on the screen performing exactly the same action: ringing a bell. In a real world application you often have several buttons, which all do perform _different_ actions, however. With the components in its current form, implementing this is not possible right now. So let's extend the component and make it truly reusable in the next chapter!
 
 '''
 .Source code
 ****
-TIP: If you didn't author or didn't keep the _First component_ project explained in the previous xref::FirstComponent.adoc[chapter], you may download the link:{attachmentsdir}/FirstComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+TIP: If you didn't author or didn't keep the _First component_ project explained in the previous xref::FirstComponent.adoc[chapter], you may download the link:{attachmentsdir}/code/code/FirstComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
 ****
 '''
 
@@ -21,31 +21,38 @@ Let's have a look at our component first:
 Let us reflect on the current design of the component a bit: currently there are three items hard-coded, which severely limits the reusability of this component:
 
 * the text shown in the header text view (hard-coded value: _Bell_),
-* the text of the label on the push button (hard/coded value: _Ring_) and
+* the text of the label on the push button (hard-coded value: _Ring_) and
 * the slot method attached to the property _OnActivate_ of the push button (hard-coded value: _RingTheBellSlot_).
 
 In order to allow reuse, we have to extend the component so that the three items listed above can be stored inside the component. That's what https://doc.embedded-wizard.de/property-member[properties^] are made for. If you do have a Java or C# background, you already should be familiar with the concept of properties:
 
 * Properties are a kind of variable where data of an arbitrary Chora https://doc.embedded-wizard.de/data-types[data type^] can be stored (e.g. string, int, slot, ...). For each property, you have to specify the data type it can held (including its default value).
-* A property represent a more sophisticated variable in that sense that a property does have _OnSet_ and _OnGet_ methods that are used to get and set the value of the property. Normally, these methods contain boilerplate code that set or gets the internal memory of the property. You are encouraged to add your custom code to these method(s) to tailor them to your needs. We will do some shortly, so hold on!
+* A property represents a more sophisticated variable in that sense that a property does have _OnSet_ and _OnGet_ methods that are used to get and set the value of the property. Normally, these methods contain boilerplate code that set or gets the internal memory of the property. You are encouraged to add your custom code to these method(s) to tailor them to your needs. We will do some shortly, so hold on!
 * You are allowed to attach slot methods as observer to any property we implement. As soon as the value of the property changes, the slot method (={nbsp}observer) gets notified about the change. This is a core feature of Chora that allows the development of applications following the https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller[MVC^] pattern. We may talk about this later on.
 * Properties cannot only store arbitrary data type, they can also store references to any data type. Properties that store references are so called https://doc.embedded-wizard.de/implementing-component-interface#4[outlet properties^]. This is an advanced concept, we may talk about that later on.
 
-That's the theory behind property in short. Let's get our feet wet and add some properties to our component:
+That's the theory behind property in short, let's start and put theory into practice: 
 
-* In the _PushButtonComponent_ tab, rename the existing push button _BushButtonBell_ to _PushButton_ in order to reflect the refactoring of the component. Also rename the header text element _HeaderBell_ to _Header_.
-* Delete the existing slot method _RingTheBellSlot_ using the kbd:[Del] key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more. Don't forget to reset the property _OnActivate_ of the PushButton to _null_ otherwise you will run in trouble later on.
-* From the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ openend (key kbd:[c]), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element right beneath the component's canvas and rename the property _Caption_ of the element to _Properties_ using the inspector window.
+First we have to make a few adjustments to our components in order to reflect the refactoring of the component:
+
+* In the _PushButtonComponent_ tab, rename the existing push button _PushButtonBell_ to _PushButton_ . Change the value of the property _Label_ of this component from _"Ring"_ to _"Action"_.
+* Afterwards, rename the header text element _HeadingBell_ to _Header_ and change the value of the property _Label_ of this component from _"Ring"_ to _"Action"_.
+* Delete both the existing slot method _RingTheBellSlot_ and the corresponding note group _Slot method(s)_ using the kbd:[Del] key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more.
+* Remove the current value _RingTheBellSLot_ from the the property _OnActivate_ of the PushButton, otherwise you will run in trouble later on. To do so, select the  _PushButton_ component and right click on its property _OnActivate_. From the context menu select the menu item _Restore default value_ (kbd:[Ctrl+R]), and the current entry will be replace with the default _null_ value.
+
+Let's get our feet wet and add some properties to our component:
+
+* From the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ opened (key kbd:[C]), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element right beneath the component's canvas and rename the property _Caption_ of the element to _Properties_ using the inspector window.
 * Now we are ready to insert our properties: Click on the element image:icons/PropertyIcon.png[property icon] _Property_, and drag an instance over to the component's canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.
 
-As you can see, a property named _Property_ was inserted, together with its _Onset_ and _OnGet_ methods:
+As you can see, a property named _Property_ was inserted, together with its _OnSet_ and _OnGet_ methods:
 
 .Inserting our first property
 image::reusablecomponent/NewProperty.png[New property]
 
 Let's move on and adapt the property to our needs:
 
-* The property should be used to store the text of the header element of our component, therefore we rename the property to _TextHeader_ using the kbd:[F2]. Please note that the names of the _Onset_ and _OnGet_ methods automatically change to _OnSetTextHeader_ and _OnGetTextHeader_ respectively.
+* The property should be used to store the text of the header element of our component, therefore we rename the property to _TextHeader_ using the kbd:[F2]. Please note that the names of the _OnSet_ and _OnGet_ methods automatically change to _OnSetTextHeader_ and _OnGetTextHeader_ respectively.
 * Currently, the data type of the property is _int32_, that's not what we want, instead we want to store a string value (={nbsp}the header text) inside the property. To be able to do so, we change the value of the property _Type_ to _string_ inside the inspector window.
 * The header text of our component should be _Header_ by default, so we change the value _Default_ to _"Header"_ inside the inspector window. Don't forget the surrounding double quotes here or you may run in trouble.
 
@@ -63,11 +70,11 @@ if ( pure Property == value )
 pure Property = value;
 
 // TO DO:
-// 
+//
 // Now you can handle the alternation of the property.
 ----
 
-Replace the TODO section at the bottom with two lines of custom code:
+Replace the _TO DO:_ section at the bottom with two lines of custom code:
 
 [source,chora]
 ----
@@ -87,18 +94,18 @@ That's all we have to do! Now, as soon as the property gets a new value assigned
 
 The first property is ready to go, so add two more properties:
 
-* From the gallery templates window drag another _Property_ to the component's canvas.
+* From the gallery templates window drag another image:icons/PropertyIcon.png[property icon] _Property_ to the component's canvas.
 * Rename the property to _LabelButton_ using the kbd:[F2] key.
 * Change the type of the property to _string_, with a default value _"Label"_.
-* In the body of the _OnSetLabelButton_ method, replace the _TODO_ section with the code line ``PushButton.Label = value;``.
+* In the body of the _OnSetLabelButton_ method, replace the _TO DO:_ section with the code line ``PushButton.Label = value;``.
 
 This way, any change of the property _LabelButton_ will immediately change the label text of the button.
 So far so good. Now we have to take care that not only the label and heading text can be set, but also the action performed once the button is clicked:
 
-* From the gallery templates window drag another _Property_ to the component's canvas.
+* From the gallery templates window drag another image:icons/PropertyIcon.png[property icon] _Property_ to the component's canvas.
 * Rename the property to _ActionButton_ using the kbd:[F2] key.
 * Change the type of the property to _slot_, with a default value _null_.
-* In the body of the _OnSetActionButton_ method, replace the _TODO_ section with the code line ``PushButton.OnActivate = value;``.
+* In the body of the _OnSetActionButton_ method, replace the _TO DO:_ section with the code line ``PushButton.OnActivate = value;``.
 
 The refactoring of our component is done, it should now look like this:
 
@@ -119,6 +126,7 @@ The appearance of our component now again looks as wanted. When pressing the but
 * From the gallery templates window to the left, drag an element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Slot method(s)_.
 * Add a new slot method inside the note rectangle. Rename the slot method to _RingTheBellSlot_.
 * Fill the body of the slot method with the code line ``trace "Sorry, the GUI cannot ring the bell!";``.
+* Using the inspector window, change the property _ActionButton_ of the bell push button component to the newly created _RingTheBellSlot_.
 
 That's it! Test the main application in the prototyper (kbd:[Ctrl+F5]), and the main app should behave exactly as prior to the refactoring.
 
@@ -138,8 +146,9 @@ Yeah! You successfully included a second push button component into the main app
 * Using the inspector window, change the property _LabelButton_ of the same component to _"Show"_.
 * Add a new slot method inside the note rectangle titled _Slot methods_. Rename the slot method to _ForecastSlot_.
 * Fill the body of the slot method with the code line ``trace "Sorry, but the GUI cannot tell the weather forecast";``.
+* Using the inspector window, change the property _ActionButton_ of the new push button component to the newly created _ForecastSlot_.
 
-The extended version of the application with two push button components should now look like in <<fig:ExtendedApplication>> below: 
+The extended version of the application with two push button components should now look like in <<fig:ExtendedApplication>> below:
 
 [[fig:ExtendedApplication]]
 .Extended tutorial application
@@ -152,7 +161,7 @@ This chapter has come to an end, time to recap: By adding three properties to ou
 '''
 .Source code
 ****
-TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/ReusableComponentTutorial.zip[project sources] of the finalized example on how to build and make use of a truly reusable component.
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/ReusableComponentTutorial.zip[project sources] of the finalized example on how to build and make use of a truly reusable component.
 ****
 '''
 

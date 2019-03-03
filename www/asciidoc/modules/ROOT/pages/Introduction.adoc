@@ -51,7 +51,7 @@ Download and install https://www.embedded-wizard.de/download/[Embedded Wizard Fr
 
 == Feedback and questions
 
-If you have any suggestion for improvement or comment concerning this tutorial, feel free to open an https://github.com/deining/EmWiTutorial/issues[issue] in the github repository associated with this tutorial. 
+If you have any suggestion for improvement or comment concerning this tutorial, feel free to open an https://github.com/deining/EmWiTutorial/issues[issue] in the github repository associated with this tutorial.
 
 For general question unrelated to this tutorial, you may make use of the https://ask.embedded-wizard.de[question and answer site] for Embedded Wizard users and UI developers.
 

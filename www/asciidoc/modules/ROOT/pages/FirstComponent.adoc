@@ -9,11 +9,11 @@ Reusability:: When using components, it's much easier to follow the DRY principl
 '''
 .Source code
 ****
-TIP: If you didn't author or didn't keep the _Hello world_ project explained in the previous xref::HelloWorld.adoc[chapter], you may download the link:{attachmentsdir}/HelloWorldTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+TIP: If you didn't author or didn't keep the _Hello world_ project explained in the previous xref::HelloWorld.adoc[chapter], you may download the link:{attachmentsdir}/code/HelloWorldTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
 ****
 '''
 
-So let's start and build our first GUI component: it's a simple graphical unit with a border, a header text, a push button, and a background. Once the button is pressed, some action will occur. 
+So let's start and build our first GUI component: it's a simple graphical unit with a border, a header text, a push button, and a background. Once the button is pressed, some action will occur.
 
 == Adding the empty component itself
 
@@ -35,7 +35,7 @@ Now, we have to open the empty component we just inserted:
 .Empty GUI component
 image::firstcomponent/EmptyComponent.png[Empty GUI component]
 
-== Filling the component 
+== Filling the component
 
 Next, we have to fill the empty component:
 
@@ -142,7 +142,7 @@ Let's go and test our first component! There are several ways to do so:
 
 * From the main menu, select the menu item menu:Build[Start prototyper], or
 * use the keystroke kbd:[F5], or
-* click on the launch icon image:icons/LaunchIcon.png[Launch icon] in the second row of the toolbar. 
+* click on the launch icon image:icons/LaunchIcon.png[Launch icon] in the second row of the toolbar.
 
 A prototyper window will appear which shows your component and simulate its behaviour: Click on the push button, twice, and two debug messages will appear in the log window:
 
@@ -172,10 +172,10 @@ Let's move on and integrate the component into the root component, that's what t
 * Using the inspector window, change the _Hello world!_ text to _Tutorial application_.
 * Using the _Bounds_ property, change the size of the root canvas to 480 × 320 px. If you don't know how to do that, have a look at how we changed the size of the _bell_ component above.
 * Add a background with the same dimensions of 480 × 320 px to the root canvas. If you don't know how to do that, have a look at how we added a background to the bell component above. Change the color of the background to Gainsborough (_#DCDCDCFF_).
- 
+
 [IMPORTANT]
 ====
-When adding the background onto the canvas, it will be placed in the foreground and will hide your header text. In order to fix that, you have to restack the elements on the canvas. 
+When adding the background onto the canvas, it will be placed in the foreground and will hide your header text. In order to fix that, you have to restack the elements on the canvas.
 
 * Right click on the _Background_ element in the inspector window to show its context menu.
 
@@ -201,7 +201,7 @@ Let's test it out:
 
 * From the main menu, select the menu item menu:Build[Start prototyper with application class], or
 * use the keystroke combination kbd:[Ctrl+F5], or
-* click on application launch icon image:icons/LaunchApplicationIcon.png[Launch icon] in the second row of the toolbar. 
+* click on application launch icon image:icons/LaunchApplicationIcon.png[Launch icon] in the second row of the toolbar.
 
 The application will start up. You will notice that the screen size is larger than the root element we put on it. Let's fix this:
 
@@ -219,7 +219,7 @@ image::firstcomponent/TutorialApplicationRunning.png[Screen size]
 '''
 .Source code
 ****
-TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/FirstComponentTutorial.zip[project sources] of the finalized example on how to build your first component.
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/FirstComponentTutorial.zip[project sources] of the finalized example on how to build your first component.
 ****
 '''
 

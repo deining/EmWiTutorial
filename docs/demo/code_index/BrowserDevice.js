@@ -35,7 +35,7 @@ var index;if(!index)throw new Error("The application file '_project.js' isn't ye
 var Ai="Ring the bell command on browser device was called";var AF="Show forecast command on browser device was called";
 var BV="0";
 C.FS={Fh:function(){B.ta("%s",Ai);beep();},Fi:function(){B.ta("%s",AF);window.open(
-'http://worldweather.wmo.int','_self');},CW:function(value){localStorage.setItem(
+'https://worldweather.wmo.int','_self');},CW:function(value){localStorage.setItem(
 "Language",value);this.HM(value);},Fg:function(Az){var lang=BV;lang=localStorage.
 getItem("Language");B._GetAutoObject(B.Device.Device).CW(B.s6(lang,0,10));},_Init:
 function(aArg){var AP=this.AP;AP.__proto__=C.FS;B.gb++;},_Done:function(){var AP=

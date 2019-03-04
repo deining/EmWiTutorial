@@ -13,8 +13,10 @@ In the course of this tutorial, we gradually authored and extended a sample appl
 | xref::HelloWorld.adoc[Getting started with 'Hello world']                  | link:{attachmentsdir}/code/HelloWorldTutorial.zip[HelloWorldTutorial.zip]
 | xref::FirstComponent.adoc[Adding your first GUI component]                 | link:{attachmentsdir}/code/FirstComponentTutorial.zip[FirstComponentTutorial.zip]
 | xref::ComponentReusability.adoc[Making your GUI component truly reusable]  | link:{attachmentsdir}/code/ReusableComponentTutorial.zip[ReusableComponentTutorial.zip]
-| xref::DeviceIntegrationBrowser.adoc[Integrating with your browser device] | link:{attachmentsdir}/code/DeviceIntegrationTutorial.zip[DeviceIntegrationTutorial.zip]
+| xref::DeviceIntegrationBrowser.adoc[Integrating with your browser device]  | link:{attachmentsdir}/code/DeviceIntegrationTutorial.zip[DeviceIntegrationTutorial.zip]
 | xref::LocalizingYourApplication.adoc[Localizing your application]          | link:{attachmentsdir}/code/LocalizationTutorial.zip[LocalizationTutorial.zip]
+| xref::LanguageSwitcher.adoc[Adding a language switcher]                    | link:{attachmentsdir}/code/LanguageSwitcherTutorial.zip[LanguageSwitcher.zip]
+| xref::DataStorageDevice.adoc[Storing data permanently on your device]       | link:{attachmentsdir}/code/DataStorageDeviceTutorial.zip[DataStorageDeviceTutorial.zip]
 |===
 
 NOTE: The zip-archive represents the project once the lesson was *finalized*. If you want to work through a lesson, and need the project code as starting point, simply take the zip archive from the lesson before.

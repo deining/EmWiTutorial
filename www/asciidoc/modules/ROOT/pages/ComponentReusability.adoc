@@ -6,7 +6,7 @@ In the xref::FirstComponent.adoc[last chapter], we successfully built your first
 '''
 .Source code
 ****
-TIP: If you didn't author or didn't keep the _First component_ project explained in the previous xref::FirstComponent.adoc[chapter], you may download the link:{attachmentsdir}/code/code/FirstComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+TIP: If you didn't author or didn't keep the _First component_ project explained in the previous xref::FirstComponent.adoc[chapter], you may download the link:{attachmentsdir}/code/FirstComponentTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
 ****
 '''
 

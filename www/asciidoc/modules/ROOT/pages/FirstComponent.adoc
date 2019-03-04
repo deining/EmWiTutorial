@@ -158,7 +158,7 @@ NOTE: When we launched the test above, the prototyper acted on a component level
 |                   | Prototyping of component     |  Prototyping of application
 | Menu              | menu:Build[Start prototyper] | menu:Build[Start prototyper with application class]
 | Keyboard shortcut | kbd:[F5]                     | kbd:[Ctrl+F5]
-| Toolbar icon      | image:icons/Launchlcon.png[Launch icon] | image:icons/LaunchApplicationIcon.png[Launch icon]
+| Toolbar icon      | image:icons/LaunchIcon.png[Launch icon] | image:icons/LaunchApplicationIcon.png[Launch icon]
 |===
 
 == Add the component to the application's root component

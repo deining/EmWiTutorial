@@ -1,0 +1,14 @@
+= Document Title
+Andreas Deininger andreas@deininger.net
+:pagesdir: ./pages/
+:imagesdir: ./assets/images/
+:doctype: book
+:toc:
+
+== Lesson 1: Getting started with 'Hello world'
+
+include::{pagesdir}HelloWorld.adoc[]
+
+== Lesson 2: Adding your first GUI component
+
+include::{pagesdir}FirstComponent.adoc[]

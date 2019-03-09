@@ -34,7 +34,7 @@ Project units:: That's the most interesting part for now, so let's start explain
 
 === Units
 
-https://doc.embedded-wizard.de/unit-member[Units^] are a way to structure your project. For now, we will deal with one unit only, the _Application_ unit. While we use this unit for now, we will add more units later on. Units are a kind of container for our components used, so have a look now what's inside the _Application_ unit_:
+https://doc.embedded-wizard.de/unit-member[Units^] are a way to structure your project. For now, we will deal with one unit only, the _Application_ unit. While we use this unit for now, we will add more units later on. Units are a kind of container for our components used, so have a look now what's inside the _Application_ unit:
 
 . Double click on the icon image:icons/ApplicationUnitIcon.png[Icon application unit], representing the _Application_ unit.
 . Inside the composer window, a second tab appears which shows the contents inside the unit which is now opened.

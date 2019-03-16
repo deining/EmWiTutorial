@@ -12,3 +12,4 @@
 .Resources
 * xref:DemoSite.adoc[Application demo site]
 * xref:DownloadCode.adoc[Download source code]
+* link:{attachmentsdir}/pdf/Tutorial.pdf[PDF version of tutorial]

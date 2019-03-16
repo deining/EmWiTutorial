@@ -1,14 +1,15 @@
-= Document Title
-Andreas Deininger andreas@deininger.net
-:pagesdir: ./pages/
-:imagesdir: ./assets/images/
+= Embedded Wizard tutorial
+:pagesdir: ./../asciidoc/modules/ROOT/pages/
+:imagesdir: ./../asciidoc/modules/ROOT/assets/images/
 :doctype: book
 :toc:
+:sectnums:
+:leveloffset: 0
 
-== Lesson 1: Getting started with 'Hello world'
-
+include::{pagesdir}Introduction.adoc[]
 include::{pagesdir}HelloWorld.adoc[]
-
-== Lesson 2: Adding your first GUI component
-
 include::{pagesdir}FirstComponent.adoc[]
+include::{pagesdir}ComponentReusability.adoc[]
+include::{pagesdir}DeviceIntegrationBrowser.adoc[]
+include::{pagesdir}LocalizingYourApplication.adoc[]
+include::{pagesdir}LanguageSwitcher.adoc[]

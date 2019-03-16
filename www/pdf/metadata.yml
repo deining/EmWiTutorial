@@ -1,0 +1,9 @@
+---
+title:  'Embedded Wizard Tutorial'
+book: true
+documentclass: scrbook
+titlepage: true
+author:
+- Andreas Deininger
+keywords: [Embedded Wizard Tutorial]
+---

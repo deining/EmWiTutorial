@@ -1,6 +1,7 @@
-= Embedded Wizard Tutorial
+= Introduction
 Andreas Deininger andreas@deininger.net
 
+ifdef::backend-html5[]
 ****
 ++++
 <script type="text/javascript">
@@ -8,6 +9,7 @@ Andreas Deininger andreas@deininger.net
 </script>
 ++++
 ****
+endif::[]
 
 == About Embedded Wizard
 

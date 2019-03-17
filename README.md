@@ -50,8 +50,8 @@ www/                     -> tutorial website
         assets/                     -> images and attachments
         pages/                      -> page source files
   pdf/                      -> pdf publishing toolchain
-    metadata.yml            -> metadata file, allows [customization](https://github.com/Wandmalfarbe/pandoc-latex-template#custom-template-variables) of pdf output
-    template.latex          -> [pandoc LaTeX template](https://github.com/Wandmalfarbe/pandoc-latex-template), authored by [Pascal Wagler](https://github.com/Wandmalfarbe)
+    metadata.yml            -> metadata file, customization of pdf output
+    template.latex          -> pandoc LaTeX template (author: Pascal Wagler)
     Tutorial.adoc           -> book file, includes all chapters of the tutorial
   resources/images/         -> images used (photoshop format)
   ui/                       -> website page templates, footer, header, ...
@@ -212,7 +212,9 @@ This will produce a file ``Tutorial.xml`` inside the same directory, containing 
 Finally, invoke ``pandoc`` converter to generate a pdf file from the docbook output you just generated:
 
 ````
-C:\Users\Me\Projects\EmWiTutorial\www\pdf> pandoc Tutorial.xml --output Tutorial.pdf --from docbook --template template --metadata-file metadata.yml --pdf-engine xelatex --toc 
+C:\Users\Me\Projects\EmWiTutorial\www\pdf> pandoc Tutorial.xml --output Tutorial.pdf --from docbook --template template --metadata-file metadata.yml --pdf-engine xelatex --toc
 ````
 
 This eventually will produce the pdf file ``Tutorial.pdf`` inside the same directory.
+
+For pdf styling, we use the [pandoc LaTeX template](https://github.com/Wandmalfarbe/pandoc-latex-template) authored by [Pascal Wagler](https://github.com/Wandmalfarbe). Further [customization](https://github.com/Wandmalfarbe/pandoc-latex-template#custom-template-variables) of the generated pdf can be achieved by extending the metadata file ``metadata.yml``.

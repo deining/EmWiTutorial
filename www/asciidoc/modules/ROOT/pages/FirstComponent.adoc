@@ -39,11 +39,11 @@ image::firstcomponent/EmptyComponent.png[Empty GUI component]
 
 Next, we have to fill the empty component:
 
-* First, we do some cleanup: With the kbd:[Shift] key pressed, click on the two methods _UpdateViewState_ and _UpdateLayout_ to select both methods. Press the kbd:[Delete] key to delete those methods, we don't need them for now.
-* Also, click on the note element that contains a lot of text. Press the kbd:[Delete] key to delete this element, too.
-* Our component should have a size of 200 × 150 px, so we have to adjust this: click on the property _Bounds_ (adorned by a green diamond) to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
+* First, we do some cleanup: With the kbd:[Shift] key pressed, click on the two methods _UpdateViewState_ and _UpdateLayout_ to select both methods. Press the kbd:[Del] key to delete those methods, we don't need them for now.
+* Also, click on the note element that contains a lot of text. Press the kbd:[Del] key to delete this element, too.
+* Our component should have a size of 200 × 150 px, so we have to adjust this: click on the property image:icons/PropertyIcon.png[property icon] _Bounds_ to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
 * Inside the attributes and properties area, we can adapt the default bounds values to our needs:
-** Click on the black triangle left to the _Default_ element. Multiple lines will show up which hold the values for the origin (_x_, _y_) and the size of the element (_**w**idth_, _**h**eight).
+** Click on the black triangle left to the _Default_ element. Multiple lines will show up which hold the values for the origin (_x_, _y_) and the size of the element (_**w**idth_, _**h**eight_).
 ** Alter the _w_ instance property of the component to the value _200_ to set the default width of the component to 200{nbsp}px.
 ** Alter the _h_ instance property of the component to the value _150_ to set the default height of the component to 150{nbsp}px.
 ** In order to adapt the size of the component on the screen, click on the _Reload_ icon image:icons/ReloadIcon.png[Reload icon] in the second row of the toolbar or press kbd:[F7] to reload the class. The blue border of the element will shrink to the new size then.
@@ -195,7 +195,7 @@ Now we are eventually ready to add our bell component:
 Yeah! You successfully included your component into the main app!
 
 .Tutorial application with bell component
-image::firstcomponent/TutorialApplication.png[Debugging output]
+image::firstcomponent/TutorialApplication.png[Tutorial application]
 
 Let's test it out:
 
@@ -214,7 +214,7 @@ image::firstcomponent/AdaptingScreenSize.png[Screen size]
 Hooray, it we have our first application up and running:
 
 .First application running
-image::firstcomponent/TutorialApplicationRunning.png[Screen size]
+image::firstcomponent/TutorialApplicationRunning.png[First application]
 
 '''
 .Source code

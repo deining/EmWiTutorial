@@ -246,6 +246,15 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Localization</em> projec
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Our flag bitmap resources are ready for use now, they should look like illustrated in <a href="#fig:FlagResources">Figure 1</a> below:</p>
+</div>
+<div id="fig:FlagResources" class="imageblock">
+<div class="content">
+<img src="_images/languageswitcher/FlagiconResources.png" alt="flag icons">
+</div>
+<div class="title">Figure 1. Flag bitmap resources</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_building_a_pushbutton_flag_component"><a class="anchor" href="#_building_a_pushbutton_flag_component"></a>Building a pushbutton flag component</h3>
@@ -261,13 +270,146 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Localization</em> projec
 <p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em>, over to root canvas. Rename the group to <em>Language selector</em>.</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>From the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>C</strong>omponent Templates</em> opened (press key <kbd>C</kbd> twice), drag an instance of the <span class="image"><img src="_images/icons/PushButtonIcon.png" alt="push button icon"></span> <em>Push Button</em> component template to the component&#8217;s canvas. Place the element right inside the newly created <em>Language selector</em> annotation group. Rename the component to <em>PushButtonFlag</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>Double click on the newly inserted <span class="image"><img src="_images/icons/PushButtonIcon.png" alt="push button icon"></span> <em>Push Button</em> component. Inside the composer window, a new tab titled <em>Application::PushButtonFlag</em> appears which shows the component template.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>We now have to adapt the component to our needs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>First, click on the note element that contains a lot of text and press the <kbd>Del</kbd> key to delete this element.</p>
+</li>
+<li>
+<p>Our flag inside the component has a size of 46 × 33 px. Since we want to have a black one pixel border around the selected flag, the component size should be 48 × 35 px, so let&#8217;s adjust this: click on the property <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Bounds</em> to select the element. Now, in the in the upper <em>member area</em> of the inspector window right to the main composer window you should see the element named <em>Bounds</em> selected. Also note the attributes and properties area below that shows all properties of the currently selected <em>Bounds</em> property.</p>
+</li>
+<li>
+<p>Inside the attributes and properties area, we can adapt the default bounds values to our needs:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the black triangle left to the <em>Default</em> element. Multiple lines will show up which hold the values for the origin (<em>x</em>, <em>y</em>) and the size of the element (<em><strong>w</strong>idth</em>, <em><strong>h</strong>eight</em>).</p>
+</li>
+<li>
+<p>Alter the <em>w</em> instance property of the component to the value <em>48</em> to set the default width of the component to 48&#160;px.</p>
+</li>
+<li>
+<p>Alter the <em>h</em> instance property of the component to the value <em>35</em> to set the default height of the component to 35&#160;px.</p>
+</li>
+<li>
+<p>In order to adapt the size of the component on the screen, click on the <em>Reload</em> icon <span class="image"><img src="_images/icons/ReloadIcon.png" alt="Reload icon"></span> in the second row of the toolbar or press <kbd>F7</kbd> to reload the class. The blue border of the element will shrink to the new size then.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Looking at the inspector window, we can see that our component consist of three graphical elements, titled <em>Background</em>, <em>Border</em> and <em>TouchHandler</em>. Let&#8217;s adapt these elements, too:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adapt the size of the <em>Border</em> element to 48 × 35 px by altering the default width and height of the property <em>Bounds</em> of the <em>Border</em> element (as you did when changing the size of the whole component above).</p>
+</li>
+<li>
+<p>Adapt the size of the <em>TouchHandler</em> element to 48 × 35 px. Do so so, alter the property <em>Point2</em> of the <em>TouchHandler</em> element to <em>&lt;48,0&gt;</em>. Also, set the property <em>Point3</em> to <em>&lt;48,35&gt;</em> and the property <em>Point4</em> to <em>&lt;0,35&gt;</em>. The <em>TouchHandler</em> element should now fit exactly into the component again.</p>
+</li>
+<li>
+<p>Delete the <em>Background</em> element using the <kbd>Del</kbd> key. We don&#8217;t need this element, since we will replace it with our flag icon.</p>
+</li>
+<li>
+<p>Inside the method <em>UpdateViewState</em>, the color of the background is changed depending on the state of the component (pressed, selected, enabled). Since we just deleted the background, we have to remove all references to the deleted element, so inside the method body, look for the 3 code lines <code>Background.Color = #XXXXXXXX;</code> and remove these three lines.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now we are ready to insert our flag to the component:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>V</strong>iews</em> opened (key <kbd>V</kbd>), drag an instance of the <span class="image"><img src="_images/icons/ImageIcon.png" alt="image icon"></span> <em>Image</em> bitmap view to the component&#8217;s canvas. Rename the <em>Image</em> element to <em>Flag</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>Adapt the size of the <em>Image</em> element to 46 × 33 px by altering the default width and height of the property <em>Bounds</em> of the <em>Image</em> element. Define an offset of one pixel from the origin by setting the default <em>x</em> and <em>y</em> coordinate inside the property <em>Bounds</em> to <em>1</em>.</p>
+</li>
+<li>
+<p>Set the property <em>Bitmap</em> of the <em>Image</em> element <em>Icons::FlagUK</em>.</p>
+</li>
+<li>
+<p>In the inspector window, select the <em>Image</em> element and press the keyboard combination <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Down</kbd></span> multiple time to move the <em>Image</em> element down in the element hierarchy. You may stop once you placed the element just below the <em>TouchHandler</em> element.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>While our component is usable now, it is not reusable yet. If at all possible, try to reuse your components! Our goal must be to develop one single flag component only and reuse this component once we add several flags for language switching to the main window. In order to make the component truly reusable, we have to add two <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> properties <em>Language</em> and <em>BitmapFlag</em> to the component. These properties can then be set individually for each component&#8217;s instance used inside the application. Let&#8217;s go and add these properties to our component:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>C</strong>hora</em> opened (key <kbd>C</kbd>), drag an instance of the <span class="image"><img src="_images/icons/AnnotationGroupIcon.png" alt="annotation group icon"></span> <em>Annotation Group</em> to the component&#8217;s canvas. Place the element right beneath the component&#8217;s canvas and rename the property <em>Caption</em> of the element to <em>User defined properties</em> using the inspector window.</p>
+</li>
+<li>
+<p>Now we are ready to insert our properties: Click on the element <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Property</em>, and drag an instance over to the component&#8217;s canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.</p>
+</li>
+<li>
+<p>The property will be used to store the flag element of our component, therefore we rename the property to <em>BitmapFlag</em> using the <kbd>F2</kbd>. Please note that the names of the <em>OnSet</em> and <em>OnGet</em> methods automatically change to <em>OnSetBitmapFlag</em> and <em>OnGetOnSetBitmapFlag</em> respectively.</p>
+</li>
+<li>
+<p>Currently, the data type of the property is <em>int32</em>, that&#8217;s not what we want, instead we want to store a bitmap resource value (=&#160;the flag used) inside the property. To be able to do so, we change the value of the property <em>Type</em> to <em>Resources::Bitmap</em> inside the inspector window.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The property is now set up, however a change of the property value is not yet reflected inside the flag component. To overcome this, we have to add some code to the OnSet method which is called each time a new value is assigned to the property:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Double click on the method <em>OnSetTextHeader</em> of the property. In the code editor window, replace the <em>TO DO:</em> section at the bottom with the code line <code>Flag.Bitmap = value;</code>. Now, if a new value was assigned to the <em>BitmapFlag</em> property was set to, this is immediately reflected in the GUI.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first property is ready to go, so let&#8217;s add a second property to store the language associated with the flag:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery templates window drag another <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Property</em> to the component&#8217;s canvas.</p>
+</li>
+<li>
+<p>Rename the property to <em>Language</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>Change the type of the property to <em>language</em>, with a default value <em>"Default"</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Our flag component is ready for use, it should now look like illustrated in <a href="#fig:PushButtonFlag">Figure 2</a> below:</p>
+</div>
+<div id="fig:PushButtonFlag" class="imageblock">
+<div class="content">
+<img src="_images/languageswitcher/PushButtonFlag.png" alt="push button flag" width="1024">
+</div>
+<div class="title">Figure 2. Finalized push button flag component</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_building_the_language_switcher_component"><a class="anchor" href="#_building_the_language_switcher_component"></a>Building the language switcher component</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_the_language_switcher_to_the_main_screen"><a class="anchor" href="#_adding_the_language_switcher_to_the_main_screen"></a>Adding the language switcher to the main screen</h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>

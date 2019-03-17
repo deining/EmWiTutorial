@@ -263,7 +263,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 <p>Delete both the existing slot method <em>RingTheBellSlot</em> and the corresponding note group <em>Slot method(s)</em> using the <kbd>Del</kbd> key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more.</p>
 </li>
 <li>
-<p>Remove the current value <em>RingTheBellSLot</em> from the the property <em>OnActivate</em> of the PushButton, otherwise you will run in trouble later on. To do so, select the  <em>PushButton</em> component and right click on its property <em>OnActivate</em>. From the context menu select the menu item <em>Restore default value</em> (<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>R</kbd></span>), and the current entry will be replace with the default <em>null</em> value.</p>
+<p>Remove the current value <em>RingTheBellSLot</em> from the the property <em>OnActivate</em> of the PushButton, otherwise you will run in trouble later on. To do so, select the <em>PushButton</em> component and right click on its property <em>OnActivate</em>. From the context menu select the menu item <em>Restore default value</em> (<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>R</kbd></span>), and the current entry will be replace with the default <em>null</em> value.</p>
 </li>
 </ul>
 </div>
@@ -295,7 +295,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>First component</em> pro
 <div class="ulist">
 <ul>
 <li>
-<p>The property should be used to store the text of the header element of our component, therefore we rename the property to <em>TextHeader</em> using the <kbd>F2</kbd>. Please note that the names of the <em>OnSet</em> and <em>OnGet</em> methods automatically change to <em>OnSetTextHeader</em> and <em>OnGetTextHeader</em> respectively.</p>
+<p>The property will be used to store the text of the header element of our component, therefore we rename the property to <em>TextHeader</em> using the <kbd>F2</kbd>. Please note that the names of the <em>OnSet</em> and <em>OnGet</em> methods automatically change to <em>OnSetTextHeader</em> and <em>OnGetTextHeader</em> respectively.</p>
 </li>
 <li>
 <p>Currently, the data type of the property is <em>int32</em>, that&#8217;s not what we want, instead we want to store a string value (=&#160;the header text) inside the property. To be able to do so, we change the value of the property <em>Type</em> to <em>string</em> inside the inspector window.</p>
@@ -393,7 +393,7 @@ So far so good. Now we have to take care that not only the label and heading tex
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/reusablecomponent/RefactoredComponent.png" alt="New property">
+<img src="_images/reusablecomponent/RefactoredComponent.png" alt="refactored component">
 </div>
 <div class="title">Figure 2. Refactored component</div>
 </div>

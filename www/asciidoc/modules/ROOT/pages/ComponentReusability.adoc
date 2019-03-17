@@ -38,7 +38,7 @@ First we have to make a few adjustments to our components in order to reflect th
 * In the _PushButtonComponent_ tab, rename the existing push button _PushButtonBell_ to _PushButton_ . Change the value of the property _Label_ of this component from _"Ring"_ to _"Action"_.
 * Afterwards, rename the header text element _HeadingBell_ to _Header_ and change the value of the property _Label_ of this component from _"Ring"_ to _"Action"_.
 * Delete both the existing slot method _RingTheBellSlot_ and the corresponding note group _Slot method(s)_ using the kbd:[Del] key. When using the refactored component, slot methods will be added on the root application level and not at the component level any more.
-* Remove the current value _RingTheBellSLot_ from the the property _OnActivate_ of the PushButton, otherwise you will run in trouble later on. To do so, select the  _PushButton_ component and right click on its property _OnActivate_. From the context menu select the menu item _Restore default value_ (kbd:[Ctrl+R]), and the current entry will be replace with the default _null_ value.
+* Remove the current value _RingTheBellSLot_ from the the property _OnActivate_ of the PushButton, otherwise you will run in trouble later on. To do so, select the _PushButton_ component and right click on its property _OnActivate_. From the context menu select the menu item _Restore default value_ (kbd:[Ctrl+R]), and the current entry will be replace with the default _null_ value.
 
 Let's get our feet wet and add some properties to our component:
 
@@ -52,7 +52,7 @@ image::reusablecomponent/NewProperty.png[New property]
 
 Let's move on and adapt the property to our needs:
 
-* The property should be used to store the text of the header element of our component, therefore we rename the property to _TextHeader_ using the kbd:[F2]. Please note that the names of the _OnSet_ and _OnGet_ methods automatically change to _OnSetTextHeader_ and _OnGetTextHeader_ respectively.
+* The property will be used to store the text of the header element of our component, therefore we rename the property to _TextHeader_ using the kbd:[F2]. Please note that the names of the _OnSet_ and _OnGet_ methods automatically change to _OnSetTextHeader_ and _OnGetTextHeader_ respectively.
 * Currently, the data type of the property is _int32_, that's not what we want, instead we want to store a string value (={nbsp}the header text) inside the property. To be able to do so, we change the value of the property _Type_ to _string_ inside the inspector window.
 * The header text of our component should be _Header_ by default, so we change the value _Default_ to _"Header"_ inside the inspector window. Don't forget the surrounding double quotes here or you may run in trouble.
 
@@ -110,7 +110,7 @@ So far so good. Now we have to take care that not only the label and heading tex
 The refactoring of our component is done, it should now look like this:
 
 .Refactored component
-image::reusablecomponent/RefactoredComponent.png[New property]
+image::reusablecomponent/RefactoredComponent.png[refactored component]
 
 == Adapt and fix the main application
 

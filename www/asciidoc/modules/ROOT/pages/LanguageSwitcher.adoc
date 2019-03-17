@@ -33,15 +33,73 @@ Now that we have the two icons available, we will make use of them and create tw
 * From the gallery templates window to the left, drag another image:icons/BitmapResourceIcon.png[constant icon] _Bitmap Resource_ element over to the canvas. Rename the constant to _FlagGermany_.
 * Change the property _FileName_ of the newly inserted bitmap resource to _.\Flags\de.png_.
 
+Our flag bitmap resources are ready for use now, they should look like illustrated in <<fig:FlagResources>> below:
+
+[[fig:FlagResources]]
+.Flag bitmap resources
+image::languageswitcher/FlagiconResources.png[flag icons]
+
 === Building a pushbutton flag component
 
 With the resources available, we now can build a reusable pushbutton flag component that will be used inside the language switcher component later on:
 
 * We want to place the push button component in the _Application_ unit, so we have to invoke this unit first: click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to open the corresponding composer tab. Inside the tab, you should now see the _Application_ root component and the _Pushbutton component_, built by you.
 * From the gallery templates window to the left, drag the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Language selector_.
-* ...
+* From the gallery templates window (kbd:[Alt+1]) with folder _**C**omponent Templates_ opened (press key kbd:[C] twice), drag an instance of the image:icons/PushButtonIcon.png[push button icon] _Push Button_ component template to the component's canvas. Place the element right inside the newly created _Language selector_ annotation group. Rename the component to _PushButtonFlag_ using the kbd:[F2] key.
+* Double click on the newly inserted image:icons/PushButtonIcon.png[push button icon] _Push Button_ component. Inside the composer window, a new tab titled _Application::PushButtonFlag_ appears which shows the component template.
+
+We now have to adapt the component to our needs:
+
+* First, click on the note element that contains a lot of text and press the kbd:[Del] key to delete this element.
+* Our flag inside the component has a size of 46 × 33 px. Since we want to have a black one pixel border around the selected flag, the component size should be 48 × 35 px, so let's adjust this: click on the property image:icons/PropertyIcon.png[property icon] _Bounds_ to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
+* Inside the attributes and properties area, we can adapt the default bounds values to our needs:
+** Click on the black triangle left to the _Default_ element. Multiple lines will show up which hold the values for the origin (_x_, _y_) and the size of the element (_**w**idth_, _**h**eight_).
+** Alter the _w_ instance property of the component to the value _48_ to set the default width of the component to 48{nbsp}px.
+** Alter the _h_ instance property of the component to the value _35_ to set the default height of the component to 35{nbsp}px.
+** In order to adapt the size of the component on the screen, click on the _Reload_ icon image:icons/ReloadIcon.png[Reload icon] in the second row of the toolbar or press kbd:[F7] to reload the class. The blue border of the element will shrink to the new size then.
+
+Looking at the inspector window, we can see that our component consist of three graphical elements, titled _Background_, _Border_ and _TouchHandler_. Let's adapt these elements, too:
+
+* Adapt the size of the _Border_ element to 48 × 35 px by altering the default width and height of the property _Bounds_ of the _Border_ element (as you did when changing the size of the whole component above).
+* Adapt the size of the _TouchHandler_ element to 48 × 35 px. Do so so, alter the property _Point2_ of the _TouchHandler_ element to _<48,0>_. Also, set the property _Point3_ to _<48,35>_ and the property _Point4_ to _<0,35>_. The _TouchHandler_ element should now fit exactly into the component again.
+* Delete the _Background_ element using the kbd:[Del] key. We don't need this element, since we will replace it with our flag icon.
+* Inside the method _UpdateViewState_, the color of the background is changed depending on the state of the component (pressed, selected, enabled). Since we just deleted the background, we have to remove all references to the deleted element, so inside the method body, look for the 3 code lines ``Background.Color = #XXXXXXXX;`` and remove these three lines.
+
+Now we are ready to insert our flag to the component:
+
+* From the gallery templates window (kbd:[Alt+1]) with folder _**V**iews_ opened (key kbd:[V]), drag an instance of the image:icons/ImageIcon.png[image icon] _Image_ bitmap view to the component's canvas. Rename the _Image_ element to _Flag_ using the kbd:[F2] key.
+* Adapt the size of the _Image_ element to 46 × 33 px by altering the default width and height of the property _Bounds_ of the _Image_ element. Define an offset of one pixel from the origin by setting the default _x_ and _y_ coordinate inside the property _Bounds_ to _1_. 
+* Set the property _Bitmap_ of the _Image_ element _Icons::FlagUK_. 
+* In the inspector window, select the _Image_ element and press the keyboard combination kbd:[Ctrl+Down] multiple time to move the _Image_ element down in the element hierarchy. You may stop once you placed the element just below the _TouchHandler_ element.
+
+While our component is usable now, it is not reusable yet. If at all possible, try to reuse your components! Our goal must be to develop one single flag component only and reuse this component once we add several flags for language switching to the main window. In order to make the component truly reusable, we have to add two image:icons/PropertyIcon.png[property icon] properties _Language_ and _BitmapFlag_ to the component. These properties can then be set individually for each component's instance used inside the application. Let's go and add these properties to our component:
+
+* From the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ opened (key kbd:[C]), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element right beneath the component's canvas and rename the property _Caption_ of the element to _User defined properties_ using the inspector window.
+* Now we are ready to insert our properties: Click on the element image:icons/PropertyIcon.png[property icon] _Property_, and drag an instance over to the component's canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.
+* The property will be used to store the flag element of our component, therefore we rename the property to _BitmapFlag_ using the kbd:[F2]. Please note that the names of the _OnSet_ and _OnGet_ methods automatically change to _OnSetBitmapFlag_ and _OnGetOnSetBitmapFlag_ respectively.
+* Currently, the data type of the property is _int32_, that's not what we want, instead we want to store a bitmap resource value (={nbsp}the flag used) inside the property. To be able to do so, we change the value of the property _Type_ to _Resources::Bitmap_ inside the inspector window.
+
+The property is now set up, however a change of the property value is not yet reflected inside the flag component. To overcome this, we have to add some code to the OnSet method which is called each time a new value is assigned to the property:
+
+* Double click on the method _OnSetTextHeader_ of the property. In the code editor window, replace the _TO DO:_ section at the bottom with the code line ``Flag.Bitmap = value;``. Now, if a new value was assigned to the _BitmapFlag_ property was set to, this is immediately reflected in the GUI.
+
+The first property is ready to go, so let's add a second property to store the language associated with the flag:
+
+* From the gallery templates window drag another image:icons/PropertyIcon.png[property icon] _Property_ to the component's canvas.
+* Rename the property to _Language_ using the kbd:[F2] key.
+* Change the type of the property to _language_, with a default value _"Default"_.
+
+Our flag component is ready for use, it should now look like illustrated in <<fig:PushButtonFlag>> below:
+
+[[fig:PushButtonFlag]]
+.Finalized push button flag component
+image::languageswitcher/PushButtonFlag.png[push button flag, 1024]
 
 === Building the language switcher component
+
+TODO
+
+=== Adding the language switcher to the main screen
 
 TODO
 

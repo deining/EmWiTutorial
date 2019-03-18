@@ -224,7 +224,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Localization</em> projec
 <p>Identify the note frame with the caption <em>GUI project</em>, it currently contains the icon <span class="image"><img src="_images/icons/ApplicationUnitIcon.png" alt="Application unit icon"></span> representing the <em>Application</em> unit and the icon <span class="image"><img src="_images/icons/StringsUnitIcon.png" alt="Strings unit icon"></span> representing the <em>Strings</em> unit.</p>
 </li>
 <li>
-<p>From the gallery templates window to the left, drag the element <span class="image"><img src="_images/icons/UnitIcon.png" alt="profile icon"></span> <em>Unit</em> inside the <em>Chora</em> folder over to the canvas and place it underneath the existing <em>Strings</em> unit. Rename the unit to <em>Icons</em>.</p>
+<p>From the gallery templates window to the left (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>), drag the element <span class="image"><img src="_images/icons/UnitIcon.png" alt="profile icon"></span> <em>Unit</em> inside the <em>Chora</em> folder over to the canvas and place it underneath the existing <em>Strings</em> unit. Rename the unit to <em>Icons</em>.</p>
 </li>
 <li>
 <p>Double click on the newly inserted unit <span class="image"><img src="_images/icons/IconsUnitIcon.png" alt="Icon icons unit"></span>. Inside the composer window, a new tab <em>Icons</em> appears which shows the currently empty unit.</p>
@@ -286,7 +286,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Localization</em> projec
 <p>First, click on the note element that contains a lot of text and press the <kbd>Del</kbd> key to delete this element.</p>
 </li>
 <li>
-<p>Our flag inside the component has a size of 46 × 33 px. Since we want to have a black one pixel border around the selected flag, the component size should be 48 × 35 px, so let&#8217;s adjust this: click on the property <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Bounds</em> to select the element. Now, in the in the upper <em>member area</em> of the inspector window right to the main composer window you should see the element named <em>Bounds</em> selected. Also note the attributes and properties area below that shows all properties of the currently selected <em>Bounds</em> property.</p>
+<p><a id="resizing-component"></a>Our flag inside the component has a size of 46 × 33 px. Since we want to have a black one pixel border around the selected flag, the component size should be 48 × 35 px, so let&#8217;s adjust this: click on the property <span class="image"><img src="_images/icons/PropertyIcon.png" alt="property icon"></span> <em>Bounds</em> to select the element. Now, in the in the upper <em>member area</em> of the inspector window right to the main composer window you should see the element named <em>Bounds</em> selected. Also note the attributes and properties area below that shows all properties of the currently selected <em>Bounds</em> property.</p>
 </li>
 <li>
 <p>Inside the attributes and properties area, we can adapt the default bounds values to our needs:</p>
@@ -372,7 +372,7 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Localization</em> projec
 <div class="ulist">
 <ul>
 <li>
-<p>Double click on the method <em>OnSetTextHeader</em> of the property. In the code editor window, replace the <em>TO DO:</em> section at the bottom with the code line <code>Flag.Bitmap = value;</code>. Now, if a new value was assigned to the <em>BitmapFlag</em> property was set to, this is immediately reflected in the GUI.</p>
+<p>Double click on the method <em>OnSetTextHeader</em> of the property. In the code editor window, replace the <em>TO DO:</em> section at the bottom with the code line <code>Flag.Bitmap = value;</code>. Now, if a new value gets assigned to the <em>BitmapFlag</em> property, this is immediately reflected in the GUI.</p>
 </li>
 </ul>
 </div>
@@ -405,7 +405,77 @@ If you didn&#8217;t author or didn&#8217;t keep the <em>Localization</em> projec
 <div class="sect2">
 <h3 id="_building_the_language_switcher_component"><a class="anchor" href="#_building_the_language_switcher_component"></a>Building the language switcher component</h3>
 <div class="paragraph">
-<p>TODO</p>
+<p>Next, we need to build the language switcher component, holding two or more flags for language selection:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>C</strong>omponent Templates</em> opened (press key <kbd>C</kbd> twice), drag an <span class="image"><img src="_images/icons/ComponentIcon.png" alt="component icon"></span> <em>Empty GUI component</em> to the component&#8217;s canvas. Place the element inside the <em>Language selector</em> note group, underneath the <em>PushButton</em> component. Rename the component to <em>LanguageSelector</em> using the <kbd>F2</kbd> key.</p>
+</li>
+<li>
+<p>Double click on the newly inserted <span class="image"><img src="_images/icons/LanguageSelector.png" alt="push button icon"></span> component. Inside the composer window, a new tab titled <em>Application::LanguageSelector</em> appears which shows the empty GUI component.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We now have to adapt and fill the component according to our needs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>First, click on the note element that contains a lot of text and press the <kbd>Del</kbd> key to delete this element. Also delete the methods <em>UpdateViewState</em> and <em>UpdateLayout</em>.</p>
+</li>
+<li>
+<p>Adjust the component size to 104 × 35 px so that the component can held two flags. If you don&#8217;t know how to do that remember how you changed the size of the <em>PushButton</em> flag component <a href="#resizing-component">above</a>.</p>
+</li>
+<li>
+<p>Press <span class="keyseq"><kbd>Alt</kbd>+<kbd>2</kbd></span> to select the gallery browser window, left to the main composer window. Alternatively, you may mouse click at the second tab <em>Browser</em> at the very top of the window.</p>
+</li>
+<li>
+<p>In the search field immediately below the two tabs, type in <em>Flag</em> to shorten the class list.</p>
+</li>
+<li>
+<p>Click on the <span class="image"><img src="_images/icons/PushButtonIcon.png" alt="push button icon"></span> <em>Application::PushButtonFlag</em> class and drag an instance of the class over to the canvas. Align the component to the left.</p>
+</li>
+<li>
+<p>Drag another instance of the <span class="image"><img src="_images/icons/PushButtonIcon.png" alt="push button icon"></span> <em>Application::PushButtonFlag</em> class over to the canvas. Align the component to the right.</p>
+</li>
+<li>
+<p>Using the inspector window, change the property <em>BitmapFlag</em> of the secondly inserted push button flag to <em>Icons::FlagGerman</em> and the German flag will be displayed.</p>
+</li>
+<li>
+<p>Using the inspector window, change the property <em>Language</em> of the same flag to <em>German</em>.</p>
+</li>
+<li>
+<p>Inside the gallery templates window (<span class="keyseq"><kbd>Alt</kbd>+<kbd>1</kbd></span>) with folder <em><strong>C</strong>hora</em> opened (key <kbd>C</kbd>), click on the element <span class="image"><img src="_images/icons/SlotMethodIcon.png" alt="slot method icon"></span> <em>Slot Method</em> and drag an instance over to the component&#8217;s canvas.</p>
+</li>
+<li>
+<p>Press <kbd>F2</kbd> to rename the slot method to <em>switchLanguage</em>.</p>
+</li>
+<li>
+<p>Using the inspector window, change the property <em>OnActivate</em> of both flags to the newly created slot method <em>switchLanguage</em>. This way, the <em>switchLanguage</em> slot method gets called once the user clicks on any of the flags. The only object passed to the slot method is the hidden parameter <em>sender</em>, in our case the <em>PushButtonFlag</em> instance the user clicked on.</p>
+</li>
+<li>
+<p>Now, how do we implement language switching once the slot method gets called? That&#8217;s easy, double click on the <span class="image"><img src="_images/icons/RingTheBellSlotIcon.png" alt="slot icon"></span> <em>switchLanguage</em> and fill into the body of the slot method one single Chora code line:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-chora hljs" data-lang="chora">language = ((Application::PushButtonFlag)sender).Language;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code line looks complicated to you? Let&#8217;s explain it: at the very beginning, left to the equal sign, we see built in global variable <em>language</em>. When assigning a language member name to this global variable, the language will be switched. So what gets assigned to this global variable? Simply the value of the property <em>Language</em> of the sender object, which is the <em>PushButtonFlag</em> instance the user clicked on. Since the slot method does not know anything about the identity of the sender, we have to cast the hidden parameter <em>sender</em> to an instance of the <em>Application::PushButtonFlag</em> class, that&#8217;s what the construct <code>(Application::PushButtonFlag)sender</code> does.</p>
+</div>
+<div class="paragraph">
+<p>Our language switcher is ready for use, it should now look like illustrated in <a href="#fig:LanguageSwitcher">Figure 3</a> below:</p>
+</div>
+<div id="fig:LanguageSwitcher" class="imageblock">
+<div class="content">
+<img src="_images/languageswitcher/LanguageSelector.png" alt="language selector">
+</div>
+<div class="title">Figure 3. Finalized language switcher</div>
 </div>
 </div>
 <div class="sect2">

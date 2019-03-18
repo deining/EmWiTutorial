@@ -25,7 +25,7 @@ Now that we have the two icons available, we will make use of them and create tw
 
 * Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
 * Identify the note frame with the caption _GUI project_, it currently contains the icon image:icons/ApplicationUnitIcon.png[Application unit icon] representing the _Application_ unit and the icon image:icons/StringsUnitIcon.png[Strings unit icon] representing the _Strings_ unit.
-* From the gallery templates window to the left, drag the element image:icons/UnitIcon.png[profile icon] _Unit_ inside the _Chora_ folder over to the canvas and place it underneath the existing _Strings_ unit. Rename the unit to _Icons_.
+* From the gallery templates window to the left (kbd:[Alt+1]), drag the element image:icons/UnitIcon.png[profile icon] _Unit_ inside the _Chora_ folder over to the canvas and place it underneath the existing _Strings_ unit. Rename the unit to _Icons_.
 * Double click on the newly inserted unit image:icons/IconsUnitIcon.png[Icon icons unit]. Inside the composer window, a new tab _Icons_ appears which shows the currently empty unit.
 * From the gallery templates window to the left, drag the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Flags_.
 * From the gallery templates window to the left, drag the element image:icons/BitmapResourceIcon.png[constant icon] _Bitmap Resource_ inside the _Resources_ folder over to the canvas and place it inside the just inserted annotation group. Rename the constant to _FlagUK_.
@@ -51,7 +51,7 @@ With the resources available, we now can build a reusable pushbutton flag compon
 We now have to adapt the component to our needs:
 
 * First, click on the note element that contains a lot of text and press the kbd:[Del] key to delete this element.
-* Our flag inside the component has a size of 46 × 33 px. Since we want to have a black one pixel border around the selected flag, the component size should be 48 × 35 px, so let's adjust this: click on the property image:icons/PropertyIcon.png[property icon] _Bounds_ to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
+* [[resizing-component]]Our flag inside the component has a size of 46 × 33 px. Since we want to have a black one pixel border around the selected flag, the component size should be 48 × 35 px, so let's adjust this: click on the property image:icons/PropertyIcon.png[property icon] _Bounds_ to select the element. Now, in the in the upper _member area_ of the inspector window right to the main composer window you should see the element named _Bounds_ selected. Also note the attributes and properties area below that shows all properties of the currently selected _Bounds_ property.
 * Inside the attributes and properties area, we can adapt the default bounds values to our needs:
 ** Click on the black triangle left to the _Default_ element. Multiple lines will show up which hold the values for the origin (_x_, _y_) and the size of the element (_**w**idth_, _**h**eight_).
 ** Alter the _w_ instance property of the component to the value _48_ to set the default width of the component to 48{nbsp}px.
@@ -81,7 +81,7 @@ While our component is usable now, it is not reusable yet. If at all possible, t
 
 The property is now set up, however a change of the property value is not yet reflected inside the flag component. To overcome this, we have to add some code to the OnSet method which is called each time a new value is assigned to the property:
 
-* Double click on the method _OnSetTextHeader_ of the property. In the code editor window, replace the _TO DO:_ section at the bottom with the code line ``Flag.Bitmap = value;``. Now, if a new value was assigned to the _BitmapFlag_ property was set to, this is immediately reflected in the GUI.
+* Double click on the method _OnSetTextHeader_ of the property. In the code editor window, replace the _TO DO:_ section at the bottom with the code line ``Flag.Bitmap = value;``. Now, if a new value gets assigned to the _BitmapFlag_ property, this is immediately reflected in the GUI.
 
 The first property is ready to go, so let's add a second property to store the language associated with the flag:
 
@@ -97,7 +97,38 @@ image::languageswitcher/PushButtonFlag.png[push button flag, 1024]
 
 === Building the language switcher component
 
-TODO
+Next, we need to build the language switcher component, holding two or more flags for language selection:
+
+* From the gallery templates window (kbd:[Alt+1]) with folder _**C**omponent Templates_ opened (press key kbd:[C] twice), drag an image:icons/ComponentIcon.png[component icon] _Empty GUI component_ to the component's canvas. Place the element inside the _Language selector_ note group, underneath the _PushButton_ component. Rename the component to _LanguageSelector_ using the kbd:[F2] key.
+* Double click on the newly inserted image:icons/LanguageSelector.png[push button icon] component. Inside the composer window, a new tab titled _Application::LanguageSelector_ appears which shows the empty GUI component.
+
+We now have to adapt and fill the component according to our needs:
+
+* First, click on the note element that contains a lot of text and press the kbd:[Del] key to delete this element. Also delete the methods _UpdateViewState_ and _UpdateLayout_.
+* Adjust the component size to 104 × 35 px so that the component can held two flags. If you don't know how to do that remember how you changed the size of the _PushButton_ flag component xref:#resizing-component[above].
+* Press kbd:[Alt+2] to select the gallery browser window, left to the main composer window. Alternatively, you may mouse click at the second tab _Browser_ at the very top of the window.
+* In the search field immediately below the two tabs, type in _Flag_ to shorten the class list.
+* Click on the image:icons/PushButtonIcon.png[push button icon] _Application::PushButtonFlag_ class and drag an instance of the class over to the canvas. Align the component to the left.
+* Drag another instance of the image:icons/PushButtonIcon.png[push button icon] _Application::PushButtonFlag_ class over to the canvas. Align the component to the right.
+* Using the inspector window, change the property _BitmapFlag_ of the secondly inserted push button flag to _Icons::FlagGerman_ and the German flag will be displayed.
+* Using the inspector window, change the property _Language_ of the same flag to _German_.
+* Inside the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ opened (key kbd:[C]), click on the element image:icons/SlotMethodIcon.png[slot method icon] _Slot Method_ and drag an instance over to the component's canvas.
+* Press kbd:[F2] to rename the slot method to _switchLanguage_.
+* Using the inspector window, change the property _OnActivate_ of both flags to the newly created slot method _switchLanguage_. This way, the _switchLanguage_ slot method gets called once the user clicks on any of the flags. The only object passed to the slot method is the hidden parameter _sender_, in our case the _PushButtonFlag_ instance the user clicked on.
+* Now, how do we implement language switching once the slot method gets called? That's easy, double click on the image:icons/RingTheBellSlotIcon.png[slot icon] _switchLanguage_ and fill into the body of the slot method one single Chora code line:
+
+[source,chora]
+----
+language = ((Application::PushButtonFlag)sender).Language;
+----
+
+This code line looks complicated to you? Let's explain it: at the very beginning, left to the equal sign, we see built in global variable _language_. When assigning a language member name to this global variable, the language will be switched. So what gets assigned to this global variable? Simply the value of the property _Language_ of the sender object, which is the _PushButtonFlag_ instance the user clicked on. Since the slot method does not know anything about the identity of the sender, we have to cast the hidden parameter _sender_ to an instance of the _Application::PushButtonFlag_ class, that's what the construct ``(Application::PushButtonFlag)sender`` does.
+
+Our language switcher is ready for use, it should now look like illustrated in <<fig:LanguageSwitcher>> below:
+
+[[fig:LanguageSwitcher]]
+.Finalized language switcher
+image::languageswitcher/LanguageSelector.png[language selector]
 
 === Adding the language switcher to the main screen
 

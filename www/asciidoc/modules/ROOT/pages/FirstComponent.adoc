@@ -78,7 +78,7 @@ Next we add a header text to the component:
 
 Eventually, we add the core element, a push button that will be used to ring the bell:
 
-* In the gallery templates window to the left, either click on the folder header _**W**idgets_ or press key kbd:[W], this will open and show all items inside the _**w**idgets_ folder.
+* In the gallery templates window to the left (kbd:[Alt+1]), either click on the folder header _**W**idgets_ or press key kbd:[W], this will open and show all items inside the _**W**idgets_ folder.
 * Click on the _Push Button_, widget and drag an instance over to the component's canvas. Place the element in the lower area of the canvas.
 * Press kbd:[F2] to rename the component. In the inspector window, type in _PushButtonBell_ and press kbd:[Enter] once you are done.
 * Now customize the appearance of the push button. You may do so by setting the property _Appearance_ in the inspector window to _WidgetSet::PushButtonSmall_ and by setting the property _Label_ to _Ring_.
@@ -103,7 +103,7 @@ Inheritance:: Slot methods are members of class objects. If a class is derived f
 
 So let's start and build our first slot method to bring life to our push button:
 
-* In the gallery templates window to the left, either click on the folder header _**C**hora_ or press key kbd:[w] twice, this will open the folder and will present the list of all language elements available in the programming language _**C**hora_.
+* In the gallery templates window to the left (kbd:[Alt+1]), either click on the folder header _**C**hora_ or press key kbd:[C], this will open the folder and will present the list of all language elements available in the programming language _**C**hora_.
 * To keep our component organized, it's a good idea to place a note group on the canvas first:
 ** Click on the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, and drag an instance over to the component's canvas. Place the element right beneath the component's canvas.
 ** By default, the heading of the note is _This is an annotation_. Change the heading of the note area by changing the property _Caption_ in the inspector window to _Slot method(s)_.

@@ -1,0 +1,15 @@
+= Permanently storing your language setting
+Andreas Deininger andreas@deininger.net
+
+In the xref::LanguageSwitcher.adoc[last chapter], we added a language switcher to our tutorial application, allowing you to switch to the desired language. While that's great, any reasonable program will store your language setting so that you have to select the language only once at the very first use of the program. In the next lesson, we will implement this behavior for our application, too. Once we are finished, our browser application will store your language setting in its local storage and will recall these setting on each startup.
+
+'''
+.Source code
+****
+TIP: If you didn't author or didn't keep the _Language switcher_ project explained in the previous xref:LanguageSwicther.adoc[chapter], you may download the link:{attachmentsdir}/code/LanguageSwitcherTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+****
+'''
+
+== Preparing data storage on the device
+
+TODO

@@ -8,6 +8,7 @@
 * Localizing your application
 ** xref:LocalizingYourApplication.adoc[Adding languages and localizing your strings]
 ** xref:LanguageSwitcher.adoc[Adding a language switcher]
+** xref:DataStorageDevice.adoc[Storing your language setting]
 
 .Resources
 * xref:DemoSite.adoc[Application demo site]

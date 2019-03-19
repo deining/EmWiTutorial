@@ -318,6 +318,7 @@ $endif
 We are done! To test the newly added weather forecast functionality, rebuild the project and reload the application page in your web browser.
 You should now be able to both make your device beep and to view the weather forecast inside your browser. Pretty cool, isn't it?
 
+'''
 .Source code
 ****
 TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/DeviceIntegrationTutorial.zip[project sources] of the finalized example on how to integrate your browser device.

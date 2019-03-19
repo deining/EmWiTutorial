@@ -89,8 +89,10 @@ Now that we have the language strings defined, let's make use of them!
 * Next, we have localize the bell component: inside the inspector window, search for and click on the _BellComponent_ or click on the component in the main window. Change the property _TextHeader_ of this component to the language string _Strings::HeadingBell_. Also, change the property _LabelButton_ of this component to the language string _Strings::LabelPushButtonBell_.
 * Finally, we have localize the forecast component: inside the inspector window, search for and click on the _ForecastComponent_ or click on the component in the main window. Change the property _TextHeader_ of this component to the language string _Strings::HeadingForecast_. Also, change the property _LabelButton_ of this component to the language string _Strings::LabelPushButtonForecast_.
 
-That's it, our application uses localized text strings now! Let's test this out: usw the language dropdown (illustrated in <<fig:DropdownLanguages>>) to change the project language to _German_ and all the textual elements used in our application will change to _German_ immediately! Isn't that great? For sure, we will need a language switcher now, allowing the user to switch the language. Stay with us, in the next xref::LanguageSwitcher.adoc[chapter], we will explain how to add such a switch to the application!
+That's it, our application uses localized text strings now! Let's test this out: use the language dropdown (illustrated in <<fig:DropdownLanguages>>) to change the project language to _German_ and all the textual elements used in our application will change to _German_ immediately! Isn't that great? For sure, we will need a language switcher now, allowing the user to switch the language. Stay with us, in the next xref::LanguageSwitcher.adoc[chapter], we will explain how to add such a switcher to the application!
 
+
+'''
 .Source code
 ****
 TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/LocalizationTutorial.zip[project sources] of the finalized example on how to localize your application.

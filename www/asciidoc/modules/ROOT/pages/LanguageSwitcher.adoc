@@ -132,8 +132,23 @@ image::languageswitcher/LanguageSelector.png[language selector]
 
 === Adding the language switcher to the main screen
 
-TODO
+The only task left is to integrate the  language switcher into the main screen. Doing so is quite easy:
 
+* Open the the _Application_ unit by clicking on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab.
+* Double click on the _TutorialApplication_ root component, this will open root application in a new tab titled _Application::TutorialApplication_.
+* Press kbd:[Alt+2] to select the gallery browser window, left to the main composer window. Alternatively, you may mouse click at the second tab _Browser_ at the very top of the window.
+* In the search field immediately below the two tabs, type in _Selector_ to shorten the class list.
+* Click on the image:icons/ComponentIcon.png[component icon] _Application::LanguageSelector_ class and drag an instance of the class over to the canvas. Place the component in the upper right corner of the main canvas. Rearrange the elements so that everything look nice again.
+
+That's it, we do have a working language switcher now! The main app should now look like illustrated in <<fig:AppLanguageSwitcher>> below:
+
+[[fig:AppLanguageSwitcher]]
+.Application with language switcher added
+image::languageswitcher/AppLanguageSelector.png[language selector]
+
+Let's go and test the language switcher out! While it is great to have such a switcher, this is not the end of the story: any reasonable program will store your language setting so that you have to set the language only once at the very first use of the program. And guess what, we can do that with our program, too. Stay with us, in the next xref::DataStorageDevice.adoc[chapter], we will explain how to permanently store the language setting of our tutorial application in the web browser!
+
+'''
 .Source code
 ****
 TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/LanguageSwitcherTutorial.zip[project sources] of the finalized example on how to add a language switcher to your application.

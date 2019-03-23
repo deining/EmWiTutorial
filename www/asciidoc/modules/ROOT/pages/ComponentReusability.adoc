@@ -31,7 +31,7 @@ In order to allow reuse, we have to extend the component so that the three items
 * You are allowed to attach slot methods as observer to any property we implement. As soon as the value of the property changes, the slot method (={nbsp}observer) gets notified about the change. This is a core feature of Chora that allows the development of applications following the https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller[MVC^] pattern. We may talk about this later on.
 * Properties cannot only store arbitrary data type, they can also store references to any data type. Properties that store references are so called https://doc.embedded-wizard.de/implementing-component-interface#4[outlet properties^]. This is an advanced concept, we may talk about that later on.
 
-That's the theory behind property in short, let's start and put theory into practice: 
+That's the theory behind property in short, let's start and put theory into practice:
 
 First we have to make a few adjustments to our components in order to reflect the refactoring of the component:
 

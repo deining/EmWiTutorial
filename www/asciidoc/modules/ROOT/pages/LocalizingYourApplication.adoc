@@ -67,7 +67,7 @@ image::localization/LanguageStrings.png[language string]
 [[tab:LanguageStrings]]
 [width=99%, cols="<,^,^,^", options="header", grid=rows, frame=topbot]
 |===
-| Name                      | Default / Fallback value | German translation | Annotation group
+| Name                      | Default / Fallback value | German translation   | Annotation group
 | _HeadingBell_             | "Bell"                   | "Klingel"       .2+.^| Bell component
 | _LabelPushButtonBell_     | "Ring"                   | "Läuten"
 | _HeadingForeCast_         | "Weather report"         | "Wetterbericht" .2+.^| Forecast component

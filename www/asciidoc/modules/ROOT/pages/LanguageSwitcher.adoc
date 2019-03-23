@@ -68,8 +68,8 @@ Looking at the inspector window, we can see that our component consist of three 
 Now we are ready to insert our flag to the component:
 
 * From the gallery templates window (kbd:[Alt+1]) with folder _**V**iews_ opened (key kbd:[V]), drag an instance of the image:icons/ImageIcon.png[image icon] _Image_ bitmap view to the component's canvas. Rename the _Image_ element to _Flag_ using the kbd:[F2] key.
-* Adapt the size of the _Image_ element to 46 × 33 px by altering the default width and height of the property _Bounds_ of the _Image_ element. Define an offset of one pixel from the origin by setting the default _x_ and _y_ coordinate inside the property _Bounds_ to _1_. 
-* Set the property _Bitmap_ of the _Image_ element _Icons::FlagUK_. 
+* Adapt the size of the _Image_ element to 46 × 33 px by altering the default width and height of the property _Bounds_ of the _Image_ element. Define an offset of one pixel from the origin by setting the default _x_ and _y_ coordinate inside the property _Bounds_ to _1_.
+* Set the property _Bitmap_ of the _Image_ element _Icons::FlagUK_.
 * In the inspector window, select the _Image_ element and press the keyboard combination kbd:[Ctrl+Down] multiple time to move the _Image_ element down in the element hierarchy. You may stop once you placed the element just below the _TouchHandler_ element.
 
 While our component is usable now, it is not reusable yet. If at all possible, try to reuse your components! Our goal must be to develop one single flag component only and reuse this component once we add several flags for language switching to the main window. In order to make the component truly reusable, we have to add two image:icons/PropertyIcon.png[property icon] properties _Language_ and _BitmapFlag_ to the component. These properties can then be set individually for each component's instance used inside the application. Let's go and add these properties to our component:
@@ -132,7 +132,7 @@ image::languageswitcher/LanguageSelector.png[language selector]
 
 === Adding the language switcher to the main screen
 
-The only task left is to integrate the  language switcher into the main screen. Doing so is quite easy:
+The only task left is to integrate the language switcher into the main screen. Doing so is quite easy:
 
 * Open the the _Application_ unit by clicking on the tab labelled _Application_. If this tab is not present yet, click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab and double click on the _Application_ unit to invoke the tab.
 * Double click on the _TutorialApplication_ root component, this will open root application in a new tab titled _Application::TutorialApplication_.

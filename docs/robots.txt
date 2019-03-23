@@ -1,1 +1,8 @@
+User-agent: *
+Disallow: /_/
+Disallow: /demo/
+Disallow: /EmWiTutorial/latest/_attachments/
+Disallow: /EmWiTutorial/latest/_images/
+Disallow: /EmWiTutorial/latest/partials/
+
 Sitemap: https://deining.github.io/EmWiTutorial/sitemap.xml

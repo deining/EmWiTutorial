@@ -155,7 +155,7 @@ NOTE: When we launched the test above, the prototyper acted on a component level
 [[tab:ProtoyperStart]]
 [cols="<h,^,^", options="header", grid=rows, frame=topbot]
 |===
-|                   | Prototyping of component     |  Prototyping of application
+|                   | Prototyping of component     | Prototyping of application
 | Menu              | menu:Build[Start prototyper] | menu:Build[Start prototyper with application class]
 | Keyboard shortcut | kbd:[F5]                     | kbd:[Ctrl+F5]
 | Toolbar icon      | image:icons/LaunchIcon.png[Launch icon] | image:icons/LaunchApplicationIcon.png[Launch icon]

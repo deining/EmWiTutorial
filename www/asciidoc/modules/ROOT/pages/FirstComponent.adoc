@@ -105,7 +105,7 @@ So let's start and build our first slot method to bring life to our push button:
 
 * In the gallery templates window to the left (kbd:[Alt+1]), either click on the folder header _**C**hora_ or press key kbd:[C], this will open the folder and will present the list of all language elements available in the programming language _**C**hora_.
 * To keep our component organized, it's a good idea to place a note group on the canvas first:
-** Click on the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, and drag an instance over to the component's canvas. Place the element right beneath the component's canvas.
+** Click on the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, and drag an instance over to the component's canvas. Place the element right to the component's canvas.
 ** By default, the heading of the note is _This is an annotation_. Change the heading of the note area by changing the property _Caption_ in the inspector window to _Slot method(s)_.
 * By now we are ready to insert our slot method: Click on the element image:icons/SlotMethodIcon.png[slot method icon] _Slot Method_, and drag an instance over to the component's canvas. Place the element inside the note rectangle you inserted and adapted in the previous two steps.
 * Press kbd:[F2] to rename the slot method. In the inspector window, type in _RingTheBellSlot_ and press kbd:[Enter] once you are done.
@@ -123,7 +123,7 @@ For now, change this code line to:
 trace "Sorry, the GUI cannot ring the bell!";
 ----
 
-The https://doc.embedded-wizard.de/trace-statemen[trace^] is a debugging statement that prints diagnostic output to the https://doc.embedded-wizard.de/log-window[log window^] located in the lower left area of the screen.
+The _https://doc.embedded-wizard.de/trace-statement[trace^]_ statement is a debugging command that prints diagnostic output to the https://doc.embedded-wizard.de/log-window[log window^] located in the lower left area of the screen.
 
 We now finished with our slot method now, as soon as a signal will be sent to the method, it will print it's output to the log window. However, we haven't connected our slot method to our push button yet, so let's move on and connect the sender (={nbsp}push button) with the slot slot method in order to get the push button working!
 

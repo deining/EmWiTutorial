@@ -46,9 +46,9 @@ image::localization/DropdownLanguages.png[dropdown list languages]
 
 We just added a second language to our project, but this is not the end: next we have to add language strings to our project that will be used when we want to display text in different languages. We will put all these strings inside a new unit _Strings_ so let's go ahead and add the unit and the language strings:
 
-* Click on the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab (the first tab from the left).
+* Invoke the image:icons/EmbeddedWizardIcon.png[project icon] _Project_ tab by clicking on the icon image:icons/ProjectIcon.png[project icon] in the first row of the toolbar (kbd:[Ctrl+Shift+P]).
 * Identify the note frame with the caption _GUI project_, it only contains the icon image:icons/ApplicationUnitIcon.png[Application unit icon] representing the _Application_ unit.
-* From the gallery templates window to the left, drag the element image:icons/UnitIcon.png[profile icon] _Unit_ inside the _Chora_ folder over to the canvas and place it beneath the existing _Application_ unit. Rename the unit to _Strings_.
+* From the gallery templates window to the left, drag the element image:icons/UnitIcon.png[profile icon] _Unit_ inside the _Chora_ folder over to the canvas and place it right to the existing _Application_ unit. Rename the unit to _Strings_.
 * Double click on the newly inserted unit image:icons/StringsUnitIcon.png[Icon strings unit]. Inside the composer window, a new tab _Strings_ appears which shows the currently empty unit.
 * From the gallery templates window to the left, drag the element image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_, over to root canvas. Rename the group to _Application_.
 * From the gallery templates window to the left, drag the element image:icons/ConstantIcon.png[constant icon] _Constant_ inside the _Chora_ folder over to the canvas and place it inside the just inserted annotation group . Rename the constant to _HeaderTutorialApplication_.

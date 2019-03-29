@@ -118,6 +118,7 @@ If we want to make use of more than one platform package inside our project, we 
 * Identify the note frame with the caption _Profile configuration_, it only contains the icon image:icons/DefaultProfileIcon.png[Default profile icon] representing the default profile. Select this profile and have a look at the inspector window. You will realize that the attribute _PlatformPackage_ of the profile has the value _Tara.Win32.RGBA8888_ assigned. To reflect this, rename the profile from _Profile_ to _Win32_ using the kbd:[F2] key.
 * From the gallery templates window to the left, drag the element image:icons/ProfileIcon.png[profile icon] _Profile_ inside the _Chora_ folder over to the canvas and place it underneath the existing profile _Win32_ . Rename the profile to _Browser_. Resize the note frame and rearrange the elements on the canvas so that the layout looks nice again.
 * Our new profile should be associated with the WebGL platform package, so inside the inspector window, change the value of the attribute _PlatformPackage_ from _Tara.Win32.RGBA8888_ to _Tara.WebGL.RGBA8888_.
+* Inside the inspector window, set the value of the attribute _ApplicationClass_ to _Application::TutorialApplication_. This attribute defines the root class which is invoked once the application starts up.
 * Inside the inspector window, change the value of the attribute _ScreenSize_ to _<480,320>_.
 * Also change the value of the attribute _OutputDirectory_ to _../WebGL_. This defines the directory where all the code for our website will be stored once we build the project.
 * Optionally, you may fill the attributes _ApplicationName_ and _ApplicationTitle_ with the values _TutorialApplication_ or _"Embedded Wizard sample application"_, respectively. For the last value, don't forget the surrounding double quotes here or you may run in trouble.
@@ -130,7 +131,7 @@ image::deviceintegration/ProjectProfiles.png[Project profiles]
 
 [TIP]
 ====
-Now that we have two profiles defined, we can switch between these two profiles using the https://doc.embedded-wizard.de/menu-build#9[_Profile_ dropdown list^] located in the second row of the toolbar, placed right beneath the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode:
+Now that we have two profiles defined, we can switch between these two profiles using the https://doc.embedded-wizard.de/menu-build#9[_Profile_ dropdown list^] located in the second row of the toolbar, placed right to the icon image:icons/BuildProfileIcon.png[Build profile] for building the selected profile and the icon image:icons/BuildBatchIcon.png[Build batch mode] for building multiple profiles in batch mode:
 
 [[fig:DropdownList]]
 .Dropdown list for switching between different profiles

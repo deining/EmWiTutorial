@@ -42,7 +42,7 @@ First we have to make a few adjustments to our components in order to reflect th
 
 Let's get our feet wet and add some properties to our component:
 
-* From the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ opened (key kbd:[C]), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element right beneath the component's canvas and rename the property _Caption_ of the element to _Properties_ using the inspector window.
+* From the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ opened (key kbd:[C]), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element right to the component's canvas and rename the property _Caption_ of the element to _Properties_ using the inspector window.
 * Now we are ready to insert our properties: Click on the element image:icons/PropertyIcon.png[property icon] _Property_, and drag an instance over to the component's canvas. Place the element inside the note rectangle you inserted and adapted in the previous step.
 
 As you can see, a property named _Property_ was inserted, together with its _OnSet_ and _OnGet_ methods:

@@ -6,7 +6,7 @@ In the xref::LanguageSwitcher.adoc[last chapter], we added a language switcher t
 '''
 .Source code
 ****
-TIP: If you didn't author or didn't keep the _Language switcher_ project explained in the previous xref:LanguageSwicther.adoc[chapter], you may download the link:{attachmentsdir}/code/LanguageSwitcherTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
+TIP: If you didn't author or didn't keep the _Language switcher_ project explained in the previous xref:LanguageSwitcher.adoc[chapter], you may download the link:{attachmentsdir}/code/LanguageSwitcherTutorial.zip[sources] of this project and use this a starting base to follow the instructions given below.
 ****
 '''
 

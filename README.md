@@ -122,10 +122,11 @@ C:\Users\Me\Projects\EmWiTutorial> REM ready for the next steps
 
 ### Building and bundling the user interface
 
-The project uses a customized version of the [Antora Default UI](https://gitlab.com/antora/antora-ui-default) as GUI template for the tutorial website. In order to successfully publish the tutorial site, we have to build and bundle this user interface first. Enter the directory ``www\ui`` of the cloned repository and issue two ``gulp`` commands there:
+The project uses a customized version of the [Antora Default UI](https://gitlab.com/antora/antora-ui-default) as GUI template for the tutorial website. In order to successfully publish the tutorial site, we have to build and bundle this user interface first. Enter the directory ``www\ui`` of the cloned repository and install the dependencies using ``yarn`` first. Afterwards, issue two ``gulp`` commands to generate the bundled user interface:
 
 ````
 C:\Users\Me\Projects\EmWiTutorial> cd www\ui
+C:\Users\Me\Projects\EmWiTutorial\www\ui> yarn install
 C:\Users\Me\Projects\EmWiTutorial\www\ui> gulp preview:build
 C:\Users\Me\Projects\EmWiTutorial\www\ui> gulp bundle
 ````

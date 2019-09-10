@@ -12,4 +12,15 @@ TIP: If you didn't author or didn't keep the _Language switcher_ project explain
 
 == Preparing data storage on the device
 
-TODO
+* From the gallery templates window (kbd:[Alt+1]) with folder _**C**hora_ opened (key kbd:[C]), drag an instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element on the canvas and rename the property _Caption_ of the element to _Device interface_ using the inspector window. Resize the note group so that it will cover the two existing elements on the canvas. Move the two elements _DeviceClass_ and _Device_ down so that they don't hide the caption any more.
+* Drag another instance of the image:icons/AnnotationGroupIcon.png[annotation group icon] _Annotation Group_ to the component's canvas. Place the element underneath the previously inserted note group and rename the property _Caption_ of the newly inserted element to _Enumerations_ using the inspector window.
+* From the gallery templates window to the left (kbd:[Alt+1]), drag the element image:icons/EnumIcon.png[enum icon] _Enum_ inside the _Chora_ folder over to the canvas and place it inside the recently inserted note group _Enumerations_. Rename the enumeration to _Language_.
+* Double click on the newly inserted enumeration:icons/EnumIcon.png[enum icon]. Inside the composer window, a new tab _Device::Language_ appears which shows the three items of the enumeration.
+
+
+'''
+.Source code
+****
+TIP: If you encountered difficulties and didn't succeed when following the instructions given above, you may download the link:{attachmentsdir}/code/DataStorageDeviceTutorial.zip[project sources] of the finalized example on how to permanently store the language settings on your device.
+****
+'''

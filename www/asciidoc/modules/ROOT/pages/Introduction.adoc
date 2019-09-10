@@ -35,7 +35,7 @@ While building a sample application step by step, the tutorial covers the follow
 * https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/ComponentReusability.html[Developing and prototyping reusable graphical components]
 * https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/DeviceIntegrationBrowser.html[Device integration]
 * https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/LocalizingYourApplication.html[Localization of your application]
-* Persistent data storage on the target device
+* https://deining.github.io/EmWiTutorial/EmWiTutorial/latest/DataStorageDevice.html[Persistent data storage on the target device]
 
 == Sample application
 

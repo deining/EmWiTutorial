@@ -144,7 +144,7 @@ Let's go and test our first component! There are several ways to do so:
 * use the keystroke kbd:[F5], or
 * click on the launch icon image:icons/LaunchIcon.png[Launch icon] in the second row of the toolbar.
 
-A prototyper window will appear which shows your component and simulate its behaviour: Click on the push button, twice, and two debug messages will appear in the log window:
+A prototyper window will appear which shows your component and simulate its behaviour: Click on the push button twice, and two debug messages will appear in the log window:
 
 .Debugging output inside the log window
 image::firstcomponent/DebugOutput.png[Debugging output]

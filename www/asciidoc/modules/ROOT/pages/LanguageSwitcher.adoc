@@ -37,7 +37,7 @@ Our flag bitmap resources are ready for use now, they should look like illustrat
 
 [[fig:FlagResources]]
 .Flag bitmap resources
-image::languageswitcher/FlagiconResources.png[flag icons]
+image::languageswitcher/FlagIconResources.png[flag icons]
 
 === Building a pushbutton flag component
 

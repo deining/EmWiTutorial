@@ -102,7 +102,7 @@ $ npm install -g yarn
 
 #### Install Antora
 
-Next, install version 2.0 of the Antora CLI and site generator packages globally, using the following command:
+Next, install version 2.1 of the Antora CLI and site generator packages globally, using the following command:
 
 ````
 C:\> npm install --global @antora/cli@2.1 @antora/site-generator-default@2.1

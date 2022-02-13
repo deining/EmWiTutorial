@@ -49,7 +49,7 @@ IMPORTANT: If you haven't written any code by hand, this tutorial is most likely
 
 == Prerequisites
 
-Download and install https://www.embedded-wizard.de/download/[Embedded Wizard Free Edition], version 9.20. The free edition has all features of the Professional edition, it is restricted to small projects however. Luckily, the free edition allows to develop and to run the tutorial application without limitation.
+Download and install https://www.embedded-wizard.de/download/[Embedded Wizard Free Edition], version 11.00. The free edition has all features of the Professional edition, it is restricted to small projects however. Luckily, the free edition allows to develop and to run the tutorial application without limitation.
 
 == Feedback and questions
 

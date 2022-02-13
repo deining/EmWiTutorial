@@ -84,31 +84,7 @@ If you don't have ``git`` installed yet, download and run the [Git installer](ht
 For various installation tasks, we need ``npm``, the Node.js package manager.
 If you don't have ``npm`` installed yet, download and run the [Node.Js®](https://nodejs.org/) installer. This installer will install both ``Node.Js`` and the package manager ``npm`` on your system.
 
-#### Gulp CLI
-
-Next, you have to install the Gulp CLI globally using the following command:
-
-````
-C:\> npm install --global gulp-cli
-````
-
-#### Yarn CLI
-
-Next, you have to install ``yarn``, which is the preferred package manager for the Node ecosystem, globally, using the following command:
-
-````
-$ npm install -g yarn
-````
-
-#### Install Antora
-
-Next, install version 3.0.1 of the Antora CLI and site generator packages globally, using the following command:
-
-````
-C:\> npm install --global @antora/cli@3.0.1 @antora/site-generator@3.0.1
-````
-
-Now that you have ``git``, ``node``, ``gulp``, ``yarn`` and ``antora`` installed, you’re ready to set up the project.
+With ``git`` and ``node`` installed, you’re ready to set up the project.
 
 ### Cloning the project locally
 
@@ -122,13 +98,13 @@ C:\Users\Me\Projects\EmWiTutorial> REM ready for the next steps
 
 ### Building and bundling the user interface
 
-The project uses a customized version of the [Antora Default UI](https://gitlab.com/antora/antora-ui-default) as GUI template for the tutorial website. In order to successfully publish the tutorial site, we have to build and bundle this user interface first. Enter the directory ``www\ui`` of the cloned repository and install the dependencies using ``yarn`` first. Afterwards, issue two ``gulp`` commands to generate the bundled user interface:
+The project uses a customized version of the [Antora Default UI](https://gitlab.com/antora/antora-ui-default) as GUI template for the tutorial website. In order to successfully publish the tutorial site, we have to build and bundle this user interface first. Enter the directory ``www\ui`` of the cloned repository and install the dependencies using ``npm`` first. Afterwards, issue two ``gulp`` commands to generate the bundled user interface:
 
 ````
 C:\Users\Me\Projects\EmWiTutorial> cd www\ui
-C:\Users\Me\Projects\EmWiTutorial\www\ui> yarn install
-C:\Users\Me\Projects\EmWiTutorial\www\ui> gulp preview:build
-C:\Users\Me\Projects\EmWiTutorial\www\ui> gulp bundle
+C:\Users\Me\Projects\EmWiTutorial\www\ui> npm install
+C:\Users\Me\Projects\EmWiTutorial\www\ui> npx gulp preview:build
+C:\Users\Me\Projects\EmWiTutorial\www\ui> npx gulp bundle
 ````
 If all went fine, you should now see the UI bundle ``ui-bundle.zip`` available inside the subdirectory ``build``.
 
@@ -143,11 +119,12 @@ ui-bundle.zip
 
 ### Rebuilding the tutorial site
 
-Using the ``antora`` publisher, we can now build the tutorial site. Enter the directory ``www\antora`` of the cloned repository and issue the following ``antora`` command there:
+Using the ``antora`` publisher, we can now build the tutorial site. Enter the directory ``www\antora`` of the cloned repository and install the dependencies using ``npm`` first. Afterwards, issue the following ``antora`` command to generate the tutorial site:
 
 ````
 C:\Users\Me\Projects\EmWiTutorial\www\ui> cd ..\antora
-C:\Users\Me\Projects\EmWiTutorial\www\antora> antora --fetch playbook.yml
+C:\Users\Me\Projects\EmWiTutorial\www\ui> npm install
+C:\Users\Me\Projects\EmWiTutorial\www\antora> npx antora --fetch playbook.yml
 ````
 
 If all went fine, you should now see your changes reflected in the web site stored inside the the subdirectory ``docs`` of the cloned repository.

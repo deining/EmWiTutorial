@@ -1,7 +1,5 @@
-{{#if site.keys.googleAnalytics}}
-{{#with site.keys.googleAnalytics}}
+    {{#with site.keys.googleAnalytics}}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{this}}"></script>
-    <script>dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','{{this}}')</script>
-{{/with}}
-{{/if}}
-    <script src="{{uiRootPath}}/js/email-obfuscator.js"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','{{this}}')</script>
+    {{/with}}
+    <script>var uiRootPath = '{{{uiRootPath}}}'</script>

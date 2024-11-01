@@ -131,7 +131,7 @@ If all went fine, you should now see your changes reflected in the web site stor
 
 ### PDF version
 
-Besides the html sources, you may want to generate a pdf version of the tutorial website. While there are several ways to produce a pdf document from asciidoc sources, we found out that leveraging the [LaTex](https://www.latex-project.org/) toolchain gave the best results. All needed files for pdf generation are found inside the directory ``www\pdf``. Be aware that generating high quality pdf documents is not an easy task, so don't expect a perfect result here.
+Besides the html sources, you may want to generate a pdf version of the tutorial website. While there are several ways to produce a pdf document from asciidoc sources, we found out that leveraging the [LaTeX](https://www.latex-project.org/) toolchain gave the best results. All needed files for pdf generation are found inside the directory ``www\pdf``. Be aware that generating high quality pdf documents is not an easy task, so don't expect a perfect result here.
 
 ### Instructions how to generate a pdf version of the tutorial site
 

@@ -22,7 +22,7 @@ For every language, its a good practice to start by printing out _Hello World!_.
 Let's have a look at the structure of the newly created project. As you can see from <<fig:ProjectLayout>>, in total 4 items were added to the main area, the so called https://doc.embedded-wizard.de/composer-window[composer window^]:
 
 [[fig:ProjectLayout]]
-.Inital project layout
+.Initial project layout
 image::helloworld/InitialProject.png[Initial project setup, 1024]
 
 These 4 groups serve totally different purposes:

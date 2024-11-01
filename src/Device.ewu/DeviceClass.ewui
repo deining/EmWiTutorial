@@ -71,6 +71,6 @@ class DeviceClass : Templates::DeviceClass
   $rect <27,37,240,80>
   slot RestoreLanguage
   {
-    sender; /* The GUI cannot restore the languauge */
+    sender; /* The GUI cannot restore the language */
   }
 }
